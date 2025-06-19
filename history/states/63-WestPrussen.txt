@@ -1,0 +1,27 @@
+state = {
+	id = 63
+	name = "STATE_63"
+	manpower = 894420
+	state_category = state_level_1
+
+	resources = {
+		oil = 1
+	}
+
+	history = {
+		owner = POL
+		add_core_of = POL
+		victory_points = { 11372 2 }
+		buildings = {
+			infrastructure = 5
+			air_base = 3
+			11372 = {
+				naval_base = 3
+			}
+		}
+	}
+
+	provinces = {
+		9252 9277 9306 9361 11260 11288 11316 11343 11372 
+	}
+}

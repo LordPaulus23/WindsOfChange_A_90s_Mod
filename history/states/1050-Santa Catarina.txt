@@ -1,0 +1,53 @@
+
+state={
+	id=1050
+	name="STATE_1050"
+	resources={
+		oil=3.000
+	}
+
+	history={
+		owner = BRA
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 2
+			4533 = {
+				naval_base = 3
+
+			}
+			10405 = {
+				naval_base = 1
+
+			}
+
+		}
+		add_core_of = BRA
+		victory_points = {
+			10405 10 
+		}
+		victory_points = {
+			4533 6 
+		}
+		victory_points = {
+			16138 5
+		}
+		victory_points = {
+			4548 2
+		}
+		victory_points = {
+			16137 1 
+		}
+		victory_points = {
+			12466 2 
+		}
+
+	}
+
+	provinces={
+		1529 4533 4548 5156 10405 12466 16137 16138 16139 
+	}
+	manpower=5356000
+	buildings_max_level_factor=1.000
+	state_category=state_level_10
+	local_supplies=0.000
+}

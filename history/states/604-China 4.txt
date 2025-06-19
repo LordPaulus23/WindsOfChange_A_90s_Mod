@@ -1,0 +1,25 @@
+
+state={
+	id=604
+	name="STATE_604" # Yushu
+	manpower = 262000
+	
+	state_category = state_level_0
+	history={
+		owner = PRC
+		#add_claim_by = CHI
+		add_core_of = PRC
+		add_claim_by = TIB
+		victory_points = {
+		    10490 2
+		}
+		buildings = {
+			infrastructure = 2
+			air_base = 1
+		}
+	}
+
+	provinces={
+		4914 4964 8018 8037 10490 12899 16307
+	}
+}

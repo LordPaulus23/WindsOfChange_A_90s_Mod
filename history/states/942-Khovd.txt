@@ -1,0 +1,33 @@
+
+state={
+	id=942
+	name="STATE_942"
+
+	history={
+		owner = MON
+		add_core_of = MON
+		buildings = {
+			infrastructure = 3
+			air_base = 1
+
+		}
+		victory_points = {
+			1774 3
+		}
+		victory_points = {
+			7843 1
+		}
+		victory_points = {
+			12695 1
+		}
+
+	}
+
+	provinces={
+		1774 7808 7870 12520 15975 4751 7843 10539 16362 16363 7773 10669 12695 16361
+	}
+	manpower=266000
+	buildings_max_level_factor=1.000
+	state_category=state_level_0
+	local_supplies=0.000
+}

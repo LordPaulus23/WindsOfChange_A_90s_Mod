@@ -1,0 +1,27 @@
+state={
+	id=1280
+	name="STATE_1280"
+	provinces={
+		16836 
+	}
+	history={
+		owner = CHL
+		add_core_of = CHL
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			16836 = {
+				naval_base = 1
+
+			}
+		}
+		victory_points = {
+			16836 1
+		}
+	}
+
+	manpower=3500
+	buildings_max_level_factor=1.000
+	state_category=state_level_0
+	local_supplies=0.000
+}

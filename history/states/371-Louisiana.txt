@@ -1,0 +1,54 @@
+
+state = {
+	id = 371
+	name = "STATE_371"
+	manpower = 4468000
+	
+	state_category = state_level_9
+	resources={
+		oil=60.000
+		rubber=10
+	}
+	history = {
+		owner = USA
+		add_extra_state_shared_building_slots = 1
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 3
+			air_base = 5
+			7552 = { naval_base = 2 }
+		}
+		add_core_of = USA
+		add_core_of = CSA
+		#add_core_of = LOU
+		victory_points = {
+			7552 10 
+		}
+		victory_points = {
+			1453 6
+		}
+		victory_points = {
+			12401 3
+		}
+		victory_points = {
+			4507 2
+		}
+		victory_points = {
+			12313 1
+		}
+		victory_points = {
+			4535 1
+		}
+		victory_points = {
+			7524 1
+		}
+		victory_points = {
+			1559 1
+		}
+
+	}
+
+	provinces = {
+		1453 1528 1559 1643 4507 4522 4535 7524 7552 7555 7599 12313 12398 12401 
+	}
+}

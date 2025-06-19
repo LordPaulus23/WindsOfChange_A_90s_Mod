@@ -1,0 +1,41 @@
+
+state={
+	id=303
+	name="STATE_303"
+	resources={
+		oil=0.000
+		steel=5.000
+	}
+
+	history={
+		owner = PRU
+		add_core_of = PRU
+		victory_points = {
+			12997 50 
+		}
+		victory_points = {
+			16101 3
+		}
+		buildings = {
+			infrastructure = 7
+			arms_factory = 2
+			industrial_complex = 2
+			dockyard = 1
+			air_base = 3
+			12997 = {
+				naval_base = 5
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		12997 16098 16101 
+	}
+	manpower=9041000
+	buildings_max_level_factor=1.000
+	state_category=state_level_14
+	local_supplies=0.000
+}

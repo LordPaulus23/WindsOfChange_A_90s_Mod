@@ -1,0 +1,48 @@
+
+state = {
+	id = 396
+	name = "STATE_396"
+	manpower = 6080000
+	state_category = state_level_11
+	resources={
+		steel = 80
+		aluminium=15.000
+	}
+	history = {
+		owner = USA
+		buildings = {
+			infrastructure = 6
+			air_base = 4
+			industrial_complex = 4
+			arms_factory = 1
+		}
+		add_core_of = USA
+		victory_points = {
+			1595 20 
+		}
+		victory_points = {
+			870 3
+		}
+		victory_points = {
+			11635 2
+		}
+		victory_points = {
+			9654 3
+		}
+		victory_points = {
+			6713 1
+		}
+		victory_points = {
+			4531 2
+		}
+		victory_points = {
+			12437 1
+		}
+
+
+	}
+
+	provinces = {
+		870 1595 1881 4437 4527 4531 6713 7551 9653 9654 9796 9810 10448 11621 11635 11637 12437 
+	}
+}

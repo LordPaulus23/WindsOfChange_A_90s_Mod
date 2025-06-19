@@ -1,0 +1,39 @@
+
+state={
+	id=266
+	name="STATE_266"
+
+
+	history={
+		owner = PER
+		add_core_of = PER
+		victory_points = {
+			10837 60 
+		}
+		victory_points = {
+			16669 19 
+		}
+		victory_points = {
+			7969 8 
+		}
+		victory_points = {
+			16667 1 
+		}
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 6
+			arms_factory = 2
+			air_base = 8
+
+		}
+
+	}
+
+	provinces={
+		7969 10837 16667 16668 16669 
+	}
+	manpower=13498000
+	buildings_max_level_factor=1.000
+	state_category=state_level_18
+	local_supplies=0.000
+}

@@ -1,0 +1,48 @@
+
+state={
+	id=435
+	name="STATE_435"
+
+	history={
+		add_core_of = RAJ
+		owner = RAJ
+		add_core_of = NAX
+		victory_points = {
+			4516 20 
+		}
+		victory_points = {
+			7537 5 
+		}
+		victory_points = {
+			7537 5 
+		}
+		victory_points = {
+			4571 5 
+		}
+		victory_points = {
+			10361 4 
+		}
+		victory_points = {
+			7475 4 
+		}
+		victory_points = {
+			4544 3 
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 4
+			air_base = 1
+
+		}
+
+	}
+
+	provinces={
+		1541 1569 1656 4459 4516 4544 4571 7475 7537 10361 10878 16480 
+	}
+	manpower=82998000
+	buildings_max_level_factor=1.000
+	state_category=state_level_28
+	local_supplies=0.000
+}

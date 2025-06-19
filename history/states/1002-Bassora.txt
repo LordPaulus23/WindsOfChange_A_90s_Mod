@@ -1,0 +1,40 @@
+
+state={
+	id=1002
+	name="STATE_1002"
+	resources={
+		oil=80.000
+		steel=2.000
+	}
+
+	history={
+		owner = IRQ
+		add_core_of = IRQ
+		victory_points = {
+			13314 25 
+		}
+		victory_points = {
+			2089 2 
+		}
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+			dockyard = 1
+			air_base = 2
+			2089 = {
+				naval_base = 2
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		2089 13306 13313 13314 13316 15573 15984 
+	}
+	manpower=1657000
+	buildings_max_level_factor=1.000
+	state_category=state_level_4
+	local_supplies=0.000
+}

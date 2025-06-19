@@ -1,0 +1,70 @@
+
+state={
+	id=428
+	name="STATE_428"
+	resources={
+		oil=13.000
+		steel=20.000
+	}
+
+	history={
+		owner = RAJ
+		add_core_of = RAJ
+		add_core_of = NAX
+		victory_points = {
+			9975 50 
+		}
+		victory_points = {
+			4187 40 
+		}
+		victory_points = {
+			10118 15 
+		}
+		victory_points = {
+			11952 18 
+		}
+		victory_points = {
+			4132 6 
+		}
+		victory_points = {
+			12037 6 
+		}
+		victory_points = {
+			4090 3 
+		}
+		victory_points = {
+			1190 2 
+		}
+		victory_points = {
+			4064 1 
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 4
+			dockyard = 1
+			arms_factory = 2
+			4132 = {
+				naval_base = 2
+
+			}
+			1190 = {
+				naval_base = 2
+
+			}
+			4187 = {
+				naval_base = 4
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		1103 1144 1190 4064 4090 4132 4187 7020 7150 7165 7207 9975 10118 11952 12037 12092 14196 14197 16507 16508 
+	}
+	manpower=50671000
+	buildings_max_level_factor=1.000
+	state_category=state_level_17
+	local_supplies=0.000
+}

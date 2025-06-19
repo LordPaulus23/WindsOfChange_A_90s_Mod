@@ -1,0 +1,24 @@
+state={
+	id=889
+	name="STATE_889"
+	
+	history={
+		owner = PAN
+		add_core_of = PAN
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+		}
+		victory_points = { 4624 2 }
+		victory_points = { 4611 1 }
+	}
+	
+	provinces={
+		1633 4611 4624 
+	}
+	
+	manpower=1307000
+	buildings_max_level_factor=1.000
+	
+	state_category = state_level_2
+}

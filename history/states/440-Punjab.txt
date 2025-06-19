@@ -1,0 +1,28 @@
+
+state={
+	id=440
+	name="STATE_440"
+
+	history={
+		owner = PAK
+		add_core_of = PAK
+		add_extra_state_shared_building_slots = 1
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 2
+			arms_factory = 1
+		}
+		victory_points = {
+			4979 20 
+		}
+
+	}
+
+	provinces={
+		4979 
+	}
+	manpower=805000
+	buildings_max_level_factor=1.000
+	state_category=state_level_2
+	local_supplies=0.000
+}

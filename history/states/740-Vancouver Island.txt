@@ -1,0 +1,31 @@
+
+state={
+	id=740
+	name="STATE_740"
+
+	history={
+		owner = CAN
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			air_base = 1
+
+		}
+		victory_points = {
+			12291 2 
+		}
+		victory_points = {
+			4422 1 
+		}
+		add_core_of = CAN
+		add_core_of = QUE
+
+	}
+
+	provinces={
+		1284 4305 4422 12291 13812 
+	}
+	manpower=312000
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+}

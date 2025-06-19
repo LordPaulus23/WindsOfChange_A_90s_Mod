@@ -1,0 +1,27 @@
+state={
+	id=738
+	name="STATE_738"
+	
+	resources = {
+		oil = 0
+	}
+
+	history={
+		owner = INS
+		add_core_of = INS
+		victory_points = {
+			4579 5 
+		}
+		buildings = {
+			infrastructure = 1
+			4579 = { naval_base = 1 }
+		}
+	}
+
+	provinces={
+		4579 
+	}
+	manpower=250000
+	buildings_max_level_factor=1	
+	state_category = state_level_1
+}

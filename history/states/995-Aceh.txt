@@ -1,0 +1,40 @@
+
+state={
+	id=995
+	name="STATE_995"
+	resources={
+		oil=7.000
+		rubber=30.000
+	}
+
+	history={
+		owner = INS
+		add_core_of = INS
+		victory_points = {
+			7658 20 
+		}
+		victory_points = {
+			10509 10 
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 5
+			arms_factory = 1
+			7658 = {
+				naval_base = 2
+
+			}
+
+
+		}
+
+	}
+
+	provinces={
+		7658 10509 12488 
+	}
+	manpower=5571000
+	buildings_max_level_factor=1.000
+	state_category=state_level_18
+	local_supplies=0.000
+}

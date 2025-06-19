@@ -1,0 +1,26 @@
+
+state={
+	id=718
+	name="STATE_718"
+
+	history={
+		owner = COG
+		add_core_of = COG
+		buildings = {
+			infrastructure = 3
+
+		}
+		victory_points = {
+			14978 3 
+		}
+
+	}
+
+	provinces={
+		2034 14314 14315 14977 14978 14979 14993 
+	}
+	manpower=1073000
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+	local_supplies=0.000
+}

@@ -1,0 +1,41 @@
+
+state={
+	id=621
+	name="STATE_621"
+	resources={
+		steel=10.000
+	}
+
+	history={
+		owner = PRC
+		#add_claim_by = CHI
+		add_core_of = PRC
+		add_core_of = MEN
+		victory_points = {
+			10424 25 
+		}
+		victory_points = {
+			12469 19 
+		}
+		victory_points = {
+			7158 4 
+		}
+		victory_points = {
+			10629 4 
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		2087 4525 7048 7158 7631 10424 10629 12331 12403 12469 12609 12880 16259 16260 16263 16402 16414 
+	}
+	manpower=8612000
+	buildings_max_level_factor=1.000
+	state_category=state_level_3
+	local_supplies=0.000
+}

@@ -1,0 +1,60 @@
+
+state={
+	id=410
+	name="STATE_410"
+
+
+	history={
+		owner = PER
+		add_core_of = PER
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			air_base = 3
+			2070 = {
+				bunker = 1
+
+			}
+			10782 = {
+				bunker = 1
+
+			}
+			13082 = {
+				bunker = 1
+
+			}
+			16457 = {
+				bunker = 1
+
+			}
+			4891 = {
+				bunker = 1
+				naval_base = 3
+
+
+			}
+
+		}
+		victory_points = {
+			2070 10
+		}
+		victory_points = {
+			12895 2
+		}
+		victory_points = {
+			13082 2
+		}
+		victory_points = {
+			4891 2
+		}
+
+	}
+
+	provinces={
+		2039 2070 4891 10782 12895 13082 16457 16651 
+	}
+	manpower=2208000
+	buildings_max_level_factor=1.000
+	state_category=state_level_2
+	local_supplies=0.000
+}

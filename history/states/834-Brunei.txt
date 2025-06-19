@@ -1,0 +1,35 @@
+
+state={
+	id=834
+	name="STATE_834"
+	resources={
+		oil=16.000
+	}
+
+	history={
+		owner = BRU
+		add_core_of = BRU
+		add_extra_state_shared_building_slots = 1
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 2
+			7387 = {
+				naval_base = 3
+
+			}
+
+		}
+		victory_points = {
+			7387 4
+		}
+
+	}
+
+	provinces={
+		7387 
+	}
+	manpower=335500
+	buildings_max_level_factor=1.000
+	state_category=state_level_2
+	local_supplies=0.000
+}

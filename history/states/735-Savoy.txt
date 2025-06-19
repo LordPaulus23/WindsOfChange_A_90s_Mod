@@ -1,0 +1,30 @@
+
+state={
+	id=735
+	name="STATE_735"
+	resources={
+		steel=2.000
+		aluminium=5.000
+	}
+
+	history={
+		owner = FRA
+		add_core_of = FRA
+		add_core_of = SAV
+		victory_points = {
+			11573 3 
+		}
+		buildings = {
+			infrastructure = 4
+
+		}
+
+	}
+
+	provinces={
+		778 6609 9603 9745 11573 
+	}
+	manpower=1045000
+	buildings_max_level_factor=1.000
+	state_category=state_level_2
+}

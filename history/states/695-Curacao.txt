@@ -1,0 +1,26 @@
+state={
+	id=695
+	name="STATE_695"
+	manpower = 130000
+	
+	state_category = state_level_1
+
+	history={
+		owner = HOL
+		buildings = {
+			infrastructure = 4
+			air_base = 2
+			153 = {
+				naval_base = 3
+			}
+			#153 = { coastal_bunker = 1 }
+		}
+		victory_points = { 153 3 }
+		add_core_of = HOL
+		add_core_of = CRC
+	}
+
+	provinces={
+		153 
+	}
+}

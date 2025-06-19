@@ -1,0 +1,35 @@
+
+state={
+	id=346
+	name="STATE_346"
+
+	history={
+		owner = TUR
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 1
+			air_base = 3
+			arms_factory = 1
+
+		}
+		victory_points = {
+			15640 20 
+		}
+		victory_points = {
+			 6807 2
+		}
+		victory_points = {
+			7143 3 
+		}
+		add_core_of = TUR
+
+	}
+
+	provinces={
+		940 3788 6807 6894 7143 9755 9763 9811 11792 11860 15639 15640 
+	}
+	manpower=2435000
+	buildings_max_level_factor=1.000
+	state_category=state_level_5
+	local_supplies=0.000
+}

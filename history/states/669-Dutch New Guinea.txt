@@ -1,0 +1,33 @@
+
+state={
+	id=669
+	name="STATE_669"
+	resources={
+		oil=1.000
+	}
+
+	history={
+		owner = INS
+		add_core_of = INS
+		victory_points = {
+			12315 15 
+		}
+		victory_points = {
+			12386 5 
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+
+		}
+
+	}
+
+	provinces={
+		4524 7487 7585 12315 12386 
+	}
+	manpower=344000
+	buildings_max_level_factor=1.000
+	state_category=state_level_5
+	local_supplies=0.000
+}

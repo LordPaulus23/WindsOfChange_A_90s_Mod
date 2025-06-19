@@ -1,0 +1,68 @@
+
+state={
+	id=815
+	name="STATE_815"
+	resources={
+		oil=15.000
+		steel=2.000
+	}
+
+	history={
+		owner = KUR
+		victory_points = {
+			15599 20 
+		}
+		victory_points = {
+			15598 12 
+		}
+		victory_points = {
+			15600 8 
+		}
+		victory_points = {
+			5014 3 
+		}
+		victory_points = {
+			15596 3 
+		}
+		victory_points = {
+			15597 2 
+		}
+		add_core_of = KUR
+		add_claim_by = IRQ
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 2
+
+		}
+		2015.5.1 = {
+			owner = KUR
+			buildings = {
+				10804 = {
+					bunker = 1
+
+				}
+				10811 = {
+					bunker = 1
+
+				}
+				6826 = {
+					bunker = 1
+
+				}
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		5014 6826 10811 15596 15597 15598 15599 15600 
+	}
+	manpower=3107000
+	buildings_max_level_factor=1.000
+	state_category=state_level_5
+	local_supplies=0.000
+}

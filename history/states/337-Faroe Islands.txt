@@ -1,0 +1,25 @@
+state=
+{
+	id = 337
+	name = "STATE_337"
+	manpower = 46500
+	
+	state_category = state_level_1
+	
+	history=
+	{
+	    victory_points = {
+		    13003 1
+		}
+		owner = FAI
+		buildings = {
+			infrastructure = 4
+
+			13003 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = FAI
+	}
+	provinces= { 13003 }
+}

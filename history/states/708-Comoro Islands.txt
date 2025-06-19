@@ -1,0 +1,22 @@
+state={
+	id=708
+	name="STATE_708"
+	manpower = 300000
+
+	state_category = state_level_1
+
+	history={
+		owner = COM
+		buildings = {
+			infrastructure = 4
+			13072 = {
+				naval_base = 1
+			}
+		}
+		victory_points = { 13072 2 }
+	}
+
+	provinces={
+		13072 
+	}
+}

@@ -1,0 +1,33 @@
+
+state={
+	id=594
+	name="STATE_594" # Ordos
+	manpower = 1369000
+	state_category = state_level_0
+	
+	resources={
+		oil = 10
+	}
+
+	history={
+		owner = PRC
+		add_core_of = PRC
+		#add_claim_by = CHI
+		add_core_of = MEN
+		victory_points = {
+			8081 7
+		}
+		victory_points = {
+			16264 5
+		}
+		buildings = {
+			infrastructure = 3
+			air_base = 1
+		}
+		
+	}
+
+	provinces={
+		1959 3427 4960 4986 8081 10451 10854 12706 16261 16262 16264 16409 16410 16419
+	}
+}

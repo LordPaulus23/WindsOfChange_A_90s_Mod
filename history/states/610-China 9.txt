@@ -1,0 +1,42 @@
+
+state={
+	id=610
+	name="STATE_610"
+
+	resources={
+		steel=70.000
+	}
+
+	history={
+		owner = PRC
+		add_core_of = PRC
+		#add_claim_by = CHI
+		add_extra_state_shared_building_slots = 3
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 4
+			air_base = 2
+			arms_factory = 1
+			dockyard = 2
+			16250 = {
+				naval_base = 8
+			}
+
+		}
+		victory_points = {
+			16250 70 
+		}
+		victory_points = {
+			10068 4 
+		}
+
+	}
+
+	provinces={
+		4137 10068 16250 
+	}
+	manpower=9848000
+	buildings_max_level_factor=1.000
+	state_category=state_level_6
+	local_supplies=0.000
+}

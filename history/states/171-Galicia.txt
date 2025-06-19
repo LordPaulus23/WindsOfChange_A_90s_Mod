@@ -1,0 +1,33 @@
+state = {
+	id = 171
+	name = "STATE_171"
+	manpower = 2695085
+	state_category = state_level_5
+	
+	resources = {
+
+		aluminium = 20
+		steel = 10
+	}
+	
+	history = {
+		owner = SPR
+		add_core_of = SPR
+		victory_points = { 758 7 }
+		victory_points = { 6734 7 }
+		victory_points = { 11710 2 }
+		victory_points = { 11677 3 }
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 3
+			dockyard = 1
+			synthetic_refinery = 1
+			air_base = 4
+			758 = { naval_base = 6 }
+		}
+	}
+	
+	provinces = {
+		729 758 3761 6734 6764 6955 9686 9689 11675 11677 11692 11710 11840 
+	}
+}

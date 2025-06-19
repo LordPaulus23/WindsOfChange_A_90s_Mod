@@ -1,0 +1,30 @@
+
+state={
+	id=437
+	name="STATE_437"
+	resources={
+		oil = 4
+	}
+	history={
+		owner = RAJ
+		add_core_of = RAJ
+		add_core_of = NAX
+		victory_points = {
+			10066 2 
+		}
+		buildings = {
+			infrastructure = 3
+			air_base = 1
+
+		}
+
+	}
+
+	provinces={
+		1129 10066 12005 12708 16530 
+	}
+	manpower=6056234
+	buildings_max_level_factor=1.000
+	state_category=state_level_2
+	local_supplies=0.000
+}

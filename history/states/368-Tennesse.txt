@@ -1,0 +1,47 @@
+
+state={
+	id=368
+	name="STATE_368"
+	resources={
+		aluminium=10.000
+	}
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 3
+
+		}
+		add_core_of = USA
+		add_core_of = CSA
+		victory_points = {
+			12501 12 
+		}
+		victory_points = {
+			7797 10 
+		}
+		victory_points = {
+			10657 6 
+		}
+		victory_points = {
+			10909 4 
+		}
+		victory_points = {
+			12670 2
+		}
+		victory_points = {
+			8014 1
+		}
+		victory_points = {
+			10281 2
+		}
+
+	}
+
+	provinces={
+		913 1758 1987 7615 7791 7797 8014 8083 10281 10615 10657 10824 10909 12501 12670 13619 
+	}
+	manpower=5689000
+	buildings_max_level_factor=1.000
+	state_category=state_level_10
+}

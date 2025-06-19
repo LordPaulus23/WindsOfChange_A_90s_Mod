@@ -1,0 +1,34 @@
+
+state={
+	id=168
+	name="STATE_168"
+
+	history={
+		owner = SPR
+		add_core_of = SPR
+		victory_points = {
+			13856 15 
+		}
+		victory_points = {
+			10024 5 
+		}
+		buildings = {
+			industrial_complex = 1
+			infrastructure = 6
+			10024 = {
+				naval_base = 6
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		1093 4195 7111 10024 10109 13856 
+	}
+	manpower=1197605
+	buildings_max_level_factor=1.000
+	state_category=state_level_2
+	local_supplies=0.000
+}

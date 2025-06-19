@@ -1,0 +1,50 @@
+
+state={
+	id=679
+	name="STATE_679"
+	resources={
+		steel=15.000
+	}
+
+	history={
+		owner = SAU
+		add_core_of = SAU
+		victory_points = {
+			12883 30 
+		}
+		victory_points = {
+			5037 20 
+		}
+		victory_points = {
+			15550 12 
+		}
+		victory_points = {
+			15548 2 
+		}
+		victory_points = {
+			5060 1
+		}
+
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 6
+			dockyard = 1
+			arms_factory = 1
+			air_base = 6
+			12883 = {
+				naval_base = 5
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		1923 2090 4897 5037 5060 10748 12883 15093 15548 15549 15550 15551 15552 
+	}
+	manpower=5618000
+	buildings_max_level_factor=1.000
+	state_category=state_level_10
+	local_supplies=0.000
+}

@@ -1,0 +1,32 @@
+
+state={
+	id=8
+	name="STATE_8"
+	resources={
+		steel=16.000
+	}
+
+	history={
+		owner = LUX
+		add_core_of = LUX
+		add_extra_state_shared_building_slots = 2
+		victory_points = {
+			6583 5 
+		}
+		buildings = {
+			infrastructure = 7
+			air_base = 3
+			industrial_complex = 2
+			arms_factory = 1
+
+		}
+
+	}
+
+	provinces={
+		6583 13281 
+	}
+	manpower=435000
+	buildings_max_level_factor=1.000
+	state_category=state_level_2
+}

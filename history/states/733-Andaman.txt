@@ -1,0 +1,25 @@
+state={
+	id=733
+	name="STATE_733"
+	manpower=350500
+	state_category = state_level_0
+	
+	history={
+		owner = RAJ
+		buildings = {
+			infrastructure = 3
+			air_base = 1
+			12251 = {
+				naval_base = 2
+			}
+		}
+		add_core_of = RAJ
+		add_core_of = NAX
+		victory_points = {
+			12251 1
+		}
+	}
+	provinces={
+		10321 12251 
+	}
+}

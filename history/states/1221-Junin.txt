@@ -1,0 +1,30 @@
+
+state={
+	id=1221
+	name="STATE_1221"
+
+	history={
+		owner = PRU
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+		}
+		victory_points = {
+			16099 10
+		}
+		victory_points = {
+			16095 4
+		}
+
+		add_core_of = PRU
+
+	}
+
+	provinces={
+		2162 2212 16095 16099 16100 16109 
+	}
+	manpower=2198000
+	buildings_max_level_factor=1.000
+	state_category=state_level_4
+	local_supplies=0.000
+}

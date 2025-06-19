@@ -1,0 +1,35 @@
+
+state={
+	id=527
+	name="STATE_527"
+	provinces={
+		5128 5185 5222 8188 11015 14215 14219 14220 14222 14223 14224 14225 
+	}
+	history={
+		owner = MAD
+		buildings = {
+			infrastructure = 3
+			dockyard = 1
+			14225 = {
+				naval_base = 3
+
+			}
+			14219 = {
+				naval_base = 2
+
+			}
+
+		}
+		victory_points = {
+			14225 3
+		}
+		victory_points = {
+			14219 5
+		}
+
+	}
+	manpower=5564000
+	buildings_max_level_factor=1.000
+	state_category=state_level_4
+	local_supplies=0.000
+}

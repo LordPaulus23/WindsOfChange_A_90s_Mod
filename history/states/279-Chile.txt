@@ -1,0 +1,36 @@
+
+state={
+	id=279
+	name="STATE_279"
+	resources={
+		oil=0.000
+		steel=8.000
+	}
+
+	history={
+		owner = CHL
+		add_core_of = CHL
+		victory_points = {
+			650 40
+		}
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 3
+			arms_factory = 2
+			air_base = 6
+			650 = {
+				bunker = 1
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		650 
+	}
+	manpower=6045000
+	buildings_max_level_factor=1.000
+	state_category=state_level_10
+}

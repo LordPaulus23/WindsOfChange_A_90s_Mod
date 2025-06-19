@@ -1,0 +1,33 @@
+
+state={
+	id=206
+	name="STATE_206"
+	resources={
+		steel=7.000
+	}
+
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = BLR
+		victory_points = {
+			11370 25 
+		}
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 2
+			arms_factory = 1
+			air_base = 6
+
+		}
+
+	}
+
+	provinces={
+		216 294 360 386 3267 3759 11216 11370 
+	}
+	manpower=2663163
+	buildings_max_level_factor=1.000
+	state_category=state_level_6
+	local_supplies=0.000
+}
