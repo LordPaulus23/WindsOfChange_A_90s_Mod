@@ -10,7 +10,6 @@ tags={
 	"Ideologies"
 	"Military"
 }
-replace_path="gfx/loadingscreens"
 name="The Winds of Change: A New Cold War"
 supported_version="1.16.*"
 remote_file_id="3503323448"
