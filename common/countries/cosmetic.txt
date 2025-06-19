@@ -1,8 +1,0 @@
-EUR_federation = {
-    color = rgb { 0 16 171 }
-    color_ui = rgb { 0 16 78 }
-}
-BAL_union = {
-	color = rgb { 45 57 77 }
-	color_ui = rgb { 45 57 77 }	
-}
