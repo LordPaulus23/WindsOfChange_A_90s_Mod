@@ -1,0 +1,50 @@
+
+state={
+	id=100
+	name="STATE_100"
+	resources={
+		aluminium=18.000
+	}
+
+	history={
+		owner = ICE
+		add_core_of = ICE
+		add_extra_state_shared_building_slots = 1
+		victory_points = {
+			14820 1 
+		}
+		victory_points = {
+			14816 1 
+		}
+		victory_points = {
+			12674 5 
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			air_base = 5
+			12674 = {
+				naval_base = 3
+
+			}
+			14820 = {
+				naval_base = 1
+
+			}
+			14816 = {
+				naval_base = 1
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		4861 12674 12689 14814 14815 14816 14817 14818 14819 14820 14821 14822 14823 
+	}
+	manpower=279000
+	buildings_max_level_factor=1.000
+	state_category=state_level_2
+	local_supplies=0.000
+}

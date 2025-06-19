@@ -1,0 +1,36 @@
+
+state={
+	id=153
+	name="STATE_153"
+	resources={
+		oil=1.000
+	}
+
+	history={
+		owner = AUS
+		add_core_of = AUS
+		victory_points = {
+			11618 5
+		}
+		victory_points = {
+			6680 1
+		}
+		victory_points = {
+			671 1
+		}
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 2
+			air_base = 1
+
+		}
+
+	}
+
+	provinces={
+		671 673 6680 9633 9636 11618 11634 
+	}
+	manpower=1024000
+	buildings_max_level_factor=1.000
+	state_category=state_level_2
+}

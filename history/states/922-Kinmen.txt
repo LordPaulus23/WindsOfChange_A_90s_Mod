@@ -1,0 +1,33 @@
+
+state={
+	id=922
+	name="STATE_922"
+
+	history={
+		owner = CHI
+		add_core_of = CHI
+		add_core_of = PRC
+		add_core_of = GXC
+		buildings = {
+			infrastructure = 4
+			13260 = {
+				naval_base = 1
+				coastal_bunker = 2
+				bunker = 2
+
+			}
+
+		}
+		victory_points = {
+			13260 1 
+		}
+
+	}
+
+	provinces={
+		13260 
+	}
+	manpower=56000
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+}

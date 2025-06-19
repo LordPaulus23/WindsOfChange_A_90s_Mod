@@ -1,0 +1,37 @@
+
+state={
+	id=226
+	name="STATE_226"
+	resources={
+		aluminium=3.000
+		steel=50.000
+	}
+
+	history={
+		owner = UKR
+		add_core_of = UKR
+		victory_points = {
+			11437 20 
+		}
+		victory_points = {
+			11561 10 
+		}
+		victory_points = {
+			9419 2
+		}
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		6423 9419 9433 11422 11437 11561 14178 15396 
+	}
+	manpower=2831300
+	buildings_max_level_factor=1.000
+	state_category=state_level_5
+	local_supplies=0.000
+}

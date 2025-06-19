@@ -1,0 +1,172 @@
+﻿capital = 308
+
+oob = "DMN_2000"
+
+set_research_slots = 2
+set_convoys = 30
+set_stability = 0.55
+
+set_country_flag = country_language_english
+set_country_flag = country_behavior_indolent
+
+if = {
+	limit = {
+		NOT = {has_dlc = "By Blood Alone"}
+	}
+	set_technology = {
+		CAS1 = 1
+		CAS2 = 1
+		cv_CAS1 = 1
+		cv_CAS2 = 1
+		fighter1 = 1
+		fighter2 = 1
+		cv_fighter1 = 1
+		cv_fighter2 = 1
+		naval_bomber1 = 1
+		naval_bomber2 = 1
+		naval_bomber3 = 1
+		cv_naval_bomber1 = 1
+		cv_naval_bomber2 = 1
+		cv_naval_bomber3 = 1
+		strategic_bomber1 = 1
+		strategic_bomber2 = 1
+		#scout_plane1 = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "By Blood Alone"
+	}
+	#tech
+	set_technology = {
+		iw_small_airframe = 1
+		basic_small_airframe = 1
+		iw_medium_airframe = 1
+		basic_medium_airframe = 1
+		iw_heli_airframe = 1
+		iw_naval_airframe = 1
+		basic_naval_airframe = 1
+		iw_large_airframe = 1
+		basic_large_airframe = 1
+		aa_lmg = 1
+		Cold_war_cas = 1
+		engines_1 = 1
+		air_misc = 1
+		#scout_plane1 = 1
+	}
+	#varients
+	#CAS
+	create_equipment_variant = {
+		name = "Su-25" 
+		type = small_plane_airframe_1
+		modules = {
+			fixed_main_weapon_slot = heavy_mg_2x
+			fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
+			fixed_auxiliary_weapon_slot_2 = tank_buster_1
+			engine_type_slot = engine_1_2x
+			special_type_slot_1 = empty
+			special_type_slot_3 = armor_plate_medium
+		}
+	}
+	#Multirole
+	create_equipment_variant = {
+		name = "MiG-23" 
+		type = medium_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = light_mg_2x
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
+			engine_type_slot = engine_1_2x
+			special_type_slot_1 = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "MiG-29" 
+		type = medium_plane_airframe_1
+		modules = {
+			fixed_main_weapon_slot = light_mg_2x
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
+			fixed_auxiliary_weapon_slot_2 = aircraft_cannon_medium_1
+			engine_type_slot = engine_1_2x
+			special_type_slot_1 = empty
+		}
+	}
+}
+
+set_technology = {
+	## Infantry ##
+	infantry_weapons1 = 1
+	motorised_infantry = 1
+	marines = 1
+	tech_mountaineers = 1
+	paratroopers = 1
+	
+	## Support Companies ##
+	tech_support = 1
+	basic_train = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_field_hospital = 1
+	tech_logistics_company = 1
+	tech_military_police = 1
+	tech_maintenance_company = 1
+
+	## Artillery ##
+	coldwar_artillery = 1
+	
+	
+	## Industry ##
+	fuel_silos = 1
+	fuel_refining = 1
+}
+
+add_ideas = {
+	government_system_parliamentary_republic
+	disarmed_nation
+	population_growth_stagnation
+	commonwealth_of_nations_member
+}
+
+set_politics = {	
+	ruling_party = social_democrat
+	last_election = "1997.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+    reactionary = 1
+    conservative = 2
+    market_liberal = 34
+    social_liberal = 1
+    social_democrat = 61
+    progressive = 1
+}
+recruit_character = DMN_pierre_charles
+recruit_character = DMN_eugenia_charles
+recruit_character = DMN_ezekiel_bazil
+recruit_character = DMN_edward_campbell
+recruit_character = DMN_horatio_cardigan
+recruit_character = DMN_geoffrey_cardigan
+recruit_character = DMN_ian_hope
+recruit_character = DMN_hugh_hope
+recruit_character = DMN_leopold_jellicoe
+recruit_character = DMN_john_plummer
+recruit_character = DMN_jeremy_gough
+recruit_character = DMN_winston_grant
+
+2004.1.1 = {
+	create_country_leader = {
+		name = "Roosevelt Skerrit"
+		picture = "Roosevelt_Skerrit.dds"
+		ideology = social_democrat_ideology
+	}
+}
+
+2005.1.1 = {
+#	create_country_leader = {
+#		name = "Michael Astaphin"
+#		picture = "Michael_Astaphin.dds"
+#		ideology = fiscal_conservative
+#	}
+}

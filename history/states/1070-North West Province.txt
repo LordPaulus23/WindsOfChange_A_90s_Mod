@@ -1,0 +1,32 @@
+
+state={
+	id=1070
+	name="STATE_1070"
+	resources={
+		chromium=500.000
+	}
+
+	history={
+		owner = SAF
+		add_core_of = SAF
+		victory_points = {
+			15695 4 
+		}
+		victory_points = {
+			13512 3 
+		}
+		buildings = {
+			infrastructure = 4
+
+		}
+
+	}
+
+	provinces={
+		2213 10668 13512 13514 13515 13517 13518 15692 15694 15695 
+	}
+	manpower=2984000
+	buildings_max_level_factor=1.000
+	state_category=state_level_3
+	local_supplies=0.000
+}

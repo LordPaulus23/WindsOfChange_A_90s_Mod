@@ -1,0 +1,41 @@
+
+state={
+	id=88
+	name="STATE_88"
+	resources={
+		steel=20.000
+	}
+
+	history={
+		owner = POL
+		add_core_of = POL
+		victory_points = {
+			9427 30 
+		}
+		victory_points = {
+			442 2 
+		}
+		victory_points = {
+			6522 5 
+		}
+		victory_points = {
+			3434 1 
+		}
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 2
+			arms_factory = 2
+			air_base = 3
+
+		}
+
+	}
+
+	provinces={
+		417 442 466 3410 3434 6499 6522 9412 9427 11398 11413 11507 14958 14959 14961 15360 
+	}
+	manpower=5852300
+	buildings_max_level_factor=1.000
+	state_category=state_level_10
+	local_supplies=0.000
+}

@@ -1,0 +1,31 @@
+
+state={
+	id=320
+	name="STATE_320"
+
+	history={
+		owner = TAL
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			4893 8
+		}
+		victory_points = {
+			2062 1 
+		}
+		add_core_of = AFG
+		add_core_of = TAL
+
+	}
+
+	provinces={
+		2017 2062 4893 8053 10476 10896 12788 12871 15777 15778 15779 15780 15782 15783 15784 15785 
+	}
+	manpower=2800000
+	buildings_max_level_factor=1.000
+	state_category=state_level_4
+	local_supplies=0.000
+}

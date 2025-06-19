@@ -1,0 +1,35 @@
+
+state={
+	id=779
+	name="STATE_779"
+
+	history={
+		owner = ERI
+		add_claim_by = ETH
+		victory_points = {
+			15438 1 
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			15438 = {
+				naval_base = 2
+
+			}
+			12766 = {
+				bunker = 3
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		5047 5091 12766 15438 
+	}
+	manpower=580000
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+	local_supplies=0.000
+}

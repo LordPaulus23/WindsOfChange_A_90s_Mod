@@ -1,0 +1,37 @@
+
+state={
+	id=1083
+	name="STATE_1083"
+
+	history={
+		owner = INS
+		add_core_of = INS
+		victory_points = {
+			12113 20 
+		}
+		victory_points = {
+			15467 5 
+		}
+		buildings = {
+			infrastructure = 6
+			12113 = {
+				naval_base = 1
+
+			}
+			15467 = {
+				naval_base = 1
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		12113 15467 
+	}
+	manpower=1053000
+	buildings_max_level_factor=1.000
+	state_category=state_level_2
+	local_supplies=0.000
+}

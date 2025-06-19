@@ -1,0 +1,25 @@
+state=
+{
+	id=626
+	name="STATE_626"
+	manpower = 755041
+	
+	state_category = state_level_1
+	
+	history=
+	{
+		owner = PHI
+		victory_points = { 4429 2 }
+		buildings = {
+			infrastructure = 3
+			air_base = 1
+			4429 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = PHI
+	}
+	provinces={
+		4429 7419 10145 
+	}
+}

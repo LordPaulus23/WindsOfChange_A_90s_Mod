@@ -1,0 +1,54 @@
+
+state={
+	id=438
+	name="STATE_438"
+	resources={
+		aluminium=10.000
+	}
+
+	history={
+		owner = RAJ
+		add_core_of = RAJ
+		add_core_of = NAX
+		victory_points = {
+			16549 25 
+		}
+		victory_points = {
+			16544 15 
+		}
+		victory_points = {
+			16545 12 
+		}
+		victory_points = {
+			12137 24
+		}
+		victory_points = {
+			16547 7 
+		}
+		victory_points = {
+			16548 3
+		}
+		victory_points = {
+			10751 3
+		}
+		victory_points = {
+			9973 2
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 5
+			arms_factory = 1
+			air_base = 3
+
+		}
+
+	}
+
+	provinces={
+		1377 1983 2005 4299 5055 7064 7334 7938 8082 8114 9973 10751 12137 12777 12786 13283 16235 16543 16544 16545 16546 16547 16548 16549 
+	}
+	manpower=102495000
+	buildings_max_level_factor=1.000
+	state_category=state_level_34
+	local_supplies=0.000
+}

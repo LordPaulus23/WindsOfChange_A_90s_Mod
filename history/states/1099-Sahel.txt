@@ -1,0 +1,28 @@
+
+state={
+	id=1099
+	name="STATE_1099"
+
+	history={
+		owner = MRT
+		buildings = {
+			infrastructure = 3
+
+		}
+		victory_points = {
+			8058 1 
+		}
+		victory_points = {
+			7943 1
+		}
+
+	}
+
+	provinces={
+		1897 7943 8058 10771 14024 14025 
+	}
+	manpower=1231000
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+	local_supplies=0.000
+}

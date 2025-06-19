@@ -1,0 +1,26 @@
+state={
+	id=573
+	name="STATE_573"
+	provinces={
+		3796 3819 3952 6842 9610 
+	}
+	history={
+		owner = BUL
+		add_core_of = BUL
+		victory_points = {
+			3796 2
+		}
+		victory_points = {
+			3819 1
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+
+		}
+
+	}
+	manpower=938000
+	buildings_max_level_factor=1.000
+	state_category=state_level_2
+}

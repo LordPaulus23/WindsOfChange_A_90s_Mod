@@ -1,0 +1,26 @@
+
+state={
+	id=1234
+	name="STATE_1234"
+
+	history={
+		owner = BRM
+		add_core_of = BRM
+		victory_points = {
+			12449 1
+		}
+		buildings = {
+			infrastructure = 4
+
+		}
+
+	}
+
+	provinces={
+		1650 4019 4059 7190 12449 16425 
+	}
+	manpower=3525000
+	buildings_max_level_factor=1.000
+	state_category=state_level_3
+	local_supplies=0.000
+}

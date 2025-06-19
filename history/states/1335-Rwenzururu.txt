@@ -1,0 +1,24 @@
+state={
+	id=1335
+	name="STATE_1335"
+	provinces={
+		14329 
+	}
+	history={
+		owner = UGA
+		add_core_of = UGA
+		buildings = {
+			infrastructure = 3
+
+		}
+		victory_points = {
+			14329 2 
+		}
+
+	}
+
+	manpower=1000000
+	buildings_max_level_factor=1.000
+	state_category=state_level_0
+	local_supplies=0.000
+}

@@ -1,0 +1,18 @@
+state = {
+	id = 77
+	name = "STATE_77"
+	manpower = 357000
+	state_category = state_level_1
+
+	history = {
+		owner = BUL
+		add_core_of = BUL		
+		buildings = {
+			infrastructure = 4
+		}
+	}
+
+	provinces = {
+		9614 11597 
+	}
+}

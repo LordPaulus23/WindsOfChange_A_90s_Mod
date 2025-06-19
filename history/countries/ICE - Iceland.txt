@@ -1,0 +1,282 @@
+﻿capital = 100 #Iceland
+
+oob = "ICE_2000"
+
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "ICE_2000_naval_mtg"
+	else = {
+		set_naval_oob = "ICE_2000_naval_legacy"
+	}
+}
+
+set_research_slots = 3
+set_convoys = 30
+set_stability = 0.55
+
+set_country_flag = country_language_icelandic
+
+if = {
+	limit = {
+		NOT = {has_dlc = "By Blood Alone"}
+	}
+	set_technology = {
+		CAS1 = 1
+		CAS2 = 1
+		cv_CAS1 = 1
+		cv_CAS2 = 1
+		fighter1 = 1
+		fighter2 = 1
+		cv_fighter1 = 1
+		cv_fighter2 = 1
+		naval_bomber1 = 1
+		naval_bomber2 = 1
+		naval_bomber3 = 1
+		cv_naval_bomber1 = 1
+		cv_naval_bomber2 = 1
+		cv_naval_bomber3 = 1
+		strategic_bomber1 = 1
+		strategic_bomber2 = 1
+		#scout_plane1 = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "By Blood Alone"
+	}
+	#tech
+	set_technology = {
+		iw_small_airframe = 1
+		basic_small_airframe = 1
+		iw_medium_airframe = 1
+		basic_medium_airframe = 1
+		iw_heli_airframe = 1
+		iw_naval_airframe = 1
+		basic_naval_airframe = 1
+		iw_large_airframe = 1
+		basic_large_airframe = 1
+		aa_lmg = 1
+		Cold_war_cas = 1
+		engines_1 = 1
+		air_misc = 1
+		#scout_plane1 = 1
+	}
+	#varients
+	#CAS
+	create_equipment_variant = {
+		name = "Su-25" 
+		type = small_plane_airframe_1
+		modules = {
+			fixed_main_weapon_slot = heavy_mg_2x
+			fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
+			fixed_auxiliary_weapon_slot_2 = tank_buster_1
+			engine_type_slot = engine_1_2x
+			special_type_slot_1 = empty
+			special_type_slot_3 = armor_plate_medium
+		}
+	}
+	#Multirole
+	create_equipment_variant = {
+		name = "MiG-23" 
+		type = medium_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = light_mg_2x
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
+			engine_type_slot = engine_1_2x
+			special_type_slot_1 = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "MiG-29" 
+		type = medium_plane_airframe_1
+		modules = {
+			fixed_main_weapon_slot = light_mg_2x
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
+			fixed_auxiliary_weapon_slot_2 = aircraft_cannon_medium_1
+			engine_type_slot = engine_1_2x
+			special_type_slot_1 = empty
+		}
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+	main_battle_tank1 = 1
+	main_battle_tank2 = 1
+	light_tank1 = 1
+	mechanised_infantry1 = 1
+	nonsnb_technicality_tech = 1
+	light_mechanized_infantry1 = 1
+	light_mechanized_infantry2 = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		IFV_chassis_80s = 1
+		IFV_chassis = 1
+		technicality_tech = 1
+		light_mechanized_infantry1 = 1
+		light_mechanized_infantry2 = 1
+		main_battle_tank_chassis = 1
+	}
+}
+set_technology = {
+	## Infantry ##
+	infantry_weapons1 = 1
+	infantry_weapons2 = 1
+	motorised_infantry = 1
+	infantry_rifle_upgrade = 1
+	support_weapons = 1
+	support_weapons2 = 1
+	night_vision = 1
+	body_armor = 1
+	camouflage = 1
+	marines = 1
+	
+	## Support Companies ##
+	tech_support = 1
+	basic_train =1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_military_police = 1
+	tech_maintenance_company = 1
+	tech_field_hospital = 1
+	tech_logistics_company = 1
+	tech_signal_company = 1
+	light_mechanized_infantry1 = 1
+	
+	## Artillery ##
+	coldwar_artillery = 1
+	gw_artillery = 1
+	
+	interwar_antiair = 1
+	coldwar_antiair = 1
+	coldwar_antitank = 1
+	
+	## Air ##
+	# CAS1 = 1
+	# CAS2 = 1
+	# fighter1 = 1
+	# fighter2 = 1
+	# fighter3 = 1
+	# naval_bomber1 = 1
+	# naval_bomber2 = 1
+	# naval_bomber3 = 1
+	# strategic_bomber1 = 1
+	# strategic_bomber2 = 1
+	# tactical_bomber1 = 1
+	
+	## Engineering ##
+	electronic_mechanical_engineering = 1
+	radio = 1
+	
+	## Industry ##
+	basic_machine_tools = 1
+	fuel_silos = 1
+	fuel_refining = 1
+	
+	## Doctrines ##
+	superior_firepower = 1
+	trade_interdiction = 1
+	force_rotation = 1
+}
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_patrol_boat = 1
+		early_destroyer = 1
+		early_submarine = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		early_ship_hull_patrol_boat = 1
+		early_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		sonar = 1
+		basic_depth_charges = 1
+		basic_torpedo = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		mtg_transport = 1
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+	}
+}
+
+add_ideas = {
+	government_system_parliamentary_republic
+	national_development_developed
+	disarmed_nation
+	welfare_modest_assistance
+	civil_liberties_free
+	population_growth_stagnation
+}
+
+set_politics = {	
+	ruling_party = social_liberal
+	last_election = "2000.6.26" #The 2000 elections didn't happen so I'm skipping it
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	conservative = 37
+	social_democrat = 27
+    social_liberal = 25
+	progressive = 9
+	democratic_socialist = 1
+	communist = 1
+}
+
+recruit_character = ICE_karl_sigurbjornsson
+recruit_character = ICE_gunnlaugur_ingvarsson
+recruit_character = ICE_guomundur_thorleifsson
+recruit_character = ICE_david_oddsson
+recruit_character = ICE_guomundur_franklin_jonsson
+recruit_character = ICE_olafur_ragnar_grimsson
+recruit_character = ICE_ossur_skarpheoinsson
+recruit_character = ICE_steingrimur_j_sigfusson
+recruit_character = ICE_julius_valdimarsson
+recruit_character = ICE_thorvaldur_thorvaldsson
+recruit_character = ICE_arnor_sigurjonsson
+recruit_character = ICE_sindri_steingrimsson
+recruit_character = ICE_halli_sigurdsson
+recruit_character = ICE_haraldur_johannessen
+recruit_character = ICE_georg_kristinn_larusson
+recruit_character = ICE_asgrimur_asgrimsson
+
+
+2015.1.1 = {
+	set_politics = {	
+		ruling_party = social_liberal
+		last_election = "2012.6.25" 
+		election_frequency = 48
+		elections_allowed = yes
+	}
+}
+
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	create_equipment_variant = {
+		name = "Ægir Class"
+		type = ship_hull_patrol_boat_1
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_engine_slot = light_patrol_ship_engine_1
+			fixed_ship_torpedo_slot = empty
+			mid_1_custom_slot = ship_airplane_launcher_1
+		}
+	}
+}	

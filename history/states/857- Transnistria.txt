@@ -1,0 +1,30 @@
+
+state={
+	id=857
+	name="STATE_857"
+
+	history={
+		owner = TRA
+		add_extra_state_shared_building_slots = 1
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+
+		}
+		add_core_of = TRA
+		add_core_of = MOL
+		add_core_of = ROM
+		victory_points = {
+			13209 4 
+		}
+
+	}
+
+	provinces={
+		13209 13212 13214 
+	}
+	manpower=580000
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+	local_supplies=0.000
+}

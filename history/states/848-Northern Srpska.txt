@@ -1,0 +1,26 @@
+
+state={
+	id=848
+	name="STATE_848"
+
+	history={
+		owner = BOS
+		add_core_of = BOS
+		victory_points = {
+			14798 4
+		}
+		buildings = {
+			infrastructure = 4
+
+		}
+
+	}
+
+	provinces={
+		6619 6983 9588 9591 14797 14798 
+	}
+	manpower=378000
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+	local_supplies=0.000
+}

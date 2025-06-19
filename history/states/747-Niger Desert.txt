@@ -1,0 +1,26 @@
+
+state={
+	id=747
+	name="STATE_747"
+
+	history={
+		owner = NGR
+		add_core_of = NGR
+		buildings = {
+			infrastructure = 2
+
+		}
+		victory_points = {
+			14470 3 
+		}
+
+	}
+
+	provinces={
+		4913 8128 14466 14467 14468 14469 14470 14471 14472 14473 15019 15060 15061 15065 
+	}
+	manpower=321000
+	buildings_max_level_factor=1.000
+	state_category=state_level_0
+	local_supplies=0.000
+}

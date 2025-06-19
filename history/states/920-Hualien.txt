@@ -1,0 +1,38 @@
+
+state={
+	id=920
+	name="STATE_920"
+
+	history={
+		owner = CHI
+		add_core_of = CHI
+		add_claim_by = PRC
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			1175 = {
+				coastal_bunker = 1
+
+			}
+			4096 = {
+				coastal_bunker = 1
+
+			}
+
+		}
+		victory_points = {
+			4096 1 
+		}
+		victory_points = {
+			1175 1 
+		}
+
+	}
+
+	provinces={
+		1175 4096 
+	}
+	manpower=597000
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+}

@@ -1,0 +1,51 @@
+
+state={
+	id=505
+	name="STATE_505"
+	resources={
+		aluminium=15.000
+		chromium=13.000
+	}
+
+	history={
+		owner = BRA
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 4
+			arms_factory = 1
+			air_base = 3
+
+		}
+		victory_points = {
+			8140 30 
+		}
+		victory_points = {
+			16181 25 
+		}
+		victory_points = {
+			13377 2
+		}
+		victory_points = {
+			13379 1 
+		}
+		victory_points = {
+			16182 4
+		}
+		victory_points = {
+			13381 2
+		}
+		victory_points = {
+			13380 3 
+		}
+		add_core_of = BRA
+
+	}
+
+	provinces={
+		5115 5208 8140 12959 12987 13377 13378 13379 13380 13381 13382 16180 16181 16182 16183 
+	}
+	manpower=7054000
+	buildings_max_level_factor=1.000
+	state_category=state_level_10
+	local_supplies=0.000
+}

@@ -1,0 +1,44 @@
+
+state={
+	id=461
+	name="STATE_461"
+
+	history={
+		owner = MOR
+		victory_points = {
+			10070 30 
+		}
+		victory_points = {
+			14850 20 
+		}
+		victory_points = {
+			14849 12 
+		}
+		victory_points = {
+			4097 3 
+		}
+		victory_points = {
+			1194 10 
+		}
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 2
+			arms_factory = 1
+			air_base = 4
+			10070 = {
+				naval_base = 3
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		1079 1194 4097 7100 7173 10013 10070 11987 12042 14844 14848 14849 14850 14851 14853 14854 
+	}
+	manpower=8050000
+	buildings_max_level_factor=1.000
+	state_category=state_level_13
+	local_supplies=0.000
+}

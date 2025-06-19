@@ -1,0 +1,224 @@
+﻿capital = 313
+
+oob = "GUA_2000"
+
+set_research_slots = 3
+set_convoys = 100
+set_stability = 0.3
+
+set_country_flag = country_language_spanish
+set_country_flag = country_behavior_indolent
+set_country_flag = unique_tank_manufacturer
+set_country_flag = unique_naval_manufacturer
+set_country_flag = unique_aircraft_manufacturer
+set_country_flag = unique_industrial_concern
+set_country_flag = gc_elections
+
+add_timed_idea = {
+    idea = GUA_scars_of_the_civil_war
+    days = 1825
+}
+
+if = {
+	limit = {
+		NOT = {has_dlc = "By Blood Alone"}
+	}
+	set_air_oob = "GUA_2000_air_legacy"
+	set_technology = {
+		CAS1 = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "By Blood Alone"
+	}
+	set_air_oob = "GUA_2000_air_bba"
+	#tech
+	set_technology = {
+		iw_small_airframe = 1
+		aa_lmg = 1
+		Cold_war_cas = 1
+		engines_1 = 1
+		air_misc = 1
+		#scout_plane1 = 1
+	}
+	#varients
+	#CAS
+	create_equipment_variant = {
+		name = "A-37 Dragonfly" 
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = heavy_mg_2x
+			fixed_auxiliary_weapon_slot_1 = small_bomb_bay
+			fixed_auxiliary_weapon_slot_2 = small_bomb_bay
+			engine_type_slot = engine_1_2x
+		}
+		icon = "GFX_A-37_Dragonfly_medium"
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+	light_tank1 = 1
+	light_mechanized_infantry1 = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		IFV_chassis = 1
+		technicality_tech = 1
+		light_mechanized_infantry1 = 1
+	}
+	create_equipment_variant = {
+		name = "M41 Walker Bulldog"
+		type = light_tank_destroyer_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_auto_cannon
+			special_type_slot_1 = ergo_ifv_old
+			#turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_petrol_electric_engine
+			#special_type_slot_1 = tank_radio_1
+			optics_slot = tank_optics_1
+			special_type_slot_4 = main_ammo_bay
+			#atgm_slot = empty
+		}
+		upgrades = {
+			tank_nsb_armor_upgrade = 1
+			tank_nsb_engine_upgrade = 1
+		}
+		icon = "GFX_USA_mechanised_infantry2_medium"
+	}
+}	
+set_technology = {
+	## Infantry ##
+	infantry_weapons1 = 1
+	motorised_infantry = 1
+	support_weapons = 1
+	night_vision = 1
+	body_armor = 1
+	camouflage = 1
+	marines = 1
+	tech_mountaineers = 1
+	paratroopers = 1
+	
+	## Support Companies ##
+	tech_support = 1
+	basic_train = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_field_hospital = 1
+	tech_logistics_company = 1
+	tech_military_police = 1
+	tech_maintenance_company = 1
+	
+	## Armor ##
+	#main_battle_tank1 = 1
+	#main_battle_tank2 = 1
+	#light_tank1 = 1
+	
+	#mechanised_infantry2 = 1
+	#light_mechanized_infantry1 = 1
+	#light_mechanized_infantry2 = 1
+	
+	## Artillery ##
+	coldwar_artillery = 1
+	coldwar_antiair = 1
+	coldwar_antitank = 1
+	
+	## Air ##
+	# CAS1 = 1
+	# CAS2 = 1
+	# cv_CAS1 = 1
+	# fighter1 = 1
+	# fighter2 = 1
+	# cv_fighter1 = 1
+	# cv_fighter2 = 1
+	# naval_bomber1 = 1
+	# naval_bomber2 = 1
+	# cv_naval_bomber1 = 1
+	# cv_naval_bomber2 = 1
+	# strategic_bomber1 = 1
+	# strategic_bomber2 = 1
+	# #scout_plane1 = 1
+	
+	## Industry ##
+	fuel_silos = 1
+	fuel_refining = 1
+}
+
+add_ideas = {
+	civil_liberties_restricted
+	population_growth_steady
+	limited_conscription
+}
+
+set_politics = {	
+	ruling_party = conservative
+	last_election = "1999.11.7"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+    reactionary = 48
+	conservative = 39
+	social_liberal = 1
+	social_democrat = 12
+}
+
+recruit_character = GUA_rodolfo_quezada_toruno
+recruit_character = GUA_efrain_rios_montt
+recruit_character = GUA_hector_mario_lopez_fuentes
+recruit_character = GUA_alonso_portillo
+recruit_character = GUA_alvaro_arzu
+recruit_character = GUA_alejandro_giammattei
+recruit_character = GUA_alvaro_colom
+recruit_character = GUA_rigoberta_menchu
+recruit_character = GUA_rodrigo_asturias_amado
+recruit_character = GUA_pablo_monsanto
+
+recruit_character = GUA_oscar_berger
+recruit_character = GUA_jimmy_morales
+
+#Generals#
+recruit_character = GUA_juan_de_dios_estrada
+recruit_character = GUA_eduardo_arevalo_lacs
+recruit_character = GUA_carlos_humberto_aldana_villanueva
+recruit_character = GUA_francisco_bermudez_amado
+recruit_character = GUA_ronaldo_cecilio_leiva
+
+2015.1.1 = {
+	set_politics = {	
+		ruling_party = conservative
+		last_election = "2015.8.7"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+
+	set_popularities = {
+		conservative = 68 #Including all conservative parties here
+		social_democrat = 20
+		social_liberal = 7
+		progressive = 2
+		democratic_socialist = 3
+	}
+
+	retire_character = GUA_ronaldo_cecilio_leiva
+	promote_character = GUA_jimmy_morales
+
+	set_party_name = {
+		ideology = conservative
+		long_name = GUA_conservative_party_2016_long
+		name = GUA_conservative_party_2016
+	}
+}
+
+

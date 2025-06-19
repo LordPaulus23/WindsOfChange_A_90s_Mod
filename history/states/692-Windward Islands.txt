@@ -1,0 +1,25 @@
+
+state={
+	id=692
+	name="STATE_692"
+
+	history={
+		owner = BRB
+		buildings = {
+			infrastructure = 4
+			#industrial_complex = 1
+			11350 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = BRB
+		victory_points = { 11350 2 }
+	}
+
+	provinces={
+		11350 
+	}
+	manpower=271100
+	buildings_max_level_factor=1.000
+	state_category = state_level_1
+}

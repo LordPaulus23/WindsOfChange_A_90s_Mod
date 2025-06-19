@@ -1,0 +1,31 @@
+state={
+	id=825
+	name="STATE_825"
+	
+	resources = {
+		oil=68
+		steel=5
+	}
+	
+	history = {
+		owner = QAT
+		add_extra_state_shared_building_slots = 2
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 4#5
+			arms_factory = 1
+			#dockyard = 1
+			air_base = 8
+			8051 = { naval_base = 5 }
+		}
+		victory_points = { 8051 12 }
+		victory_points = { 13255 2 }
+	}
+	provinces={
+		8051 13253 13255 
+	}
+	manpower=592250
+	buildings_max_level_factor=1.000
+	
+	state_category = state_level_3
+}

@@ -1,0 +1,26 @@
+
+state={
+	id=276
+	name="STATE_276"
+
+	history={
+		owner = CAN
+		add_core_of = CAN
+		victory_points = {
+			3778 20 
+		}
+		buildings = {
+			infrastructure = 8
+			industrial_complex = 3
+
+		}
+
+	}
+
+	provinces={
+		490 3778 4270 6625 
+	}
+	manpower=1178000
+	buildings_max_level_factor=1.000
+	state_category=state_level_4
+}

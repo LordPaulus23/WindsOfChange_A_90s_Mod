@@ -1,0 +1,28 @@
+state={
+	id=953
+	name="STATE_953"
+	provinces={
+		1512 4646 7595 
+	}
+	resources={
+		oil=2
+	}
+	
+	history={
+		owner = JAP
+		add_core_of = JAP
+		add_core_of = AIN
+		buildings = {
+			infrastructure = 4
+
+		}
+		victory_points = {
+			4646 3 
+		}
+
+	}
+	
+	manpower=630000
+	buildings_max_level_factor=1.000
+	state_category=state_level_2
+}

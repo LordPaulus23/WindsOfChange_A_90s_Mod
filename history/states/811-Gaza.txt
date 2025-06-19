@@ -1,0 +1,27 @@
+state={
+	id=811
+	name="STATE_811"
+	history = {
+		owner = PAL
+		add_core_of = PAL
+		add_claim_by = ISR
+		set_demilitarized_zone = yes
+		
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			4088 = {
+				naval_base = 1
+
+			}
+		}
+		victory_points = { 4088 10 }
+	}
+	provinces={
+		4088 
+	}
+	manpower=1228000
+	buildings_max_level_factor=1.000
+	
+	state_category = state_level_2
+}

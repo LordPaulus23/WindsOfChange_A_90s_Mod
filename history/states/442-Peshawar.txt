@@ -1,0 +1,45 @@
+
+state={
+	id=442
+	name="STATE_442"
+	resources={
+		oil=2.000
+	}
+	history={
+		owner = PAK
+		add_core_of = PAK
+		victory_points = {
+			16422 20 
+		}
+		victory_points = {
+			16241 2
+		}
+		victory_points = {
+			4998 2
+		}
+		victory_points = {
+			16555 4
+		}
+		victory_points = {
+			16550 3
+		}
+		victory_points = {
+			16554 2
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			air_base = 1
+
+		}
+
+	}
+
+	provinces={
+		4558 4998 8022 16241 16422 16550 16554 16555 
+	}
+	manpower=17743000
+	buildings_max_level_factor=1.000
+	state_category=state_level_12
+	local_supplies=0.000
+}

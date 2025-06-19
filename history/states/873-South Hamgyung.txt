@@ -1,0 +1,41 @@
+
+state={
+	id=873
+	name="STATE_873"
+	resources={
+		tungsten=30.000
+	}
+
+	history={
+		owner = PRK
+		add_core_of = PRK
+		add_claim_by = KOR
+		buildings = {
+			infrastructure = 5
+			air_base = 2
+			industrial_complex = 1
+			dockyard = 1
+			arms_factory = 1
+			3981 = {
+				naval_base = 1
+
+			}
+
+		}
+		victory_points = {
+			3981 12 
+		}
+		victory_points = {
+			6922 2 
+		}
+
+	}
+
+	provinces={
+		852 3852 3981 6922 6928 11878 14142 
+	}
+	manpower=3012000
+	buildings_max_level_factor=1.000
+	state_category=state_level_4
+	local_supplies=0.000
+}

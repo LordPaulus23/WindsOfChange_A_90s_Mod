@@ -1,0 +1,31 @@
+
+state={
+	id=661
+	name="STATE_661"
+	resources={
+		oil=10.000
+	}
+
+	history={
+		owner = LBA
+		add_core_of = LBA
+		victory_points = {
+			1174 1 
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			air_base = 1
+
+		}
+
+	}
+
+	provinces={
+		1174 4051 4962 7154 10037 10067 10884 11940 15041 15042 15043 15052 15056 15057 15058 
+	}
+	manpower=372617
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+	local_supplies=0.000
+}

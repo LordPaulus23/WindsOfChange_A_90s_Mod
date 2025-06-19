@@ -1,0 +1,31 @@
+
+state={
+	id=547
+	name="STATE_547"
+
+	history={
+		owner = KEN
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 5
+
+		}
+		victory_points = {
+			1939 40 
+		}
+		victory_points = {
+			16715 1 
+		}
+
+	}
+
+	provinces={
+		1939 16715 
+	}
+	manpower=5868000
+	buildings_max_level_factor=1.000
+	state_category=state_level_6
+	local_supplies=0.000
+}

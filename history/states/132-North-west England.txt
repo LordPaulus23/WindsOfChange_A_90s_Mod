@@ -1,0 +1,31 @@
+state = {
+	id = 132
+	name = "STATE_132" #Lancashire
+	manpower = 6284454
+	state_category = state_level_11
+	
+	resources = {
+		rubber=10
+	}
+	
+	history = {
+		owner = ENG
+		add_core_of = ENG
+		victory_points = { 6384 20 }
+		victory_points = { 6318 25 }
+		victory_points = { 6335 3 }
+		buildings = {
+			infrastructure = 8
+			industrial_complex = 5
+			synthetic_refinery = 1
+			arms_factory = 2
+			dockyard = 1
+			air_base = 5
+			6384 = { naval_base = 5 }
+		}
+	}
+	
+	provinces = {
+		3205 6318 6335 6384
+ 	}
+}

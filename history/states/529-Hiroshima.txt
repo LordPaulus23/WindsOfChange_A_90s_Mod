@@ -1,0 +1,39 @@
+
+state={
+	id=529
+	name="STATE_529" # Chugoku
+	manpower = 7724428
+	state_category = state_level_13
+	
+	resources = {
+		steel = 80
+	}
+
+	history={
+		owner = JAP
+		add_core_of = JAP
+		add_extra_state_shared_building_slots = 1
+		buildings = {
+			infrastructure = 7
+			air_base = 3
+			industrial_complex = 9
+			arms_factory = 1
+			dockyard = 1
+			1092 = {
+				naval_base = 10
+			}
+		}
+		
+		victory_points = {
+			1092 5
+		}
+
+		victory_points = {
+			10052 3
+		}
+	}
+
+	provinces={
+		1092 1167 1191 4197 7050 7145 7212 9968 10052 10055 11946 11985 
+	}
+}

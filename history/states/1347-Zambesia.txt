@@ -1,0 +1,26 @@
+state={
+	id=1347
+	name="STATE_1347"
+
+	history={
+		owner = BOT
+		add_core_of = BOT
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+
+		}
+		victory_points = {
+			13833 1 
+		}
+
+	}	
+
+	provinces={
+		1580 13832 13833 14201 14656 14657 15698 
+	}
+	manpower=450000
+	buildings_max_level_factor=1.000
+	state_category=state_level_0
+	local_supplies=0.000
+}

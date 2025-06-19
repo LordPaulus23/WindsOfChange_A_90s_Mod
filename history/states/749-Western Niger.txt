@@ -1,0 +1,29 @@
+
+state={
+	id=749
+	name="STATE_749"
+
+	history={
+		owner = NGR
+		add_core_of = NGR
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+
+		}
+		victory_points = {
+			14453 12 
+		}
+
+	}
+
+	provinces={
+		1975 2056 12707 14449 14450 14453 14457 15062 
+	}
+	manpower=3377000
+	buildings_max_level_factor=1.000
+	state_category=state_level_3
+	local_supplies=0.000
+}

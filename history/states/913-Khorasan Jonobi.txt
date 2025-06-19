@@ -1,0 +1,26 @@
+
+state={
+	id=913
+	name="STATE_913"
+
+	history={
+		owner = PER
+		buildings = {
+			infrastructure = 3
+
+		}
+		add_core_of = PER
+		victory_points = {
+			12852 2 
+		}
+
+	}
+
+	provinces={
+		7990 8009 10759 10873 10890 12739 12852 16660 
+	}
+	manpower=644000
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+	local_supplies=0.000
+}

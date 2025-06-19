@@ -1,0 +1,40 @@
+
+state={
+	id=352
+	name="STATE_352"
+	resources={
+		steel=3.000
+	}
+
+	history={
+		owner = TUR
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+
+		}
+		add_claim_by = TUR
+		add_core_of = KUR
+		victory_points = {
+			15613 10 
+		}
+		victory_points = {
+			7530 1 
+		}
+		victory_points = {
+			10497 2 
+		}
+		victory_points = {
+			1463 1 
+		}
+
+	}
+
+	provinces={
+		864 1463 6935 7530 10497 12318 12476 13121 15604 15611 15613 
+	}
+	manpower=2117490
+	buildings_max_level_factor=1.000
+	state_category=state_level_3
+	local_supplies=0.000
+}

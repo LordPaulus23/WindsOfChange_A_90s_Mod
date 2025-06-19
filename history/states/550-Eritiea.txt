@@ -1,0 +1,40 @@
+
+state={
+	id=550
+	name="STATE_550"
+
+	history={
+		owner = ERI
+		add_claim_by = ETH
+		victory_points = {
+			15440 10
+		}
+		victory_points = {
+			15441 1
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 3
+			15437 = {
+				bunker = 3
+
+			}
+			12723 = {
+				bunker = 2
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		5017 12723 15437 15439 15440 15441 
+	}
+	manpower=2544000
+	buildings_max_level_factor=1.000
+	state_category=state_level_3
+	local_supplies=0.000
+}

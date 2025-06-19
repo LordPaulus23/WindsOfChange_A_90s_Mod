@@ -1,0 +1,34 @@
+
+state={
+	id=899
+	name="STATE_899"
+
+	history={
+		owner = ROM
+		add_core_of = ROM
+		victory_points = {
+			657 5 
+		}
+		victory_points = {
+			15411 1 
+		}
+		buildings = {
+			dockyard = 2
+			infrastructure = 4
+			657 = {
+				naval_base = 5
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		657 687 3076 9635 15410 15411 
+	}
+	manpower=950000
+	buildings_max_level_factor=1.000
+	state_category=state_level_2
+	local_supplies=0.000
+}

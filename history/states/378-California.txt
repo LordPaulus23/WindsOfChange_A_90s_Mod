@@ -1,0 +1,58 @@
+
+state={
+	id=378
+	name="STATE_378"
+	resources={
+		steel=5.000
+		oil = 10
+	}
+
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 3
+			arms_factory = 1
+			air_base = 2
+			610 = {
+				naval_base = 2
+
+			}
+
+		}
+		add_core_of = USA
+		add_core_of = CAL
+		victory_points = {
+			9713 20 
+		}
+		victory_points = {
+			781 1 
+		}
+		victory_points = {
+			6745 1 
+		}
+		victory_points = {
+			13659 1 
+		}
+		victory_points = {
+			6681 3 
+		}
+		victory_points = {
+			11658 2 
+		}
+		victory_points = {
+			677 3
+		}
+		victory_points = {
+			610 2
+		}
+
+	}
+
+	provinces={
+		610 677 710 766 768 781 3588 3644 4331 6482 6665 6681 6745 6757 6772 9697 9713 9730 10159 11658 11698 13655 13656 13657 13658 13659 13660 
+	}
+	manpower=4151000
+	buildings_max_level_factor=1.000
+	state_category=state_level_9
+}

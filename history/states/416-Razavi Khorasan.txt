@@ -1,0 +1,45 @@
+
+state={
+	id=416
+	name="STATE_416"
+	resources={
+		oil=5.000
+		chromium=5.000
+		aluminium=8.000
+	}
+
+	history={
+		owner = PER
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 3
+			air_base = 4
+
+		}
+		victory_points = {
+			5029 40 
+		}
+		victory_points = {
+			1957 5 
+		}
+		victory_points = {
+			16666 5 
+		}
+		victory_points = {
+			7573 4 
+		}
+		victory_points = {
+			16665 3 
+		}
+		add_core_of = PER
+
+	}
+
+	provinces={
+		1521 1888 1957 2000 5029 5073 7573 10351 10806 16665 16666 
+	}
+	manpower=5891000
+	buildings_max_level_factor=1.000
+	state_category=state_level_8
+	local_supplies=0.000
+}

@@ -1,0 +1,37 @@
+
+state={
+	id=546
+	name="STATE_546"
+
+	history={
+		owner = TZN
+		add_core_of = TZN
+		victory_points = {
+			16765 4
+		}
+		victory_points = {
+			16764 3 
+		}
+		victory_points = {
+			12967 2 
+		}
+		victory_points = {
+			16769 1
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			air_base = 1
+
+		}
+
+	}
+
+	provinces={
+		5180 8205 12911 12967 16761 16762 16763 16764 16765 16766 16767 16768 16769 
+	}
+	manpower=5371000
+	buildings_max_level_factor=1.000
+	state_category=state_level_4
+	local_supplies=0.000
+}

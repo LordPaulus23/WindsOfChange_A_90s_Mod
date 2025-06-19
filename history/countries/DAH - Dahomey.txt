@@ -1,0 +1,197 @@
+﻿capital = 769
+
+oob = "DAH_2000"
+
+set_research_slots = 2
+set_convoys = 240
+set_stability = 0.3
+
+set_country_flag = country_language_french
+set_country_flag = country_behavior_dispersed
+set_country_flag = country_behavior_indolent
+
+#No attack aircraft
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+	light_tank1 = 1
+	nonsnb_technicality_tech = 1
+	light_mechanized_infantry1 = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		IFV_chassis = 1
+		technicality_tech = 1
+		light_mechanized_infantry1 = 1
+	}
+	create_equipment_variant = {
+		name = "PT-76"
+		type = light_tank_destroyer_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_ifv_medium_cannon
+			special_type_slot_1 = ergo_ifv_old
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_welded_armor
+			engine_type_slot = tank_diesel_engine
+			optics_slot = tank_optics_1
+			special_type_slot_4 = main_ammo_bay
+		}
+		upgrades = {
+			tank_nsb_armor_upgrade = 1
+			tank_nsb_engine_upgrade = 1
+		}
+		obsolete = no
+		icon = "GFX_SOV_light_tank1_medium"
+	}
+}
+set_technology = {
+	## Infantry ##
+	infantry_weapons1 = 1
+	motorised_infantry = 1
+	support_weapons = 1
+	night_vision = 1
+	body_armor = 1
+	camouflage = 1
+	marines = 1
+	tech_mountaineers = 1
+	paratroopers = 1
+	
+	## Support Companies ##
+	tech_support = 1
+	basic_train = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_field_hospital = 1
+	tech_logistics_company = 1
+	tech_military_police = 1
+	tech_maintenance_company = 1
+	
+	## Armor ##
+	#main_battle_tank1 = 1
+	#main_battle_tank2 = 1
+	#light_tank1 = 1
+	
+	#mechanised_infantry2 = 1
+	#light_mechanized_infantry1 = 1
+	#light_mechanized_infantry2 = 1
+	
+	## Artillery ##
+	coldwar_artillery = 1
+	coldwar_antiair = 1
+	coldwar_antitank = 1
+ 	rocket_artillery = 1
+	sp_antiair0 = 1 
+	
+	## Air ##
+	# CAS1 = 1
+	# CAS2 = 1
+	# cv_CAS1 = 1
+	# fighter1 = 1
+	# fighter2 = 1
+	# cv_fighter1 = 1
+	# cv_fighter2 = 1
+	# naval_bomber1 = 1
+	# naval_bomber2 = 1
+	# cv_naval_bomber1 = 1
+	# cv_naval_bomber2 = 1
+	# strategic_bomber1 = 1
+	# strategic_bomber2 = 1
+	# #scout_plane1 = 1
+	
+	## Industry ##
+	fuel_silos = 1
+	fuel_refining = 1
+}
+
+add_ideas = {
+	national_development_undeveloped
+	economy_tax_high
+	population_growth_explosion
+	african_union_member
+	CFA_franc_member
+}
+
+set_politics = {	
+	ruling_party = democratic_socialist
+	last_election = "1996.3.3"
+	election_frequency = 60
+	elections_allowed = yes
+}
+
+set_popularities = {
+    democratic_socialist = 35
+	market_liberal = 30
+	progressive = 20
+	social_democrat = 10
+	social_liberal = 4
+	communist = 1
+}
+
+recruit_character = DAH_marcel_honorat_leon_agboton
+recruit_character = DAH_fernand_amoussou
+recruit_character = DAH_agoli_agbo_dedjalagni
+recruit_character = DAH_janvier_yahouedeou
+recruit_character = DAH_thomas_boni_yayi
+recruit_character = DAH_patrice_talon
+recruit_character = DAH_nicephore_soglo
+recruit_character = DAH_adrien_houngbedji
+recruit_character = DAH_mathieu_kerekou
+recruit_character = DAH_bruno_amoussou
+recruit_character = DAH_pascal_fantodji
+
+recruit_character = DAH_aristide_gonsallo
+recruit_character = DAH_sebastien_ajavon
+recruit_character = DAH_lionel_zinsou
+recruit_character = DAH_eric_houndete
+recruit_character = DAH_noel_koumba_koussey
+
+recruit_character = DAH_laurent_amoussou
+recruit_character = DAH_mathieu_amoussa_chabi_boni
+recruit_character = DAH_soumanou_oke
+recruit_character = DAH_awal_djibril_bouko_nagnimi
+recruit_character = DAH_denis_hounsou_gbessemehlan
+recruit_character = DAH_patrick_jean_baptiste_aho
+
+	
+2016.4.4 = {
+	retire_character = DAH_marcel_honorat_leon_agboton
+	retire_character = DAH_nicephore_soglo
+	retire_character = DAH_thomas_boni_yayi
+	retire_character = DAH_mathieu_kerekou
+	retire_character = DAH_pascal_fantodji
+
+	set_party_name = {
+		ideology = market_liberal
+		long_name = DAH_market_liberal_party_2016
+		name = DAH_market_liberal_party_2016
+	}
+
+	set_party_name = {
+		ideology = democratic_socialist
+		long_name = DAH_democratic_socialist_party_2016_long
+		name = DAH_democratic_socialist_party_2016
+	}
+
+
+	set_politics = {	
+		ruling_party = conservative
+		last_election = "2016.3.3"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+
+	set_popularities = {
+		social_liberal = 30
+		conservative = 35
+		market_liberal = 25
+		democratic_socialist = 10
+	}
+}

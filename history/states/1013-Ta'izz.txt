@@ -1,0 +1,35 @@
+
+state={
+	id=1013
+	name="STATE_1013"
+
+	history={
+		owner = YEM
+		add_core_of = YEM
+		victory_points = {
+			15955 10 
+		}
+		victory_points = {
+			15959 4 
+		}
+
+		victory_points = {
+			15957 1 
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			arms_factory = 1
+
+		}
+
+	}
+
+	provinces={
+		10752 13532 15955 15957 15959 
+	}
+	manpower=4902000
+	buildings_max_level_factor=1.000
+	state_category=state_level_5
+	local_supplies=0.000
+}

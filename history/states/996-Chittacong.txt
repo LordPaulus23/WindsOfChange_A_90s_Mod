@@ -1,0 +1,35 @@
+state={
+	id=996
+	name="STATE_996"
+	provinces={
+		1142 9991 11968 12010 
+	}
+	history={
+		owner = BAN
+		add_core_of = BAN
+		victory_points = {
+			9991 30 
+		}
+		victory_points = {
+			1142 2
+		}
+		victory_points = {
+			11968 4
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			air_base = 1
+			dockyard = 1
+			9991 = {
+				naval_base = 4
+			}
+
+		}
+
+	}
+
+	manpower=24290000
+	buildings_max_level_factor=1.000
+	state_category=state_level_16
+}

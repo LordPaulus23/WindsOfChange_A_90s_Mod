@@ -1,0 +1,3 @@
+CMK = "countries/committee_korea.txt"
+NDF = "countries/AINDF.txt"
+PRO = "countries/republic_of_koryo.txt"

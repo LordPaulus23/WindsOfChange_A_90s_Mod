@@ -1,0 +1,26 @@
+state = {
+	id = 73
+	name = "STATE_73"
+	manpower = 1254300
+	state_category = state_level_1
+
+	resources = {
+		steel = 5
+	}
+
+	history = {
+		owner = UKR
+		add_core_of = UKR
+		add_claim_by = HUN
+		victory_points = {
+			11691 2  
+		}
+		buildings = {
+			infrastructure = 4
+		}
+	}
+
+	provinces = {
+		3548 6571 9563 11536 11691 
+	}
+}

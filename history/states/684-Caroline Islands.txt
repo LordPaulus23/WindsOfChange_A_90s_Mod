@@ -1,0 +1,54 @@
+
+state={
+	id=684
+	name="STATE_684"
+
+	history={
+		owner = FSM
+		add_core_of = FSM
+		buildings = {
+			infrastructure = 3
+			air_base = 3
+			13028 = {
+				naval_base = 1
+
+			}
+			13030 = {
+				naval_base = 1
+
+			}
+			13031 = {
+				naval_base = 1
+
+			}
+			13034 = {
+				naval_base = 1
+
+			}
+			13035 = {
+				naval_base = 1
+
+			}
+			13036 = {
+				naval_base = 1
+
+			}
+
+		}
+		victory_points = {
+			13028 1 
+		}
+		victory_points = {
+			13036 5 
+		}
+
+	}
+
+	provinces={
+		13027 13028 13029 13030 13031 13034 13035 13036 
+	}
+	manpower=334357
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+	local_supplies=0.000
+}

@@ -1,0 +1,26 @@
+state={
+	id=706
+	name="STATE_706"
+	manpower = 706637
+	
+	state_category = state_level_1
+
+	history={
+		owner = FRA
+		buildings = {
+			infrastructure = 3
+			air_base = 1
+			13017 = {
+				naval_base = 1
+			}
+		}
+		victory_points = {
+			13017 4
+		}
+		add_core_of = FRA
+	}
+
+	provinces={
+		13017 
+	}
+}

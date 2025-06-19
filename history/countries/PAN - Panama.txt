@@ -1,0 +1,121 @@
+﻿capital = 304
+
+oob = "PAN_2000"
+
+set_research_slots = 3
+set_convoys = 400
+set_stability = 0.4
+
+set_country_flag = country_language_spanish
+
+
+set_technology = {
+	## Infantry ##
+	infantry_weapons1 = 1
+	motorised_infantry = 1
+	support_weapons = 1
+	night_vision = 1
+	body_armor = 1
+	camouflage = 1
+	marines = 1
+	tech_mountaineers = 1
+	paratroopers = 1
+	
+	## Support Companies ##
+	tech_support = 1
+	basic_train = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_field_hospital = 1
+	tech_logistics_company = 1
+	tech_military_police = 1
+	tech_maintenance_company = 1
+	
+	## Armor ##
+	#main_battle_tank1 = 1
+	#main_battle_tank2 = 1
+	#light_tank1 = 1
+	
+	#mechanised_infantry2 = 1
+	#light_mechanized_infantry1 = 1
+	#light_mechanized_infantry2 = 1
+	
+	## Air ##
+	# CAS1 = 1
+	# CAS2 = 1
+	# cv_CAS1 = 1
+	# fighter1 = 1
+	# fighter2 = 1
+	# cv_fighter1 = 1
+	# cv_fighter2 = 1
+	# naval_bomber1 = 1
+	# naval_bomber2 = 1
+	# cv_naval_bomber1 = 1
+	# cv_naval_bomber2 = 1
+	# strategic_bomber1 = 1
+	# strategic_bomber2 = 1
+	# #scout_plane1 = 1
+	
+	## Industry ##
+	fuel_silos = 1
+	fuel_refining = 1
+}
+
+add_ideas = {
+	population_growth_steady
+}
+
+set_politics = {	
+	ruling_party = reactionary
+	last_election = "1999.5.2"
+	election_frequency = 60
+	elections_allowed = yes
+}
+
+set_popularities = {
+    social_democrat = 47
+	social_liberal = 30
+	reactionary = 13
+	market_liberal = 4
+	conservative = 6
+}
+
+recruit_character = PAN_jose_dimas_cedeno_delgado
+recruit_character = PAN_reynaldo_alexis_santana
+recruit_character = PAN_mireya_moscoso
+recruit_character = PAN_ricardo_martinelli
+recruit_character = PAN_francisco_aleman_mendoza
+recruit_character = PAN_guillermo_endara
+recruit_character = PAN_martin_torrijos_espino
+recruit_character = PAN_ricardo_lombana
+recruit_character = PAN_saul_mendez
+recruit_character = PAN_moises_carrasquilla
+
+recruit_character = PAN_ruben_dario_paredes
+recruit_character = PAN_florencio_flores_aguilar
+
+recruit_character = PAN_juan_carlos_varela
+recruit_character = PAN_romulo_roux
+recruit_character = PAN_laurentino_cortizo
+
+2015.1.1 = {
+	set_politics = {	
+		ruling_party = reactionary
+		last_election = "2014.5.5"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+
+	promote_character = PAN_juan_carlos_varela
+	promote_character = PAN_romulo_roux
+	promote_character = PAN_laurentino_cortizo
+
+	set_popularities = {
+		social_democrat = 33
+		conservative = 31
+		progressive = 19
+		reactionary = 11
+		market_liberal = 5
+		democratic_socialist = 1
+	}
+}

@@ -1,0 +1,38 @@
+
+state={
+	id=924
+	name="STATE_924"
+	resources={
+		chromium=2.000
+	}
+
+	history={
+		owner = SHN
+		add_claim_by = BRM
+		add_core_of = SHN
+		set_resistance = 15
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			4585 5
+		}
+		victory_points = {
+			1170 3
+		}
+		victory_points = {
+			7909 1
+		}
+
+	}
+
+	provinces={
+		1170 1566 1607 2061 3999 4175 4585 7562 7603 7909 7974 10920 12363 16701 
+	}
+	manpower=4352000
+	buildings_max_level_factor=1.000
+	state_category=state_level_5
+	local_supplies=0.000
+}

@@ -1,0 +1,42 @@
+
+state={
+	id=298
+	name="STATE_298"
+	resources={
+		rubber=10.000
+	}
+
+	history={
+		owner = LIB
+		add_core_of = LIB
+		victory_points = {
+			7959 10 
+		}
+		victory_points = {
+			14043 2 
+		}
+		victory_points = {
+			14042 2 
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			dockyard = 1
+			arms_factory = 1
+			7959 = {
+				naval_base = 2
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		7959 8006 14015 14041 14042 14043 15443 
+	}
+	manpower=2552000
+	buildings_max_level_factor=1.000
+	state_category=state_level_4
+	local_supplies=0.000
+}

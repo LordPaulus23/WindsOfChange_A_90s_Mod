@@ -1,0 +1,39 @@
+state={
+	id=575
+	name="STATE_575"
+	provinces={
+		738 3729 3744 6749 9699 9703 9719 11684 11688 11707 
+	}
+	resources={
+		steel = 20
+		aluminium = 8
+	}
+	history={
+		owner = SPR
+		add_core_of = SPR
+		victory_points = {
+			11707 7
+		}
+		victory_points = {
+			9703 4
+		}
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 2
+			arms_factory = 1
+			11707 = {
+				naval_base = 1
+
+			}
+			9703 = {
+				naval_base = 2
+
+			}
+
+		}
+
+	}
+	manpower=1600000
+	buildings_max_level_factor=1.000
+	state_category=state_level_4
+}

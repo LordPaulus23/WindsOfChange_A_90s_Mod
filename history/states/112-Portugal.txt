@@ -1,0 +1,42 @@
+
+state={
+	id=112
+	name="STATE_112"
+	resources={
+	steel=5.000
+	}
+
+	history={
+		owner = POR
+		add_core_of = POR
+		victory_points = {
+			11805 30 
+		}
+		victory_points = {
+			970 3 
+		}
+		victory_points = {
+			924 1 
+		}
+		buildings = {
+			infrastructure = 7
+			air_base = 5
+			industrial_complex = 3
+			dockyard = 2
+			arms_factory = 2
+			11805 = {
+				naval_base = 6
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		844 924 970 3861 11768 11805 
+	}
+	manpower=3812100
+	buildings_max_level_factor=1.000
+	state_category=state_level_7
+}

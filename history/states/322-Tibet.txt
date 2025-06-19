@@ -1,0 +1,43 @@
+
+state={
+	id=322
+	name="STATE_322"
+	resources={
+		steel=5.000
+	}
+
+	history={
+		owner = PRC
+		add_core_of = TIB
+		add_claim_by = PRC
+		add_extra_state_shared_building_slots = 1
+		victory_points = {
+			5033 7 
+		}
+		victory_points = {
+			16302 2 
+		}
+		victory_points = {
+			12807 1 
+		}
+		victory_points = {
+			2098 1 
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 2
+
+		}
+
+	}
+
+	provinces={
+		1991 2014 2098 4900 5033 8121 12807 16297 16298 16299 16300 16302 16303 
+	}
+	manpower=1426000
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+	local_supplies=0.000
+}

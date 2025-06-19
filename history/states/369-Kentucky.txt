@@ -1,0 +1,47 @@
+
+state={
+	id=369
+	name="STATE_369"
+	resources={
+		aluminium=25.000
+		steel = 10
+	}
+
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 3
+			arms_factory = 1
+			air_base = 4
+
+		}
+		add_core_of = USA
+		add_core_of = CSA
+		victory_points = {
+			6696 10 
+		}
+		victory_points = {
+			1445 3 
+		}
+		victory_points = {
+			13615 2
+		}
+		victory_points = {
+			10727 1
+		}
+		victory_points = {
+			10586 1
+		}
+		victory_points = {
+			6974 1
+		}
+	}
+
+	provinces={
+		1445 1582 4402 4452 4988 6696 6974 7547 9727 10586 10727 12568 12637 12709 13614 13615 
+	}
+	manpower=4041000
+	buildings_max_level_factor=1.000
+	state_category=state_level_9
+}

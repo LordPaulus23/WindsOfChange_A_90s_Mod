@@ -1,0 +1,38 @@
+
+state={
+	id=782
+	name="STATE_782"
+	resources={
+		chromium=105.000
+		steel=3.000
+	}
+
+	history={
+		owner = ZIM
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 3
+
+		}
+		victory_points = {
+			13842 20 
+		}
+		victory_points = {
+			7842 3 
+		}
+		victory_points = {
+			4851 3 
+		}
+
+	}
+
+	provinces={
+		1874 2216 4851 7842 10929 13836 13840 13842 13843 14661 14663 14730 14731 14733 
+	}
+	manpower=8381100
+	buildings_max_level_factor=1.000
+	state_category=state_level_7
+	local_supplies=0.000
+}

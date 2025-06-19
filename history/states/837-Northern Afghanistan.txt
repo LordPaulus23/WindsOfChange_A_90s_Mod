@@ -1,0 +1,41 @@
+
+state={
+	id=837
+	name="STATE_837"
+
+	history={
+		owner = TAL
+		add_core_of = AFG
+		add_core_of = TAL
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			air_base = 1
+
+		}
+		victory_points = {
+			7448 2 
+		}
+		victory_points = {
+			7584 2 
+		}
+		victory_points = {
+			15790 7
+		}
+		victory_points = {
+			15788 1 
+		}
+		victory_points = {
+			12248 1 
+		}
+
+	}
+
+	provinces={
+		7448 7584 10852 12248 12877 15786 15787 15788 15789 15790 15791 
+	}
+	manpower=2972000
+	buildings_max_level_factor=1.000
+	state_category=state_level_4
+	local_supplies=0.000
+}

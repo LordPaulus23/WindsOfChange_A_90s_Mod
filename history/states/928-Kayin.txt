@@ -1,0 +1,31 @@
+
+state={
+	id=928
+	name="STATE_928"
+
+	history={
+		owner = KRN
+		add_claim_by = BRM
+		add_core_of = KRN
+		set_resistance = 30
+		victory_points = {
+			4654 1 
+		}
+		victory_points = {
+			4408 2 
+		}
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+
+	provinces={
+		4275 4293 4408 4654 7441 12238 12317 
+	}
+	manpower=1674000
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+	local_supplies=0.000
+}

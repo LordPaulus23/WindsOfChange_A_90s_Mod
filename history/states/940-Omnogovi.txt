@@ -1,0 +1,37 @@
+
+state={
+	id=940
+	name="STATE_940"
+	resources={
+		tungsten=4.000
+	}
+	history={
+		owner = MON
+		add_core_of = MON
+		buildings = {
+			infrastructure = 3
+
+		}
+		victory_points = {
+			12669 1 
+		}
+		victory_points = {
+			7749 1
+		}
+		victory_points = {
+			16322 1
+		}
+		victory_points = {
+			16354 1
+		}
+
+	}
+
+	provinces={
+		7806 7881 16353 16354 16355 1853 4729 4786 10558 10632 10689 12539 12669 16323 16325 7749 1787 10704 12686 16321 16322 16324 16329
+	}
+	manpower=220000
+	buildings_max_level_factor=1.000
+	state_category=state_level_0
+	local_supplies=0.000
+}

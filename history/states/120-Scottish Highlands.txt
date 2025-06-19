@@ -1,0 +1,28 @@
+state = {
+	id = 120
+	name = "STATE_120"
+	manpower = 365873
+	state_category = state_level_1
+
+	resources = {
+		oil = 65
+	}
+
+	history = {
+		owner = ENG
+		add_core_of = ENG
+		add_core_of = SCO
+		victory_points = { 11064 1 }
+		victory_points = { 9075 2 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			11064 = { naval_base = 1 }
+			6196 = { naval_base = 2 }
+		}
+	}
+
+	provinces = {
+		131 284 3159 3178 3373 6046 6062 6104 6196 6205 9075 9090 11064 11161 11266
+	}
+}

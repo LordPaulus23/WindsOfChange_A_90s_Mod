@@ -1,0 +1,31 @@
+
+state={
+	id=1040
+	name="STATE_1040"
+
+	history={
+		owner = RAJ
+		add_core_of = RAJ
+		add_core_of = NAX
+		buildings = {
+			infrastructure = 4
+			air_base = 1
+
+		}
+		victory_points = {
+			16528 10 
+		}
+		victory_points = {
+			10021 2 
+		}
+
+	}
+
+	provinces={
+		1898 3989 5002 5157 10021 16528 16529 
+	}
+	manpower=8489000
+	buildings_max_level_factor=1.000
+	state_category=state_level_3
+	local_supplies=0.000
+}

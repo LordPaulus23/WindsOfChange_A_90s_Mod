@@ -1,0 +1,33 @@
+
+state={
+	id=1277
+	name="STATE_1277"
+	resources={
+		aluminium=8.000
+		steel=2.000
+	}
+
+	history={
+		owner = BOS
+		add_core_of = BOS
+		victory_points = {
+			9894 2 
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 0
+			arms_factory = 0
+			air_base = 2
+
+		}
+
+	}
+
+	provinces={
+		6942 9894 11872 
+	}
+	manpower=380000
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+	local_supplies=0.000
+}

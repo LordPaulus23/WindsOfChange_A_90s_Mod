@@ -1,0 +1,34 @@
+
+state={
+	id=415
+	name="STATE_415"
+
+	history={
+		owner = TAL
+		buildings = {
+			infrastructure = 3
+			air_base = 1
+
+		}
+		victory_points = {
+			15793 1 
+		}
+		victory_points = {
+			5064 7 
+		}
+		victory_points = {
+			2078 2 
+		}
+		add_core_of = AFG
+		add_core_of = TAL
+
+	}
+
+	provinces={
+		1948 2078 2101 4949 5020 5064 15792 15793 15794 15795 15796 
+	}
+	manpower=1794000
+	buildings_max_level_factor=1.000
+	state_category=state_level_2
+	local_supplies=0.000
+}

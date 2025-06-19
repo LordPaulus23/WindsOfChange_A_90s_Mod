@@ -1,0 +1,34 @@
+
+state={
+	id=680
+	name="STATE_680"
+	resources={
+		oil=5.000
+	}
+
+	history={
+		owner = SYR
+		victory_points = {
+			2013 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			air_base = 2
+
+		}
+		add_core_of = SYR
+		2016.5.1 = {
+			owner = ISS
+
+		}
+
+	}
+
+	provinces={
+		2013 13323 13324 
+	}
+	manpower=723000
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+}

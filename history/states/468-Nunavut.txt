@@ -1,0 +1,55 @@
+
+state={
+	id=468
+	name="STATE_468"
+	resources={
+		steel=15.000
+		aluminium=120.000
+		rubber=4
+	}
+	history={
+		owner = CAN
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 7
+			dockyard = 1
+			arms_factory = 1
+			air_base = 3
+			12149 = {
+				naval_base = 5
+
+			}
+
+		}
+		add_core_of = CAN
+		add_core_of = QUE
+		victory_points = {
+			1341 2 
+		}
+		victory_points = {
+			4345 40 
+		}
+		victory_points = {
+			12149 20 
+		}
+		victory_points = {
+			13813 3 
+		}
+		victory_points = {
+			13783 3
+		}
+		victory_points = {
+			7345 3
+		}
+		victory_points = {
+			7875 1
+		}
+	}
+
+	provinces={
+		1341 1356 1764 4345 4417 7289 7291 7345 7433 7435 7875 9601 10174 10230 10249 10320 10700 11902 12149 12205 12223 12276 13160 13691 13782 13783 13784 13785 13786 13787 13788 13789 13790 13804 13813 
+	}
+	manpower=6710000
+	buildings_max_level_factor=1.000
+	state_category=state_level_11
+}

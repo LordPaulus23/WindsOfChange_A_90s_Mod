@@ -1,0 +1,23 @@
+state={
+	id=793
+	name="STATE_793"
+	
+	history={
+		owner = USA
+		add_core_of = USA
+		add_core_of = NEG
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 1
+		}
+		victory_points = { 4445 1 }
+		victory_points = { 7629 1 }
+	}
+
+	provinces={
+		4445 7629 9675 13158 
+	}
+	manpower=609618
+	buildings_max_level_factor=1.000
+	state_category = state_level_2
+}

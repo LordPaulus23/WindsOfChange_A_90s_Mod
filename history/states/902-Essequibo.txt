@@ -1,0 +1,24 @@
+
+state={
+	id=902
+	name="STATE_902"
+
+	history={
+		owner = GYA
+		add_core_of = GYA
+		add_claim_by = VEN
+		buildings = {
+			infrastructure = 2
+
+		}
+
+	}
+
+	provinces={
+		12716 13280 14955 14956 
+	}
+	manpower=125250
+	buildings_max_level_factor=1.000
+	state_category=state_level_1
+	local_supplies=0.000
+}

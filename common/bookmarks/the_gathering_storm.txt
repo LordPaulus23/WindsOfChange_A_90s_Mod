@@ -1,8 +1,8 @@
 bookmarks = {
 	bookmark = {
-		name = "GATHERING_STORM_NAME"
-		desc = "GATHERING_STORM_DESC"
-		date = 2000.1.1.12
+		name = "WINDSOFCHANGE"
+		desc = "WINDSOFCHANGE_DESC"
+		date = 1990.1.1.12
 		picture = "GFX_select_date_1936"
 		default_country = "USA"
 		default = yes
