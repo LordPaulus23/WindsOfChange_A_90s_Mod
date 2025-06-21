@@ -1,29 +1,22 @@
-
 state={
 	id=566
-	name="STATE_566"
+	name="STATE_566" #Irktusk
+	
+	state_category = rural
 	resources={
-		tungsten=120.000
-		aluminium=20.000
-		oil=15.000
-		steel=20.000
+		steel=20 # was: 28.000
+		aluminium=7 # was: 10.000
 	}
 
 	history={
 		owner = SOV
 		victory_points = {
-			1727 15 
-		}
-		victory_points = {
-			13552 1
-		}
-		victory_points = {
-			1803 1
+			4797 3 
 		}
 		buildings = {
-			infrastructure = 5
-			air_base = 2
-			industrial_complex = 1
+			infrastructure = 2
+			arms_factory = 1
+			air_base = 1
 
 		}
 		add_core_of = SOV
@@ -31,10 +24,10 @@ state={
 	}
 
 	provinces={
-		1707 1727 1735 1803 1810 1813 1829 1876 4737 4750 4797 4808 4815 7713 7726 7769 7828 7838 7841 7876 7902 10524 10543 10549 10562 10570 10596 10661 10664 10688 10699 12525 12531 12540 12647 12668 12681 13152 13551 13552 13571 13572 16418
+		1707 1727 1829 4797 4815 7838 10596 10661 12525 12540 12647 
 	}
-	manpower=2521000
+	manpower=755237
 	buildings_max_level_factor=1.000
-	state_category=state_level_5
-	local_supplies=0.000
+
+	local_supplies=0.0 
 }

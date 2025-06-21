@@ -1,25 +1,24 @@
 state={
 	id=709
 	name="STATE_709"
-	manpower = 80000
+	manpower = 126703
 	
-	state_category = state_level_1
+	state_category = small_island
 	
 	history=
 	{
-		owner = SEY
-		add_core_of = SEY
+		owner = ENG
 		buildings = {
 			infrastructure = 2
 			2188 = {
 				naval_base = 1
 			}
 		}
-		
-		victory_points = { 2188 1 }
 	}
 	
 	provinces={
 		2188 
 	}
+
+	local_supplies=0.0 
 }

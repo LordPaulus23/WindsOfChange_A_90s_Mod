@@ -1,36 +1,37 @@
-
-state={
-	id=67
-	name="STATE_67"
-	resources={
-		steel=30.000
-		rubber=3.000
+state = {
+	id = 67
+	name = "STATE_67"
+	manpower = 1402591
+	resources = {
+		steel = 8 #was 11 #was: 11 was 19 # was: 60
+		aluminium = 6 # was: 20
 	}
+	
+	state_category = city
 
-	history={
+	history = {
+
 		owner = POL
 		add_core_of = POL
+		add_core_of = SIL
+		add_core_of = PRE
+
 		victory_points = {
-			11467 3
+			11467 5 # Gleiwitz
 		}
 		victory_points = {
-			6464 20 
+			9511 3 # Oppeln
 		}
+		
 		buildings = {
-			infrastructure = 7
-			industrial_complex = 3
-			arms_factory = 2
-			air_base = 3
-
+			infrastructure = 3
 		}
-
+		
 	}
 
-	provinces={
-		479 6464 6512 9457 9511 11467 14960 
+	provinces = {
+		479 6512 9457 9511 11467 
 	}
-	manpower=5255500
-	buildings_max_level_factor=1.000
-	state_category=state_level_9
-	local_supplies=0.000
+
+	local_supplies = 4.0 
 }

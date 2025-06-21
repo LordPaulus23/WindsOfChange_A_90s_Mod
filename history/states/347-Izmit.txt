@@ -2,43 +2,35 @@
 state={
 	id=347
 	name="STATE_347"
+	manpower = 1607660
+	resources={
+		chromium=19 # was: 26
+		steel = 9
+	}
+	
+	state_category = rural
 
 	history={
 		owner = TUR
 		victory_points = {
-			11866 2
+			11811 1 
 		}
 		victory_points = {
-			11811 15 
-		}
-		victory_points = {
-			15634 10 
-		}
-		victory_points = {
-			904 3
-		}
-		victory_points = {
-			3905 3
+			904 1 
 		}
 		buildings = {
-			infrastructure = 5
-			industrial_complex = 2
-			dockyard = 1
-			11866 = {
-				naval_base = 3
-
+			infrastructure = 2
+			industrial_complex = 1
+			904 = {
+				naval_base = 2
 			}
-
 		}
 		add_core_of = TUR
-
 	}
 
 	provinces={
-		890 904 3905 11811 11866 15634 15635 
+		890 904 3905 3919 6871 11811 11866 11883 
 	}
-	manpower=2908000
-	buildings_max_level_factor=1.000
-	state_category=state_level_6
-	local_supplies=0.000
+
+	local_supplies=0.0 
 }

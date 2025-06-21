@@ -1,53 +1,39 @@
+state = {
+	id = 558
+	name = "STATE_558"
+	manpower = 19757000
+	state_category = rural
 
-state={
-	id=558
-	name="STATE_558"
-	resources={
-		rubber=4.000
-		oil=50.000
+	resources = {
+		rubber = 2.000
 	}
 
-	history={
+	history = {
+
 		owner = NGA
 		add_core_of = NGA
-		buildings = {
-			infrastructure = 6
-			industrial_complex = 3
-			arms_factory = 1
-			dockyard = 2
-			air_base = 2
-			2050 = {
-				naval_base = 6
 
+		buildings = {
+			infrastructure = 2
+			arms_factory = 0
+			industrial_complex = 1
+
+			2050 = {
+				naval_base = 3
 			}
 
 		}
+
 		victory_points = {
-			2050 50 
-		}
-		victory_points = {
-			14391 25
-		}
-		victory_points = {
-			14394 5
-		}
-		victory_points = {
-			14399 7
-		}
-		victory_points = {
-			14392 5
-		}
-		victory_points = {
-			14382 5
+			2050 5 # Lagos
 		}
 
 	}
 
-	provinces={
-		2050 12731 14374 14381 14382 14390 14391 14392 14393 14394 14395 14397 14398 14399 14401 14434 
+	provinces = {
+		2050 4952 12731 12817 12900 
 	}
-	manpower=24114000
-	buildings_max_level_factor=1.000
-	state_category=state_level_20
-	local_supplies=0.000
+	
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
 }

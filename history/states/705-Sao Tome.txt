@@ -1,23 +1,22 @@
 state={
 	id=705
 	name="STATE_705"
-	manpower=142000
-	state_category = state_level_1
+	manpower=24725	
+	state_category = tiny_island
 
 	history={
-		owner = SAO
-		victory_points = { 13015 2 }
+		owner = POR
 		buildings = {
-			infrastructure = 4
-			#industrial_complex = 1
+			infrastructure = 1
 			13015 ={
 				naval_base = 1
 			}
 		}
-		add_core_of = SAO
 	}
 
 	provinces={
 		13015 
 	}
+
+	local_supplies=0.0 
 }

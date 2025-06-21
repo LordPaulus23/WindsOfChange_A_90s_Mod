@@ -1,337 +1,298 @@
-﻿capital = 295
+﻿capital = 295 # Leopoldville/Kinshaasa
 
-oob = "COG_2000"
+set_oob = "COG_1936"
 
-set_research_slots = 2
-set_convoys = 60
-set_stability = 0.1
-
-set_country_flag = country_language_french
-set_country_flag = country_language_lingala
-set_country_flag = country_language_kikongo
-set_country_flag = country_language_swahili
-set_country_flag = country_language_tshiluba
-set_country_flag = country_behavior_dispersed
-set_country_flag = country_behavior_indolent
-
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-	set_technology = {
-		CAS1 = 1
-		CAS2 = 1
-		cv_CAS1 = 1
-		cv_CAS2 = 1
-		fighter1 = 1
-		fighter2 = 1
-		cv_fighter1 = 1
-		cv_fighter2 = 1
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-		naval_bomber3 = 1
-		cv_naval_bomber1 = 1
-		cv_naval_bomber2 = 1
-		cv_naval_bomber3 = 1
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
-		#scout_plane1 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	#tech
-	set_technology = {
-		iw_small_airframe = 1
-		basic_small_airframe = 1
-		iw_medium_airframe = 1
-		basic_medium_airframe = 1
-		iw_heli_airframe = 1
-		iw_naval_airframe = 1
-		basic_naval_airframe = 1
-		iw_large_airframe = 1
-		basic_large_airframe = 1
-		aa_lmg = 1
-		Cold_war_cas = 1
-		engines_1 = 1
-		air_misc = 1
-		#scout_plane1 = 1
-	}
-	#varients
-	#CAS
-	create_equipment_variant = {
-		name = "Mirage 5" 
-		type = small_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = small_bomb_bay
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Su-25" 
-		type = small_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = heavy_mg_2x
-			fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
-			fixed_auxiliary_weapon_slot_2 = tank_buster_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-			special_type_slot_3 = armor_plate_medium
-		}
-	}
-	#Multirole
-	create_equipment_variant = {
-		name = "MiG-23" 
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		obsolete = yes
-	}
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-	main_battle_tank1 = 1
-	main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	light_tank1 = 1
-	mechanised_infantry1 = 1
-	nonsnb_technicality_tech = 1
-	light_mechanized_infantry1 = 1
-	light_mechanized_infantry2 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		IFV_chassis_80s = 1
-		IFV_chassis = 1
-		technicality_tech = 1
-		light_mechanized_infantry1 = 1
-		light_mechanized_infantry2 = 1
-		main_battle_tank_chassis = 1
-		main_battle_tank_chassis_80s = 1
-	}
-	create_equipment_variant = {
-		name = "T-62"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_SOV_main_battle_tank1_medium"
-	}
-	create_equipment_variant = {
-		name = "MT-LB"
-		type = light_tank_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_heavy_machine_gun
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_SOV_mechanised_infantry1_medium"
-	}
-	create_equipment_variant = {
-		name = "PT-76"
-		type = light_tank_destroyer_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_ifv_medium_cannon
-			special_type_slot_1 = ergo_ifv_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			optics_slot = tank_optics_1
-			special_type_slot_4 = main_ammo_bay
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = no
-		icon = "GFX_SOV_light_tank1_medium"
-	}
-}
+# Starting tech
 set_technology = {
-	## Infantry ##
-	infantry_weapons1 = 1
-	motorised_infantry = 1
-	support_weapons = 1
-	night_vision = 1
-	body_armor = 1
-	camouflage = 1
-	marines = 1
-	tech_mountaineers = 1
-	paratroopers = 1
-	
-	## Support Companies ##
+	infantry_weapons = 1
 	tech_support = 1
+	tech_trucks = 1
 	basic_train = 1
+	armored_car1 = 1
+	gw_artillery = 1
+	interwar_antitank = 1
 	tech_engineers = 1
-	tech_recon = 1
-	tech_field_hospital = 1
-	tech_logistics_company = 1
-	tech_military_police = 1
-	tech_maintenance_company = 1
-	
-	## Armor ##
-	#main_battle_tank1 = 1
-	#main_battle_tank2 = 1
-	#light_tank1 = 1
-	
-	#mechanised_infantry2 = 1
-	#light_mechanized_infantry1 = 1
-	#light_mechanized_infantry2 = 1
-	
-	## Artillery ##
-	coldwar_artillery = 1
-	coldwar_antiair = 1
-	coldwar_antitank = 1
- 	rocket_artillery = 1
-	sp_antiair0 = 1 
-	
-	## Air ##
-	# CAS1 = 1
-	# CAS2 = 1
-	# cv_CAS1 = 1
-	# fighter1 = 1
-	# fighter2 = 1
-	# cv_fighter1 = 1
-	# cv_fighter2 = 1
-	# naval_bomber1 = 1
-	# naval_bomber2 = 1
-	# cv_naval_bomber1 = 1
-	# cv_naval_bomber2 = 1
-	# strategic_bomber1 = 1
-	# strategic_bomber2 = 1
-	# #scout_plane1 = 1
-	
-	## Industry ##
-}
-add_ideas = {
-	national_development_undeveloped
-	economy_tax_high
-	civil_liberties_totalitarian
-	population_growth_explosion
-	african_union_member
-	scraping_the_barrel		#child soldiers 
-	mobilization_service_time_corrupt
 }
 
-set_politics = {
-	ruling_party = democratic_socialist
-	last_election = "1997.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
+### Set Base Values ###
+set_war_support = 0.4 
+set_stability = 0.35
 
-set_popularities = {
-		progressive = 14
-		nationalist = 10
-		social_democrat = 16
-		conservative = 6
-		social_liberal = 6
-		democratic_socialist = 48
-}
-
-recruit_character = COG_laurent_kabila
-recruit_character = COG_joseph_kabila
-recruit_character = COG_antoine_gizenga
-recruit_character = COG_nzanga_mobuto
-recruit_character = COG_etienne_thisekedi
-recruit_character = COG_azarias_ruberwa
-recruit_character = COG_isabel_maria_gama
-###Generals
-recruit_character = COG_celestin_mbala
-recruit_character = COG_didier_etumba_longila
-recruit_character = COG_francois_olenga
-recruit_character = COG_sikabwe_fall
-recruit_character = COG_ilunga_kampate
-recruit_character = COG_mustapha_mukiza
-###Generic Leaders
-recruit_character = COG_albert_bamba
-recruit_character = COG_antoine_kasavubu
-recruit_character = COG_mobutu_bamba
-
-2015.1.1 = {
-	oob = "COG_2016"
-	retire_character = COG_laurent_kabila
-	set_party_name = { ideology = democratic_socialist long_name = COG_democratic_socialist_PALU_party_long name = COG_democratic_socialist_PALU_party }
-	set_politics = {
-		ruling_party = social_democrat
-		last_election = "1997.1.1"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-	set_popularities = {
-			progressive = 14
-			nationalist = 10
-			social_democrat = 48
-			conservative = 6
-			social_liberal = 6
-			democratic_socialist = 16
-	}
-}
-if = {
+### 1936 Modifiers Setup ###
+IF = {
 	limit = {
-		has_dlc = "By Blood Alone"
+		has_dlc = "Gotterdammerung"
 	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_0
-		amount = 4
-		producer = COG
-		variant_name = "MiG-23"
+
+	# Set Flags
+	set_cosmetic_tag = COG_belgian_congo # The Belgian Congo
+	set_global_flag = COG_no_jft_done  # No focuses have yet to be completed in the JFT
+
+	### Set National Spirits ###
+	add_ideas = {
 	}
-	add_equipment_to_stockpile = {
-		type = small_plane_airframe_1
-		amount = 2
-		producer = COG
-		variant_name = "Su-25"
+
+	### Set dynamic modifiers ###
+	add_dynamic_modifier = {
+		modifier = COG_force_publique
 	}
-	add_equipment_to_stockpile = {
-		type = small_plane_airframe_0
-		amount = 6
-		producer = COG
-		variant_name = "Mirage 5"
+
+	# The Force Publique Modifier
+	set_variable = { BEL.COG_force_publique_army_leader_cost_factor = 1.0 }
+	set_variable = { BEL.COG_force_publique_acclimatization_hot_climate_gain_factor = 0.15 }
+	set_variable = { BEL.COG_force_publique_command_power_gain_mult = -0.5 }
+	set_variable = { BEL.COG_force_publique_max_command_power = -50 }
+	set_variable = { BEL.COG_force_publique_army_core_defence_factor = 0.05 }
+	set_variable = { BEL.COG_force_publique_equipment_capture_factor = 0.1 }
+	set_variable = { BEL.COG_force_publique_supply_consumption_factor = -0.05 }
+	set_variable = { BEL.COG_force_publique_resistance_target = -0.05 }
+	set_variable = { BEL.COG_force_publique_autonomy_gain = -0.2 }
+	set_variable = { BEL.COG_force_publique_conscription_factor = 0 }
+	set_variable = { BEL.COG_force_publique_army_core_attack_factor = 0 }
+	set_variable = { BEL.COG_force_publique_army_attack_factor = 0 }
+	set_variable = { BEL.COG_force_publique_army_defence_factor = 0 }
+	set_variable = { BEL.COG_force_publique_conscription = 0 }
+	set_variable = { BEL.COG_force_publique_air_training_xp_gain_factor = 0 }
+	set_variable = { BEL.COG_force_publique_production_speed_air_base_factor = 0 }
+	set_variable = { BEL.COG_force_publique_experience_loss_factor = 0 }
+	set_variable = { BEL.COG_force_publique_army_morale_factor = 0 }
+
+	# The Model Colony Modifier
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_political_power_factor = -0.1 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_war_support_factor = -0.05 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_production_speed_buildings_factor = 0.03 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_democratic_drift = 0.01 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_autonomy_gain_global_factor = 0.00 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_research_speed_factor = 0.01 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_consumer_goods_factor = 0.0 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_local_resources_factor = 0.0 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_stability_factor = 0.0 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_production_speed_industrial_complex_factor = 0.0 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_autonomy_gain = 0.0 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_trade_laws_cost_factor = 0.0 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_production_speed_infrastructure_factor = 0.0 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_production_speed_supply_node_factor = 0.0 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_industrial_capacity_dockyard = 0.0 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_cic_to_overlord_factor = 0.0 }
+	set_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_mic_to_overlord_factor = 0.0 }
+
+	# The Armée Nationale Congolaise Modifier
+	set_variable = { COG_armee_nationale_congolaise_modifier_army_leader_cost_factor = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_acclimatization_hot_climate_gain_factor = 0.0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_command_power_gain_mult = 0.0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_max_command_power = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_army_core_defence_factor = 0.0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_equipment_capture_factor = 0.0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_supply_consumption_factor = 0.0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_resistance_target = 0.0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_autonomy_gain = 0.0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_conscription_factor = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_army_core_attack_factor = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_army_attack_factor = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_army_defence_factor = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_conscription = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_air_training_xp_gain_factor = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_production_speed_air_base_factor = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_experience_loss_factor = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_army_morale_factor = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_experience_gain_navy = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_spotting_chance = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_experience_gain_air = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_experience_gain_army = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_recon_factor = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_ground_attack_factor = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_industrial_capacity_factory = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_army_org_factor = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_non_core_manpower = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_cas_damage_reduction = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_dig_in_speed_factor = 0 }
+	set_variable = { COG_armee_nationale_congolaise_modifier_training_time_factor = 0 }
+
+}
+
+# Starting Convoys
+set_convoys = 5
+
+# Hiring Characters 
+IF = {
+	limit = {
+		has_dlc = "Gotterdammerung"
+	}
+
+	# Recruiting Characters
+	recruit_character = COG_pierre_ryckmans
+	recruit_character = COG_joseph_kasa_vubu
+	recruit_character = COG_cyrille_adoula
+	recruit_character = COG_justin_kokolo
+	recruit_character = COG_louis_bobozo
+	recruit_character = COG_gerard_greindl
+	recruit_character = COG_paul_ermens
+	recruit_character = COG_auguste_gilliaert
+	recruit_character = COG_emile_janssens
+	recruit_character = COG_frederic_vandewalle
+	recruit_character = COG_joseph_beernaert
+	recruit_character = COG_armand_huyghe
+	recruit_character = COG_leopold_de_koninck
+	recruit_character = COG_charles_tombeur
+	recruit_character = COG_fredrik_olsen
+	recruit_character = COG_joris_six
+	recruit_character = COG_simon_kimbangu
+	recruit_character = COG_marcel_maquet
+	recruit_character = COG_alexandre_safiannikoff
+	recruit_character = COG_robert_de_muelenaere
+	recruit_character = COG_jean_bolikango
+	recruit_character = COG_patrice_lumumba
+	recruit_character = COG_joseph_ileo
+	recruit_character = COG_isaac_kalonji
+	recruit_character = COG_pedro_vii_alfonso
+	recruit_character = COG_mbop_mabiinc_mambeky
+	recruit_character = COG_moe_poaty_iii
+	recruit_character = COG_cristophe_gbenye
+	recruit_character = RWA_yuhi_musinga
+	recruit_character = COG_eugene_jungers
+	recruit_character = COG_auguste_tilkens
+	recruit_character = BEL_albert_de_vleeschauwer
+
+	# Adding the Belgian Minister of Colonies as a locked advisor
+}
+
+# Setup 1936 politics 
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 80
+	democratic = 20
+}
+
+### The 1939 Scenario ###
+1939.1.1 = {
+	
+	## Without the DLC (They won't exist but for if they are released) ###
+	IF = {
+		limit = {
+			NOT = {
+				has_dlc = "Gotterdammerung"
+			}
+		}
+		#generic focuses
+		complete_national_focus = army_effort
+		complete_national_focus = equipment_effort
+		complete_national_focus = motorization_effort
+		complete_national_focus = aviation_effort
+		complete_national_focus = naval_effort
+		complete_national_focus = flexible_navy
+		complete_national_focus = industrial_effort
+		complete_national_focus = construction_effort
+		complete_national_focus = production_effort
+	}
+	IF = { ## With the DLC ##
+		limit = {
+			has_dlc = "Gotterdammerung"
+		}
+
+		set_oob = "COG_1939"
+
+		# Ideology and Politics 
+		set_politics = {
+			ruling_party = neutrality
+			last_election = "1936.1.1"
+			election_frequency = 48
+			elections_allowed = no
+		}
+		set_popularities = {
+			neutrality = 70
+			democratic = 25
+			fascism = 0
+			communism = 5
+		}
+
+		add_political_power = 600
+		add_command_power = 50
+
+		# ONES THAT CAN JUST BE COMPLETED NORMALLY
+		complete_national_focus = COG_governor_general_pierre_ryckmans
+		complete_national_focus = CONGO_belgian_congo
+		complete_national_focus = CONGO_rawji_group
+		complete_national_focus = CONGO_the_heart_of_africa
+		complete_national_focus = COG_invest_in_urban_centers
+		complete_national_focus = COG_strengthen_the_banque_du_congo_belge
+		complete_national_focus = COG_cooperate_with_the_comite_special_du_katanga
+		complete_national_focus = COG_establish_new_sabena_air_routes
+		complete_national_focus = COG_closer_cooperation_with_eugene_jungers
+		complete_national_focus = COG_uplift_the_apostolic_vicar_of_leopoldville
+		complete_national_focus = COG_contract_the_empain_group
+		complete_national_focus = COG_promote_marcel_maquet_to_provincial_commisioner
+		complete_national_focus = CONGO_congo_army
+		complete_national_focus = CONGO_belgian_officer_corps
+		complete_national_focus = CONGO_ccci 
+		complete_national_focus = CONGO_regional_specialization
+		complete_national_focus = COG_improve_colonial_lawmaking
+		complete_national_focus = CONGO_bakwanga_mine
+		complete_national_focus = CONGO_societe_miniere_de_bakwanga
+
+		# ONES THAT HAVE TO BE HANDELED MANUALLY
+		unlock_national_focus = COG_allow_local_autonomy
+		unlock_national_focus = CONGO_jungle_industry
+
+		add_stability = 0.05
+		every_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+
+		# Hires Eugene Jungers by default
+
+	}
+	
+	# Technically won't matter if you have the DLC or not for this
+	set_technology = {
+
+		#weaponry and army
+		infantry_weapons1 = 1
+		support_weapons = 1
+		motorised_infantry = 1
+		tech_recon = 1
+		tech_logistics_company = 1
+		tech_field_hospital = 1
+		antitank1 = 1
+		interwar_artillery = 1
+
+		#doctrines
+		grand_battle_plan = 1
+		trench_warfare = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		fuel_silos = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		excavation1 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
 	}
 }
+
+
+
+
+
+
+
 

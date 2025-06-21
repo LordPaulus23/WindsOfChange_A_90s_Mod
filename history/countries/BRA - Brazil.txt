@@ -1,602 +1,535 @@
-﻿capital = 505
+﻿capital = 500
 
-oob = "BRA_2000"
-if = {
-	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "BRA_2000_naval_mtg"
-	else = {
-		set_naval_oob = "BRA_2000_naval_legacy"
+
+oob = "BRA_1936"
+every_core_state = {
+	ROOT = {
+		add_to_array = { cores_at_game_start = PREV }
 	}
 }
-
-set_research_slots = 4
-set_convoys = 150
-set_stability = 0.6
-
-set_country_flag = country_language_portuguese
-
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-	set_technology = {
-		CAS1 = 1
-		CAS2 = 1
-		cv_CAS1 = 1
-		cv_CAS2 = 1
-		fighter1 = 1
-		fighter2 = 1
-		cv_fighter1 = 1
-		cv_fighter2 = 1
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-		naval_bomber3 = 1
-		cv_naval_bomber1 = 1
-		cv_naval_bomber2 = 1
-		cv_naval_bomber3 = 1
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
-		#scout_plane1 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	#tech
-	set_technology = {
-		iw_small_airframe = 1
-		basic_small_airframe = 1
-		iw_medium_airframe = 1
-		basic_medium_airframe = 1
-		iw_heli_airframe = 1
-		iw_naval_airframe = 1
-		basic_naval_airframe = 1
-		iw_large_airframe = 1
-		basic_large_airframe = 1
-		aa_lmg = 1
-		Cold_war_cas = 1
-		engines_1 = 1
-		air_misc = 1
-		#scout_plane1 = 1
-	}
-	#varients
-	#CAS
-	create_equipment_variant = {
-		name = "Mirage 5" 
-		type = small_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = small_bomb_bay
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
+IF = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "BRA_1936_air_bba"
+	ELSE = {
+		set_air_oob = "BRA_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			CAS1 = 1
 		}
 	}
-	#Multirole
-	create_equipment_variant = {
-		name = "F-5 Tiger II"
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = rocket_pod
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-			special_type_slot_2 = plane_lighten_materials
-		}
-		icon = "GFX_F-5_Tiger_II_medium"
-	}
 }
-if = {
+recruit_character = BRA_getulio_vargas
+###############################################################################
+# ToA
+###############################################################################
+IF = {
 	limit = {
-		NOT = { has_dlc = "No Step Back" }
+		has_dlc = "Trial of Allegiance"
 	}
-	set_technology = {
-	main_battle_tank1 = 1
-	main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	light_tank1 = 1
-	mechanised_infantry1 = 1
-	nonsnb_technicality_tech = 1
-	light_mechanized_infantry1 = 1
-	light_mechanized_infantry2 = 1
-	mechanised_infantry2 = 1
+	set_country_flag = BRA_toa_DLC
+	}
+
+	every_owned_state = {
+		limit = {
+			OR = {
+				has_state_category = wasteland
+				has_state_category = pastoral
+				has_state_category = rural
+				#TODO_JUNO: Check states below are correct after map changes implemented
+				state = 498
+				state = 499
+			}
+			NOT = {
+				state = 961
+				state = 962
+				state = 963
+				state = 964
+				state = 965
+				state = 966
+				state = 967
+				state = 968
+				state = 496
+			}
+		}
+
+		# Neglected State Modifier
+		set_variable = { BRA_state_development_production_speed = -0.4 }
+		set_variable = { BRA_state_development_local_building_slots_factor = -0.4 }
+		set_variable = { BRA_state_development_local_factories = -0.4 }
+		set_variable = { BRA_state_development_state_resources_factor = -0.4 }
+
+		add_dynamic_modifier = {
+			modifier = BRA_neglected_state_dynamic_modifier
+		}
+	}
+
+	every_owned_state = {
+		limit = {
+			OR = {
+				state = 498
+				state = 499
+				state = 935
+				state = 936
+				state = 937
+			}
+		}
+		add_dynamic_modifier = {
+			modifier = BRA_cangaceiro_state
+		}
+	}
+
+	JUNO_set_shared_military_branch_defaults = yes
+
+	# Undiversified Economy Modifier
+	set_variable = { BRA_economy_production_efficiency_gain_factor = -0.2 }
+	set_variable = { BRA_economy_production_max_efficiency_factor = -0.2 }
+	set_variable = { BRA_economy_industrial_capacity_factor = -0.2 }
+	
+	set_variable = { BRA_weak_government_stability_factor = -0.15 }
+	set_variable = { BRA_weak_government_pp_factor = -0.2 }
+	set_variable = { BRA_weak_government_neutrality_factor = 0.02 }
+	set_variable = { BRA_weak_government_command_power_factor = -0.4}
+
+	set_variable = { BRA_coup_stability_factor = -0.05 }
+	set_variable = { BRA_coup_communism_factor = 0.05 }
+	set_variable = { BRA_coup_democratic_factor = 0 }
+	set_variable = { BRA_coup_fascism_factor = 0 }
+	set_variable = { BRA_coup_neutrality_factor = 0 }
+
+	# Estado Novo Modifier
+	set_variable = { BRA_estado_novo_stability_factor = 0.1 }
+	set_variable = { BRA_estado_novo_fascism_factor = 0 }
+	set_variable = { BRA_estado_novo_communism_factor = 0 }
+	set_variable = { BRA_estado_novo_democratic_factor = 0 }
+	set_variable = { BRA_estado_novo_fascism_factor = 0 }
+	set_variable = { BRA_estado_novo_neutrality_factor = 0.2 }
+	set_variable = { BRA_estado_novo_production_speed_buildings_factor = 0 }
+	set_variable = { BRA_estado_novo_war_support_factor = 0 }
+	set_variable = { BRA_estado_novo_recruitable_population_factor = 0 }
+	set_variable = { BRA_estado_novo_consumer_goods_factor = 0 }
+	set_variable = { BRA_estado_novo_political_power_factor = 0 }
+	set_variable = { BRA_estado_novo_production_factory_max_efficiency_factor = 0 }
+	set_variable = { BRA_estado_novo_industrial_capacity_factory = 0 }
+	set_variable = { BRA_estado_novo_industrial_capacity_dockyard = 0 }
+	set_variable = { BRA_estado_novo_production_speed_arms_factory_factor = 0 }
+	set_variable = { BRA_estado_novo_production_speed_dockyard_factor = 0 }
+	set_variable = { BRA_estado_novo_production_speed_industrial_complex_factor = 0 }
+
+	# Estado Moderno Modifier
+	set_variable = { BRA_estado_moderno_stability_factor = 0 }
+	set_variable = { BRA_estado_moderno_neutrality_factor = 0 }
+	set_variable = { BRA_estado_moderno_communism_factor = 0 }
+	set_variable = { BRA_estado_moderno_democratic_factor = 0 }
+	set_variable = { BRA_estado_moderno_fascism_factor = 0.2 }
+	set_variable = { BRA_estado_moderno_production_speed_buildings_factor = 0 }
+	set_variable = { BRA_estado_moderno_war_support_factor = 0 }
+	set_variable = { BRA_estado_moderno_recruitable_population_factor = 0 }
+	set_variable = { BRA_estado_moderno_consumer_goods_factor = 0 }
+	set_variable = { BRA_estado_moderno_political_power_factor = 0 }
+	set_variable = { BRA_estado_moderno_production_factory_max_efficiency_factor = 0 }
+	set_variable = { BRA_estado_moderno_industrial_capacity_factory = 0 }
+	set_variable = { BRA_estado_moderno_industrial_capacity_dockyard = 0 }
+	set_variable = { BRA_estado_moderno_production_speed_arms_factory_factor = 0 }
+	set_variable = { BRA_estado_moderno_production_speed_dockyard_factor = 0 }
+	set_variable = { BRA_estado_moderno_production_speed_industrial_complex_factor = 0 }
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1934.7.17"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+
+	set_popularities = {
+		democratic = 50
+		neutrality = 25
+		fascism = 15
+		communism = 10
+	}
+
+	set_party_name = {
+		ideology = neutrality
+		name = BRA_military_party
+		long_name = BRA_military_party_long
+	}
+
+	set_party_name = {
+		ideology = democratic
+		name = BRA_provisional_government
+		long_name = BRA_provisional_government_long
+	}
+
+	country_event = {
+		id = JUNO_brazil_events.153
+		days = 30
+		random_days = 15
+	}
+	#Political
+	recruit_character = BRA_armando_de_sales_oliveira
+	recruit_character = BRA_domingos_bras
+	recruit_character = BRA_jose_linhares
+	recruit_character = BRA_benedito_valadres
+	recruit_character = BRA_alfred_agache
+	recruit_character = BRA_joao_neves_da_fortuna
+	recruit_character = BRA_joao_marques_de_reis
+	recruit_character = BRA_francisco_campos
+	recruit_character = BRA_filinto_muller
+	recruit_character = BRA_indigenous_council
+	recruit_character = BRA_lindolfo_collor
+	recruit_character = BRA_jose_americo_de_almeida
+	recruit_character = BRA_anisio_teixeira
+	recruit_character = BRA_integralist_militia_general
+	recruit_character = BRA_pedro_henrique
+	recruit_character = BRA_pedro_de_alcantara
+	recruit_character = BRA_alianca_nacional_libertadora_council
+	recruit_character = BRA_minervino_de_oliveira
+	recruit_character = BRA_olga_benario_prestes
+	recruit_character = BRA_apolonio_de_carvalho
+	recruit_character = BRA_war_industrialist
+	recruit_character = BRA_captain_of_industry
+	recruit_character = BRA_leoncio_basbaum
+	recruit_character = BRA_geremia_lunarelli
+	recruit_character = BRA_henry_ford
+	recruit_character = BRA_gustavo_barroso
+	recruit_character = BRA_miguel_reale
+	recruit_character = BRA_oliveria_viana
+	#Army
+	recruit_character = BRA_augusto_fragoso
+	recruit_character = BRA_alvaro_de_castro
+	recruit_character = BRA_gois_monterio
+	recruit_character = BRA_euclides_zenobio_da_costa
+	recruit_character = BRA_jose_pessoa_cavalcanti_de_albuquerque
+	recruit_character = BRA_henrique_teixeira_lott
+	recruit_character = BRA_pereira_de_oliveira
+	recruit_character = BRA_eduardo_guedes
+	recruit_character = BRA_cristovao_de_castro
+	recruit_character = BRA_milton_de_freitas
+	recruit_character = BRA_candido_mariano
+	recruit_character = BRA_olympio_falconiere_da_cunha
+	recruit_character = BRA_floriano_de_lima_brayner
+	#Navy
+	recruit_character = BRA_henrique_aristides_guilhem
+	recruit_character = BRA_silvio_de_noronha
+	recruit_character = BRA_protogenes_guimaraes
+	recruit_character = BRA_renato_de_almeida_guillobel
+	recruit_character = BRA_alvaro_alberto_da_motta_e_silva
+	#Cangaco
+	recruit_character = BRA_lampiao
+
+}
+IF = {
+	limit = {
+		NOT = {
+			has_dlc = "Trial of Allegiance"
+		}
+	}
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1934.7.17"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		democratic = 50
+		neutrality = 25
+		fascism = 15
+		communism = 10
 	}
 }
-if = {
+###############################################################################
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_trucks = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	basic_train = 1	
+}
+
+IF = {
 	limit = {
 		has_dlc = "No Step Back"
 	}
 	set_technology = {
-		IFV_chassis_80s = 1
-		IFV_chassis = 1
-		technicality_tech = 1
-		light_mechanized_infantry1 = 1
-		light_mechanized_infantry2 = 1
-		main_battle_tank_chassis = 1
-		#main_battle_tank_chassis_00s = 1
-	}
-	create_equipment_variant = {
-		name = "Leopard 1"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			#turret_type_slot = tank_modern_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			special_type_slot_1 = ergo_old
-			optics_slot = tank_optics_1
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		icon = "GFX_GER_main_battle_tank1_medium"
-	}
-	create_equipment_variant = {
-		name = "M60A3 TTS"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			#turret_type_slot = tank_modern_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_USA_main_battle_tank1_medium"
-	}
-	create_equipment_variant = {
-		name = "M113"
-		type = light_tank_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_heavy_machine_gun
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_MAC_mechanised_infantry3_medium"
-	}
-	create_equipment_variant = {
-		name = "EE-9 Cascavel"
-		type = light_tank_destroyer_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_auto_cannon
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_wheeled_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = main_ammo_bay
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = no
-		icon = "GFX_SOV_mechanised_infantry1_medium"
+		gwtank_chassis = 1
 	}
 }
-set_technology = {
-	## Infantry ##
-	infantry_weapons1 = 1
-	motorised_infantry = 1
-	infantry_rifle_upgrade = 1
-	support_weapons = 1
-	support_weapons2 = 1
-	night_vision = 1
-	body_armor = 1
-	camouflage = 1
-	marines = 1
-	tech_mountaineers = 1
-	paratroopers = 1
-	
-	## Support Companies ##
-	tech_support = 1
-	basic_train = 1
-	tech_engineers = 1
-	tech_recon = 1
-	tech_field_hospital = 1
-	tech_logistics_company = 1
-	tech_military_police = 1
-	tech_signal_company = 1
-	tech_maintenance_company = 1
-	
-	## Armor ##
-	#main_battle_tank1 = 1
-	#main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	#light_tank1 = 1
-	
-	#mechanised_infantry2 = 1
-	#light_mechanized_infantry1 = 1
-	#light_mechanized_infantry2 = 1
-	amphibious_mechanized_infantry1 = 1
-	
-	## Artillery ##
-	coldwar_artillery = 1
-	gw_artillery = 1
-	interwar_antitank = 1
-	interwar_antiair = 1
- 	rocket_artillery = 1
-	sp_antiair0 = 1 
-	coldwar_antiair = 1
-	coldwar_antitank = 1
-	 
-	 
-	sp_artillery1 = 1
-	
-	## Air ##
-	# CAS1 = 1
-	# CAS2 = 1
-	# cv_CAS1 = 1
-	# cv_CAS2 = 1
-	# fighter1 = 1
-	# fighter2 = 1
-	# cv_fighter1 = 1
-	# cv_fighter2 = 1
-	# naval_bomber1 = 1
-	# naval_bomber2 = 1
-	# cv_naval_bomber1 = 1
-	# cv_naval_bomber2 = 1
-	# strategic_bomber1 = 1
-	# strategic_bomber2 = 1
-	# #scout_plane1 = 1
-	
-	## Engineering ##
-	electronic_mechanical_engineering = 1
-	radio = 1
-	
-	## Industry ##
-	fuel_silos = 1
-	fuel_refining = 1
-}
-
-if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
+IF = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
 	set_technology = {
+		gwtank = 1
+	}
+}
+IF = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns"}
+	}
+	set_technology = {
+		early_submarine = 1
 		early_destroyer = 1
-		basic_destroyer = 1
 		early_light_cruiser = 1
 		early_heavy_cruiser = 1
-		early_carrier = 1
-		basic_carrier = 1
-		early_submarine = 1
+		early_battleship = 1
 		transport = 1
 	}
+	set_naval_oob = "BRA_1936_naval_legacy"
 }
-if = {
-	limit = { has_dlc = "Man the Guns" }
+IF = {
+	limit = { has_dlc = "Man the Guns"}
 	set_technology = {
-		early_ship_hull_light = 1
-		basic_ship_hull_light = 1
-		early_ship_hull_cruiser = 1
-		basic_ship_hull_cruiser = 1
-		early_ship_hull_carrier = 1
-		basic_ship_hull_carrier = 1
-		early_ship_hull_submarine = 1
-		smoke_generator = 1
-		sonar = 1
-		basic_depth_charges = 1
-		improved_airplane_launcher = 1
-		basic_cruiser_armor_scheme = 1
-		basic_torpedo = 1
-		basic_battery = 1
-		basic_light_battery = 1
-		basic_medium_battery = 1
-		basic_secondary_battery = 1
-		mtg_transport = 1
 		basic_naval_mines = 1
 		submarine_mine_laying = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_battery = 1
+		basic_torpedo = 1
+		mtg_transport = 1
 	}
+	set_naval_oob = "BRA_1936_naval"	
 }
 
-add_ideas = {
-	centralization_federal
-	economy_tax_high
-	immigration_policy_loose_regulations
-	population_growth_steady
-	idea_mercosur_member
-}
+set_country_flag = monroe_doctrine
+recruit_character = BRA_plinio_salgado
+recruit_character = BRA_luis_carlos_prestes
+#recruit_character = BRA_armando_sales
+recruit_character = BRA_eurico_gaspar_dutra
+recruit_character = BRA_mascarenhas_de_morais
+recruit_character = BRA_augusto_rademaker
+recruit_character = BRA_agliberto_vieira
+recruit_character = BRA_eduardo_gomes
+recruit_character = BRA_salgado_filho
+recruit_character = BRA_floriano_peixoto
+#recruit_character = BRA_aristides_guilhem
+#recruit_character = BRA_joao_neves_da_fontoura
+recruit_character = BRA_epaminondas_dos_santos
+recruit_character = BRA_moreira_lima
+recruit_character = BRA_nero_fiuza_de_castro
+recruit_character = BRA_artur_da_costa_e_silva
+recruit_character = BRA_ismael_motta_paes
+recruit_character = BRA_jorge_martins
+recruit_character = BRA_newton_cavalcanti
+recruit_character = BRA_afranio_de_mello_franco
+recruit_character = BRA_washington_luis_pereira
+recruit_character = BRA_osvaldo_aranha
+recruit_character = BRA_arlindo_veiga_dos_santos
+recruit_character = BRA_random_army_chief
 
-set_politics = {
-	ruling_party = social_democrat
-	last_election = "1998.10.4"
-	election_frequency = 48
-	elections_allowed = yes
-}
+1939.1.1 = {
 
-set_popularities = {
-    fascist = 1
-    reactionary = 1
-    conservative = 20
-    market_liberal = 11
-    social_liberal = 16
-    social_democrat = 30
-    progressive = 1
-    democratic_socialist = 18
-    communist = 2
-}
-recruit_character = BRA_fernando_h._cardoso
-recruit_character = BRA_luiz_inacio_lula_da_silva
-recruit_character = BRA_eneas_carneiro
-recruit_character = BRA_alfredo_syrkis
-recruit_character = BRA_marco_maciel
-recruit_character = BRA_jader_barbalho
-recruit_character = BRA_luiz_of_orleansbraganza
-recruit_character = BRA_levy_fidelix
-recruit_character = BRA_renato_rabelo
-recruit_character = BRA_ciro_nogueira
-recruit_character = BRA_fernando_azevedo_e_silva
-recruit_character = BRA_araken_de_albuquerque
-recruit_character = BRA_manoel_luiz_narvaz_pafiadache
-recruit_character = BRA_joao_camilo_pires_de_campos
-recruit_character = BRA_juarez_aparecido_de_paula_cunha
-recruit_character = BRA_marco_antonio_de_farias
-recruit_character = BRA_nivaldo_luis_rossato
-recruit_character = BRA_joaquim_maia_brandao_junior
-recruit_character = BRA_antonio_miotto
-recruit_character = BRA_artur_costa_moura
-recruit_character = BRA_gerson_menandro_garcia_de_freitas
-recruit_character = BRA_luiz_carlos_pereira_gomes
-recruit_character = BRA_mauro_cesar_lourena_cid
-recruit_character = BRA_claudio_coscia_moura
-recruit_character = BRA_valerio_stumpf_trindade
-recruit_character = BRA_walmir_almada_schneider_filho
-recruit_character = BRA_carlos_alberto_mansur
-recruit_character = BRA_joarez_alves_pereira_junior
-recruit_character = BRA_marcio_roland_heise
-recruit_character = BRA_luciano_jose_penna
-recruit_character = BRA_marco_antonio_freire_gomes
-recruit_character = BRA_antonio_carlos_machado_faillace
-recruit_character = BRA_antonio_maxwell_de_oliveira_eufrasio
-recruit_character = BRA_kleber_nunes_de_vasconcellos
-recruit_character = BRA_sergio_schwingel
-recruit_character = BRA_achilles_furlan_neto
-recruit_character = BRA_adilson_carlos_katibe
-recruit_character = BRA_alessio_oliveira_da_silva
-recruit_character = BRA_wilson_mendes_lauria
-recruit_character = BRA_hertz_pires_do_nascimento
-recruit_character = BRA_lourenco_willian_da_silva_ribeiro_pinho
-recruit_character = BRA_jorge_roberto_lopes_fossi
-recruit_character = BRA_gustavo_henrique_dutra_de_menezes
-recruit_character = BRA_fernando_telles_ferreira_bandeira
-recruit_character = BRA_heber_garcia_portella
-recruit_character = BRA_carlos_andre_alcantara_leite
-recruit_character = BRA_jayme_octavio_de_alexandre_queiroz
-recruit_character = BRA_carlos_alberto_dahmer
-recruit_character = BRA_francisco_humberto_montenegro_junior
-recruit_character = BRA_ricardo_rodrigues_canhaci
-recruit_character = BRA_sergio_luiz_tratz
-recruit_character = BRA_jose_eduardo_leal_de_oliveira
-recruit_character = BRA_joao_denison_maia_correia
-recruit_character = BRA_daniel_de_almeida_dantas
-recruit_character = BRA_marcelo_arantes_guedon
-recruit_character = BRA_fernando_antonio_de_siqueira_ribeiro
-recruit_character = BRA_jose_carlos_de_nardi
-recruit_character = BRA_eduardo_villas_boas
-recruit_character = BRA_francisco_carlos_modesto
-recruit_character = BRA_mauro_sinott_lopes
-recruit_character = BRA_carlos_alberto_dos_santos_cruz
-recruit_character = BRA_floriano_peixoto_vieira_neto
-recruit_character = BRA_enzo_martins_peri
-recruit_character = BRA_edison_leal_pujol
-recruit_character = BRA_eduardo_bacellar_leal_ferreira
-recruit_character = BRA_julio_soares_de_moura_neto
-recruit_character = BRA_victor_cardoso_gomes
-recruit_character = BRA_glauco_castilho_dallantonia
-recruit_character = BRA_liseo_zampronio
-recruit_character = BRA_eduardo_leal_ferreira
-recruit_character = BRA_ademir_sobrinho
-recruit_character = BRA_mario_osorio
-recruit_character = BRA_benjamin_de_braganca
-
-2014.10.26 = {
-
-	set_popularities = {
-		nationalist = 1
-		reactionary = 26
-		monarchist = 1
-		conservative = 13
-		market_liberal = 6
-		social_liberal = 12
-		social_democrat = 16
-		progressive = 1
-		democratic_socialist = 21
-		communist = 3
-	}
-	set_politics = {	
-		ruling_party = market_liberal
-		last_election = "2014.10.26"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-}
-### VARIANTS ###
-# 2000 Start #
-if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
+	add_political_power = 1198
+	add_command_power = 100
 	
+	#Setting up which focuses are to be coplete upon start
+	IF = {
+		limit = {
+			has_dlc = "Trial of Allegiance"
+		}
+
+		complete_national_focus = BRA_tribunal_de_seguranca_nacional
+		complete_national_focus = BRA_coffee_crisis_aftermath
+		complete_national_focus = BRA_ensure_continued_military_support #35
+		complete_national_focus = BRA_work_with_the_integralists #35
+		complete_national_focus = SMB_army #35
+		complete_national_focus = SMB_navy #35
+		complete_national_focus = BRA_desenvolvimentismo
+		complete_national_focus = BRA_cohen_plan
+		complete_national_focus = BRA_estado_novo #35
+		complete_national_focus = BRA_promote_resource_extraction
+		complete_national_focus = BRA_the_polaca
+		complete_national_focus = BRA_stimulate_the_civilian_economy
+		complete_national_focus = BRA_radio_nacional
+		complete_national_focus = BRA_deal_with_the_cangaceiro
+		complete_national_focus = BRA_establish_psad
+		complete_national_focus = BRA_autarky 
+		complete_national_focus = BRA_departamendo_de_propaganda
+		complete_national_focus = BRA_tech_slot_1
+
+		ELSE = {
+			#generic focuses
+			complete_national_focus = army_effort
+			complete_national_focus = equipment_effort
+			complete_national_focus = motorization_effort
+			complete_national_focus = aviation_effort
+			complete_national_focus = naval_effort
+			complete_national_focus = large_navy
+			complete_national_focus = industrial_effort
+			complete_national_focus = construction_effort
+			complete_national_focus = production_effort
+		}
+	}
+
+# no need to manually add in ideas and modifiers, I have tried and it is not needed, in fact, adding them in does nothing and adding to variables adds double. I write this here to serve as a note to future me, and other rookie CDs, it is not needed. You need not do it. The ideas, modifiers and such are set automatically.
+	
+	oob = "BRA_1939"
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "BRA_1939_air_bba"
+		else = {
+			set_air_oob = "BRA_1939_air_legacy"
+		}
+	}
+	set_technology = {
+		interwar_artillery = 1
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+		
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_silos = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+	IF = {
+		limit = { NOT = { has_dlc = "Man the Guns" } }
+		set_technology = {
+			basic_submarine = 1
+			basic_destroyer = 1
+		}
+		set_naval_oob = "BRA_1939_naval_legacy"
+	}
+	IF = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			basic_ship_hull_light = 1
+		}
+		set_naval_oob = "BRA_1939_naval"
+	}
 }
-if = {
-	limit = { has_dlc = "Man the Guns" }
-	## Corvettes ##
-	create_equipment_variant = { #Corvette 1
-		name = "Imperial Marinheiro class"
-		type = ship_hull_light_1
+
+set_convoys = 40
+
+1939.1.1 = {
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1934.7.17"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		neutrality = 100
+	}
+}
+
+IF = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	create_equipment_variant = {
+		name = "Minas Geras Class"
+		type = ship_hull_heavy_1
+		name_group = BRA_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = ship_secondaries_1
+			rear_1_custom_slot = ship_heavy_battery_1
+		}
+	}
+	create_equipment_variant = {
+		name = "Bahia Class"
+		type = ship_hull_cruiser_1
+		name_group = BRA_CL_HISTORICAL
 		parent_version = 0
 		modules = {
 			fixed_ship_battery_slot = ship_light_battery_1
 			fixed_ship_anti_air_slot = ship_anti_air_1
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
 			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = ship_light_battery_1
+			rear_1_custom_slot = empty
+		}
+	}
+	create_equipment_variant = {
+		name = "Para Class"
+		type = ship_hull_light_1
+		name_group = BRA_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
 			fixed_ship_engine_slot = light_ship_engine_1
 			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_torpedo_1
-			rear_1_custom_slot = ship_depth_charge_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
 		}
 		obsolete = yes
 	}
-	create_equipment_variant = { #Corvette 2
-		name = "Inhaúma class"
-		type = ship_hull_light_2
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_2
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_2
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_torpedo_1
-			rear_1_custom_slot = ship_depth_charge_1
-		}
-		obsolete = no
-	}
-	## Frigates ##
-	create_equipment_variant = { #Frigate 1
-		name = "Niterói class Frigate"
-		type = ship_hull_cruiser_1
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = ship_anti_air_1
-			rear_1_custom_slot = ship_light_medium_battery_1
-		}
-		obsolete = no
-	}
-	## Destroyers ##
-	create_equipment_variant = { #Destroyer 1
-		name = "Pará class Destroyer"
-		type = ship_hull_cruiser_1
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = ship_radar_1
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = ship_anti_air_1
-			rear_1_custom_slot = ship_medium_battery_1
-		}
-		obsolete = no
-	}
-	## Carriers ##
-	create_equipment_variant = { #Carrier 1 #Not needed for variant, just use type
-		name = "Colossus-class"
-		type = ship_hull_carrier_conversion_bb
-		parent_version = 0
-		modules = {
-			fixed_ship_deck_slot_1 = ship_deck_space
-			fixed_ship_deck_slot_2 = ship_deck_space
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_radar_slot = ship_radar_1
-			fixed_ship_engine_slot = carrier_ship_engine_1
-			fixed_ship_secondaries_slot = empty
-			mid_1_custom_slot = empty
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = { #Carrier 2
-		name = "Clemenceau class"
-		type = ship_hull_carrier_1
-		parent_version = 0
-		modules = {
-			fixed_ship_deck_slot_1 = ship_deck_space
-			fixed_ship_deck_slot_2 = ship_deck_space
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_radar_slot = ship_radar_1
-			fixed_ship_engine_slot = carrier_ship_engine_1
-			fixed_ship_secondaries_slot = empty
-			front_1_custom_slot = ship_deck_space
-		}
-		obsolete = no
-	}
-	## Submarines ##
-	create_equipment_variant = { #Diesel Sub 1
-		name = "Tupi class"
-		type = ship_hull_submarine_1
+	create_equipment_variant = {
+		name = "Humaytá Class"
+		type = ship_hull_submarine_2
+		name_group = BRA_SS_HISTORICAL
 		parent_version = 0
 		modules = {
 			fixed_ship_torpedo_slot = ship_torpedo_sub_1
-			fixed_ship_engine_slot = sub_ship_engine_1
-			rear_1_custom_slot = empty
+			fixed_ship_engine_slot = sub_ship_engine_2
+			rear_1_custom_slot = ship_mine_layer_sub
 		}
-		obsolete = no
 	}
 }
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-		add_equipment_to_stockpile = {
-			type = fighter_equipment_2
-			amount = 50
-			producer = USA
+
+# 1939 Start #
+1939.1.1 = {
+	IF = {
+		limit = {
+			has_dlc = "Man the Guns"
 		}
-		add_equipment_to_stockpile = {
-			type = CAS_equipment_2
-			amount = 48
-			producer = FRA
+		create_equipment_variant = {
+			name = "Tupi Class"
+			type = ship_hull_submarine_2
+			name_group = BRA_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_torpedo_slot = ship_torpedo_sub_1
+				fixed_ship_engine_slot = sub_ship_engine_1
+				rear_1_custom_slot = empty
+			}
 		}
-		add_equipment_to_stockpile = {
-			type = nav_bomber_equipment_3
-			amount = 7
-			producer = USA
-		}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_0
-		amount = 50
-		producer = BRA
-		variant_name = "F-5 Tiger II"
-	}
-	add_equipment_to_stockpile = {
-		type = small_plane_airframe_0
-		amount = 48
-		producer = BRA
-		variant_name = "Mirage 5"
 	}
 }

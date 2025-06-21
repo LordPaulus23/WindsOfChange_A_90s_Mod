@@ -1,634 +1,579 @@
-﻿capital = 847
+﻿capital = 278
 
-oob = "ARG_2000"
-if = {
+oob = "ARG_1936"
+
+IF = {
 	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "ARG_2000_naval_mtg"
-	else = {
-		set_naval_oob = "ARG_2000_naval_legacy"
+		set_naval_oob = "ARG_1936_naval_mtg"
+	ELSE = {
+		set_naval_oob = "ARG_1936_naval_legacy"
+	}
+}
+IF = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "ARG_1936_air_bba"
+		set_technology = {
+			iw_small_airframe = 1
+			aa_lmg = 1
+			engines_1 = 1
+			early_bombs = 1
+		}
+	ELSE = {
+		set_air_oob = "ARG_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			CAS1 = 1
+		}
 	}
 }
 
-set_research_slots = 4
-set_convoys = 260
-set_stability = 0.5
+every_core_state = {
+	ROOT = {
+		add_to_array = { cores_at_game_start = PREV }
+	}
+}
 
+# Crackdown on Corruption Modifier
+set_variable = { ARG_corruption_crackdown_stability_factor = 0.1 }
+set_variable = { ARG_corruption_crackdown_production_factory_max_efficiency_factor = 0.1 }
+set_variable = { ARG_corruption_crackdown_neutrality_factor = 0.02 }
+set_variable = { ARG_corruption_crackdown_fascism_factor = 0.02 }
+set_variable = { ARG_corruption_crackdown_war_support_factor = -0.1 }
 
-set_country_flag = country_language_spanish
+# Anti Corruption Modifier
+set_variable = { ARG_anti_corruption_stability_factor = 0.15 }
+set_variable = { ARG_anti_corruption_production_factory_max_efficiency_factor = 0.1 }
+set_variable = { ARG_anti_corruption_neutrality_factor = 0.02 }
+set_variable = { ARG_anti_corruption_democratic_factor = 0.03 }
+set_variable = { ARG_anti_corruption_war_support_factor = -0.2 }
 
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-	set_technology = {
-		CAS1 = 1
-		CAS2 = 1
-		cv_CAS1 = 1
-		cv_CAS2 = 1
-		fighter1 = 1
-		fighter2 = 1
-		cv_fighter1 = 1
-		cv_fighter2 = 1
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-		naval_bomber3 = 1
-		cv_naval_bomber1 = 1
-		cv_naval_bomber2 = 1
-		cv_naval_bomber3 = 1
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
-		#scout_plane1 = 1
-	}
+# Growing Nationalism Modifier
+set_variable = { ARG_growing_nationalism_fascism_drift = 0.05 } 
+set_variable = { ARG_growing_nationalism_recruitable_population_factor = 0.02 }
+set_variable = { ARG_growing_nationalism_stability_factor = 0.05 }
+set_variable = { ARG_growing_nationalism_war_support_factor = 0 }
+set_variable = { ARG_growing_nationalism_democratic_drift = -0.02 }
+set_variable = { ARG_growing_nationalism_political_power_factor = 0 }
+
+IF = {
+	# TODO JA, set this to the correct dlc!
+	limit = { has_dlc = "Trial of Allegiance" }
+
+	# Army modifier
+	JUNO_set_shared_military_branch_defaults = yes
+
 }
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	#tech
-	set_technology = {
-		iw_small_airframe = 1
-		basic_small_airframe = 1
-		iw_medium_airframe = 1
-		basic_medium_airframe = 1
-		iw_heli_airframe = 1
-		iw_naval_airframe = 1
-		basic_naval_airframe = 1
-		iw_large_airframe = 1
-		basic_large_airframe = 1
-		aa_lmg = 1
-		Cold_war_cas = 1
-		engines_1 = 1
-		air_misc = 1
-		#scout_plane1 = 1
-	}
-	#varients
-	#CAS
-	create_equipment_variant = {
-		name = "Mirage 5" 
-		type = small_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = small_bomb_bay
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-	}
-	#Multirole
-	create_equipment_variant = {
-		name = "Mirage III" 
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		obsolete = yes
-		icon = "GFX_FRA_fighter2_medium"
-	}
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-	main_battle_tank1 = 1
-	main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	light_tank1 = 1
-	mechanised_infantry1 = 1
-	nonsnb_technicality_tech = 1
-	light_mechanized_infantry1 = 1
-	light_mechanized_infantry2 = 1
-	mechanised_infantry2 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		IFV_chassis_80s = 1
-		IFV_chassis = 1
-		technicality_tech = 1
-		light_mechanized_infantry1 = 1
-		light_mechanized_infantry2 = 1
-		main_battle_tank_chassis = 1
-		main_battle_tank_chassis_80s = 1
-		main_battle_tank_chassis_00s = 1
-	}
-	create_equipment_variant = {
-		name = "VCTP"
-		type = light_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_auto_cannon
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			atgm_slot = tank_atgm_1
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 2
-			tank_nsb_engine_upgrade = 2
-		}
-		icon = "GFX_ARG_mechanised_infantry2_medium"
-	}
-	create_equipment_variant = {
-		name = "Tanque Argentino Mediano"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_ARG_main_battle_tank1_medium"
-	}
-	create_equipment_variant = {
-		name = "MT-LB"
-		type = light_tank_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_heavy_machine_gun
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_SOV_mechanised_infantry1_medium"
-	}
-	create_equipment_variant = {
-		name = "AMX-13" #50
-		type = light_tank_destroyer_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_ifv_small_cannon
-			#turret_type_slot = tank_medium_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			special_type_slot_1 = ergo_ifv_old
-			optics_slot = tank_optics_1
-			special_type_slot_4 = main_ammo_bay
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 2
-			tank_nsb_engine_upgrade = 5
-		}
-		icon = "GFX_light_tank1_medium"
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "SK-105 Kurassier" #100
-		type = light_tank_destroyer_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_auto_cannon
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = main_ammo_bay
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = no
-		icon = "GFX_AUS_light_tank1_medium"
-	}
-}
+
+# Starting tech
 set_technology = {
-	## Infantry ##
-	infantry_weapons1 = 1
-	motorised_infantry = 1
-	support_weapons = 1
-	night_vision = 1
-	body_armor = 1
-	camouflage = 1
-	marines = 1
+	infantry_weapons = 1
 	tech_mountaineers = 1
-	paratroopers = 1
-	
-	## Support Companies ##
-	tech_support = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	interwar_antiair = 1
 	basic_train = 1
-	tech_engineers = 1
-	tech_recon = 1
-	tech_field_hospital = 1
-	tech_logistics_company = 1
-	tech_military_police = 1
-	tech_maintenance_company = 1
-	
-	## Armor ##
-	#main_battle_tank1 = 1
-	#main_battle_tank2 = 1
-	#light_tank1 = 1
-	
-	#mechanised_infantry2 = 1
-	#light_mechanized_infantry1 = 1
-	#light_mechanized_infantry2 = 1
-	
-	## Artillery ##
-	coldwar_artillery = 1
-	coldwar_antiair = 1
-	coldwar_antitank = 1
- 	rocket_artillery = 1
-	sp_antiair0 = 1 
-	
-	## Air ##
-	# CAS1 = 1
-	# CAS2 = 1
-	# cv_CAS1 = 1
-	# fighter1 = 1
-	# fighter2 = 1
-	# cv_fighter1 = 1
-	# cv_fighter2 = 1
-	# naval_bomber1 = 1
-	# naval_bomber2 = 1
-	# cv_naval_bomber1 = 1
-	# cv_naval_bomber2 = 1
-	# strategic_bomber1 = 1
-	# strategic_bomber2 = 1
-	# #scout_plane1 = 1
-	
-	## Industry ##
-	fuel_silos = 1
-	fuel_refining = 1
 }
 
-if = {
+IF = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 	set_technology = {
-		early_destroyer = 1
-		basic_destroyer = 1
-		early_light_cruiser = 1
-		basic_light_cruiser = 1
-		early_heavy_cruiser = 1
-		basic_heavy_cruiser = 1
 		early_submarine = 1
-		basic_submarine = 1
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
 		transport = 1
 	}
 }
-if = {
+IF = {
 	limit = { has_dlc = "Man the Guns" }
 	set_technology = {
+		basic_naval_mines = 1
 		early_ship_hull_light = 1
 		basic_ship_hull_light = 1
-		early_ship_hull_cruiser = 1
-		basic_ship_hull_cruiser = 1
 		early_ship_hull_submarine = 1
 		basic_ship_hull_submarine = 1
-		smoke_generator = 1
-		sonar = 1
-		basic_depth_charges = 1
-		improved_airplane_launcher = 1
+		early_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_battery = 1
 		basic_cruiser_armor_scheme = 1
 		basic_torpedo = 1
-		basic_battery = 1
-		basic_light_battery = 1
-		basic_medium_battery = 1
-		basic_secondary_battery = 1
+		basic_depth_charges = 1
+		coastal_defense_ships = 1
 		mtg_transport = 1
-		basic_naval_mines = 1
-		submarine_mine_laying = 1
 	}
 }
 
-add_ideas = {
-	centralization_federal
-	economy_recession
-	economy_tax_high
-	population_growth_steady
-	idea_mercosur_member
+IF = {
+	limit = {
+		NOT = {
+			has_dlc = "Trial of Allegiance" 
+		}
+	}
+	recruit_character = ARG_agustin_pedro_justo
+	recruit_character = ARG_roberto_maria_ortiz
+	recruit_character = ARG_ramon_castillo
+	recruit_character = ARG_nimio_de_anquin
+	recruit_character = ARG_marcelo_t_de_alvear
+	recruit_character = ARG_fanny_edelman
+	recruit_character = ARG_arturo_rawson
+	recruit_character = ARG_juan_pistarini
+	recruit_character = ARG_uribaldi_diaz_brittenberg
+	recruit_character = ARG_edelmiro_julian_farrell
+	recruit_character = ARG_francisco_m_velez
+	recruit_character = ARG_jose_tamborni
+	recruit_character = ARG_hortensio_quijano
+	recruit_character = ARG_antonio_parodi
+	recruit_character = ARG_heriberto_la_galine
+	recruit_character = ARG_thomas_martinez
+	recruit_character = ARG_luis_podesta_costa
+	recruit_character = ARG_senor_hitler
+	recruit_character = ARG_manuel_a_rodriguez
+
+	ELSE_IF = {
+		limit = {
+			has_dlc = "Trial of Allegiance" 
+		}
+		recruit_character = ARG_agustin_pedro_justo
+		recruit_character = ARG_roberto_maria_ortiz
+		recruit_character = ARG_ramon_castillo
+		recruit_character = ARG_nimio_de_anquin
+		recruit_character = ARG_enrique_mosca
+		recruit_character = ARG_marcelo_t_de_alvear
+		recruit_character = ARG_victorio_codovilla
+		recruit_character = ARG_fanny_edelman
+		recruit_character = ARG_rodolfo_ghioldi
+		recruit_character = ARG_antonio_soto
+		recruit_character = ARG_arturo_rawson
+		recruit_character = ARG_juan_pistarini
+		recruit_character = ARG_alberto_teisaire
+		recruit_character = ARG_juan_peron
+		recruit_character = ARG_edelmiro_julian_farrell
+		recruit_character = ARG_manuel_a_rodriguez
+		recruit_character = ARG_pedro_s_casal
+		recruit_character = ARG_antonio_parodi
+		recruit_character = ARG_pedro_pablo_ramirez
+		recruit_character = ARG_eleazar_videla
+		recruit_character = ARG_manuel_maria_de_iriondo
+		recruit_character = ARG_senor_hitler
+		recruit_character = ARG_carlos_marquez
+		recruit_character = ARG_eduardo_avalos
+		recruit_character = ARG_juan_tonazzi
+		recruit_character = ARG_alberto_gilbert
+		recruit_character = ARG_diego_mason
+		recruit_character = ARG_benito_sueyro
+		recruit_character = ARG_leon_scasso
+		recruit_character = ARG_oscar_muratorio
+		recruit_character = ARG_edmundo_sustaita
+		recruit_character = ARG_basilio_pertine
+		recruit_character = ARG_bartolome_de_la_colina
+		recruit_character = ARG_segundo_storni
+		recruit_character = ARG_hugo_wast
+		recruit_character = ARG_raul_prebisch
+		#recruit_character = ARG_ezequiel_pedro_paz
+		recruit_character = ARG_julio_roca
+		recruit_character = ARG_honorio_pueyrredon
+		recruit_character = ARG_diogenes_taboada
+		recruit_character = ARG_guillermo_rothe
+		recruit_character = ARG_frederick_pinedo
+		recruit_character = ARG_jose_cantilo
+		recruit_character = ARG_enrique_ruiz_guinazu
+		recruit_character = ARG_vincente_gallo
+		recruit_character = ARG_carlos_lamas
+		recruit_character = ARG_osmar_hellmuth
+		recruit_character = ARG_eva_peron
+	}
 }
+
+
+
+set_country_flag = monroe_doctrine
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	IF = {
+		limit = {
+			has_dlc = "Trial of Allegiance"
+		}
+
+		complete_national_focus = SMB_army #35
+		complete_national_focus = SMB_navy #35
+		complete_national_focus = ARG_roberto_maria_ortiz
+		complete_national_focus = ARG_defense_and_democracy
+		complete_national_focus = ARG_banco_central_de_la_republica_argentina
+		complete_national_focus = ARG_crack_down_on_corruption #35
+		complete_national_focus = ARG_industrial_expansion
+		complete_national_focus = ARG_british_cooperation
+		complete_national_focus = ARG_rapid_urbanization
+		complete_national_focus = ARG_import_substitution #35
+		complete_national_focus = ARG_agricultural_improvements
+		complete_national_focus = ARG_military_production_lines
+		complete_national_focus = ARG_emphasis_on_public_works #35
+		complete_national_focus = ARG_economic_reactivation_act #35
+		complete_national_focus = ARG_towards_a_greater_argentina
+		complete_national_focus = ARG_universidad_de_buenos_aires
+		complete_national_focus = SMB_air_force #35
+
+		ELSE = {
+			#generic focuses
+			complete_national_focus = army_effort
+			complete_national_focus = equipment_effort
+			complete_national_focus = motorization_effort
+			complete_national_focus = aviation_effort
+			complete_national_focus = naval_effort
+			complete_national_focus = large_navy
+			complete_national_focus = industrial_effort
+			complete_national_focus = construction_effort
+			complete_national_focus = production_effort
+		}
+	}
+	
+	oob = "ARG_1939"
+	IF = {
+		limit = { has_dlc = "Man the Guns" }
+			set_naval_oob = "ARG_1939_naval_mtg"
+		ELSE = {
+			set_naval_oob = "ARG_1939_naval_legacy"
+		}
+	}
+	IF = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "ARG_1939_air_bba"
+			set_technology = {
+				iw_medium_airframe = 1
+				bba_early_transport_plane = 1
+			}
+		ELSE = {
+			set_air_oob = "ARG_1939_air_legacy"
+			set_technology = {
+				early_bomber = 1
+				naval_bomber1 = 1
+				early_transport_plane = 1
+			}
+		}
+	}
+
+	set_technology = {
+		interwar_artillery = 1
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+		tech_support = 1
+		tech_engineers = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_silos = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+	IF = {
+		limit = { NOT = { has_dlc = "Man the Guns" } }
+		set_technology = {
+			basic_destroyer = 1
+			basic_light_cruiser = 1
+		}
+	}
+	IF = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			basic_light_battery = 1
+			basic_medium_battery = 1
+		}
+	}
+}
+
+set_convoys = 120
 
 set_politics = {
-	ruling_party = social_democrat
-	last_election = "1999.5.18"
-	election_frequency = 48
+	ruling_party = neutrality
+	last_election = "1931.11.8"
+	election_frequency = 72
 	elections_allowed = yes
 }
-
 set_popularities = {
-    nationalist = 4
-    reactionary = 6
-    conservative = 30
-    social_liberal = 1
-    social_democrat = 47
-    progressive = 1
-    democratic_socialist = 8
-    communist = 3
+	democratic = 25
+	fascism = 20
+	communism = 25
+	neutrality = 30
 }
 
-add_opinion_modifier = {
-	target = ENG
-	modifier = falkland_conflict_argentina
-}
-
-#Political Leaders
-recruit_character = ARG_jorge_mario_bergoglio
-recruit_character = ARG_alejandro_biondini
-recruit_character = ARG_alberto_asseff
-recruit_character = ARG_philippe_boiry
-recruit_character = ARG_luis_abelardo_patti
-recruit_character = ARG_carlos_menem
-recruit_character = ARG_gonzalo_blousson
-recruit_character = ARG_elisa_carrio
-recruit_character = ARG_fernando_de_la_rua
-recruit_character = ARG_lia_mendez
-recruit_character = ARG_nestor_kirchner
-recruit_character = ARG_patricia_walsh
-recruit_character = ARG_federico_ramon_puerta
-recruit_character = ARG_adolfo_rodriguez_saa
-recruit_character = ARG_eduardo_camano
-recruit_character = ARG_eduardo_duhalde
-recruit_character = ARG_leopoldo_moreau
-
-#Army and Navy Leaders
-recruit_character = ARG_diego_luis_suner
-recruit_character = ARG_bari_del_valle_sosa
-recruit_character = ARG_enrique_victor_amrein
-recruit_character = ARG_santiago_ferreyra
-recruit_character = ARG_joaquin_estrada
-recruit_character = ARG_agustin_cejas
-recruit_character = ARG_alberto_corvalan
-recruit_character = ARG_alberto_sigon
-recruit_character = ARG_aldo_fernandez
-recruit_character = ARG_aldo_sala
-recruit_character = ARG_alejandro_martelletti
-recruit_character = ARG_carlos_alfredo_perez_aquino
-recruit_character = ARG_carlos_nogueira
-recruit_character = ARG_carlos_podio
-recruit_character = ARG_carlos_sityar
-recruit_character = ARG_claudio_gallardo
-recruit_character = ARG_clemente_magallanes
-recruit_character = ARG_daniel_eduardo_varela
-recruit_character = ARG_claudio_ernesto_pasqualini
-recruit_character = ARG_federico_sidders
-recruit_character = ARG_fernando_mauricio_ros
-recruit_character = ARG_gerardo_ferrara
-recruit_character = ARG_german_monge
-recruit_character = ARG_guillermo_pereda
-recruit_character = ARG_guillermo_Angel_tabernero
-recruit_character = ARG_gustavo_booth
-recruit_character = ARG_gustavo_luzuriaga
-recruit_character = ARG_gustavo_planes
-recruit_character = ARG_gustavo_vidal
-recruit_character = ARG_hector_horacio_prechi
-recruit_character = ARG_hugo_gargano
-recruit_character = ARG_hugo_leonard
-recruit_character = ARG_javier_abregu
-recruit_character = ARG_javier_aquino
-recruit_character = ARG_jose_navarro
-recruit_character = ARG_jose_antonio_saumell_robert
-recruit_character = ARG_jose_stanchina
-recruit_character = ARG_jose_luis_yofre
-recruit_character = ARG_juan_antonio_zamora
-recruit_character = ARG_juan_adrian_campitelli
-recruit_character = ARG_juan_gettig
-recruit_character = ARG_juan_paleo
-recruit_character = ARG_juan_pulleiro
-recruit_character = ARG_justo_treviranus
-recruit_character = ARG_luis_ricciardi
-recruit_character = ARG_maria_pansa
-recruit_character = ARG_martin_deimundo
-recruit_character = ARG_miguel_lugand
-recruit_character = ARG_norberto_pastor
-recruit_character = ARG_osvaldo_guardone
-recruit_character = ARG_osvaldo_jose_suarez
-recruit_character = ARG_sergio_santulario
-recruit_character = ARG_tomas_moyano
-recruit_character = ARG_bernardo_noziglia
-recruit_character = ARG_cesar_recalde
-recruit_character = ARG_dardo_difalco
-recruit_character = ARG_david_burden
-recruit_character = ARG_eduardo_bacchi
-recruit_character = ARG_eduardo_malchiodi
-recruit_character = ARG_eduardo_sancet
-recruit_character = ARG_francisco_medrano
-recruit_character = ARG_gabriel_gonzalez
-recruit_character = ARG_german_arbizu
-recruit_character = ARG_guillermo_cormick
-recruit_character = ARG_gustavo_iglesias
-recruit_character = ARG_gustavo_vignale
-recruit_character = ARG_jorge_cisneros
-recruit_character = ARG_jose_villan
-recruit_character = ARG_luis_gottardo
-recruit_character = ARG_luis_mazzeo
-recruit_character = ARG_marcelo_eduardo_hipolito_srur
-recruit_character = ARG_marcos_henson
-recruit_character = ARG_maria_uriarte
-recruit_character = ARG_miguel_Angel_mascolo
-recruit_character = ARG_oscar_pichel
-recruit_character = ARG_oscar_vivas
-recruit_character = ARG_osvaldo_vernazza
-recruit_character = ARG_pedro_galardi
-recruit_character = ARG_rafael_prieto
-recruit_character = ARG_rodolfo_larrosa
-recruit_character = ARG_zenon_bolino
-recruit_character = ARG_juan_manuel_brown
-#recruit_character = ARG_cirilo_rondeau
-recruit_character = ARG_lorenzo_saenz
-recruit_character = ARG_carlos_justo
-recruit_character = ARG_juan_ramon_bareiro
-
-2016.1.1 = {
-	oob = "ARG_2016"
-
-	retire_character = ARG_gonzalo_blousson
-	recruit_character = ARG_javier_milei
-	promote_character = ARG_javier_milei
-	set_party_name = {
-		ideology = market_liberal
-		long_name = ARG_la_libertad_avanza_long
-		name = ARG_la_libertad_avanza
+1939.1.1 = {
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1937.9.5"
+		election_frequency = 108
+		elections_allowed = yes
 	}
+
+	set_popularities = {
+		democratic = 15
+		fascism = 20
+		communism = 15
+		neutrality = 50
+	}
+
+	recruit_character = ARG_roberto_maria_ortiz
+	promote_character = ARG_roberto_maria_ortiz
+	retire_character = ARG_agustín_pedro_justo
 }
+
 
 ### VARIANTS ###
-# 2000 Start #
-if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
-	
+# 1936 Start #
+IF = {
+	limit = {
+		has_dlc = "By Blood Alone"
+	}
+	create_equipment_variant = {
+		name = "FMA D.21" #
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = light_mg_2x
+			engine_type_slot = engine_1_1x
+			special_type_slot_1 = empty
+		}
+		obsolete = no
+	}
 }
-if = {
+IF = {
+	limit = { NOT = { has_dlc = "Man the Guns" } }
+	### Ship Variants ###
+	create_equipment_variant = {
+		name = "Cervantes Class"
+		type = destroyer_1
+		upgrades = {
+			ship_torpedo_upgrade = 1
+			destroyer_engine_upgrade = 1
+			ship_ASW_upgrade = 1
+			ship_anti_air_upgrade = 1
+		}
+	}
+	create_equipment_variant = {
+		name = "Veinticinco de Mayo Class"
+		type = heavy_cruiser_1
+		upgrades = {
+			ship_reliability_upgrade = 1
+			ship_engine_upgrade = 1
+			ship_armor_upgrade = 1
+			ship_gun_upgrade = 1
+		}
+	}
+
+}
+IF = {
 	limit = { has_dlc = "Man the Guns" }
-	## Corvettes ##
-	create_equipment_variant = { #Corvette 1
-		name = "Baradero class"
+	# Submarines #
+	create_equipment_variant = {
+		name = "Santa Fe Class"				
+		type = ship_hull_submarine_1
+		name_group = ARG_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_2
+			rear_1_custom_slot = ship_torpedo_sub_1
+		}
+	}
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Catamarca Class"				# represents Catamarca, La Plata Class		
 		type = ship_hull_light_1
+		name_group = ARG_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Cervantes Class"	
+		type = ship_hull_light_2
+		name_group = ARG_DD_HISTORICAL
 		parent_version = 0
 		modules = {
 			fixed_ship_battery_slot = ship_light_battery_1
 			fixed_ship_anti_air_slot = ship_anti_air_1
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
 			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_engine_slot = light_ship_engine_2
 			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
 			rear_1_custom_slot = ship_depth_charge_1
 		}
-		obsolete = yes
 	}
-	create_equipment_variant = { #Corvette 2
-		name = "D'Estienne d'Orves class"
+	create_equipment_variant = {
+		name = "Mendoza Class"				
 		type = ship_hull_light_2
+		name_group = ARG_DD_HISTORICAL
 		parent_version = 0
 		modules = {
-			fixed_ship_battery_slot = ship_light_battery_2
+			fixed_ship_battery_slot = ship_light_battery_1
 			fixed_ship_anti_air_slot = ship_anti_air_1
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
 			fixed_ship_radar_slot = empty
 			fixed_ship_engine_slot = light_ship_engine_2
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_torpedo_1
-			rear_1_custom_slot = ship_depth_charge_1
-		}
-		obsolete = no
-	}
-	## Frigates ##
-	create_equipment_variant = { #Frigate 2
-		name = "Espora class"
-		type = ship_hull_cruiser_2
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_2
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_2
-			fixed_ship_armor_slot = ship_armor_cruiser_2
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			front_1_custom_slot = ship_light_medium_battery_2
+			fixed_ship_torpedo_slot = empty
 			mid_1_custom_slot = empty
-			mid_2_custom_slot = ship_anti_air_1
-			rear_1_custom_slot = ship_light_medium_battery_1
+			rear_1_custom_slot = empty
 		}
-		obsolete = no
 	}
-	## Destroyers ##
-	create_equipment_variant = { #Destroyer 1
-		name = "Hercules class"
-		type = ship_hull_cruiser_1
+	# Heavy Cruisers #
+	create_equipment_variant = {
+		name = "Libertad Class"				
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = ARG_CL_HISTORICAL
 		parent_version = 0
 		modules = {
 			fixed_ship_battery_slot = ship_medium_battery_1
 			fixed_ship_anti_air_slot = ship_anti_air_1
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = ship_radar_1
+			fixed_ship_radar_slot = empty
 			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_armor_slot = ship_armor_cruiser_2
+			fixed_ship_secondaries_slot = ship_secondaries_1
 			mid_1_custom_slot = empty
-			mid_2_custom_slot = ship_anti_air_1
-			rear_1_custom_slot = ship_medium_battery_1
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
 		}
 		obsolete = yes
 	}
-	create_equipment_variant = { #Destroyer 2
-		name = "Almirante Brown class"
-		type = ship_hull_cruiser_2
+	create_equipment_variant = {
+		name = "Garibaldi Class"				
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = ARG_CA_HISTORICAL
 		parent_version = 0
 		modules = {
-			fixed_ship_battery_slot = ship_medium_battery_2
+			fixed_ship_battery_slot = ship_medium_battery_1
 			fixed_ship_anti_air_slot = ship_anti_air_1
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = ship_radar_1
-			fixed_ship_engine_slot = cruiser_ship_engine_2
-			fixed_ship_armor_slot = ship_armor_cruiser_2
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = ship_anti_air_1
-			rear_1_custom_slot = ship_medium_battery_2
-		}
-		obsolete = no
-	}
-	## Submarines ##
-	create_equipment_variant = { #Diesel Sub 1
-		name = "Type 209"
-		type = ship_hull_submarine_1
-		parent_version = 0
-		modules = {
-			fixed_ship_torpedo_slot = ship_torpedo_sub_1
-			fixed_ship_engine_slot = sub_ship_engine_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = empty
 			rear_1_custom_slot = empty
 		}
 		obsolete = yes
 	}
-	create_equipment_variant = { #Diesel Sub 1A
-		name = "TR-1700 class"
-		type = ship_hull_submarine_1
+	create_equipment_variant = {
+		name = "Veinticinco de Mayo Class"				
+		type = ship_hull_cruiser_1
+		name_group = ARG_CA_HISTORICAL
 		parent_version = 0
 		modules = {
-			fixed_ship_radar_slot = ship_radar_1
-			fixed_ship_torpedo_slot = ship_torpedo_sub_1
-			fixed_ship_engine_slot = sub_ship_engine_1
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			mid_1_custom_slot = ship_torpedo_1
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = ship_airplane_launcher_1
+		}
+	}
+	# Battleships #
+	create_equipment_variant = {
+		name = "Rivadavia Class"	
+		type = ship_hull_heavy_1
+		name_group = ARG_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			front_1_custom_slot = ship_heavy_battery_1
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = empty
 			rear_1_custom_slot = empty
 		}
-		obsolete = no
 	}
 }
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
+
+# 1939 Start #
+1939.1.1 = {
+	IF = {
+		limit = { NOT = { has_dlc = "Man the Guns" } }
+		# Ship variants #
 	}
-		add_equipment_to_stockpile = {
-			type = fighter_equipment_2
-			amount = 25
-			producer = FRA
+	IF = {
+		limit = { has_dlc = "Man the Guns" }
+		# Destroyers #
+		create_equipment_variant = {
+			name = "Buenos Aires Class"	
+			type = ship_hull_light_2
+			name_group = ARG_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_2
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = empty
+				rear_1_custom_slot = empty
+			}
 		}
-		add_equipment_to_stockpile = {
-			type = CAS_equipment_2
-			amount = 7
-			producer = FRA
+		# Light Cruisers #
+		create_equipment_variant = {
+			name = "La Argentina Class"
+			type = ship_hull_cruiser_1
+			name_group = ARG_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_1
+				fixed_ship_armor_slot = ship_armor_cruiser_1
+				mid_1_custom_slot = ship_torpedo_1
+				mid_2_custom_slot = ship_light_medium_battery_2
+				rear_1_custom_slot = ship_airplane_launcher_1
+			}
 		}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_0
-		amount = 25
-		producer = ARG
-		variant_name = "Mirage III"
-	}
-	add_equipment_to_stockpile = {
-		type = small_plane_airframe_0
-		amount = 7
-		producer = ARG
-		variant_name = "Mirage 5"
 	}
 }

@@ -1,29 +1,21 @@
-
 state={
 	id=663
 	name="STATE_663"
-	resources={
-		oil=35.000
-	}
+	manpower = 8808
+	
+	state_category = wasteland
 
 	history={
 		owner = LBA
-		add_core_of = LBA
-		victory_points = {
-			1127 2 
-		}
 		buildings = {
-			infrastructure = 3
-
+			infrastructure = 1
 		}
-
+		add_core_of = LBA
 	}
 
 	provinces={
-		1060 1127 1140 1198 4057 4133 4200 7063 7076 8069 9977 10104 10754 10785 11951 12079 15038 15040 
+		1062 1186 4060 4063 4133 7063 7139 7206 9977 10049 12025 12079 13078 
 	}
-	manpower=169808
-	buildings_max_level_factor=1.000
-	state_category=state_level_0
-	local_supplies=0.000
+
+	local_supplies=0.0 
 }

@@ -2,21 +2,28 @@
 state={
 	id=636
 	name="STATE_636"
-	manpower = 811000
+	manpower = 180000
 	
-	state_category = state_level_2
+	state_category = small_island
 
 	history={
-		owner = FIJ
-		buildings = {
-			infrastructure = 4
-			industrial_complex = 1
-			#arms_factory = 1
-			4286 = { naval_base = 2 }
-		}
-		victory_points = { 4286 1 }
+		owner = ENG
 		add_core_of = FIJ
+		buildings = {
+			infrastructure = 2
+			4286 = {
+				naval_base = 1
+			}
+		}
+		
+		victory_points = {
+			4286 1 
+		}
 	}
 	
-	provinces={ 4286 7302 12159 }
+	provinces={
+		4286 7302 12159 
+	}
+
+	local_supplies=0.0 
 }

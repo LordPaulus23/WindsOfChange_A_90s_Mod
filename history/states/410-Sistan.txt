@@ -2,59 +2,25 @@
 state={
 	id=410
 	name="STATE_410"
-
+	manpower = 341053
+	
+	state_category = rural
 
 	history={
 		owner = PER
-		add_core_of = PER
+		victory_points = {
+			10782 1 
+		}
 		buildings = {
-			infrastructure = 3
-			industrial_complex = 1
-			air_base = 3
-			2070 = {
-				bunker = 1
-
-			}
-			10782 = {
-				bunker = 1
-
-			}
-			13082 = {
-				bunker = 1
-
-			}
-			16457 = {
-				bunker = 1
-
-			}
-			4891 = {
-				bunker = 1
-				naval_base = 3
-
-
-			}
-
+			infrastructure = 1
 		}
-		victory_points = {
-			2070 10
-		}
-		victory_points = {
-			12895 2
-		}
-		victory_points = {
-			13082 2
-		}
-		victory_points = {
-			4891 2
-		}
-
+		add_core_of = PER 
+		add_core_of = BLC
 	}
 
 	provinces={
-		2039 2070 4891 10782 12895 13082 16457 16651 
+		1889 2039 2070 4891 10782 13082 12895
 	}
-	manpower=2208000
-	buildings_max_level_factor=1.000
-	state_category=state_level_2
-	local_supplies=0.000
+
+	local_supplies=6.0 
 }

@@ -1,34 +1,33 @@
 
-state={
-	id=569
-	name="STATE_569"
-	resources={
-		steel=30.000
-		aluminium=20.000
-	}
+state = {
+	id = 569
+	name = "STATE_569" # Khakassia
+	manpower = 1567322
+	
+	state_category = town
 
-	history={
+	history = {
 		owner = SOV
-		victory_points = {
-			13563 5
-		}
-		victory_points = {
-			2923 2
-		}
 		buildings = {
-			infrastructure = 4
-			air_base = 1
+			infrastructure = 2
 			industrial_complex = 1
-
 		}
 		add_core_of = SOV
-
+		add_core_of = KHA
+		victory_points = {
+			7757 1
+		}
+		victory_points = {
+			7822 1
+		}
+		victory_points = {
+			10580 2
+		}
 	}
 
-	provinces={
-		1369 1685 2923 4665 4789 4793 7757 7822 7886 12631 13563 
+	provinces = {
+		1369 1685 1702 1816 4665 4789 4793 7757 7822 7886 10580 10649 12631 
 	}
-	manpower=2899000
-	buildings_max_level_factor=1.000
-	state_category=state_level_5
+
+	local_supplies = 0.0 
 }

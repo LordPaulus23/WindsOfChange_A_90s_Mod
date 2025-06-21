@@ -1,313 +1,141 @@
 ﻿capital = 615
 
-oob = "generic_2000"
+oob = "SHX_1936"
 
-set_research_slots = 2
-set_convoys = 10
-set_stability = 0.5
-
-set_country_flag = country_language_chinese
-
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-	set_technology = {
-		CAS1 = 1
-		CAS2 = 1
-		cv_CAS1 = 1
-		cv_CAS2 = 1
-		fighter1 = 1
-		fighter2 = 1
-		cv_fighter1 = 1
-		cv_fighter2 = 1
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-		naval_bomber3 = 1
-		cv_naval_bomber1 = 1
-		cv_naval_bomber2 = 1
-		cv_naval_bomber3 = 1
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
-		#scout_plane1 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	#tech
-	set_technology = {
-		iw_small_airframe = 1
-		basic_small_airframe = 1
-		iw_medium_airframe = 1
-		basic_medium_airframe = 1
-		iw_heli_airframe = 1
-		iw_naval_airframe = 1
-		basic_naval_airframe = 1
-		iw_large_airframe = 1
-		basic_large_airframe = 1
-		aa_lmg = 1
-		Cold_war_cas = 1
-		engines_1 = 1
-		air_misc = 1
-		#scout_plane1 = 1
-	}
-	#varients
-	#CAS
-	create_equipment_variant = {
-		name = "Su-25" 
-		type = small_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = heavy_mg_2x
-			fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
-			fixed_auxiliary_weapon_slot_2 = tank_buster_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-			special_type_slot_3 = armor_plate_medium
-		}
-	}
-	#Multirole
-	create_equipment_variant = {
-		name = "MiG-23" 
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "MiG-29" 
-		type = medium_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = aircraft_cannon_medium_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-	}
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-	main_battle_tank1 = 1
-	main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	light_tank1 = 1
-	mechanised_infantry1 = 1
-	nonsnb_technicality_tech = 1
-	light_mechanized_infantry1 = 1
-	light_mechanized_infantry2 = 1
-	#mechanised_infantry2 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		IFV_chassis_80s = 1
-		IFV_chassis = 1
-		technicality_tech = 1
-		light_mechanized_infantry1 = 1
-		light_mechanized_infantry2 = 1
-		main_battle_tank_chassis = 1
-		main_battle_tank_chassis_80s = 1
-		#main_battle_tank_chassis_00s = 1
-	}
-	create_equipment_variant = {
-		name = "T-72M"
-		type = modern_tank_chassis_2
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_small
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_3 = auto_loader
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		icon = "GFX_SOV_main_battle_tank2_medium"
-	}
-	create_equipment_variant = {
-		name = "BMP-2"
-		type = light_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_auto_cannon
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			atgm_slot = tank_atgm_1
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 2
-			tank_nsb_engine_upgrade = 2
-		}
-		icon = "GFX_SOV_mechanised_infantry2_medium"
-	}
-	create_equipment_variant = {
-		name = "T-62"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_SOV_main_battle_tank1_medium"
-	}
-	create_equipment_variant = {
-		name = "MT-LB"
-		type = light_tank_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_heavy_machine_gun
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_SOV_mechanised_infantry1_medium"
-	}
-	create_equipment_variant = {
-		name = "PT-76"
-		type = light_tank_destroyer_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_ifv_medium_cannon
-			special_type_slot_1 = ergo_ifv_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			optics_slot = tank_optics_1
-			special_type_slot_4 = main_ammo_bay
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = no
-		icon = "GFX_SOV_light_tank1_medium"
-	}
-}
+set_stability = 0.7
+set_war_support = 0.4
+# Starting tech
 set_technology = {
-	## Infantry ##
-	infantry_weapons1 = 1
-	infantry_weapons2 = 1
-	motorised_infantry = 1
-	infantry_rifle_upgrade = 1
-	support_weapons = 1
-	support_weapons2 = 1
-	night_vision = 1
-	body_armor = 1
-	camouflage = 1
-	marines = 1
-	tech_mountaineers = 1
-	paratroopers = 1
-	
-	## Support Companies ##
-	tech_support = 1
-	basic_train = 1
-	tech_engineers = 1
-	tech_recon = 1
-	tech_military_police = 1
-	tech_maintenance_company = 1
-	tech_field_hospital = 1
-	tech_logistics_company = 1
-	tech_signal_company = 1
-	
-	## Armor ##
-	#main_battle_tank1 = 1
-	#main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	#light_tank1 = 1
-	#light_tank2 = 1
-	
-	#mechanised_infantry2 = 1
-	#light_mechanized_infantry1 = 1
-	#light_mechanized_infantry2 = 1
-	
-	## Artillery ##
-	coldwar_artillery = 1
-	gw_artillery = 1
-	
-	interwar_antiair = 1
-	coldwar_antiair = 1
-	coldwar_antitank = 1
-	
-	## Air ##
-	# CAS1 = 1
-	# CAS2 = 1
-	# fighter1 = 1
-	# fighter2 = 1
-	# fighter3 = 1
-	# naval_bomber1 = 1
-	# naval_bomber2 = 1
-	# strategic_bomber1 = 1
-	# strategic_bomber2 = 1
-	
-	## Engineering ##
-	electronic_mechanical_engineering = 1
-	
-	## Industry ##
-	basic_machine_tools = 1
-	
-	## Doctrines ##
-	mass_assault = 1
+	infantry_weapons = 1
 }
 
-set_politics = {	
-	ruling_party = social_liberal
-	last_election = "1980.1.1"
+recruit_character = SHX_yan_xishan
+recruit_character = SHX_wang_jingguo
+recruit_character = SHX_zhang_shen
+recruit_character = SHX_luo_zhao
+recruit_character = SHX_liao_ting
+recruit_character = SHX_cheng_zhao
+recruit_character = SHX_ma_tian
+recruit_character = SHX_zhu_ting
+recruit_character = SHX_wang_li_sun
+recruit_character = SHX_min_lan_tung_tin
+recruit_character = SHX_tan_fang
+recruit_character = SHX_huang_peng
+recruit_character = SHX_peng_dong
+recruit_character = SHX_kong_fang
+recruit_character = SHX_yang_lu
+recruit_character = SHX_sun_li
+recruit_character = SHX_wang_zuanxu
+recruit_character = SHX_fu_zuoyi
+recruit_character = SHX_qu_yangke
+
+
+if = {
+	limit = {
+		has_dlc = "Waking the Tiger"
+	}
+	add_ideas = {
+		PRC_government_corruption
+		CHI_ineffective_bureaucracy_warlord
+		CHI_warlord_state_idea
+	}
+}
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+
+	if = {
+		limit = {
+			has_dlc = "Waking the Tiger"
+		}
+
+		#CHI = { add_to_faction = PREV }
+		#add_to_war = {
+		#	targeted_alliance = CHI
+		#	enemy = JAP
+		#	hostility_reason = asked_to_join
+		#}
+		
+		#complete_national_focus = CHI_secure_internal_politics
+		#complete_national_focus = CHI_cooperation_with_the_communists
+		#complete_national_focus = CHI_land_redistribution
+		#complete_national_focus = CHI_land_value_tax
+		#complete_national_focus = CHI_judiciary_reforms
+		#complete_national_focus = CHI_communist_administrators
+		#complete_national_focus = CHI_industrial_investment
+		#complete_national_focus = CHI_public_education_reform
+		#complete_national_focus = CHI_local_arms_production
+		#complete_national_focus = CHI_long_term_economic_planning
+		#complete_national_focus = CHI_ideological_education
+		#complete_national_focus = CHI_local_arms_development
+		#complete_national_focus = CHI_heavy_weapons_development
+		#complete_national_focus = CHI_public_works
+		#complete_national_focus = CHI_labor_reform
+		#complete_national_focus = CHI_rural_militias
+		else = {			
+			#generic focuses
+			complete_national_focus = army_effort
+			complete_national_focus = equipment_effort
+			complete_national_focus = motorization_effort
+			complete_national_focus = aviation_effort
+			complete_national_focus = naval_effort
+			complete_national_focus = flexible_navy
+			complete_national_focus = industrial_effort
+			complete_national_focus = construction_effort
+			complete_national_focus = production_effort
+		}	
+	}
+
+	add_ideas = {
+		#laws
+		tot_economic_mobilisation
+		service_by_requirement
+		closed_economy
+	}
+	
+	set_technology = {
+		#doctrines
+		air_superiority = 1
+		mass_assault = 1
+		pocket_defence = 1
+		defence_in_depth = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+		computing_machine = 1
+		basic_encryption = 1
+		basic_decryption = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		fuel_silos = 1
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+		concentrated_industry = 1
+		concentrated_industry2 = 1
+		concentrated_industry3 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
-
 set_popularities = {
-	nationalist = 25
-	reactionary = 25
-	conservative = 15
-	market_liberal = 10
-	social_liberal = 25
+	neutrality = 100
 }

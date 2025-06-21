@@ -1,95 +1,43 @@
 ﻿capital = 284
 
-oob = "NZL_2000"
+oob = "NZL_1936"
 if = {
-	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "NZL_2000_naval_mtg"
-	else = {
-		set_naval_oob = "NZL_2000_naval_legacy"
-	}
-}
-
-set_research_slots = 3
-set_convoys = 210
-set_stability = 0.8
-
-set_country_flag = country_language_english
-
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-	set_technology = {
-		CAS1 = 1
-		CAS2 = 1
-		cv_CAS1 = 1
-		cv_CAS2 = 1
-		fighter1 = 1
-		fighter2 = 1
-		cv_fighter1 = 1
-		cv_fighter2 = 1
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-		naval_bomber3 = 1
-		cv_naval_bomber1 = 1
-		cv_naval_bomber2 = 1
-		cv_naval_bomber3 = 1
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
-		#scout_plane1 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	#tech
-	set_technology = {
-		iw_small_airframe = 1
-		basic_small_airframe = 1
-		iw_medium_airframe = 1
-		basic_medium_airframe = 1
-		iw_heli_airframe = 1
-		iw_naval_airframe = 1
-		basic_naval_airframe = 1
-		iw_large_airframe = 1
-		basic_large_airframe = 1
-		aa_lmg = 1
-		Cold_war_cas = 1
-		engines_1 = 1
-		air_misc = 1
-		#scout_plane1 = 1
-	}
-	#varients
-	#CAS
-	create_equipment_variant = {
-		name = "A-4 Skyhawk" 
-		type = cv_small_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
-			fixed_auxiliary_weapon_slot_2 = rocket_pod
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "NZL_1936_air_bba"
+		set_technology = {
+			bba_early_transport_plane = 1
 		}
-		icon = "GFX_A-4_Skyhawk_medium"
-		obsolete = yes
+	else = {
+		set_air_oob = "NZL_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			naval_bomber1 = 1
+			early_transport_plane = 1
+		}
 	}
+}
+
+# Starting tech
+set_stability = 0.8
+set_war_support = 0.3
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_trucks = 1
+	gw_artillery = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+	trench_warfare = 1
+	fleet_in_being = 1
 }
 if = {
 	limit = {
 		NOT = { has_dlc = "No Step Back" }
 	}
 	set_technology = {
-	main_battle_tank1 = 1
-	main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	light_tank1 = 1
-	mechanised_infantry1 = 1
-	nonsnb_technicality_tech = 1
-	light_mechanized_infantry1 = 1
-	light_mechanized_infantry2 = 1
-	#mechanised_infantry2 = 1
+		gwtank = 1
 	}
 }
 if = {
@@ -97,380 +45,250 @@ if = {
 		has_dlc = "No Step Back"
 	}
 	set_technology = {
-		IFV_chassis_80s = 1
-		IFV_chassis = 1
-		technicality_tech = 1
-		light_mechanized_infantry1 = 1
-		light_mechanized_infantry2 = 1
-		main_battle_tank_chassis = 1
-	}
-	create_equipment_variant = {
-		name = "Leopard 1"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			#turret_type_slot = tank_modern_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			special_type_slot_1 = ergo_old
-			optics_slot = tank_optics_1
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		icon = "GFX_GER_main_battle_tank1_medium"
-	}
-	create_equipment_variant = {
-		name = "M113"
-		type = light_tank_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_heavy_machine_gun
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		icon = "GFX_MAC_mechanised_infantry3_medium"
-	}
-	create_equipment_variant = {
-		name = "FV101 Scorpion"
-		type = light_tank_destroyer_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_auto_cannon
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = main_ammo_bay
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = no
-		icon = "GFX_PER_light_tank1_medium"
+		gwtank_chassis = 1
 	}
 }
-set_technology = {
-	## Infantry ##
-	infantry_weapons1 = 1
-	infantry_weapons2 = 1
-	motorised_infantry = 1
-	infantry_rifle_upgrade = 1
-	support_weapons = 1
-	support_weapons2 = 1
-	night_vision = 1
-	body_armor = 1
-	camouflage = 1
-	marines = 1
-	tech_mountaineers = 1
-	paratroopers = 1
-	
-	## Support Companies ##
-	tech_support = 1
-	basic_train = 1
-	tech_engineers = 1
-	tech_recon = 1
-	tech_field_hospital = 1
-	tech_logistics_company = 1
-	tech_military_police = 1
-	tech_signal_company = 1
-	tech_maintenance_company = 1
-	
-	## Artillery ##
-	coldwar_artillery = 1
-	gw_artillery = 1
-	coldwar_antiair = 1
-	 
-	 
-	sp_artillery1 = 1
-	
-	# ## Air ##
-	# CAS1 = 1
-	# CAS2 = 1
-	# cv_CAS1 = 1
-	# cv_CAS2 = 1
-	# fighter1 = 1
-	# fighter2 = 1
-	# fighter3 = 1
-	# cv_fighter1 = 1
-	# cv_fighter2 = 1
-	# cv_fighter3 = 1
-	# naval_bomber1 = 1
-	# naval_bomber2 = 1
-	# naval_bomber3 = 1
-	# cv_naval_bomber1 = 1
-	# cv_naval_bomber2 = 1
-	# cv_naval_bomber3 = 1
-	# strategic_bomber1 = 1
-	# strategic_bomber2 = 1
-	# tactical_bomber1 = 1
-	# #scout_plane1 = 1
-	
-	## Engineering ##
-	electronic_mechanical_engineering = 1
-	radio = 1
-	
-	## Industry ##
-	basic_machine_tools = 1
-	fuel_silos = 1
-	fuel_refining = 1
-	synth_oil_experiments = 1
-}
-
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 	set_technology = {
 		early_destroyer = 1
 		early_light_cruiser = 1
-		basic_light_cruiser = 1
-		early_submarine = 1
 		transport = 1
 	}
 }
 if = {
 	limit = { has_dlc = "Man the Guns" }
 	set_technology = {
+		basic_naval_mines = 1
 		early_ship_hull_light = 1
 		early_ship_hull_cruiser = 1
-		basic_ship_hull_cruiser = 1
-		early_ship_hull_submarine = 1
-		smoke_generator = 1
-		sonar = 1
-		basic_depth_charges = 1
-		improved_airplane_launcher = 1
-		basic_cruiser_armor_scheme = 1
-		basic_torpedo = 1
 		basic_battery = 1
-		basic_light_battery = 1
-		basic_medium_battery = 1
-		basic_secondary_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
 		mtg_transport = 1
-		basic_naval_mines = 1
-		submarine_mine_laying = 1
 	}
 }
 
-add_ideas = {
-	government_system_constitutional_monarchy
-	national_development_developed
-	civil_liberties_free
-	population_growth_steady
-	commonwealth_of_nations_member
+recruit_character = NZL_michael_joseph_savage
+recruit_character = NZL_sidney_holland
+recruit_character = NZL_john_ormond
+recruit_character = NZL_elsie_farrelly
+recruit_character = NZL_bernard_freyberg
+recruit_character = NZL_robert_row
+recruit_character = NZL_william_stevens
+recruit_character = NZL_edmund_rupert_drummond
+recruit_character = NZL_peter_phipps
+recruit_character = NZL_r_a_cochrane
+recruit_character = NZL_l_p_peterson
+recruit_character = NZL_j_c_nichols
+recruit_character = NZL_n_weir
+recruit_character = NZL_j_e_duigan
+recruit_character = NZL_edward_puttick
+recruit_character = NZL_norris_stephen_falla
+recruit_character = NZL_trevor_handley
+recruit_character = NZL_keith_j_holyoake
+recruit_character = NZL_a_j_stallworthy
+recruit_character = NZL_eric_prendergast
+recruit_character = NZL_arthur_dawes
+recruit_character = NZL_william_sinclair_burgess
+recruit_character = NZL_h_e_horan
+recruit_character = NZL_h_d_mcgregor
+recruit_character = NZL_w_h_stratton
+recruit_character = NZL_a_e_davy
+recruit_character = NZL_walter_nash
+recruit_character = NZL_w_a_veitch_milne
+recruit_character = NZL_peter_fraser
+
+
+if = {
+	limit = { has_dlc = "Together for Victory" }
+
+	add_to_tech_sharing_group = commonwealth_research
 }
 
-set_politics = {	
-	ruling_party = conservative
-	last_election = "1999.11.27"
+1939.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	oob = "NZL_1939"
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "NZL_1939_air_bba"
+		else = {
+			set_air_oob = "NZL_1939_air_legacy"
+		}
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			set_naval_oob = "NZL_1939_naval_mtg"
+		else = {
+			set_naval_oob = "NZL_1939_naval_legacy"
+		}
+	}
+	
+	if = {
+		limit = { has_dlc = "Together for Victory" }
+		complete_national_focus = NZL_army_reforms
+		complete_national_focus = NZL_charlton_automatic_rifle
+		complete_national_focus = NZL_domestic_arms_industry
+		complete_national_focus = NZL_expand_the_nzpaf
+		complete_national_focus = NZL_form_the_rnzaf
+		complete_national_focus = NZL_national_roads_board
+		complete_national_focus = NZL_new_zealand_steel
+		complete_national_focus = NZL_taranaki_oil
+		complete_national_focus = NZL_bureau_of_industry 
+		
+		else = {
+			#generic focuses
+			complete_national_focus = army_effort
+			complete_national_focus = equipment_effort
+			complete_national_focus = motorization_effort
+			complete_national_focus = aviation_effort
+			complete_national_focus = naval_effort
+			complete_national_focus = large_navy
+			complete_national_focus = industrial_effort
+			complete_national_focus = construction_effort
+			complete_national_focus = production_effort
+		}
+	}
+
+	add_ideas = {
+		#laws
+		low_economic_mobilisation
+		limited_conscription
+	}
+
+	
+	set_technology = {
+		fighter1 = 1
+		early_bomber = 1
+		tactical_bomber1 = 1
+		interwar_artillery = 1
+		interwar_antitank = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+		support_weapons2 = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		submarine_operations = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_silos = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_dlc = "No Step Back"
+			}
+		}
+		set_technology = {
+			basic_light_tank = 1
+			improved_light_tank = 1
+			basic_medium_tank = 1
+			basic_heavy_tank = 1
+		}
+	}
+	if = {
+		limit = {
+			
+			has_dlc = "No Step Back"
+			
+		}
+		set_technology = {
+			basic_light_tank_chassis = 1
+			improved_light_tank_chassis = 1
+			basic_medium_tank_chassis = 1
+			basic_heavy_tank_chassis = 1
+		}
+	}
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		set_technology = {
+			basic_destroyer = 1
+		}
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			basic_ship_hull_light = 1
+			basic_ship_hull_cruiser = 1
+		}
+	}
+}
+set_politics = {
+	ruling_party = democratic
+	last_election = "1935.11.27"
 	election_frequency = 36
 	elections_allowed = yes
 }
-
 set_popularities = {
-    reactionary = 4
-    conservative = 37
-    market_liberal = 7
-    social_liberal = 1
-    social_democrat = 44
-    progressive = 5
-    democratic_socialist = 1
-    nationalist = 1
+	democratic = 100
 }
 
-add_opinion_modifier = {
-	target = AST
-	modifier = ANZUS
-}
+set_convoys = 70
 
-add_opinion_modifier = {
-	target = AST
-	modifier = ANZUS_trade
-}
-
-add_opinion_modifier = {
-	target = AST
-	modifier = five_eyes_agreement
-}
-
-add_opinion_modifier = {
-	target = CAN
-	modifier = five_eyes_agreement
-}
-
-add_opinion_modifier = {
-	target = ENG
-	modifier = five_eyes_agreement
-}
-
-add_opinion_modifier = {
-	target = USA
-	modifier = ANZUS
-}
-
-add_opinion_modifier = {
-	target = USA
-	modifier = ANZUS_trade
-}
-
-add_opinion_modifier = {
-	target = USA
-	modifier = five_eyes_agreement
-}
-
-recruit_character = NZL_john_campbell_paterson
-recruit_character = NZL_kyle_chapman
-recruit_character = NZL_peter_brown
-recruit_character = NZL_anne_i_of_windsor
-recruit_character = NZL_winston_peters
-recruit_character = NZL_jennifer_shipley
-recruit_character = NZL_richard_prebble
-recruit_character = NZL_peter_dunne
-recruit_character = NZL_helen_clark
-recruit_character = NZL_jeanette_fitzsimons
-recruit_character = NZL_lalia_harre
-recruit_character = NZL_annalucia_vermunt
-
-recruit_character = NZL_kevin_short
-recruit_character = NZL_clive_douglas
-recruit_character = NZL_michael_shapland
-recruit_character = NZL_richard_rhys_jones
-recruit_character = NZL_peter_kelly
-recruit_character = NZL_christopher_parsons
-recruit_character = NZL_christopher_faulls
-recruit_character = NZL_tony_davies
-recruit_character = NZL_tim_gall
-recruit_character = NZL_danny_broughton
-recruit_character = NZL_john_martin
-recruit_character = NZL_wayne_dyke
-recruit_character = NZL_david_gibbs
-recruit_character = NZL_jim_gilmour
-
-2001.10.8 = {
-	create_country_leader = {
-		name = "Bill English"
-		picture = "Bill_English.dds"
-		ideology = libertarian
-	}
-}
-2003.10.28 = {
-	create_country_leader = {
-		name = "Don Brash"
-		picture = "Don_Brash.dds"
-		ideology = libertarian
-	}
-}
-2008.11.19 = {
-	create_country_leader = {
-		name = "Phil Goff"
-		picture = "Phil_Goff.dds"
-		ideology = social_democrat_ideology
-	}
-}
-2011.4.30 = { 
-    set_party_name = {
-		ideology = democratic_socialist
-		long_name = NZL_democratic_socialist_ideology_party_Mana_Party_long
-		name = NZL_democratic_socialist_ideology_party_Mana_Movement
-    }
-	create_country_leader = {
-		name = "Hone Harawira"
-		picture = "Hone_Harawira.dds"
-		ideology = democratic_socialist_ideology
-	}
-}
-2011.12.13 = {
-    create_country_leader = {
-		name = "David Shearer"
-		picture = "David_Shearer.dds"
-		ideology = social_democrat_ideology
-	}
-}
-2013.9.15 = {
-    create_country_leader = {
-		name = "David Cunliffe"
-		picture = "David_Cunliffe.dds"
-		ideology = social_democrat_ideology
-	}
-}
-2014.2.1 = {
-	oob = "NZL_2016"
-    create_field_marshal = {
-		name = "Tim Keating"
-		picture = "generals/Tim_Keating.dds"
-		skill = 1
-	}
-}
-2016.6.1 = {
+1939.1.1 = {
 	set_politics = {
-        last_election = "2014.9.20"
-		ruling_party = conservative
-		election_frequency = 36
+		ruling_party = democratic
+		last_election = "1938.10.15"
+		election_frequency = 60
 		elections_allowed = yes
 	}
 
-    set_popularities = {
-        social_liberal = 1
-        conservative = 52
-        market_liberal = 1
-        progressive = 11
-        reactionary = 6
-        social_democrat = 28
-        democratic_socialist = 1
-    }
-	create_country_leader = {
-		name = "John Key"
-		picture = "John_Key.dds"
-		ideology = fiscal_conservative
-	}
-	create_country_leader = {
-		name = "Andrew Little"
-		picture = "Andrew_Little.dds"
-		ideology = social_democrat_ideology
-	}
-	create_country_leader = {
-		name = "Metiria Turei"
-		picture = "Metiria_Turei.dds"
-		ideology = green
-	}
-	create_country_leader = {
-		name = "David Seymour"
-		picture = "David_Seymour.dds"
-		ideology = libertarian
-	}
+	# Didn't take office until '40, added for flavor
+	promote_character = NZL_peter_fraser
+	retire_character = NZL_michael_joseph_savage
+	set_convoys = 80
 }
 
+
 ### VARIANTS ###
-# 2000 Start #
+# 1936 Start #
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
-	
+	### Ship Variants ###
+	create_equipment_variant = {
+		name = "Leander Class"
+		type = light_cruiser_1
+		upgrades = {
+			ship_reliability_upgrade = 2
+			ship_engine_upgrade = 2
+			ship_gun_upgrade = 2
+			ship_anti_air_upgrade = 2
+		}
+	}
 }
 if = {
 	limit = { has_dlc = "Man the Guns" }
-	## Frigates ##
-	create_equipment_variant = { #Frigate 1
-		name = "Leander-class"
+	# Light Cruisers #
+	create_equipment_variant = {
+		name = "Danae Class"
 		type = ship_hull_cruiser_1
+		name_group = NZL_CL_HISTORICAL
 		parent_version = 0
 		modules = {
 			fixed_ship_battery_slot = ship_light_medium_battery_1
@@ -478,57 +296,38 @@ if = {
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
 			fixed_ship_radar_slot = empty
 			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = ship_anti_air_1
-			rear_1_custom_slot = ship_light_medium_battery_1
+			mid_1_custom_slot = ship_torpedo_1
+			mid_2_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = empty
 		}
-		obsolete = yes
-	}
-	create_equipment_variant = { #Frigate 2
-		name = "Anzac-class"
-		type = ship_hull_cruiser_2
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_2
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_2
-			fixed_ship_armor_slot = ship_armor_cruiser_2
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			front_1_custom_slot = ship_light_medium_battery_2
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = ship_anti_air_1
-			rear_1_custom_slot = ship_light_medium_battery_1
-		}
-		obsolete = no
 	}
 }
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
+
+# 1939 Start #
+1939.1.1 = {
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		# Ship variants #
 	}
-		add_equipment_to_stockpile = {
-			type = CAS_equipment_1
-			amount = 22
-			producer = USA
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		# Light Cruisers #
+		create_equipment_variant = {
+			name = "Leander Class"
+			type = ship_hull_cruiser_2
+			name_group = NZL_CL_HISTORICAL
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_2
+				fixed_ship_armor_slot = ship_armor_cruiser_1
+				front_1_custom_slot = ship_anti_air_1
+				mid_1_custom_slot = ship_torpedo_1
+				mid_2_custom_slot = ship_airplane_launcher_1
+				rear_1_custom_slot = ship_light_medium_battery_1
+			}
 		}
-		add_equipment_to_stockpile = {
-			type = nav_bomber_equipment_3
-			amount = 6
-			producer = USA
-		}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	add_equipment_to_stockpile = {
-		type = cv_small_plane_airframe_0
-		amount = 22
-		producer = NZL
-		variant_name = "A-4 Skyhawk" 
 	}
 }

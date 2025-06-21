@@ -1,36 +1,52 @@
 
-state={
-	id=531
-	name="STATE_531"
-	resources={
-		steel=30.000
+state = {
+	id = 531
+	name = "STATE_531" # Kansai
+	manpower = 11015000
+	state_category = metropolis
+	resources = {
+		aluminium = 3 # was: 6
 	}
 
-	history={
+	history = {
+
 		owner = JAP
 		add_core_of = JAP
-		add_extra_state_shared_building_slots = 1
+
 		buildings = {
-			infrastructure = 8
-			industrial_complex = 9
+			infrastructure = 4 #was: 8
 			arms_factory = 2
+			industrial_complex = 4
+			dockyard = 2
 			1136 = {
 				naval_base = 6
-
+			}
+			7072 = {
+				naval_base = 3
 			}
 
 		}
+
 		victory_points = {
-			11960 35 
+			7072 40 # Osaka
+		}
+
+		victory_points = {
+			11960 20 # Kyoto
+		}
+
+		1939.1.1 = {
+			buildings = {
+				arms_factory = 3
+				industrial_complex = 5
+			}
 		}
 
 	}
 
-	provinces={
-		1051 1067 1133 1136 4054 4142 7113 9985 11960 12031 14199 
+	provinces = {
+		1051 1067 1133 1136 4054 4142 7072 7113 9985 11960 12031 
 	}
-	manpower=13884897
-	buildings_max_level_factor=1.000
-	state_category=state_level_17
-	local_supplies=0.000
+
+	local_supplies = 9.0 
 }

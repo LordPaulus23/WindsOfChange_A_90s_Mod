@@ -1,32 +1,35 @@
 
 state={
 	id=564
-	name="STATE_564"
+	name="STATE_564" # Ulan Ude
+	manpower = 370893
+	state_category = rural
 	resources={
-		steel=5.000
+		steel=10 # was: 20
+		chromium=12 # was: 34
+		tungsten=10 # was: 28
+		aluminium=4 # was: 8
 	}
 
 	history={
 		owner = SOV
 		victory_points = {
-			7816 7 
+			7835 2 
 		}
 		victory_points = {
-			13570 1 
+			12644 1 
 		}
 		buildings = {
-			infrastructure = 4
+			infrastructure = 2
 
 		}
 		add_core_of = SOV
-
+		add_core_of = BYA
 	}
 
 	provinces={
-		1696 1761 1762 4716 4766 4835 4837 7736 7816 7835 7854 10528 10658 12507 12644 13570 15802 16417
+		1696 1762 1810 4716 4766 4835 4837 7736 7816 7835 10524 10528 10543 10658 12506 12575 12644 13152
 	}
-	manpower=981000
-	buildings_max_level_factor=1.000
-	state_category=state_level_2
-	local_supplies=0.000
+
+	local_supplies=0.0 
 }

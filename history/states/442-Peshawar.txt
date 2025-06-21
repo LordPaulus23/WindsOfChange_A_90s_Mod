@@ -2,44 +2,29 @@
 state={
 	id=442
 	name="STATE_442"
+	manpower = 4684400
 	resources={
-		oil=2.000
+		steel=3
 	}
+	state_category = wasteland
+
 	history={
+		victory_points = {
+			12763 3
+		}
 		owner = PAK
-		add_core_of = PAK
-		victory_points = {
-			16422 20 
-		}
-		victory_points = {
-			16241 2
-		}
-		victory_points = {
-			4998 2
-		}
-		victory_points = {
-			16555 4
-		}
-		victory_points = {
-			16550 3
-		}
-		victory_points = {
-			16554 2
-		}
 		buildings = {
-			infrastructure = 4
-			industrial_complex = 1
+			infrastructure = 1
 			air_base = 1
-
 		}
-
+		add_core_of = NWF
+		add_core_of = PAK
+		add_core_of = KHL
 	}
 
 	provinces={
-		4558 4998 8022 16241 16422 16550 16554 16555 
+		 4558 12717 12763 
 	}
-	manpower=17743000
-	buildings_max_level_factor=1.000
-	state_category=state_level_12
-	local_supplies=0.000
+
+	local_supplies=5.0 
 }

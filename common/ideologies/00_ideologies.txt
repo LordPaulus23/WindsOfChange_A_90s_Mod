@@ -748,6 +748,8 @@ ideologies = {
 			}
 			maoist = {
 			}
+			reformist_communist = {
+			}
 			socialism_with_ccp = {
 				can_be_randomly_selected = no
 			}

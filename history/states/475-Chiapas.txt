@@ -2,39 +2,26 @@
 state={
 	id=475
 	name="STATE_475"
-	resources={
-		oil=50.000
-	}
+	manpower = 805874
+	
+	state_category = rural
 
 	history={
 		owner = MEX
 		buildings = {
-			infrastructure = 4
-			industrial_complex = 2
-			air_base = 1
-
+			infrastructure = 2
 		}
 		add_core_of = MEX
-		victory_points = {
-			13939 5
-		}
-		victory_points = {
-			13937 10
-		}
-		victory_points = {
-			13938 3
-		}
-		victory_points = {
-			12753 4
-		}
 
+		victory_points = {
+			1900 3
+		}
 	}
 
 	provinces={
-		1900 12753 12867 13875 13933 13934 13935 13936 13937 13938 13939 13952 
+		1900 12753 12867 
 	}
-	manpower=5811000
-	buildings_max_level_factor=1.000
-	state_category=state_level_9
-	local_supplies=0.000
+	
+
+	local_supplies=0.0 
 }

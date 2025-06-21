@@ -2,128 +2,74 @@
 
 if = {
 	limit = {
-		 has_dlc = "No Step Back" 
+		NOT = {
+			has_dlc = "No Step Back"
+		}
 	}
-	set_oob = "TUR_2000_nsb"
-	else = {
-		set_oob = "TUR_2000"
+	set_oob = "TUR_1936"
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
 	}
+	set_oob = "TUR_1936_nsb"
 }
 if = {
 	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "TUR_2000_naval_mtg"
+		set_naval_oob = "TUR_1936_naval_mtg"
 	else = {
-		set_naval_oob = "TUR_2000_naval_legacy"
+		set_naval_oob = "TUR_1936_naval_legacy"
 	}
 }
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "TUR_1936_air_bba"
+		set_technology = { 
+			bba_early_transport_plane = 1
+		}
+	else = {
+		set_air_oob = "TUR_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			early_bomber = 1
+			CAS1 = 1
+			early_transport_plane = 1
+		}
+	}
+}
+
+###################
+#### 3D MODELS ####
+###################
+
+#Cosmetic tags used (3D models will look for these cosmetic tags when hooking themselves):
+#TUR_communism
+#TUR_democratic
+#TUR_fascism
+#TUR_neutrality
+set_cosmetic_tag = TUR_neutrality
 
 set_research_slots = 3
-set_convoys = 650
-set_stability = 0.3
 
-set_country_flag = country_language_turkish
-
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-	set_technology = {
-		CAS1 = 1
-		CAS2 = 1
-		cv_CAS1 = 1
-		cv_CAS2 = 1
-		fighter1 = 1
-		fighter2 = 1
-		cv_fighter1 = 1
-		cv_fighter2 = 1
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-		naval_bomber3 = 1
-		cv_naval_bomber1 = 1
-		cv_naval_bomber2 = 1
-		cv_naval_bomber3 = 1
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
-		#scout_plane1 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	#tech
-	set_technology = {
-		iw_small_airframe = 1
-		basic_small_airframe = 1
-		iw_medium_airframe = 1
-		basic_medium_airframe = 1
-		iw_heli_airframe = 1
-		iw_naval_airframe = 1
-		basic_naval_airframe = 1
-		iw_large_airframe = 1
-		basic_large_airframe = 1
-		aa_lmg = 1
-		Cold_war_cas = 1
-		engines_1 = 1
-		air_misc = 1
-		#scout_plane1 = 1
-	}
-	#varients
-	#Multirole
-	create_equipment_variant = {
-		name = "F-4 Phantom II"
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = heavy_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = small_bomb_bay
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		icon = "GFX_F-4_Phantom_II_medium"
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "F-5 Tiger II"
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = rocket_pod
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-			special_type_slot_2 = plane_lighten_materials
-		}
-		icon = "GFX_F-5_Tiger_II_medium"
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "F-16C/D" 
-		type = medium_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = medium_bomb_bay
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		icon = "GFX_F-16CD_medium"
-	}
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_mountaineers = 1
+	tech_recon = 1
+	tech_support = 1
+	tech_trucks = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	basic_train = 1
 }
 if = {
 	limit = {
 		NOT = { has_dlc = "No Step Back" }
 	}
 	set_technology = {
-	main_battle_tank1 = 1
-	main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	light_tank1 = 1
-	mechanised_infantry1 = 1
-	nonsnb_technicality_tech = 1
-	light_mechanized_infantry1 = 1
-	light_mechanized_infantry2 = 1
-	#mechanised_infantry2 = 1
+		gwtank = 1
+		basic_light_tank = 1
+
 	}
 }
 if = {
@@ -131,606 +77,493 @@ if = {
 		has_dlc = "No Step Back"
 	}
 	set_technology = {
-		IFV_chassis_80s = 1
-		IFV_chassis = 1
-		technicality_tech = 1
-		light_mechanized_infantry1 = 1
-		light_mechanized_infantry2 = 1
-		# = 1
-		main_battle_tank_chassis = 1
-		main_battle_tank_chassis_80s = 1
-		#main_battle_tank_chassis_00s = 1
-	}
-	create_equipment_variant = {
-		name = "M60-2000"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			#special_type_slot_4 = main_ammo_bay_MBT
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 5
-			tank_nsb_engine_upgrade = 4
-		}
-		icon = "GFX_USA_main_battle_tank1_medium"
-	}
-	create_equipment_variant = {
-		name = "M60A3"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			#special_type_slot_4 = main_ammo_bay_MBT
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = yes
-		icon = "GFX_USA_main_battle_tank1_medium"
-	}
-	create_equipment_variant = {
-		name = "M48A5T2"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			#special_type_slot_4 = main_ammo_bay_MBT
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = yes
-		icon = "GFX_USA_main_battle_tank1_medium"
-	}
-	create_equipment_variant = {
-		name = "BMP-1"
-		type = light_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_auto_cannon
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = yes
-		icon = "GFX_SOV_mechanised_infantry1_medium"
-	}
-	create_equipment_variant = {
-		name = "M113"
-		type = light_tank_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_heavy_machine_gun
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = no
-		icon = "GFX_USA_mechanised_infantry1_medium"
-	}
-	create_equipment_variant = {
-		name = "PT-76"
-		type = light_tank_destroyer_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_ifv_medium_cannon
-			special_type_slot_1 = ergo_ifv_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			optics_slot = tank_optics_1
-			special_type_slot_4 = main_ammo_bay
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = no
-		icon = "GFX_SOV_light_tank1_medium"
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
 	}
 }
-set_technology = {
-	## Infantry ##
-	infantry_weapons1 = 1
-	motorised_infantry = 1
-	infantry_rifle_upgrade = 1
-	support_weapons = 1
-	support_weapons2 = 1
-	night_vision = 1
-	body_armor = 1
-	camouflage = 1
-	marines = 1
-	tech_mountaineers = 1
-	paratroopers = 1
-	
-	## Support Companies ##
-	tech_support = 1
-	basic_train = 1
-	tech_engineers = 1
-	tech_recon = 1
-	tech_military_police = 1
-	tech_maintenance_company = 1
-	tech_field_hospital = 1
-	tech_logistics_company = 1
-	tech_signal_company = 1
-	
-	## Armor ##
-	#main_battle_tank1 = 1
-	#main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	#light_tank1 = 1
-	
-	#mechanised_infantry2 = 1
-	#light_mechanized_infantry1 = 1
-	#light_mechanized_infantry2 = 1
-		amphibious_mechanized_infantry1 = 1
-		
-
-	
-	## Artillery ##
-	coldwar_artillery = 1
-	gw_artillery = 1
-	interwar_antiair = 1
-	sp_antiair0 = 1 
-	coldwar_antiair = 1 #they have a lot of these
-	coldwar_antitank = 1
-	
-
-	
-	## Air ##
-	# CAS1 = 1
-	# CAS2 = 1
-	# fighter1 = 1
-	# fighter2 = 1
-	# cv_fighter1 = 1
-	# cv_naval_bomber1 = 1
-	# naval_bomber1 = 1
-	# naval_bomber2 = 1
-	# strategic_bomber1 = 1
-	# strategic_bomber2 = 1
-	# #scout_plane1 = 1
-	
-	## Engineering ##
-	electronic_mechanical_engineering = 1
-	radio = 1
-	atomic_research = 1
-	experimental_rockets = 1
-	
-	
-	## Industry ##
-	
-}
-
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 	set_technology = {
-		early_destroyer = 1
-		basic_destroyer = 1
-		early_light_cruiser = 1
-		basic_light_cruiser = 1
-		early_heavy_cruiser = 1
 		early_submarine = 1
-		basic_submarine = 1
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_battleship = 1
+		early_battlecruiser = 1
 		transport = 1
 	}
 }
 if = {
 	limit = { has_dlc = "Man the Guns" }
 	set_technology = {
-		early_ship_hull_light = 1
-		basic_ship_hull_light = 1
-		early_ship_hull_cruiser = 1
-		basic_ship_hull_cruiser = 1
-		early_ship_hull_submarine = 1
-		basic_ship_hull_submarine = 1
-		smoke_generator = 1
-		sonar = 1
-		basic_depth_charges = 1
-		improved_airplane_launcher = 1
-		basic_cruiser_armor_scheme = 1
-		basic_torpedo = 1
-		basic_battery = 1
-		basic_light_battery = 1
-		basic_medium_battery = 1
-		basic_secondary_battery = 1
-		mtg_transport = 1
 		basic_naval_mines = 1
 		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_battery = 1
+		basic_torpedo = 1
+		coastal_defense_ships = 1
+		mtg_transport = 1
 	}
 }
 
-create_equipment_variant = { name = "G3A7A1" type = infantry_equipment_1 obsolete = yes }
-create_equipment_variant = { name = "M48A5T2" type = modern_tank_equipment_1 upgrades = { tank_gun_upgrade = 3 tank_reliability_upgrade = 1 tank_engine_upgrade = 2 } obsolete = yes  }
+1936.1.1 = {
+	if = { 
+		limit = { has_dlc = "Battle for the Bosporus" }	
+		set_variable = { var = TUR_kemalist_power_variable value = 5 }
+		797 = {
+			add_dynamic_modifier = { modifier = kemalist_loyalties }
+		}
+		341 = {
+			add_dynamic_modifier = { modifier = kemalist_loyalties }
+		}
+		340 = {
+			add_dynamic_modifier = { modifier = kemalist_loyalties }
+		}
+		339 = {
+			add_dynamic_modifier = { modifier = kemalist_loyalties }
+		}
+		354 = {
+			add_dynamic_modifier = { modifier = kemalist_loyalties }
+		}
+		350 = {
+			add_dynamic_modifier = { modifier = kurdish_agitation }
+		}
+		352 = {
+			add_dynamic_modifier = { modifier = kurdish_separatism }
+		}
+		800 = {
+			add_dynamic_modifier = { modifier = kurdish_separatism }
+		}
+		353 = {
+			add_dynamic_modifier = { modifier = kurdish_agitation }
+		}
+		798 = {
+			add_dynamic_modifier = { modifier = islamist_opposition }
+		}
+		349 = {
+			add_dynamic_modifier = { modifier = islamist_sedition }
+		}
+		348 = {
+			add_dynamic_modifier = { modifier = islamist_sedition }
+		}
+		345 = {
+			add_dynamic_modifier = { modifier = islamist_opposition }
+		}
+		344 = {
+			add_dynamic_modifier = { modifier = islamist_opposition }
+		}
+		355 = {
+			add_dynamic_modifier = { modifier = islamist_sedition }
+		}
+		356 = {
+			add_dynamic_modifier = { modifier = islamist_opposition }
+		}
 
-diplomatic_relation = { country = AZR relation = non_aggression_pact }
-give_guarantee = AZR
-give_military_access = AZR
+		
+		353 = {
+			start_resistance = yes
+			set_compliance = 20
+			set_resistance = 10
+			set_garrison_strength = 1.0
+		}
+		
+		350 = {
+			start_resistance = yes
+			set_compliance = 25
+			set_resistance = 15
+			set_garrison_strength = 1.0
+		}
+		
+		352 = {
+			start_resistance = yes
+			set_compliance = 10
+			set_resistance = 15
+			set_garrison_strength = 0.75
+		}
+		
+		800 = {
+			start_resistance = yes
+			set_compliance = 10
+			set_resistance = 15
+			set_garrison_strength = 0.75
+		}
+		set_variable = { var = TUR_kemalist_officers_loyalty value = 1 }
+		every_owned_state = {
+			limit = {
+				OR = {
+					state = 49
+					state = 342
+					state = 343
+					state = 346
+					state = 347
+				}
+			}
+			set_state_flag = TUR_ideological_battleground_state
+		}
+	
+		add_opinion_modifier = { 
+			target = GRE
+			modifier = BFTB_balkan_pact_ally
+		}
+		add_opinion_modifier = { 
+			target = ROM
+			modifier = BFTB_balkan_pact_ally
+		}
+		add_opinion_modifier = { 
+			target = YUG
+			modifier = BFTB_balkan_pact_ally
+		}
+		add_opinion_modifier = { 
+			target = BUL
+			modifier = BFTB_balkan_pact_enemy
+		}
+		add_opinion_modifier = { 
+			target = HUN
+			modifier = BFTB_balkan_pact_enemy
+		}
+	}
 
-set_country_flag = dominant_religion_islam
-set_country_flag = sunni_islam
-
-add_ideas = {
-	economy_growth
-	civil_liberties_totalitarian
-	population_growth_steady
-	limited_conscription
-	kurdish_separatism
+	if = { 
+		limit = { NOT = { has_dlc = "Battle for the Bosporus" }	}
+		add_ideas = {
+		}
+	}
 }
 
-352 = { #Kurdistan
-    start_resistance = yes
-    set_compliance = 50
-    set_resistance = 20
-    set_garrison_strength = 1.0
-}
-350 = { #Kurdistan
-    start_resistance = yes
-    set_compliance = 50
-    set_resistance = 20
-    set_garrison_strength = 1.0
-}
-999 = { #Kurdistan
-    start_resistance = yes
-    set_compliance = 50
-    set_resistance = 20
-    set_garrison_strength = 1.0
-}
+1939.1.1 = {
 
-add_opinion_modifier = { target = AZR modifier = large_increase }
-add_opinion_modifier = { target = ARM modifier = rival }
-add_opinion_modifier = { target = ARM modifier = rival_trade }
-add_opinion_modifier = { target = CYP modifier = rival }
-add_opinion_modifier = { target = CYP modifier = rival_trade }
-add_opinion_modifier = { target = NGK modifier = rival }
-add_opinion_modifier = { target = NGK modifier = rival_trade }
-add_opinion_modifier = { target = GRE modifier = rival }
-
-
-set_politics = {
-#1999 election results	
-	ruling_party = social_democrat
-	last_election = "1997.11.3"
-	election_frequency = 60
-	elections_allowed = yes
-}
-
-set_popularities = {
-    social_liberal = 6
-    nationalist = 13
-    islamist = 10
-    market_liberal = 10
-    conservative = 31
-    social_democrat = 26
-    progressive = 2
-    reactionary = 1
-    democratic_socialist = 1
-    communist = 0
-}
-recruit_character = TUR_bulent_ecevit
-recruit_character = TUR_devlet_bahceli
-recruit_character = TUR_recai_kutan
-recruit_character = TUR_mesut_yilmaz
-recruit_character = TUR_recep_tayyip_erdogan
-recruit_character = TUR_deniz_baykal
-recruit_character = TUR_murat_bozlak
-recruit_character = TUR_muhsin_yazicioglu
-recruit_character = TUR_dogu_perincek
-recruit_character = TUR_ufuk_uras
-recruit_character = TUR_aydemir_guler
-recruit_character = TUR_ertugrul_osman
-recruit_character = TUR_huseyin_kivrikoglu
-recruit_character = TUR_hilmi_Ozkok
-recruit_character = TUR_Cetin_dogan
-recruit_character = TUR_tuncer_kilinc
-recruit_character = TUR_tamer_akbas
-recruit_character = TUR_edip_baser
-recruit_character = TUR_rasim_betir
-recruit_character = TUR_attila_ates
-recruit_character = TUR_orhan_yoney
-recruit_character = TUR_nahit_Senogul
-recruit_character = TUR_isik_kosaner
-recruit_character = TUR_aytac_yalman
-recruit_character = TUR_Sukru_sariisik
-recruit_character = TUR_koksal_karabay
-recruit_character = TUR_Ilker_basbug
-recruit_character = TUR_hursit_tolon
-recruit_character = TUR_necdet_timur
-recruit_character = TUR_yasar_buyukanit
-recruit_character = TUR_Sener_eruygur
-recruit_character = TUR_hasan_peker_gunal
-recruit_character = TUR_ilhami_erdil
-recruit_character = TUR_bulent_alpkaya
-recruit_character = TUR_yener_karahanoglu
-recruit_character = TUR_Ozden_Ornek
-recruit_character = TUR_yalcin_ertuna
-recruit_character = TUR_osman_metin_acimuz
-recruit_character = TUR_taner_balkis
-recruit_character = TUR_alev_gumusoglu
-recruit_character = TUR_mehmet_otuzbiroglu
-recruit_character = TUR_taner_uzunay
-recruit_character = TUR_ugur_yigit
-recruit_character = TUR_lutfu_sancar
-recruit_character = TUR_hulusi_akar
-recruit_character = TUR_salih_zeki_Colak
-recruit_character = TUR_musa_avsever
-recruit_character = TUR_yildirim_guvenc
-recruit_character = TUR_ismail_serdar_savas
-recruit_character = TUR_ismail_metin_temel
-recruit_character = TUR_abdullah_recep
-recruit_character = TUR_galip_mendi
-recruit_character = TUR_ihsan_uyar
-recruit_character = TUR_mehmet_goktan
-recruit_character = TUR_hakan_atinc
-recruit_character = TUR_izzet_Cetingoz
-recruit_character = TUR_Senol_alparslan
-recruit_character = TUR_erdal_Ozturk
-recruit_character = TUR_ilyas_bozkurt
-recruit_character = TUR_mehmet_faruk_Sengun
-recruit_character = TUR_ali_sivri
-recruit_character = TUR_mehmet_daysal
-recruit_character = TUR_kemal_basak
-recruit_character = TUR_yilmaz_uyar
-recruit_character = TUR_levent_ergun
-recruit_character = TUR_mehmet_Ozoglu
-recruit_character = TUR_levent_kose
-recruit_character = TUR_Ozgur_nuhut
-recruit_character = TUR_Omer_pac
-recruit_character = TUR_murat_yetgin
-recruit_character = TUR_zekai_aksakalli
-recruit_character = TUR_abidin_Unal
-recruit_character = TUR_akin_Ozturk
-recruit_character = TUR_mehmet_Sanver
-recruit_character = TUR_gursel_Caypinar
-recruit_character = TUR_bulent_bostanoglu
-recruit_character = TUR_adnan_Ozbal
-recruit_character = TUR_veysel_kosele
-recruit_character = TUR_hasan_Sukru_korlu
-recruit_character = TUR_hasan_usaklioglu
-recruit_character = TUR_ali_Cekic
-recruit_character = TUR_ercument_tatlioglu
-
-
-2016.1.1 = {
+	add_political_power = 1198
+	add_command_power = 100
 
 	set_politics = {
-		ruling_party = conservative
-		last_election = "2015.11.1"
-		election_frequency = 48
+		ruling_party = neutrality
+		last_election = "1939.2.8"
+		election_frequency = 60
 		elections_allowed = yes
 	}
-	
-	create_country_leader = {
-		name = "Kemal Okuyan"
-		picture = "Kemal_Okuyan.dds"
-		ideology = stalinist
-		expire = "2023.1.1"
-	}
-	
-	create_country_leader = {
-		name = "Alper Taş"
-		picture = "Alper_Tas.dds"
-		ideology = democratic_socialist_ideology
-		expire = "2023.1.1"
-	}
-	
-	create_country_leader = {
-		name = "Selahattin Demirtaş"
-		picture = "Selahattin_Demirtas.dds"
-		ideology = progressive_ideology
-		expire = "2023.1.1"
+
+	if = {
+		limit = { has_dlc = "Battle for the Bosporus" }
+		complete_national_focus = TUR_the_montreux_convention
+		complete_national_focus = TUR_continue_the_policy_of_etatism
+		complete_national_focus = TUR_hava_okulu
+		complete_national_focus = TUR_ratify_the_six_arrows
+		complete_national_focus = TUR_peace_at_home
+		complete_national_focus = TUR_turkish_state_railways
+		complete_national_focus = TUR_the_second_five_year_plan
+		complete_national_focus = TUR_treaty_of_saadabad
+		complete_national_focus = TUR_the_sanayiciler
+		complete_national_focus = TUR_learning_from_the_great_war
+		complete_national_focus = TUR_the_guardians_of_kemalism
+		complete_national_focus = TUR_assess_our_future
+		complete_national_focus = TUR_the_hatay_issue
+		complete_national_focus = TUR_turk_ulusu
+		complete_national_focus = TUR_cooperate_with_the_debt_council
+		complete_national_focus = TUR_utilize_foreign_capital
+		complete_national_focus = TUR_modernising_the_army
+		complete_national_focus = TUR_expand_the_air_bases
+		remove_ideas = {
+			civilian_economy
+			TUR_kemalist_army_officers_limited_power_loyal
+			TUR_kemalist_army_officers_extended_power_loyal
+			TUR_tpda
+			TUR_disorganised_armed_forces
+			TUR_debt_council
+			TUR_etatism
+			TUR_second_five_year_plan_inonu
+			TUR_ismet_inonu
+		}
+		add_ideas = {
+		}
+		add_timed_idea = {
+			idea = TUR_second_five_year_plan_inonu
+			days = 730
+		}
+		347 = {
+			add_dynamic_modifier = { modifier = kemalist_loyalties }
+		}	
+		342 = {
+			add_dynamic_modifier = { modifier = kemalist_loyalties }
+		}
+		set_variable = { var = TUR_kemalist_officers_loyalty value = 0 }	
+
+		set_variable = { var = TUR_kemalist_power_variable value = 7 }
+
+		promote_character = TUR_ismet_inonu
+		retire_character = TUR_mustafa_kemal_ataturk
 	}
 
-#	create_country_leader = {
-#		name = "Recep Tayyip Erdoğan"
-#		picture = "Recep_Tayyip_Erdogan.dds"
-#		ideology = right_wing_conservative
-#		traits = { popular_figurehead }
-#		expire = "2023.1.1"
-#	}
-	
-	create_country_leader = {
-		name = "Kemal Kılıçdaroğlu"
-		picture = "Kemal_Kilicdaroglu.dds"
-		ideology = moderate
-		expire = "2023.1.1"
-	}
-	
-	create_country_leader = {
-		name = "Önder Aksakal"
-		picture = "Onder_Aksakal.dds"
-		ideology = social_democrat_ideology
-		expire = "2023.1.1"
-	}
-	
-	create_country_leader = {
-		name = "Gültekin Uysal"
-		picture = "Gultekin_Uysal.dds"
-		ideology = libertarian
-		expire = "2023.1.1"
-	}
-	
-	create_country_leader = {
-		name = "Bayezid Osman"
-		picture = "Bayezid_Osman.dds"
-		ideology = absolute_monarchist
-		expire = "2023.1.1"
-	}
-	
-	create_country_leader = {
-		name = "Mustafa Destici"
-		picture = "Mustafa_Destici.dds"
-		ideology = fascist_ideology
-		expire = "2023.1.1"
-	}
-	
-	create_country_leader = {
-		name = "Mustafa Kamalak"
-		picture = "Mustafa_Kamalak.dds"
-		ideology = islamic_republican
-		expire = "2023.1.1"
+	if = {
+		limit = { NOT = { has_dlc = "Battle for the Bosporus" } }
+		#generic focuses
+		complete_national_focus = army_effort
+		complete_national_focus = equipment_effort
+		complete_national_focus = motorization_effort
+		complete_national_focus = aviation_effort
+		complete_national_focus = naval_effort
+		complete_national_focus = large_navy
+		complete_national_focus = industrial_effort
+		complete_national_focus = construction_effort
+		complete_national_focus = production_effort
+
+		add_ideas = {
+		}
+
 	}
 
-	set_party_name = {
-		ideology = conservative
-		long_name = TUR_conservative_party_AKP_long
-		name = TUR_conservative_party_AKP
+	if = {
+		limit = {
+			has_character = TUR_mustafa_kemal_ataturk
+			TUR_mustafa_kemal_ataturk = { is_unit_leader = yes }
+		}
+		TUR_mustafa_kemal_ataturk = { remove_unit_leader_role = yes }
 	}
-	set_party_name = {
-		ideology = progressive
-		long_name = TUR_progressive_party_HDP_long
-		name = TUR_progressive_party_HDP
+	
+	oob = "TUR_1939"
+
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			set_naval_oob = "TUR_1939_naval_mtg"
+		else = {
+			set_naval_oob = "TUR_1939_naval_legacy"
+		}
 	}
-	set_party_name = {
-		ideology = islamist
-		long_name = TUR_islamist_party_SP_long
-		name = TUR_islamist_party_SP
-	}
-	set_party_name = {
-		ideology = market_liberal
-		long_name = TUR_market_liberal_party_DP_long
-		name = TUR_market_liberal_party_DP
-	}
-	set_party_name = {
-		ideology = communist
-		long_name = TUR_communist_party_KP_long
-		name = TUR_communist_party_KP
-	}
-	set_party_name = {
-		ideology = reactionary
-		long_name = TUR_reactionary_party_VP_long
-		name = TUR_reactionary_party_VP
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "TUR_1939_air_bba"
+		else = {
+			set_air_oob = "TUR_1939_air_legacy"
+			set_technology = {
+				fighter1 = 1
+				early_bomber = 1
+				tactical_bomber1 = 1
+			}
+		}
 	}
 
-    set_popularities = {
-        social_democrat = 0
-        nationalist = 12
-        islamist = 1
-        market_liberal = 0
-        conservative = 49
-        social_liberal = 25
-        progressive = 11
-        reactionary = 2
-        democratic_socialist = 0
-    }
-oob = "TUR_2016"
-}	
+	set_technology = {
+		interwar_artillery = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+
+		#doctrines
+		air_superiority = 1
+
+		mass_assault = 1
+		pocket_defence = 1
+		defence_in_depth = 1
+		
+		fleet_in_being = 1
+		convoy_sailing = 1
+		submarine_operations = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_silos = 1
+		oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		set_technology = {
+			basic_submarine = 1
+		}
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+		}
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1935.2.8"
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 94
+	neutrality = 6
+}
+
+set_convoys = 20
+set_stability = 0.5
+set_war_support = 0.3
+
+if = {
+	limit = { has_dlc = "Battle for the Bosporus" }
+	recruit_character = TUR_mustafa_kemal_ataturk
+	recruit_character = TUR_sefik_husnu
+	recruit_character = TUR_celal_bayar
+	recruit_character = TUR_mehmet_recep_peker
+	recruit_character = TUR_fevzi_cakmak
+	recruit_character = TUR_fahrettin_altay
+	recruit_character = TUR_kazim_orbay
+	recruit_character = TUR_cemil_cahit_toydemir
+	recruit_character = TUR_izzettin_chalishlar
+	recruit_character = TUR_kazim_karabekir
+	recruit_character = TUR_mustafa_muglali
+	recruit_character = TUR_mehmet_salih_omurtak
+	recruit_character = TUR_hayrullah_fisek
+	recruit_character = TUR_mehmet_nuri_yamut
+	recruit_character = TUR_sadik_altincan
+	recruit_character = TUR_sukru_okan
+	recruit_character = TUR_mehmet_ali_ulgen
+	recruit_character = TUR_abdurrahman_gurman
+	recruit_character = TUR_fakhri_pasha
+	recruit_character = TUR_refet_bele
+	recruit_character = TUR_zeki_dogan
+	recruit_character = TUR_sabiha_gokcen
+	recruit_character = TUR_ali_fuat_cebesoy
+	recruit_character = TUR_vecihi_hurkus
+	recruit_character = TUR_ali_ihsan_sabis
+	recruit_character = TUR_rauf_orbay
+	recruit_character = TUR_izzettin_calislar
+	recruit_character = TUR_ahmet_ali_celikten
+	recruit_character = TUR_mehmet_fahri_engin
+	recruit_character = TUR_muzaffer_goksenin
+	recruit_character = TUR_halil_kut
+	recruit_character = TUR_mumtaz_okmen
+	recruit_character = TUR_riza_nur
+	recruit_character = TUR_nejdet_sancar
+	recruit_character = TUR_kazim_ozalp
+	recruit_character = TUR_sukru_saracoglu_prime_minister
+	recruit_character = TUR_adnan_menderes
+	recruit_character = TUR_nuri_demirag_prime_minister
+	recruit_character = TUR_hasan_saka
+	recruit_character = TUR_hilmi_uran
+	recruit_character = TUR_fethi_okyar
+	recruit_character = TUR_sukru_saracoglu
+	recruit_character = TUR_halide_edib_adivar
+	recruit_character = TUR_sevket_sureyya_aydemir
+	recruit_character = TUR_mehmet_emin_yurdakul
+	recruit_character = TUR_nuri_demirag
+	recruit_character = TUR_nuri_killigil
+	recruit_character = TUR_said_i_nursi
+	recruit_character = TUR_ismet_inonu
+	recruit_character = TUR_nihal_atsiz
+	recruit_character = TUR_zeki_velidi_togan
+	recruit_character = TUR_nazim_hikmet
+
+	recruit_character = TUR_ahmet_fevzi_pasha # Ottoman Sultanate general. Not available at game start
+	recruit_character = TUR_refet_pasha # Ottoman Sultanate general. Not available at game start
+	recruit_character = TUR_mehmet_esat_pasha # Ottoman Sultanate general. Not available at game start
+	recruit_character = TUR_halife_abdulmecid_efendi #Empty Character that can become Country Leader via event.
+	recruit_character = GER_hans_von_luck #Foreign General. Not available at game start
+	recruit_character = GER_wilhelm_ritter_von_thoma #Foreign General. Not available at game start
+	recruit_character = ITA_ferdinando_umberto_filippo_adalberto #Foreign Admiral. Not available at game start
+	recruit_character = TUR_durrushehvar_i #Empty char. Can become country leader later
+	recruit_character = TUR_abdulmejid_ii #Empty char. Can become country leader later
+	recruit_character = TUR_hazi_aslanov #Empty Char. Can become unit leader later
+}
+
+if = {
+	limit = { NOT = { has_dlc = "Battle for the Bosporus" } }
+	recruit_character = TUR_ismet_inonu
+	recruit_character = TUR_mustafa_kemal_ataturk
+	recruit_character = TUR_sefik_husnu
+	recruit_character = TUR_celal_bayar
+	recruit_character = TUR_fevzi_cakmak
+	recruit_character = TUR_cemil_cahit_toydemir
+	recruit_character = TUR_rauf_orbay
+	recruit_character = TUR_memduh_tagmac
+	recruit_character = TUR_abdurrahman_gurman
+	recruit_character = TUR_mehmet_ali_ulgen
+	recruit_character = TUR_sabiha_gokcen
+	recruit_character = TUR_mehmet_gunaltay
+	recruit_character = TUR_ali_fuat_cebesoy
+	recruit_character = TUR_refik_saydam
+	recruit_character = TUR_erkan_gataly
+	recruit_character = TUR_ali_orlungat
+	recruit_character = TUR_mehmet_salih_omurtak
+	recruit_character = TUR_nazmi_solok
+	recruit_character = TUR_hassan_saka
+	recruit_character = TUR_kazim_ozalp
+	recruit_character = TUR_mumtaz_okmen
+	recruit_character = TUR_kazim_orbay
+}
+
+if = {
+	limit = {
+		AND = {
+			has_dlc = "La Resistance"
+			has_dlc = "Battle for the Bosporus"
+		}
+	}
+	recruit_character = TUR_elyesa_bazna
+	create_operative_leader = {
+		name = "Ruzi Nazar"
+		GFX = "GFX_portrait_tur_ruzi_nazar"
+		traits = { operative_tough operative_commando }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		female = no
+		nationalities = { TUR SOV KAZ }
+	}
+}
 
 ### VARIANTS ###
-# 2000 Start #
+# 1936 Start #
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
-	create_equipment_variant = { name = "Tepe-class" type = light_cruiser_1 obsolete = yes }
-	create_equipment_variant = { name = "Gabya-class" type = light_cruiser_2 obsolete = yes }
-	create_equipment_variant = { name = "Yavuz-class" type = light_cruiser_2 obsolete = yes  }
-	create_equipment_variant = { name = "Barbaros-class" type = light_cruiser_2 upgrades = { ship_gun_upgrade = 1 ship_engine_upgrade = 2 }  }
-	create_equipment_variant = { name = "Ay-class" type = submarine_2  }
-	create_equipment_variant = { name = "Preveze-class" type = submarine_2  }
+	### Ship Variants ###
+	create_equipment_variant = {
+		name = "Kocatepe Class"
+		type = destroyer_1
+		upgrades = {
+			ship_torpedo_upgrade = 2
+			destroyer_engine_upgrade = 2
+			ship_ASW_upgrade = 1
+			ship_anti_air_upgrade = 1
+		}
+	}
+	create_equipment_variant = {
+		name = "Tinaztepe Class"
+		type = destroyer_1
+		obsolete = yes
+		upgrades = {
+			ship_torpedo_upgrade = 1
+			destroyer_engine_upgrade = 1
+			ship_ASW_upgrade = 1
+			ship_anti_air_upgrade = 1
+		}
+	}
+	create_equipment_variant = {
+		name = "Dumlupinar Class"
+		type = submarine_1
+		upgrades = {
+			ship_reliability_upgrade = 2
+			sub_engine_upgrade = 2
+			sub_stealth_upgrade = 2
+			sub_torpedo_upgrade = 2
+		}
+	}
 }
 if = {
 	limit = { has_dlc = "Man the Guns" }
-	## Corvettes ##
-	create_equipment_variant = { #Corvette 2
-		name = "Kılıç class"
-		type = ship_hull_light_2
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_2
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_2
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_torpedo_1
-			rear_1_custom_slot = ship_depth_charge_1
-		}
-		obsolete = no
-	}
-	## Frigates ##
-	create_equipment_variant = { #Frigate 1
-		name = "Knox-class"
-		type = ship_hull_cruiser_1
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = ship_anti_air_1
-			rear_1_custom_slot = ship_light_medium_battery_1
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = { #Frigate 2
-		name = "Yavuz-class"
-		type = ship_hull_cruiser_2
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_2
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_2
-			fixed_ship_armor_slot = ship_armor_cruiser_2
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			front_1_custom_slot = ship_light_medium_battery_2
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = ship_anti_air_1
-			rear_1_custom_slot = ship_light_medium_battery_1
-		}
-		obsolete = no
-	}
-	## Submarines ##
-	create_equipment_variant = { #Diesel Sub 1
-		name = "Tang-class"
+	# Submarines #
+	create_equipment_variant = {
+		name = "Birinci Inönü Class"				
 		type = ship_hull_submarine_1
+		name_group = TUR_SS_HISTORICAL
 		parent_version = 0
 		modules = {
 			fixed_ship_torpedo_slot = ship_torpedo_sub_1
@@ -739,78 +572,122 @@ if = {
 		}
 		obsolete = yes
 	}
-	create_equipment_variant = { #Nuclear Sub 2
-		name = "Moon-class"
+	create_equipment_variant = {
+		name = "Dumlupinar Class"				
 		type = ship_hull_submarine_2
+		name_group = TUR_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_2
+			rear_1_custom_slot = ship_mine_layer_sub
+		}
+	}
+	create_equipment_variant = {
+		name = "Sakarya Class"								# represents Sakarya and Gur classes
+		type = ship_hull_submarine_1
+		name_group = TUR_SS_HISTORICAL
 		parent_version = 0
 		modules = {
 			fixed_ship_torpedo_slot = ship_torpedo_sub_2
-			fixed_ship_engine_slot = sub_ship_engine_n1
-			rear_1_custom_slot = ship_torpedo_sub_2
+			fixed_ship_engine_slot = sub_ship_engine_2
+			rear_1_custom_slot = empty
 		}
-		obsolete = no
+	}
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Peyk Class"									# large torpedo boats		
+		type = ship_hull_light_1
+		name_group = TUR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Kocatepe Class"								# represents Kocatepe and Zafer classes
+		type = ship_hull_light_1
+		name_group = TUR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_2
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+	}
+	# Cruisers #
+	create_equipment_variant = {
+		name = "Mecidiye Class"								# represents Mecidiye and Hamidiye protected cruisers		
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = TUR_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = empty
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = ship_torpedo_1
+		}
+	}
+	# Battlecruiser #
+	create_equipment_variant = {
+		name = "Yavuz Class"	
+		type = ship_hull_heavy_1
+		name_group = TUR_BC_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bc_1
+			front_1_custom_slot = ship_heavy_battery_1
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
 	}
 }
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
+
+# 1939 Start #
+1939.1.1 = {
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		# Ship variants #
 	}
-	add_equipment_to_stockpile = {
-		type = fighter_equipment_3
-		amount = 165
-		producer = USA
-	}
-	add_equipment_to_stockpile = {
-		type = fighter_equipment_2
-		amount = 87
-		producer = USA
-	}
-	add_equipment_to_stockpile = {
-		type = CAS_equipment_1
-		amount = 59
-		producer = USA
-	}
-	add_equipment_to_stockpile = {
-		type = CAS_equipment_2
-		amount = 80
-		producer = USA
-	}
-	add_equipment_to_stockpile = {
-		type = transport_plane_equipment_1
-		amount = 8
-		producer = USA
-	}
-	add_equipment_to_stockpile = {
-		type = transport_plane_equipment_1
-		amount = 48
-		producer = USA
-	}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_0
-		amount = 55 #50-60
-		producer = USA
-		variant_name = "F-4 Phantom II"
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_0
-		amount = 45 #40-50
-		producer = USA
-		variant_name = "F-5 Tiger II" #freedom fighter
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_1
-		amount = 160
-		producer = TUR
-		variant_name = "F-16C/D" #fight falkon
-	}
-	add_equipment_to_stockpile = {
-		type = transport_plane_equipment_1
-		amount = 48
-		producer = USA
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		# Submarines #
+		create_equipment_variant = {
+			name = "Saldiray Class"				
+			type = ship_hull_submarine_2
+			name_group = TUR_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_torpedo_slot = ship_torpedo_sub_2
+				fixed_ship_engine_slot = sub_ship_engine_2
+				rear_1_custom_slot = empty
+			}
+		}
 	}
 }

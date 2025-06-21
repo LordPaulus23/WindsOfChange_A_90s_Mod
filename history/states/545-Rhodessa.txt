@@ -1,35 +1,27 @@
-
 state={
 	id=545
+	
+	state_category = pastoral
+	
 	name="STATE_545"
 
 	history={
-		owner = ZAM
-		add_core_of = ZAM
+		owner = ZIM
 		buildings = {
-			infrastructure = 4
-			industrial_complex = 1
-			arms_factory = 1
-			air_base = 3
+			infrastructure = 2
 
 		}
 		victory_points = {
-			14742 20 
+			10929 1 
 		}
-		victory_points = {
-			14750 4 
-		}
-		victory_points = {
-			14760 6 
-		}
-
+		add_core_of = ZIM
 	}
 
 	provinces={
-		5199 12504 14739 14740 14741 14742 14743 14745 14747 14750 14755 14756 14760 
+		1874 2151 2216 4851 7842 10929
 	}
-	manpower=3500100
+	manpower=1171336
 	buildings_max_level_factor=1.000
-	state_category=state_level_6
-	local_supplies=0.000
+
+	local_supplies=3.0 
 }

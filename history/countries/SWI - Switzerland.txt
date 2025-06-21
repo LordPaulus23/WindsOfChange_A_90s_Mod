@@ -1,459 +1,376 @@
-﻿capital = 151
-
-oob = "SWI_2000"
-
-set_research_slots = 4
-set_convoys = 10
-set_stability = 0.85
-
-set_country_flag = country_language_german
-set_country_flag = country_language_french
-set_country_flag = country_language_italian
-set_country_flag = country_language_romansh
-
+﻿capital = 3
 
 if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-	set_technology = {
-		CAS1 = 1
-		CAS2 = 1
-		cv_CAS1 = 1
-		cv_CAS2 = 1
-		fighter1 = 1
-		fighter2 = 1
-		cv_fighter1 = 1
-		cv_fighter2 = 1
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-		naval_bomber3 = 1
-		cv_naval_bomber1 = 1
-		cv_naval_bomber2 = 1
-		cv_naval_bomber3 = 1
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
-		#scout_plane1 = 1
+	limit = { has_dlc = "By Blood Alone" }
+		set_oob = "SWI_1936_BBA"
+		set_air_oob = "SWI_1936_air_bba"
+	else = {
+		set_oob = "SWI_1936"
+		set_air_oob = "SWI_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			CAS1 = 1
+		}
 	}
 }
-if = {
+
+set_research_slots = 3
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_trucks = 1
+	tech_mountaineers = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	fuel_silos = 1
+	basic_train = 1
+}
+
+##### Characters for both
+recruit_character = SWI_federal_assembly 
+recruit_character = SWI_max_leo_keller
+recruit_character = SWI_fritz_platten
+recruit_character = SWI_henri_guisan
+recruit_character = SWI_hans_oehler
+recruit_character = SWI_etienne_primault
+recruit_character = SWI_hermann_hessel_lorenz
+recruit_character = SWI_carl_jacob_burckhardt
+recruit_character = SWI_johannes_baumann
+recruit_character = SWI_roger_masson
+recruit_character = SWI_giuseppe_motta
+recruit_character = SWI_ernst_wetter
+
+if = { #####  Vanilla Characters 
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	recruit_character = SWI_ernest_beuin
+	recruit_character = SWI_j_d_de_montenach
+	recruit_character = SWI_jean_de_muralt
+	recruit_character = SWI_werner_jenni
+	recruit_character = SWI_eugen_bircher
+	recruit_character = SWI_oskar_bider
+	recruit_character = SWI_ernst_laur
+	recruit_character = SWI_johann_august_sutter
+	recruit_character = SWI_hans_peter_bichsel_sohn
+	recruit_character = SWI_rene_von_graffenried
+
+}
+
+IF = {
+	limit = { #He needs to be available for Gotterdamerung too now. SWI event is bba locked, AUS is gtd locked
+		OR = {
+			has_dlc = "By Blood Alone"
+			has_dlc = "Gotterdammerung"
+		}
+	}
+	recruit_character = SWI_georg_von_trapp
+}
+
+if = { #########   By Blood Alone Stuff
 	limit = {
 		has_dlc = "By Blood Alone"
 	}
-	#tech
-	set_technology = {
-		iw_small_airframe = 1
-		basic_small_airframe = 1
-		iw_medium_airframe = 1
-		basic_medium_airframe = 1
-		iw_heli_airframe = 1
-		iw_naval_airframe = 1
-		basic_naval_airframe = 1
-		iw_large_airframe = 1
-		basic_large_airframe = 1
-		aa_lmg = 1
-		Cold_war_cas = 1
-		engines_1 = 1
-		air_misc = 1
-		#scout_plane1 = 1
-	}
-	#varients
-	#CAS
-	create_equipment_variant = {
-		name = "Su-25" 
-		type = small_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = heavy_mg_2x
-			fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
-			fixed_auxiliary_weapon_slot_2 = tank_buster_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-			special_type_slot_3 = armor_plate_medium
-		}
-	}
-	#Multirole
-	create_equipment_variant = {
-		name = "Mirage III" 
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		obsolete = yes
-		icon = "GFX_FRA_fighter2_medium"
-	}
-	create_equipment_variant = {
-		name = "F-5 Tiger II"
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = rocket_pod
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-			special_type_slot_2 = plane_lighten_materials
-		}
-		icon = "GFX_F-5_Tiger_II_medium"
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "F/A-18 Hornet" 
-		type = cv_medium_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_medium_1
-			fixed_auxiliary_weapon_slot_2 = tank_buster_1
-			engine_type_slot = engine_2_2x #
-			special_type_slot_1 = empty
-		}
-		icon = "GFX_FA-18_Hornet_medium"
-	}
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-	main_battle_tank1 = 1
-	main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	light_tank1 = 1
-	mechanised_infantry1 = 1
-	nonsnb_technicality_tech = 1
-	light_mechanized_infantry1 = 1
-	light_mechanized_infantry2 = 1
-	#mechanised_infantry2 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		IFV_chassis_80s = 1
-		IFV_chassis = 1
-		technicality_tech = 1
-		light_mechanized_infantry1 = 1
-		light_mechanized_infantry2 = 1
-		main_battle_tank_chassis = 1
-		main_battle_tank_chassis_80s = 1
-		#main_battle_tank_chassis_00s = 1
-	}
-	create_equipment_variant = {
-		name = "Panzer 68-88"
-		type = modern_tank_chassis_2
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_3 = auto_loader
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		icon = "GFX_SOV_main_battle_tank2_medium"
-	}
-	create_equipment_variant = {
-		name = "BMP-2"
-		type = light_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_auto_cannon
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			atgm_slot = tank_atgm_1
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 2
-			tank_nsb_engine_upgrade = 2
-		}
-		icon = "GFX_SOV_mechanised_infantry2_medium"
-	}
-	create_equipment_variant = {
-		name = "Panzer 61"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_SOV_main_battle_tank1_medium"
-	}
-	create_equipment_variant = {
-		name = "MT-LB"
-		type = light_tank_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_heavy_machine_gun
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_SOV_mechanised_infantry1_medium"
-	}
-	create_equipment_variant = {
-		name = "PT-76"
-		type = light_tank_destroyer_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_ifv_medium_cannon
-			special_type_slot_1 = ergo_ifv_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			optics_slot = tank_optics_1
-			special_type_slot_4 = main_ammo_bay
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = no
-		icon = "GFX_SOV_light_tank1_medium"
-	}
-}
-set_technology = {
-	## Infantry ##
-	infantry_weapons1 = 1
-	infantry_weapons2 = 1
-	motorised_infantry = 1
-	infantry_rifle_upgrade = 1
-	support_weapons = 1
-	support_weapons2 = 1
-	night_vision = 1
-	body_armor = 1
-	camouflage = 1
-	marines = 1
-	tech_mountaineers = 1
-	paratroopers = 1
+
+	####### Characters
+	recruit_character = SWI_federal_council
+	recruit_character = SWI_albert_meyer
+	recruit_character = SWI_herman_obrecht
+	recruit_character = SWI_karl_kobelt
+	recruit_character = SWI_max_petitpierre
+	recruit_character = SWI_marcel_pilet_golaz
+	recruit_character = SWI_walther_stampfli
+	recruit_character = SWI_walter_stucki
+	recruit_character = SWI_eduard_von_steiger
+	recruit_character = SWI_friedrich_wahlen
+	recruit_character = SWI_rudolf_minger
+	recruit_character = SWI_walter_allgower
+	recruit_character = SWI_august_lindt
+	recruit_character = SWI_carl_stucki
+	recruit_character = SWI_saly_mayer
+	recruit_character = SWI_philip_etter
+	recruit_character = SWI_enrico_celio
+	recruit_character = SWI_robert_eibel
+	recruit_character = SWI_ernst_nobs
+	recruit_character = SWI_robert_grimm
+	recruit_character = SWI_hans_oprecht
+	recruit_character = SWI_max_weber
+	recruit_character = SWI_adolf_brunner
+	recruit_character = SWI_jakob_schaffner
+	recruit_character = SWI_robert_tobler
+	recruit_character = SWI_rolf_henne
+	recruit_character = SWI_franz_riedweg
+	recruit_character = SWI_benno_schaeppi
+	recruit_character = SWI_hans_hausamann
+	recruit_character = SWI_max_waibel
+	recruit_character = SWI_jakob_labhart
+	recruit_character = SWI_jakob_huber
+	recruit_character = SWI_empty_councilor_seat
+	recruit_character = SWI_adolf_furrer
+	recruit_character = SWI_clara_thalmann
+	recruit_character = SWI_christian_gasser
+	recruit_character = SWI_lucien_tronchet
 	
-	## Support Companies ##
-	tech_support = 1
-	basic_train = 1
-	tech_engineers = 1
-	tech_recon = 1
-	tech_field_hospital = 1
-	tech_logistics_company = 1
-	tech_military_police = 1
-	tech_signal_company = 1
-	tech_maintenance_company = 1
+	####### Militarry Readiness Setup
+
+	set_variable = { SWI_mr_lowest_amount = 10 }
+	set_variable = { SWI_mr_low_amount = 15	}
+	set_variable = { SWI_mr_low_medium_amount = 20 }	
+	set_variable = { SWI_mr_medium_amount = 30 }
+	set_variable = { SWI_mr_high_medium_amount = 45	}
+	set_variable = { SWI_mr_high_amount = 60 }
+	set_variable = { SWI_mr_max_amount = 75 }	
+	set_variable = { SWI_military_readiness = SWI_mr_low_amount }	
+	set_variable = { SWI_max_mil_readiness = 100 }
+	set_variable = { SWI_militia_activation_time = 5 }
+	set_variable = { SWI_min_mil_readiness = 60 }
+	set_variable = { SWI_militia_division_cap = 15 }  
+	set_variable = { SWI_max_militia_division_cap = 90 }
+	set_variable = { SWI_militia_cap_increase = 5 }
+	clamp_variable = {
+		var = SWI_military_readiness
+		min = SWI_min_mil_readiness 
+		max = SWI_max_mil_readiness
+	}
+
+		#Active Militia Stuff
+	set_variable = { SWI_citizen_militia_initial_industrial_capacity_factory = -0.1 }
+	set_variable = { SWI_citizen_militia_initial_industrial_capacity_dockyard = -0.1 }
+	set_variable = { SWI_citizen_militia_initial_production_speed_buildings_factor = -0.1 }
+	set_variable = { SWI_citizen_militia_initial_civ_factory_use = 1 }
+	set_variable = { SWI_citizen_militia_initial_activation_timeout = 30 }
+	set_variable = { SWI_citizen_militia_initial_training_time_factor = 0.1 }
+	set_variable = { SWI_citizen_militia_modifier_change = 0.1 }
+
+	SWI_reset_citizen_militia_active_modifier = yes
+
+	set_variable = { SWI_citizen_militia_activation_timeout = SWI_citizen_militia_initial_activation_timeout }
+
+	########### BoP Council/Cantons  ##################
+
+	set_variable = { SWI_diplomatic_effort_cost = 30 } 
+
+	##### Absolute Neutrality Variables #####
+
+	set_variable = { SWI_small_opinion_change = 10 }
+	set_variable = { SWI_medium_opinion_change = 20 }
+	set_variable = { SWI_large_opinion_change = 30 }
+
+	set_variable = { SWI_dangerous_opinion = -75 }
+	set_variable = { SWI_terrible_opinion = -35 }
+	set_variable = { SWI_bad_opinion = -15 }
+	set_variable = { SWI_neutral_opinion = 10 }
+	set_variable = { SWI_good_opinion = 25 }
+	set_variable = { SWI_excellent_opinion = 55 }
+	set_variable = { SWI_safe_opinion = 100 }
+	set_variable = { SWI_time_to_appease_angry_country = 60 }
+	set_variable = { SWI_angry_threshold = -85 }
+	set_variable = { SWI_no_longer_angry_threshold = SWI_terrible_opinion }
+	set_variable = { SWI_fascist_germany = GER } #Yes I know it's stupid but I had to do it for tooltips.
 	
-	## Armor ##
-	#main_battle_tank1 = 1
-	#main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	#light_tank1 = 1
+	#Gold Trade
+	set_variable = { SWI_max_gold_trade = 6 }
+	set_variable = { SWI_max_country_gold_trading_level = 3 }
+	set_variable = { SWI_gold_trade_consumer_goods_factor_increase = -0.1 } 
+	set_variable = { SWI_gold_trade_building_speed_factor_increase = 0.03 } 
+	set_variable = { SWI_gold_trade_research_speed_factor_increase = 0.01 } 
+	set_variable = { SWI_gold_trade_lack_of_resoruce_penalty_factor_increase = -0.025 } 
+	set_variable = { SWI_gold_trade_factory_max_efficiency_factor_increase = 0.035 } 
 	
-	#mechanised_infantry2 = 1
-	#light_mechanized_infantry1 = 1
-	#light_mechanized_infantry2 = 1
-	amphibious_mechanized_infantry1 = 1
-	
-	## Artillery ##
-	coldwar_artillery = 1
-	gw_artillery = 1
-	interwar_antiair = 1
- 	rocket_artillery = 1
-	sp_antiair0 = 1 
-	coldwar_antiair = 1
-	coldwar_antitank = 1
-	 
-	 
-	sp_artillery1 = 1
-	
-	# ## Air ##
-	# CAS1 = 1
-	# CAS2 = 1
-	# cv_CAS1 = 1
-	# cv_CAS2 = 1
-	# fighter1 = 1
-	# fighter2 = 1
-	# fighter3 = 1
-	# cv_fighter1 = 1
-	# cv_fighter2 = 1
-	# cv_fighter3 = 1
-	# naval_bomber1 = 1
-	# naval_bomber2 = 1
-	# naval_bomber3 = 1
-	# cv_naval_bomber1 = 1
-	# cv_naval_bomber2 = 1
-	# cv_naval_bomber3 = 1
-	# strategic_bomber1 = 1
-	# strategic_bomber2 = 1
-	# tactical_bomber1 = 1
-	# #scout_plane1 = 1
-	
-	## Engineering ##
-	electronic_mechanical_engineering = 1
-	radio = 1
-	
-	## Industry ##
-	basic_machine_tools = 1
-	fuel_silos = 1
-	fuel_refining = 1
-	synth_oil_experiments = 1
-}
-add_ideas = {
-	centralization_federal
-	government_system_parliamentary_republic
-	national_development_developed
-	economy_tax_low
-	civil_liberties_free
-	population_growth_decline
-	swiss_political_system
-	neutrality_idea
-	free_trade
-	welfare_modest_assistance
-	limited_conscription
+	if = {
+		limit = {
+			has_start_date < 1936.01.02
+		}
+		set_variable = { SWI_councilor_1 = SWI_johannes_baumann }
+		set_variable = { SWI_councilor_2 = SWI_giuseppe_motta }
+		set_variable = { SWI_councilor_3 = SWI_albert_meyer }
+		set_variable = { SWI_president_initiative_cooldown = 276 }
+		set_variable = { SWI_president_initiative_cost = 100 }
+		country_event = { id = BBA_SWI_annual_election.00 months = 12 } #Triggers the event for the yearly elections 
+		country_event = { id = BBA_switzerland.2 days = 75 }
+		SWI_rudolf_minger = {
+			set_character_flag = SWI_current_confederation_president
+			SWI_make_character_confederation_president = yes
+		}	
+	}
+	SWI_upgrade_template_and_divisions = yes
+	country_lock_all_division_template = yes
+	SWI_find_biggest_fascist_neighbor = yes 
 }
 
-give_guarantee = LIC
+1939.1.1 = {
+
+	######   Basic   ###### 
+
+	add_political_power = 1198
+	add_command_power = 100
+
+
+	######   National Focuses   ######
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+
+		#### Focuses #### 
+
+		if = {
+			limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "SWI_1939_air_bba"
+			SWI_upgrade_template_and_divisions = yes #These are duplicated on purpose, nothing to see here.
+			SWI_upgrade_template_and_divisions = yes
+			SWI_upgrade_template_and_divisions = yes
+			SWI_increase_militia_cap = yes   
+			SWI_increase_militia_cap = yes    
+			SWI_increase_militia_cap = yes
+			SWI_increase_militia_cap = yes
+			set_oob = "SWI_1939_BBA"
+		}
+		#1936
+		complete_national_focus = SWI_swiss_guiding_principles #5
+		complete_national_focus = SWI_national_defense_fund
+		complete_national_focus = SWI_increase_defense_budget
+		complete_national_focus = SWI_reaffirm_spiritual_defense #5
+		complete_national_focus = SWI_fortify_border_with_italy
+		complete_national_focus = SWI_armed_neutrality #5
+		
+		#1937
+		complete_national_focus = SWI_federal_police
+		complete_national_focus = SWI_ban_foreign_nazi_propaganda #5
+		complete_national_focus = SWI_purchase_german_planes
+		complete_national_focus = SWI_fortify_border_with_germany 
+		complete_national_focus = SWI_fortify_border_with_france
+
+		#1938
+		complete_national_focus = SWI_ban_the_communist_party
+		complete_national_focus = SWI_withdraw_from_the_league_of_nations #5
+		complete_national_focus = SWI_ban_national_movement_for_switzerland
+		complete_national_focus = SWI_buero_ha
+		complete_national_focus = SWI_pro_helvetia #5
+		complete_national_focus = SWI_adopt_romansh #5
+		complete_national_focus = SWI_patriotic_shooting_clubs
+	
+		#### 
+
+		if = {
+			limit = { has_variable = SWI_councilor_1 }
+			var:SWI_councilor_1 = { SWI_remove_councilor = yes }
+		}
+		if = {
+			limit = { has_variable = SWI_councilor_2 }
+			var:SWI_councilor_2 = { SWI_remove_councilor = yes }
+		}
+		if = {
+			limit = { has_variable = SWI_councilor_3 }
+			var:SWI_councilor_3 = { SWI_remove_councilor = yes }
+		}
+		clear_variable = SWI_councilor_1
+		clear_variable = SWI_councilor_2
+		clear_variable = SWI_councilor_3	
+		set_variable = { SWI_councilor_1 = SWI_marcel_pilet_golaz }
+		set_variable = { SWI_councilor_2 = SWI_ernst_wetter }
+		set_variable = { SWI_councilor_3 = SWI_enrico_celio }
+		set_variable = { SWI_president_initiative_cooldown = 276 }
+		set_variable = { SWI_president_initiative_cost = 100 }
+		country_event = { id = BBA_SWI_annual_election.00 months = 4 } #Triggers the event for the yearly elections 
+		SWI_albert_meyer = {
+			set_character_flag = SWI_former_confederation_president
+		}
+		SWI_giuseppe_motta = {
+			set_character_flag = SWI_former_confederation_president
+		}
+		SWI_johannes_baumann = {
+			set_character_flag = SWI_former_confederation_president
+		}
+		SWI_philip_etter = {
+			set_character_flag = SWI_current_confederation_president
+			SWI_make_character_confederation_president = yes		
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_dlc = "By Blood Alone"  }
+		}
+
+		#generic focuses
+	
+		complete_national_focus = army_effort
+		complete_national_focus = equipment_effort
+		complete_national_focus = motorization_effort
+		complete_national_focus = aviation_effort
+		complete_national_focus = naval_effort
+		complete_national_focus = industrial_effort
+		complete_national_focus = construction_effort
+		complete_national_focus = production_effort
+	}
+
+
+	if = {
+		limit = {
+			NOT = { has_dlc = "By Blood Alone"  }
+		}
+		set_oob = "SWI_1939"
+		set_air_oob = "SWI_1939_air_legacy"
+		set_technology = {
+			fighter1 = 1
+		}
+	}
+	set_technology = {
+		gw_artillery = 1
+		interwar_artillery = 1
+		interwar_antiair = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		fuel_refining = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
 
 set_politics = {
-	ruling_party = reactionary
-	last_election = "1999.9.24"
+	ruling_party = democratic
+	last_election = "1935.10.27"
 	election_frequency = 48
 	elections_allowed = yes
 }
-
 set_popularities = {
-    nationalist = 2
-    reactionary = 31
-    conservative = 2
-    market_liberal = 20
-    social_liberal = 16
-    social_democrat = 22
-    progressive = 5
-    democratic_socialist = 2
+	democratic = 96
+	fascism = 2
+	communism = 2
 }
-recruit_character = SWI_federal_assembly
-recruit_character = SWI_federal_council
-recruit_character = SWI_philippe_rebord
-recruit_character = SWI_andre_blattmann
-recruit_character = SWI_aldo_c_schellenberg
-recruit_character = SWI_jeanpaul_theler
-recruit_character = SWI_thomas_kaiser
-recruit_character = SWI_daniel_keller
-recruit_character = SWI_willy_brulisauer
-recruit_character = SWI_peter_baumgartner
-recruit_character = SWI_hans_schori
-recruit_character = SWI_laurent_michaud
-recruit_character = SWI_raynald_droz
-recruit_character = SWI_alain_vuitel
-recruit_character = SWI_fredy_keller
-recruit_character = SWI_hans_schatzmann
-recruit_character = SWI_claude_meier
-recruit_character = SWI_franz_nager
-recruit_character = SWI_daniel_baumgartner
-recruit_character = SWI_rene_wellinger
-recruit_character = SWI_yvon_langel
-recruit_character = SWI_mathias_tuscher
-recruit_character = SWI_alexander_kohli
-recruit_character = SWI_martin_vogeli
-recruit_character = SWI_maurizio_dattrino
-recruit_character = SWI_erik_labara
-recruit_character = SWI_roland_favre
-recruit_character = SWI_hanspeter_walser
-recruit_character = SWI_lucas_caduff
-recruit_character = SWI_hanspeter_kellerhals
-recruit_character = SWI_dominique_andrey
 
-2015.9.18 = {
-	oob = "SWI_2016"
+#1939.1.1 = {
+#	#next election october 39
+#	set_popularities = {
+#		democratic = 95
+#		fascism = 2
+#		communism = 3
+#	}
+#}
 
-	set_politics = {
-		ruling_party = market_liberal
-		last_election = "2015.9.18"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-
-    set_popularities = {
-        nationalist = 1
-        reactionary = 29
-        conservative = 10
-        market_liberal = 16
-        social_liberal = 11
-        social_democrat = 20
-        progressive = 12
-        democratic_socialist = 1
-    }
-	
-}
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-		add_equipment_to_stockpile = {
-			type = fighter_equipment_3
-			amount = 33
-			producer = USA
-		}
-		add_equipment_to_stockpile = {
-			type = fighter_equipment_1
-			amount = 60
-			producer = USA
-		}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_0
-		amount = 30
-		producer = SWI
-		variant_name = "F-5 Tiger II"
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_0
-		amount = 30
-		producer = SWI
-		variant_name = "Mirage III" 
-	}
-	add_equipment_to_stockpile = {
-		type = cv_medium_plane_airframe_1
-		amount = 33
-		producer = SWI
-		variant_name = "F/A-18 Hornet"
-	}
-}
+set_stability = 0.85

@@ -1,35 +1,27 @@
-
 state={
 	id=699
 	name="STATE_699"
+	manpower = 21056
+	
+	state_category = wasteland
 
 	history={
-		owner = MOR
+		owner = WES
+		add_core_of = WES
 		buildings = {
-			infrastructure = 2
-			air_base = 1
+			infrastructure = 1
 			8038 = {
 				naval_base = 1
-
 			}
-
 		}
-	victory_points = {
-			8038 4 
+		victory_points = {
+			8038 1
 		}
-	victory_points = {
-			14856 2 
-		}
-		add_core_of = MOR
-		add_core_of = WES
-
 	}
-
+	
 	provinces={
-		5012 8038 8111 10875 13222 13224 14856 14857 
+		4920 5012 7979 8038 8111 10875
 	}
-	manpower=398000
-	buildings_max_level_factor=1.000
-	state_category=state_level_1
-	local_supplies=0.000
+
+	local_supplies=0.0 
 }

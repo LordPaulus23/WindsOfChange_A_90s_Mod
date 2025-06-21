@@ -1,4 +1,0 @@
-KAC = "countries/Kachin.txt"
-SHN = "countries/Shan.txt"
-KRN = "countries/Karen.txt"
-WAS = "countries/Wa.txt"

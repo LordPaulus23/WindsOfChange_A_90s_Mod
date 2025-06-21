@@ -1,15 +1,17 @@
 
 state={
 	id=555
-	name="STATE_555"
+	name="STATE_555" #Kuril Islands
+	manpower = 15000 
+	
+	state_category = tiny_island
 
 	history={
 		owner = SOV
-		add_core_of = SOV
-		add_core_of = AIN
-		add_claim_by = JAP
+		#add_core_of = JAP
+		#add_claim_by = SOV # Removed because of too much aggression
 		buildings = {
-			infrastructure = 3
+			infrastructure = 2
 			1399 = {
 				naval_base = 3
 
@@ -20,9 +22,8 @@ state={
 	}
 
 	provinces={
-		1399 1515 
+		1399 1515 13037 
 	}
-	manpower=10000
-	buildings_max_level_factor=1.000
-	state_category=state_level_0
+
+	local_supplies=0.0 
 }

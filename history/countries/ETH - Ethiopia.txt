@@ -1,412 +1,264 @@
-﻿capital = 271
+capital = 271
 
-oob = "ETH_2000"
-
-set_research_slots = 3
-set_convoys = 10
-set_stability = 0.15
-
-set_country_flag = country_language_amharic
-set_country_flag = country_behavior_dispersed
-set_country_flag = country_behavior_indolent
-
-#set_country_flag = country_language_oromifa
-#set_country_flag = country_language_somali
-#set_country_flag = country_language_tigrigna
-#set_country_flag = country_language_afar
-#set_country_flag = country_language_wolaytta
-#set_country_flag = country_language_sidama
-#set_country_flag = country_language_kunama
-#set_country_flag = country_language_benshangul
-#set_country_flag = country_language_gumuz
-#set_country_flag = country_language_english
-#set_country_flag = country_language_harari
-
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-	set_technology = {
-		CAS1 = 1
-		CAS2 = 1
-		cv_CAS1 = 1
-		cv_CAS2 = 1
-		fighter1 = 1
-		fighter2 = 1
-		cv_fighter1 = 1
-		cv_fighter2 = 1
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-		naval_bomber3 = 1
-		cv_naval_bomber1 = 1
-		cv_naval_bomber2 = 1
-		cv_naval_bomber3 = 1
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
-		#scout_plane1 = 1
-	}
-}
-if = {
+IF = {
 	limit = {
 		has_dlc = "By Blood Alone"
 	}
-	#tech
-	set_technology = {
-		iw_small_airframe = 1
-		basic_small_airframe = 1
-		iw_medium_airframe = 1
-		basic_medium_airframe = 1
-		iw_heli_airframe = 1
-		iw_naval_airframe = 1
-		basic_naval_airframe = 1
-		iw_large_airframe = 1
-		basic_large_airframe = 1
-		aa_lmg = 1
-		Cold_war_cas = 1
-		engines_1 = 1
-		air_misc = 1
-		#scout_plane1 = 1
-	}
-	#varients
-	#CAS
-	create_equipment_variant = {
-		name = "Su-25" 
-		type = small_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = heavy_mg_2x
-			fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
-			fixed_auxiliary_weapon_slot_2 = tank_buster_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-			special_type_slot_3 = armor_plate_medium
-		}
-	}
-	#Multirole
-	create_equipment_variant = {
-		name = "MiG-23" 
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "MiG-29" 
-		type = medium_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = aircraft_cannon_medium_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-	}
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-	main_battle_tank1 = 1
-	main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	light_tank1 = 1
-	mechanised_infantry1 = 1
-	nonsnb_technicality_tech = 1
-	light_mechanized_infantry1 = 1
-	light_mechanized_infantry2 = 1
-	#mechanised_infantry2 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		IFV_chassis_80s = 1
-		IFV_chassis = 1
-		technicality_tech = 1
-		light_mechanized_infantry1 = 1
-		light_mechanized_infantry2 = 1
-		main_battle_tank_chassis = 1
-		main_battle_tank_chassis_80s = 1
-		#main_battle_tank_chassis_00s = 1
-	}
-	create_equipment_variant = {
-		name = "T-72M"
-		type = modern_tank_chassis_2
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_small
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_3 = auto_loader
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		icon = "GFX_SOV_main_battle_tank2_medium"
-	}
+	ETH_set_up_lon_arms_resolution_effect = yes 
+	set_war_support = 0.30 # People are beginning to lose heart a bit
+	set_oob = "ETH_1936_bba"
+
 	
-	create_equipment_variant = {
-		name = "T-62"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_SOV_main_battle_tank1_medium"
+	# add_manpower = 60000 # have already called out the levy in 35
+	set_variable = { var_ETH_chitet_cooldown = 180 }
+	set_variable = { ETH.ETH_medal_xp_gain = 100 }
+	set_country_flag = ETH_chitet_raised_flag
+	set_variable = { ETH_war_escalation_level = 0 }
+	set_variable = { ETH_war_escalation_length = 123 } # Six months, starting in October
+	set_variable = { temp_power_struggle_meter = -25 }
+	
+	set_variable = { ETH_hold_the_capital_time = 180 } # Timer for Holding the capital after north and south have been completed somehow
+	set_variable = { ETH_treasury = 100 } # The imperial treasury
+	set_variable = { ETH_recruit_mercenaries_cost = 15 }
+	set_variable = { ETH_buy_arms_from_host_cost = 20 }
+
+	set_variable = { ETH_re_enable_time_international_actions = 30 } # Timer for various interaction decisions
+
+
+	### Set variables for Dynamic Modifiers
+	
+	# Army
+	set_variable = { ETH_army_max_dig_in_factor = -3 }
+	set_variable = { ETH_army_dig_in_speed_factor = -0.5 }
+	set_variable = { ETH_army_experience_gain_army_factor = -0.2 }
+	set_variable = { ETH_army_experience_loss_factor = 0.1 }
+	set_variable = { ETH_army_army_defence_factor = -0.15 } 
+	set_variable = { ETH_army_army_org_factor = -0.05 }
+	set_variable = { ETH_army_modifier_army_sub_unit_infantry_attack_factor = 0.05 }
+	set_variable = { ETH_army_modifier_army_sub_unit_irregular_infantry_attack_factor = 0.1 }
+	set_variable = { ETH_army_supply_consumption_factor = -0.1 }
+
+	# Navy 
+	set_variable = { ETH_navy_naval_coordination = -0.1 }
+	set_variable = { ETH_navy_screening_efficiency = -0.1 }
+	set_variable = { ETH_navy_repair_speed_factor = -0.1 }
+	set_variable = { ETH_navy_naval_doctrine_cost_factor = 0.5 }
+	set_variable = { ETH_navy_refit_ic_cost = 0.25 }
+
+	# Air
+	set_variable = { ETH_airforce_air_doctrine_cost_factor = 0.5 }
+	set_variable = { ETH_airforce_enemy_army_bonus_air_superiority_factor = 0.25 }
+	set_variable = { ETH_airforce_air_accidents_factor = 0.15 }
+	set_variable = { ETH_airforce_air_attack_factor = -0.15 }
+
+	# Bureaucracy
+	set_variable = { ETH_bureaucracy_research_speed_factor = -0.25 }
+	set_variable = { ETH_bureaucracy_production_speed_buildings_factor = -0.25 }
+	set_variable = { ETH_bureaucracy_production_factory_max_efficiency_factor = -0.1 }
+
+	# Industrialization 
+	set_variable = { ETH_industrialization_industrial_capacity_dockyard = -0.1 }
+	set_variable = { ETH_industrialization_industrial_capacity_factory =  -0.1 }
+	set_variable = { ETH_industrialization_line_change_production_efficiency_factor = -0.1 }
+	set_variable = { ETH_industrialization_consumer_goods_factor = 0.05 }
+	set_variable = { ETH_industrialization_industry_air_damage_factor = 0 }
+	set_variable = { ETH_industrialization_industry_repair_factor = 0 }
+
+ 	# Red Cross 
+ 	set_variable = { ETH_irc_morale_factor = 0.1 }
+	set_variable = { ETH_irc_enemy_army_bonus_air_superiority_factor = -0.05 }
+	set_variable = { ETH_communist_factory_repair_factor = 0 }
+	### Set dynamic modifiers 
+	add_dynamic_modifier = {
 	}
-	create_equipment_variant = {
-		name = "MT-LB"
-		type = light_tank_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_heavy_machine_gun
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_SOV_mechanised_infantry1_medium"
+	# Decentralization start levels
+	set_variable = { ETH_state_decentralization_building_slots = -0.1 }
+	set_variable = { ETH_state_decentralization_infrastructure = -0.1 }
+	set_variable = { ETH_state_decentralization_resources = -0.1 }
+	set_variable = { ETH_state_decentralization_defence = 0.05 }
+	set_variable = { ETH_state_decentralization_attack = 0.15 }
+	set_variable = { ETH_state_decentralization_recruitable_population = -0.1 }
+	set_variable = { ETH_state_decentralization_army_speed = 0.1 }
+	set_power_balance = {
+		id = ETH_centralization_balance
+		set_default = yes  # whether or not to reset the power balance to the initial value, default = no
 	}
-	create_equipment_variant = {
-		name = "PT-76"
-		type = light_tank_destroyer_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_ifv_medium_cannon
-			special_type_slot_1 = ergo_ifv_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			optics_slot = tank_optics_1
-			special_type_slot_4 = main_ammo_bay
+
+	### Add ideas 
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
 		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
+	}
+	if = {
+		limit = {
+			NOT = {	has_dlc = "Arms Against Tyranny" }
 		}
-		obsolete = no
-		icon = "GFX_SOV_light_tank1_medium"
 	}
 }
+IF = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	set_oob = "ETH_1936"
+	set_variable = { ETH_war_escalation_level = 0 }
+	set_variable = { ETH_war_escalation_length = 123 } # Six months, starting in October
+}
+
+# }
+
+# Starting tech
 set_technology = {
-	## Infantry ##
-	infantry_weapons1 = 1
-	motorised_infantry = 1
-	support_weapons = 1
-	night_vision = 1
-	body_armor = 1
-	camouflage = 1
-	marines = 1
+	infantry_weapons = 1
 	tech_mountaineers = 1
-	paratroopers = 1
-	
-	## Support Companies ##
-	tech_support = 1
+	tech_trucks = 1
 	basic_train = 1
-	tech_engineers = 1
-	tech_recon = 1
-	tech_field_hospital = 1
-	tech_logistics_company = 1
-	tech_military_police = 1
-	tech_maintenance_company = 1
+}
+
+recruit_character = ETH_haile_selassie
+recruit_character = ETH_haile_selassie_gugsa
+recruit_character = ETH_alemework_beyene
+recruit_character = ETH_ras_imru_haile_selassie
+# Generals 
+recruit_character = ETH_seyoum_mengesha
+recruit_character = ETH_desta_damtew
+recruit_character = ETH_ras_kassa 
+# Political Advisors
+recruit_character = ETH_makonnen_endelkatchew
+# Military Advisors
+recruit_character = ETH_john_robinson
+
+IF = {
+	limit = { has_dlc = "By Blood Alone" }
+	recruit_character = ETH_hailu_tekle_haymanot
+	recruit_character = ETH_abba_jofir
+	recruit_character = ETH_amha_selassie
+	# Generals 
+	recruit_character = ETH_mulugeta_yeggazu_of_illubabor
+	recruit_character = ETH_abebe_aregai
+	recruit_character = ETH_balcho_safo
+	recruit_character = ETH_ayalew_birru
+	recruit_character = ETH_beyene_merid
+	recruit_character = ETH_nasibu_zeamanuel
+	recruit_character = ETH_random_general_1
+	recruit_character = ETH_random_general_2
+	recruit_character = ETH_random_general_3
+	recruit_character = ETH_random_general_4
+	recruit_character = ETH_random_general_5
+	recruit_character = ETH_random_general_6
+	# political Advisors
+	recruit_character = ETH_abuna_qerellos_iv
+	recruit_character = IA_emma_goldman
+	recruit_character = ETH_heruy_wolde_selassie
+	recruit_character = ETH_getachew_abate
+	recruit_character = IA_sakutaro_iwasa
+	recruit_character = IA_sanshiro_ishikawa
+	recruit_character = ETH_workneh_eshete
+	recruit_character = ETH_tadesse_birru
+	recruit_character = ETH_yilma_deressa
+	recruit_character = ETH_menen_asfaw
+	recruit_character = ETH_abuna_abraham
+	recruit_character = ETH_tekle_hawariat_tekle_mariyam
+	recruit_character = ETH_random_leader_1
+	recruit_character = ETH_random_leader_2
+	recruit_character = ETH_random_leader_3
+	recruit_character = ETH_random_leader_4
+	recruit_character = ETH_random_leader_5
+	recruit_character = ETH_random_leader_6
+	recruit_character = ETH_senedu_gebru
+	recruit_character = ETH_random_sud_advisor
+	recruit_character = ETH_random_som_advisor
+	recruit_character = ETH_anarchist_council
+	recruit_character = ETH_prov_mil_admin
 	
-	## Armor ##
-	#main_battle_tank1 = 1
-	#main_battle_tank2 = 1
-	#light_tank1 = 1
+	# Military Advisors
+	recruit_character = ETH_viking_tamm
+	recruit_character = ETH_carl_gustav_von_rosen
+	recruit_character = ETH_domenico_mondelli
+	recruit_character = ETH_wehib_pasha
+	recruit_character = ETH_feodor_konovalov
+}
+
+IF = { 
+	limit = { NOT = { has_dlc = "By Blood Alone" } }
+	recruit_character = ETH_fitawrari_yeebio_woldai
+	recruit_character = ETH_amare_makonnen
+	# recruit_character = ETH_haile_mariam
+	recruit_character = ETH_gabriel_zawde_gilaneh
+	recruit_character = ETH_woldemeskal_tariku
+	recruit_character = ETH_ras_kebbede
+	recruit_character = ETH_wondossen_kassa
+	recruit_character = ETH_dedja_zinatch_nadeon
+	recruit_character = ETH_haile_abba_mersa
+	recruit_character = ETH_ras_seyum
+	recruit_character = ETH_mesfin_sileshi
+	recruit_character = ETH_lij_abiye_abebe
+	recruit_character = ETH_lij_johannes
+	recruit_character = ETH_fitauri_zawde_gobena
+	recruit_character = ETH_bedjironde_tekle_hawariate
+}
+set_global_flag = second_italo_ethiopian_war_flag
+1936.05.05 = { clr_global_flag = second_italo_ethiopian_war_flag }
+
+set_convoys = 5
+
+1939.1.1 = {
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
 	
-	#mechanised_infantry2 = 1
-	#light_mechanized_infantry1 = 1
-	#light_mechanized_infantry2 = 1
-	
-	## Artillery ##
-	coldwar_artillery = 1
-	coldwar_antiair = 1
-	coldwar_antitank = 1
- 	rocket_artillery = 1
-	sp_antiair0 = 1 
-	
-	## Air ##
-	# CAS1 = 1
-	# CAS2 = 1
-	# cv_CAS1 = 1
-	# fighter1 = 1
-	# fighter2 = 1
-	# cv_fighter1 = 1
-	# cv_fighter2 = 1
-	# naval_bomber1 = 1
-	# naval_bomber2 = 1
-	# cv_naval_bomber1 = 1
-	# cv_naval_bomber2 = 1
-	# strategic_bomber1 = 1
-	# strategic_bomber2 = 1
-	# #scout_plane1 = 1
-	
-	## Industry ##
-	fuel_silos = 1
-	fuel_refining = 1
-}
+	set_technology = {
 
-add_ideas = {
-	centralization_federal
-	government_system_parliamentary_republic
-	national_development_undeveloped
-	civil_liberties_totalitarian
-	population_growth_explosion
-	african_union_member
-	mobilization_service_time_corrupt
-}
+		#doctrines
+		grand_battle_plan = 1
+		trench_warfare = 1
 
-set_politics = {	
-	ruling_party = democratic_socialist
-	last_election = "1995.5.18"
-	election_frequency = 60
-	elections_allowed = yes
-}
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
 
-set_popularities = {
-    islamist = 1
-    nationalist = 1
-    reactionary = 1
-    conservative = 15
-    market_liberal = 1
-    social_liberal = 11
-    social_democrat = 6
-    progressive = 2
-    democratic_socialist = 35
-    communist = 27
-}
-
-declare_war_on = {
-	target = ERI
-	type = annex_everything
-}
-add_named_threat = {
-	name = ethiopia.5.t
-	threat = 1
-}
-add_timed_idea = {
-	idea = defensive_military_strategy
-	days = 365
-}
-
-2000.6.18 = {
-	diplomatic_relation = { country = ERI relation = war_relation active = no }
-}
-
-add_opinion_modifier = {
-	target = ERI
-	modifier = rival
-}
-
-add_opinion_modifier = {
-	target = ERI
-	modifier = rival_trade
-}
-#recruit_character = ETH_abdifatah_sheikh_abdullahi
-recruit_character = ETH_meles_zenawi
-recruit_character = ETH_birtukan_mideksa
-recruit_character = ETH_hailu_shawul
-recruit_character = ETH_zera_yacob_amha_selassie
-recruit_character = ETH_birhanu_julla
-recruit_character = ETH_samora_yunis
-
-
-2015.5.24 = {
-	oob = "ETH_2016"
-	set_politics = {
-		ruling_party = democratic_socialist
-		last_election = "2015.5.24"
-		election_frequency = 60
-		elections_allowed = yes
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		fuel_silos = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
 	}
-    set_popularities = {
-        reactionary = 5
-        conservative = 5
-        market_liberal = 5
-        social_liberal = 5
-        social_democrat = 5
-        progressive = 5
-        democratic_socialist = 50
-        communist = 20
-    }
-	create_country_leader = {
-		name = "Hailemariam Desalegn"
-		picture = "Hailemariam_Desalegn.dds"
-		ideology = leninist
-	}
-}
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-		add_equipment_to_stockpile = {
-			type = fighter_equipment_3
-			amount =14
-			producer = SOV
-		}
-		add_equipment_to_stockpile = {
-			type = fighter_equipment_2
-			amount =10
-			producer = SOV
-		}
-		add_equipment_to_stockpile = {
-			type = fighter_equipment_1
-			amount =50
-			producer = SOV
-		}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_0
-		amount = 60
-		producer = ETH
-		variant_name = "MiG-23"
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_1
-		amount = 14
-		producer = ETH
-		variant_name = "MiG-29"
+	complete_special_project = {
+		project = sp:sp_air_radar
 	}
 }
 
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+IF = {
+	limit = { has_dlc = "By Blood Alone" }
+	set_popularities = {
+		neutrality = 5
+		fascism = 1 
+		democratic = 70
+		communism = 24
+	}
+}
+IF = {
+	limit = { NOT = { has_dlc = "By Blood Alone" } }
+	set_popularities = {
+		neutrality = 100
+	}
+}

@@ -1,34 +1,32 @@
-
 state={
 	id=168
 	name="STATE_168"
 
 	history={
 		owner = SPR
-		add_core_of = SPR
 		victory_points = {
-			13856 15 
-		}
-		victory_points = {
-			10024 5 
+			10024 3
 		}
 		buildings = {
-			industrial_complex = 1
-			infrastructure = 6
+			infrastructure = 3 #was: 5
+			dockyard = 1
+			air_base = 2
 			10024 = {
-				naval_base = 6
+				naval_base = 8
 
 			}
 
 		}
+		add_core_of = SPR
 
 	}
 
 	provinces={
-		1093 4195 7111 10024 10109 13856 
+		832 1093 3835 4195 7111 9903 10024 10109 11807 11812 11884 
 	}
-	manpower=1197605
+	manpower=1007605
 	buildings_max_level_factor=1.000
-	state_category=state_level_2
-	local_supplies=0.000
+	state_category=town
+
+	local_supplies=0.0 
 }

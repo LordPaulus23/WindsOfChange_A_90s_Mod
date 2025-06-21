@@ -1,39 +1,28 @@
 
-state={
-	id=637
-	name="STATE_637"
-	resources={
-		aluminium=5.000
-	}
+state = {
+	id = 637
+	name = "STATE_637" #Kamchatka
 
-	history={
+	history = {
 		owner = SOV
-		victory_points = {
-			4728 3 
-		}
 		buildings = {
-			infrastructure = 2
-			nuclear_reactor = 1
-			air_base = 1
+			infrastructure = 1
 			12207 = {
 				naval_base = 1
-
-			}
-			4728 = {
-				naval_base = 2
 
 			}
 
 		}
 		add_core_of = SOV
-
+		add_core_of = FER
 	}
 
-	provinces={
-		1823 1839 1863 4455 4728 4744 7878 10540 12207 12522 12592 13549 
+	provinces = {
+		1823 1839 1863 4728 7878 12207 12522 
 	}
-	manpower=360000
-	buildings_max_level_factor=1.000
-	state_category=state_level_1
-	local_supplies=0.000
+	manpower = 48831
+	buildings_max_level_factor = 1
+	state_category = "pastoral"
+
+	local_supplies = 0.0 
 }

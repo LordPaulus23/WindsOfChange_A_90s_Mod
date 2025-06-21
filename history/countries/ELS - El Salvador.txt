@@ -1,300 +1,109 @@
 ﻿capital = 314
 
-oob = "ELS_2000"
+oob = "ELS_1936"
 
-set_research_slots = 3
-set_convoys = 120
-set_stability = 0.4
-
-set_country_flag = country_language_spanish
-
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-	set_technology = {
-		CAS1 = 1
-		CAS2 = 1
-		cv_CAS1 = 1
-		cv_CAS2 = 1
-		fighter1 = 1
-		fighter2 = 1
-		cv_fighter1 = 1
-		cv_fighter2 = 1
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-		naval_bomber3 = 1
-		cv_naval_bomber1 = 1
-		cv_naval_bomber2 = 1
-		cv_naval_bomber3 = 1
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
-		#scout_plane1 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	#tech
-	set_technology = {
-		iw_small_airframe = 1
-		basic_small_airframe = 1
-		iw_medium_airframe = 1
-		basic_medium_airframe = 1
-		iw_heli_airframe = 1
-		iw_naval_airframe = 1
-		basic_naval_airframe = 1
-		iw_large_airframe = 1
-		basic_large_airframe = 1
-		aa_lmg = 1
-		Cold_war_cas = 1
-		engines_1 = 1
-		air_misc = 1
-		#scout_plane1 = 1
-	}
-	#varients
-	#CAS
-	create_equipment_variant = {
-		name = "A-37 Dragonfly" 
-		type = small_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = heavy_mg_2x
-			fixed_auxiliary_weapon_slot_1 = small_bomb_bay
-			fixed_auxiliary_weapon_slot_2 = small_bomb_bay
-			engine_type_slot = engine_1_2x
-		}
-		icon = "GFX_A-37_Dragonfly_medium"
-	}
-	#Multirole
-	create_equipment_variant = {
-		name = "F-4 Phantom II"
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = heavy_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = small_bomb_bay
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		icon = "GFX_F-4_Phantom_II_medium"
-		obsolete = yes
-	}
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-	main_battle_tank1 = 1
-	light_tank1 = 1
-	mechanised_infantry1 = 1
-	nonsnb_technicality_tech = 1
-	light_mechanized_infantry1 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		IFV_chassis = 1
-		technicality_tech = 1
-		light_mechanized_infantry1 = 1
-		main_battle_tank_chassis = 1
-	}
-	create_equipment_variant = {
-		name = "MT-LB"
-		type = light_tank_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_heavy_machine_gun
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_SOV_mechanised_infantry1_medium"
-	}
-	create_equipment_variant = {
-		name = "AML-90"
-		type = light_tank_destroyer_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_auto_cannon
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_wheeled_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = main_ammo_bay
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = no
-		icon = "GFX_SOV_mechanised_infantry1_medium"
-	}
-}
+# Starting tech
 set_technology = {
-	## Infantry ##
-	infantry_weapons1 = 1
-	motorised_infantry = 1
-	support_weapons = 1
-	night_vision = 1
-	body_armor = 1
-	camouflage = 1
-	marines = 1
-	tech_mountaineers = 1
-	paratroopers = 1
-	
-	## Support Companies ##
-	tech_support = 1
-	basic_train = 1
-	tech_engineers = 1
-	tech_recon = 1
-	tech_field_hospital = 1
-	tech_logistics_company = 1
-	tech_military_police = 1
-	tech_maintenance_company = 1
-	
-	## Armor ##
-	#main_battle_tank1 = 1
-	#main_battle_tank2 = 1
-	#light_tank1 = 1
-	
-	#mechanised_infantry2 = 1
-	#light_mechanized_infantry1 = 1
-	#light_mechanized_infantry2 = 1
-	
-	## Artillery ##
-	coldwar_artillery = 1
-	coldwar_antiair = 1
-	coldwar_antitank = 1
- 	rocket_artillery = 1
-	sp_antiair0 = 1 
-	
-	## Air ##
-	# CAS1 = 1
-	# CAS2 = 1
-	# cv_CAS1 = 1
-	# fighter1 = 1
-	# fighter2 = 1
-	# cv_fighter1 = 1
-	# cv_fighter2 = 1
-	# naval_bomber1 = 1
-	# naval_bomber2 = 1
-	# cv_naval_bomber1 = 1
-	# cv_naval_bomber2 = 1
-	# strategic_bomber1 = 1
-	# strategic_bomber2 = 1
-	# #scout_plane1 = 1
-	
-	## Industry ##
-	fuel_silos = 1
-	fuel_refining = 1
+	infantry_weapons = 1
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	set_technology = {
+		early_fighter = 1
+	}
 }
 
-add_ideas = {
-	economy_tax_high
-	population_growth_steady
-	limited_conscription
+recruit_character = ELS_maximiliano_hernández_martínez
+recruit_character = ELS_victoriano_ubico
+recruit_character = ELS_benito_ubico
+recruit_character = ELS_bartolomé_vasconcelos
+recruit_character = ELS_hector_escobar_serrano
+recruit_character = ELS_milton_andrade_cabrera
+recruit_character = ELS_humbert_aberle
+recruit_character = ELS_horacio_carnejo_ibanez
+recruit_character = ELS_osmin_aguirre_y_salinas
+recruit_character = ELS_reinaldo_galindo_pohl
+recruit_character = ELS_mauro_espinola_castro
+recruit_character = ELS_jose_angel_castillo
+recruit_character = ELS_manuel_de_jesus_cordova
+recruit_character = ELS_augustin_farabundo_marti
+recruit_character = ELS_manuel_jose_maria_lemus_lopez
+recruit_character = ELS_raul_rodolfi_sanchez
+recruit_character = ELS_ricardo_abrego_abrego
+recruit_character = ELS_humberto_costa
+recruit_character = ELS_oscar_a_bolanos
+recruit_character = ELS_salvador_castaneda_castro
+recruit_character = ELS_jose_maria_cuellar
+
+
+set_country_flag = monroe_doctrine
+set_war_support = 0.1
+set_convoys = 5
+
+1939.1.1 = {
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	oob = "ELS_1939"
+	set_technology = {
+		infantry_weapons1 = 1
+		support_weapons = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		fuel_silos = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
 }
 
-set_politics = {	
-	ruling_party = conservative
-	last_election = "1999.3.7"
-	election_frequency = 60
+set_politics = {
+	ruling_party = fascism
+	last_election = "1935.1.15"
+	election_frequency = 48
 	elections_allowed = yes
 }
-
 set_popularities = {
-    conservative = 52
-	democratic_socialist = 29
-	social_liberal = 8
-	reactionary = 6
-	market_liberal = 5
+	fascism = 100
 }
 
-recruit_character = ELS_fernando_saenz_lacalle
-recruit_character = ELS_nelson_guardado
-recruit_character = ELS_francisco_flores
-recruit_character = ELS_oscar_morales_lemus
-recruit_character = ELS_hernan_contreras
-recruit_character = ELS_rene_hurtado_rodriguez
-recruit_character = ELS_ruben_zamora
-recruit_character = ELS_adolfo_salume
-recruit_character = ELS_facundo_guardado
-recruit_character = ELS_jose_luis_merino
-
-recruit_character = ELS_nayib_bukele
-recruit_character = ELS_norman_quijano
-recruit_character = ELS_salvador_sanchez
-
-
-recruit_character = ELS_juan_antonio_martinez_varela
-recruit_character = ELS_otto_romero_orellana
-recruit_character = ELS_humberto_corado_figueroa
-recruit_character = ELS_jaime_guzman_morales
-recruit_character = ELS_jorge_alberto_molina_contreras
-recruit_character = ELS_david_munguia_payes
-
-2015.1.1 = {
-	set_politics = {	
-		ruling_party = democratic_socialist
-		last_election = "2014.2.2"
-		election_frequency = 60
+1939.1.1 = {
+	set_politics = {
+		ruling_party = fascism
+		last_election = "1939.1.3"
+		election_frequency = 48
 		elections_allowed = yes
 	}
-
-	set_popularities = {
-		reactionary = 53
-		conservative = 32
-		democratic_socialist = 15
-	}
-
-	retire_character = ELS_francisco_flores
-	retire_character = ELS_nelson_guardado
-	retire_character = ELS_facundo_guardado
-
-	promote_character = ELS_nayib_bukele
-	promote_character = ELS_norman_quijano
-	promote_character = ELS_salvador_sanchez
 }
-
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-		add_equipment_to_stockpile = { #Cessna A-37 Dragonfly
-			type = CAS_equipment_1
-			amount = 18
-			producer = USA
-		}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	add_equipment_to_stockpile = {
-		type = small_plane_airframe_0
-		amount = 18
-		producer = ELS
-		variant_name = "A-37 Dragonfly"
-	}
-}
-

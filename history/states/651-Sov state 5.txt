@@ -1,40 +1,31 @@
 
-state={
+state = {
 	id=651
-	name="STATE_651"
-	resources={
-		oil=15.000
-		steel=20.000
-		rubber=15
-	}
+	name = "STATE_651" # Ufa
+	manpower = 2552075
 
-	history={
+	state_category = city
+
+	history = {
 		owner = SOV
 		buildings = {
-			infrastructure = 6
-			industrial_complex = 2
+			infrastructure = 3 #was: 5
+			industrial_complex = 1
 
 		}
 		victory_points = {
-			291 15
+			1278 5
 		}
 		victory_points = {
-			1305 2
-		}
-		victory_points = {
-			6246 1
-		}
-		victory_points = {
-			12172 1
+			4354 1 
 		}
 		add_core_of = SOV
-
+		add_core_of = BSK
 	}
 
-	provinces={
-		273 291 1258 1278 1305 3289 4265 4283 4311 4354 6246 6285 7237 7300 7373 7416 7431 7444 9349 10136 10142 10185 10226 11223 12117 12130 12172 12200 
+	provinces = {
+		273 291 1258 1278 1305 3289 4283 4354 6246 6285 7237 7300 7416 7431 7444 9349 10226 10142 12117 12130 12172 
 	}
-	manpower=4104000
-	buildings_max_level_factor=1.000
-	state_category=state_level_8
+
+	local_supplies = 0.0 
 }

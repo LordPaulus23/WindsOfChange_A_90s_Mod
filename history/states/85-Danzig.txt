@@ -1,50 +1,42 @@
+state = {
+	id = 85
+	name = "STATE_85"
+	manpower = 366730
+	
+	state_category = city
 
-state={
-	id=85
-	name="STATE_85"
-	resources={
-		oil=2.000
-		rubber=3.000
-	}
+	history = {
 
-	history={
 		owner = POL
 		add_core_of = POL
+		add_core_of = DNZ
+		add_core_of = KSH
+		add_claim_by = PRE
+
 		victory_points = {
-			362 20 
+			362 10 # Danzig
 		}
-		victory_points = {
-			243 12 
-		}
-		victory_points = {
-			13851 8 
-		}
-		victory_points = {
-			3295 4 
-		}
+		
+		# set_demilitarized_zone = yes (убрано)
+		
 		buildings = {
-			infrastructure = 6
-			industrial_complex = 2
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 1
 			dockyard = 3
-			air_base = 3
 			362 = {
-				naval_base = 6
-
+				naval_base = 5
 			}
-			13851 = {
-				naval_base = 2
-
-			}
-
 		}
-
+		
+		1938.3.12 = {
+			add_claim_by = GER
+		}
 	}
 
-	provinces={
-		243 279 334 362 389 3295 3324 6347 9263 13851 
+	provinces = {
+		362
 	}
-	manpower=3765100
-	buildings_max_level_factor=1.000
-	state_category=state_level_8
-	local_supplies=0.000
+
+	local_supplies = 0.0 
 }

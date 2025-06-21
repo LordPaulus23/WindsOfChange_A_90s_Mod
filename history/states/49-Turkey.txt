@@ -1,41 +1,38 @@
 
 state={
 	id=49
-	name="STATE_49"
+	name="STATE_49" # Ankara
+	manpower = 2430284
 	resources={
-		steel=5.000
+		chromium=11 # was: 16
+		steel = 28
 	}
+	
+	state_category = town
 
 	history={
 		owner = TUR
-		add_core_of = TUR
 		victory_points = {
-			15642 40
+			11747 15
 		}
 		victory_points = {
-			15641 15 
+			804 5 
 		}
 		victory_points = {
-			804 4
-		}
-		victory_points = {
-			9901 2 
+			3951 1
 		}
 		buildings = {
-			infrastructure = 7
-			industrial_complex = 3
+			infrastructure = 3
 			arms_factory = 2
-			air_base = 5
-
+			industrial_complex = 3
+			air_base = 3
 		}
-
+		add_core_of = TUR
 	}
 
 	provinces={
-		804 909 3907 3951 6808 6908 6925 9806 9901 11747 11784 15641 15642 
+		804 909 3907 3951 6808 6908 6925 9806 9901 11747 11784 
 	}
-	manpower=5096758
-	buildings_max_level_factor=1.000
-	state_category=state_level_10
-	local_supplies=0.000
+	buildings_max_level_factor = 6
+	local_supplies=7.0 
 }

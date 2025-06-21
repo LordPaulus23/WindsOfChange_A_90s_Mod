@@ -1,34 +1,44 @@
+state = {
+	id = 616
+	name = "STATE_616"
 
-state={
-	id=616
-	name="STATE_616" # Ningxia
-	manpower = 5486000
-	state_category = state_level_2
-	
+	history = {
 
-	history={
 		owner = PRC
-		#add_claim_by = CHI
+		add_core_of = XSM
+		add_core_of = CHI
 		add_core_of = PRC
-		victory_points = {
-			16270 15
-		}
-		victory_points = {
-			16269 4
-		}
-		victory_points = {
-			16272 4
-		}
-		victory_points = {
-			3742 2
-		}
+
 		buildings = {
-			infrastructure = 4
-			industrial_complex = 1
+			infrastructure = 1
 		}
+
+		victory_points = {
+			8127 2 #Yinchuan
+		}
+
+		1938.10.25 = {
+			if = {
+				limit = {
+					NOT = {
+						has_dlc = "Waking the Tiger" 
+					}
+				}
+				CHI = {
+					transfer_state = PREV
+
+				}
+			}
+		}
+
 	}
 
-	provinces={
-		1985 3742 5025 16269 16270 16271 16272 16273 16274
+	provinces = {
+		3742 5031 5057 5100 7511 8055 8081 8127 10724 12327 12750 12776 
 	}
+	manpower = 2077600
+	buildings_max_level_factor = 1.000
+	state_category = pastoral
+
+	local_supplies = 0.0 
 }

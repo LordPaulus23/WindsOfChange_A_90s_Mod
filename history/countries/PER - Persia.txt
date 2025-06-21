@@ -1,619 +1,314 @@
 ﻿capital = 266
 
-oob = "PER_2000"
+oob = "PER_1936"
 if = {
-	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "PER_2000_naval_mtg"
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "PER_1936_air_bba"
 	else = {
-		set_naval_oob = "PER_2000_naval_legacy"
+		set_air_oob = "PER_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			CAS1 = 1
+
+		}
 	}
 }
 
-set_research_slots = 3
-set_convoys = 320
-set_stability = 0.25
+# Starting tech
 
-set_country_flag = country_language_persian
-if = {
+IF = {
 	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
+		has_dlc = "Graveyard of Empires"
 	}
+
 	set_technology = {
-		CAS1 = 1
-		CAS2 = 1
-		cv_CAS1 = 1
-		cv_CAS2 = 1
-		fighter1 = 1
-		fighter2 = 1
-		cv_fighter1 = 1
-		cv_fighter2 = 1
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-		naval_bomber3 = 1
-		cv_naval_bomber1 = 1
-		cv_naval_bomber2 = 1
-		cv_naval_bomber3 = 1
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
-		#scout_plane1 = 1
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+		tech_trucks = 1
+		tech_support = 1
+		gw_artillery = 1
+		tech_military_police = 1
+		tech_engineers = 1
+	}
+
+	ELSE = {
+		set_technology = {
+			infantry_weapons = 1
+			infantry_weapons1 = 1
+			tech_trucks = 1
+			tech_support = 1
+			gw_artillery = 1
+		}
+	}
+	## This is a placeholder name until the player picks a fascist party to form
+	set_party_name = {
+		ideology = fascism
+		name = PER_ultra_nationalists
+		long_name = PER_ultra_nationalists_long
 	}
 }
-if = {
+
+### VARIABLES ###
+
+### VARIABLES FOR POPULARITY ###
+set_variable = { PER_democratic_popularity = 20 }
+set_variable = { PER_communism_popularity = 5 }
+set_variable = { PER_neutrality_popularity = 60 }
+set_variable = { PER_fascism_popularity = 15 }
+
+### VARIABLES FOR AIRFORCE ###
+
+set_variable = { PER_airforce_modifier_air_doctrine_cost_factor = 0 }
+set_variable = { PER_airforce_modifier_air_ace_generation_chance_factor = 0 }
+set_variable = { PER_airforce_modifier_air_range_factor = 0 }
+set_variable = { PER_airforce_modifier_air_superiority_efficiency = 0 }
+set_variable = { PER_airforce_modifier_air_intercept_efficiency = 0 }
+set_variable = { PER_airforce_modifier_air_mission_xp_gain_factor = 0 }
+set_variable = { PER_airforce_modifier_air_agility_factor = 0 }
+set_variable = { PER_airforce_modifier_ground_attack_factor = 0 }
+set_variable = { PER_airforce_modifier_experience_gain_air = 0.2 }
+set_variable = { PER_army_modifier_industrial_capacity_factory_airfoce = 0 }
+set_variable = { PER_airforce_modifier_conscription_factor = 0 }
+set_variable = { PER_airforce_modifier_air_strategic_bomber_bombing_factor = 0 }
+set_variable = { PER_airforce_modifier_air_cas_present_factor = 0 }
+set_variable = { PER_airforce_modifier_air_defence_factor = 0 }
+
+### VARIABLES FOR LEGACY OF GREATNESS ###
+
+set_variable = { PER_legacy_pp = 0.02 }
+set_variable = { PER_legacy_research = 0 }
+set_variable = { PER_legacy_civ = 0.05 }
+set_variable = { PER_legacy_stability = 0}
+set_variable = { PER_legacy_consumer_goods = 0}
+set_variable = { PER_legacy_industrial_capacity_factory = 0}
+set_variable = { PER_legacy_infra = 0}
+set_variable = { PER_legacy_factory_efficiency = 0}
+set_variable = { PER_legacy_conscription = 0}
+
+### VARIABLES FOR STAND WITH GIANTS ###
+
+set_variable = { PER_giants_pp = 0.02 }
+set_variable = { PER_giants_research = 0 }
+set_variable = { PER_giants_civ = 0 }
+set_variable = { PER_giants_stability = 0.05 }
+set_variable = { PER_giants_consumer_goods = 0}
+set_variable = { PER_giants_industrial_capacity_factory = 0}
+set_variable = { PER_giants_infra = 0}
+set_variable = { PER_giants_factory_efficiency = 0}
+set_variable = { PER_giants_conscription = 0}
+set_variable = { PER_giants_mils = 0 }
+set_variable = { PER_giants_training_time = 0 }
+
+
+### Variables for opposition modifier
+set_variable = { PER_opposition_political_power_factor = -0.1 }
+set_variable = { PER_opposition_research_speed_factor = 0 }
+set_variable = { PER_opposition_stability_factor = -0.1 }
+set_variable = { PER_opposition_conscription_factor = -0.05 }
+set_variable = { PER_opposition_fascism_drift = 0.02 }
+set_variable = { PER_opposition_communism_drift = 0.02 }
+set_variable = { PER_opposition_democratic_drift = 0.02 }
+set_variable = { PER_army_core_defence_factor = 0 }
+set_variable = { PER_army_core_attack_factor = 0 }
+set_variable = { PER_fascist_militia_count = 4 }
+
+### VARIABLES FOR OFFENSIVE TACTICS ###
+set_variable = { PER_sub_unit_infantry_attack_factor = 0.1 }
+set_variable = { PER_sub_unit_infantry_irregular_attack_factor = 0.1 }
+set_variable = { PER_army_defence_factor = -0.05 }
+
+### VARIABLES FOR DEFENSIVE MANEUVRES ###
+set_variable = { PER_sub_unit_infantry_defence_factor = 0.1 }
+set_variable = { PER_sub_unit_infantry_irregular_defence_factor = 0.1 }
+set_variable = { PER_army_attack_factor = -0.05 }
+
+### VARIABLES FOR SPECIAL FORCES ###
+set_variable = { PER_special_units_special_forces = 0.15 }
+set_variable = { PER_spec_force_training = -0.15 }
+
+IF = {
 	limit = {
-		has_dlc = "By Blood Alone"
+		has_dlc = "Graveyard of Empires"
 	}
-	#tech
-	set_technology = {
-		iw_small_airframe = 1
-		basic_small_airframe = 1
-		iw_medium_airframe = 1
-		basic_medium_airframe = 1
-		iw_heli_airframe = 1
-		iw_naval_airframe = 1
-		basic_naval_airframe = 1
-		iw_large_airframe = 1
-		basic_large_airframe = 1
-		aa_lmg = 1
-		Cold_war_cas = 1
-		engines_1 = 1
-		air_misc = 1
-		#scout_plane1 = 1
-	}
-	#varients
-	#CAS
-	create_equipment_variant = {
-		name = "Su-25" 
-		type = small_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = heavy_mg_2x
-			fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
-			fixed_auxiliary_weapon_slot_2 = tank_buster_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-			special_type_slot_3 = armor_plate_medium
+
+	recruit_character = PER_reza_shah_pahlavi
+	recruit_character = PER_mohammed_reza_pahlavi
+	recruit_character = PER_mohammad_ali_foroughi
+	recruit_character = PER_ali_dashti
+	recruit_character = PER_zia_ol_din_tabatabee
+	recruit_character = PER_mohammad_mosaddegh
+	recruit_character = PER_iraj_eskandari
+	recruit_character = PER_soleiman_eskandari
+	recruit_character = PER_ruhollah_khomeini
+	recruit_character = PER_fakhrafagh_parsa
+	recruit_character = PER_andre_godard
+	recruit_character = PER_arthur_millspaugh
+	recruit_character = PER_ardeshir_ovanessian
+	recruit_character = PER_ali_akbar_davar
+	recruit_character = PER_abdolhossein_hazhir
+	recruit_character = PER_teymur_bakhtiar
+	recruit_character = PER_ahmad_ahmadi
+	recruit_character = PER_nikolai_markov
+	recruit_character = PER_bahram_aryana
+	recruit_character = PER_gholam_ali_oveissi
+	recruit_character = PER_ahmad_amir_ahmadi
+	recruit_character = PER_fazlollah_zahedi
+	recruit_character = PER_ali_akbar_derakhshani
+	recruit_character = PER_ghulam_yahya_daneshian
+	recruit_character = PER_jafar_kavian
+	recruit_character = PER_ahmad_khan_nakhjavan
+	recruit_character = PER_gholamali_bayandor
+	recruit_character = PER_azad_hashemi
+	recruit_character = PER_abdollah_zelli
+	recruit_character = PER_abbas_darja_nawardi
+	recruit_character = PER_fawzia_faud
+	recruit_character = PER_teymourtash
+	recruit_character = PER_irandokht
+	recruit_character = PER_davud_monshizadeh
+	recruit_character = PER_hasan_arfa
+	recruit_character = PER_abol_ghasem_kashani
+	recruit_character = PER_generic_non_aligned
+	recruit_character = PER_sky_guy
+	recruit_character = PER_land_guy
+
+	ELSE_IF = {
+		limit = {
+			NOT = {
+				has_dlc = "Graveyard of Empires"
+			}
 		}
-	}
-	#Multirole
-	create_equipment_variant = {
-		name = "Mirage F1" 
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		obsolete = yes
-		icon = "GFX_FRA_fighter2_medium"
-	}
-	create_equipment_variant = {
-		name = "J-7" 
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "F-4 Phantom II"
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = heavy_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = small_bomb_bay
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		icon = "GFX_F-4_Phantom_II_medium"
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "F-5 Tiger II"
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = rocket_pod
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-			special_type_slot_2 = plane_lighten_materials
-		}
-		icon = "GFX_F-5_Tiger_II_medium"
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "F-14 Tomcat" 
-		type = medium_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = aircraft_cannon_medium_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		icon = "GFX_F-14_Tomcat_medium"
-	}
-	create_equipment_variant = {
-		name = "MiG-29" 
-		type = medium_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = aircraft_cannon_medium_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
+		recruit_character = PER_reza_shah_pahlavi
+		recruit_character = PER_soleyman_mirza_eskandari
+		recruit_character = PER_hasan_arfa
+		recruit_character = PER_dalir_pesyan
+		recruit_character = PER_sohrab_tahmasebi
+		recruit_character = PER_mir_afkhami
+		recruit_character = PER_ahmad_khan_nakhjavan
+		recruit_character = PER_reza_mizani
+		recruit_character = PER_ali_razmara
+		recruit_character = PER_hassan_majid_firooz
+		recruit_character = PER_ahmad_mira_khosravani
+		recruit_character = PER_ahmad_khan_nakhjaavan
+		recruit_character = PER_mohammed_nakhjavani
+		recruit_character = PER_abdolreza_afkhami
+		recruit_character = PER_fazlollah_zahedi
+		recruit_character = PER_mohammed_reza_pahlavi
+		recruit_character = PER_ali_akbar_deiva
+		recruit_character = PER_hossein_afkhami
+		recruit_character = PER_ali_zohayli
+		recruit_character = PER_mahmud_jam
+		recruit_character = PER_ali_khan_mansour
 	}
 }
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
+
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	IF = {
+		limit = {
+			has_dlc = "Graveyard of Empires"
+		}
+
+		complete_national_focus = PER_the_pahlavi_imperium
+		complete_national_focus = PER_stand_with_giants
+		complete_national_focus = PER_forced_secularization
+		complete_national_focus = PER_modernizing_iran
+		complete_national_focus = PER_restructure_army
+		complete_national_focus = PER_expand_imperial_guard
+		complete_national_focus = PER_persian_german_trade
+		complete_national_focus = PER_increase_military_funding
+		complete_national_focus = PER_rapid_industrialization
+		complete_national_focus = PER_tehran_power_plant
+		complete_national_focus = PER_increase_education_funding
+		complete_national_focus = PER_adult_literacy
+		complete_national_focus = PER_develop_cities
+		complete_national_focus = PER_expand_military_facilities
+		complete_national_focus = PER_foreign_retraining
+		complete_national_focus = PER_trial_fifty_three
+		complete_national_focus = PER_open_abadan
+		complete_national_focus = PER_military_high_schools
+
+		ELSE = {
+			#generic focuses
+			complete_national_focus = army_effort
+			complete_national_focus = equipment_effort
+			complete_national_focus = motorization_effort
+			complete_national_focus = aviation_effort
+			complete_national_focus = naval_effort
+			complete_national_focus = flexible_navy
+			complete_national_focus = industrial_effort
+			complete_national_focus = construction_effort
+			complete_national_focus = production_effort
+		}
 	}
-	set_technology = {
-	main_battle_tank1 = 1
-	main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	light_tank1 = 1
-	mechanised_infantry1 = 1
-	nonsnb_technicality_tech = 1
-	light_mechanized_infantry1 = 1
-	light_mechanized_infantry2 = 1
-	#mechanised_infantry2 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
+	
+	oob = "PER_1939"
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "PER_1936_air_bba" #intentionally using 36 oob (No significant airforce expansion)
+		else = {
+			set_air_oob = "PER_1936_air_legacy"
+		}
 	}
 	set_technology = {
-		IFV_chassis_80s = 1
-		IFV_chassis = 1
-		technicality_tech = 1
-		light_mechanized_infantry1 = 1
-		light_mechanized_infantry2 = 1
-		main_battle_tank_chassis = 1
-		main_battle_tank_chassis_80s = 1
-		#main_battle_tank_chassis_00s = 1
-	}
-	create_equipment_variant = {
-		name = "T-72A"
-		type = modern_tank_chassis_2
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_small
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_3 = auto_loader
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		icon = "GFX_SOV_main_battle_tank2_medium"
-	}
-	create_equipment_variant = {
-		name = "BMP-2"
-		type = light_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_auto_cannon
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			atgm_slot = tank_atgm_1
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 2
-			tank_nsb_engine_upgrade = 2
-		}
-		icon = "GFX_SOV_mechanised_infantry2_medium"
-	}
-	create_equipment_variant = {
-		name = "Zulfiqar I"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 4
-			tank_nsb_engine_upgrade = 2
-		}
-		icon = "GFX_USA_main_battle_tank1_medium"
-	}
-	create_equipment_variant = {
-		name = "Type 72Z"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_SOV_main_battle_tank1_medium"
-	}
-	create_equipment_variant = {
-		name = "MT-LB"
-		type = light_tank_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_heavy_machine_gun
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_SOV_mechanised_infantry1_medium"
-	}
-	create_equipment_variant = {
-		name = "FV101 Scorpion"
-		type = light_tank_destroyer_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_auto_cannon
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = main_ammo_bay
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = yes
-		icon = "GFX_PER_light_tank1_medium"
-	}
-}
-set_technology = {
-	## Infantry ##
-	infantry_weapons1 = 1
-	motorised_infantry = 1
-	support_weapons = 1
-	night_vision = 1
-	body_armor = 1
-	camouflage = 1
-	marines = 1
-	tech_mountaineers = 1
-	paratroopers = 1
-	
-	## Support Companies ##
-	tech_support = 1
-	basic_train = 1
-	tech_engineers = 1
-	tech_recon = 1
-	tech_field_hospital = 1
-	tech_logistics_company = 1
-	tech_military_police = 1
-	tech_maintenance_company = 1
-	
-	## Armor ##
-	#main_battle_tank1 = 1
-	#main_battle_tank2 = 1
-	#light_tank1 = 1
-	
-	#mechanised_infantry2 = 1
-	#light_mechanized_infantry1 = 1
-	#light_mechanized_infantry2 = 1
-	
-	## Artillery ##
-	coldwar_artillery = 1
-	coldwar_antiair = 1
-	coldwar_antitank = 1
- 	rocket_artillery = 1
-	sp_antiair0 = 1 
-	
-	## Air ##
-	# CAS1 = 1
-	# CAS2 = 1
-	# cv_CAS1 = 1
-	# fighter1 = 1
-	# fighter2 = 1
-	# fighter3 = 1
-	# cv_fighter1 = 1
-	# cv_fighter2 = 1
-	# naval_bomber1 = 1
-	# naval_bomber2 = 1
-	# cv_naval_bomber1 = 1
-	# cv_naval_bomber2 = 1
-	# strategic_bomber1 = 1
-	# strategic_bomber2 = 1
-	# #scout_plane1 = 1
-	
-	## Industry ##
-	fuel_silos = 1
-	fuel_refining = 1
-}
+		tech_support = 1
+		tech_recon = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+		gw_artillery = 1
+		interwar_antiair = 1
+		interwar_artillery = 1
 
-if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
-	set_technology = {
-		early_destroyer = 1
-		basic_destroyer = 1
-		early_light_cruiser = 1
-		early_submarine = 1
-		basic_submarine = 1
-		transport = 1
+		#doctrines
+		air_superiority = 1
+		mass_assault = 1
+		pocket_defence = 1
+		defence_in_depth = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		fuel_silos = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
 	}
-}
-if = {
-	limit = { has_dlc = "Man the Guns" }
-	set_technology = {
-		early_ship_hull_light = 1
-		basic_ship_hull_light = 1
-		early_ship_hull_cruiser = 1
-		early_ship_hull_submarine = 1
-		basic_ship_hull_submarine = 1
-		smoke_generator = 1
-		sonar = 1
-		basic_depth_charges = 1
-		improved_airplane_launcher = 1
-		basic_torpedo = 1
-		basic_battery = 1
-		basic_light_battery = 1
-		basic_medium_battery = 1
-		basic_secondary_battery = 1
-		mtg_transport = 1
-		basic_naval_mines = 1
-		submarine_mine_laying = 1
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+	if = {
+		limit = {
+			NOT = { has_dlc = "No Step Back" }
+		}
+		set_technology = {
+			gwtank = 1
+		}
 	}
 }
 
-add_opinion_modifier = {
-	target = ISR
-	modifier = death_to_israel
-}
-
-add_opinion_modifier = {
-	target = SAU
-	modifier = rival
-}
-
-set_country_flag = dominant_religion_islam
-set_country_flag = shia_islam
-
-add_ideas = {
-	economy_growth
-	public_safety_secret_police
-	civil_liberties_totalitarian
-	population_growth_explosion
-	limited_conscription
-	mobilization_service_time_corrupt
-}
-
-set_politics = {	
-	ruling_party = islamist
-	last_election = "1997.5.23"
+set_convoys = 10
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
-
 set_popularities = {
-    islamist = 77
-    conservative = 15
-    market_liberal = 2
-    social_liberal = 1
-    democratic_socialist = 5
+	democratic = PER_democratic_popularity
+	fascism = PER_fascism_popularity
+	communism = PER_communism_popularity
+	neutrality = PER_neutrality_popularity
 }
-recruit_character = PER_ali_hosseini_khamenei
-recruit_character = PER_mohsen_pezeshkpour
-recruit_character = PER_reza_pahlavi
-recruit_character = PER_roozbeh_farahanipour
-recruit_character = PER_ebrahim_yazdi
-recruit_character = PER_habibollah_asgaroladi
-recruit_character = PER_hadi_khamenei
-recruit_character = PER_hossein_kamali
-recruit_character = PER_mansoor_hekmat
-recruit_character = PER_mohammad_bagheri
-recruit_character = PER_ataollah_salehi
-recruit_character = PER_mohammad_ali_jafari
-recruit_character = PER_hossein_ashtari
-recruit_character = PER_yahya_rahim_safavi
-recruit_character = PER_abdolrahim_mousavi
-recruit_character = PER_ahmad_reza_pourdastan
-recruit_character = PER_hasan_shasafi
-recruit_character = PER_farzad_esmaili
-recruit_character = PER_hossein_salami
-recruit_character = PER_mohammad_pakpour
-recruit_character = PER_amir_ali_hajizadeh
-recruit_character = PER_qasem_soleimani
-recruit_character = PER_kioumars_heydari
-recruit_character = PER_mohammad_hejazi
-recruit_character = PER_gholamhossein_gheybparvar
-recruit_character = PER_habibollah_sayyari
-recruit_character = PER_ali_fadavi
-recruit_character = PER_ali_shamkani
-
-
-2016.1.1 = {
-	oob = "PER_2016"
-}
-
-### VARIANTS ###
-# 2000 Start #
-if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
-	
-}
-if = {
-	limit = { has_dlc = "Man the Guns" }
-	## Corvettes ##
-	create_equipment_variant = { #Corvette 1
-		name = "Bayandor class"
-		type = ship_hull_light_1
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_1
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_torpedo_1
-			rear_1_custom_slot = ship_depth_charge_1
-		}
-		obsolete = no
-	}
-	## Frigates ##
-	create_equipment_variant = { #Frigate 1
-		name = "Alvand-class"
-		type = ship_hull_cruiser_1
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = ship_anti_air_1
-			rear_1_custom_slot = ship_light_medium_battery_1
-		}
-		obsolete = no
-	}
-	## Submarines ##
-	create_equipment_variant = { #Nuclear Sub 2
-		name = "Kilo-class"
-		type = ship_hull_submarine_2
-		parent_version = 0
-		modules = {
-			fixed_ship_torpedo_slot = ship_torpedo_sub_2
-			fixed_ship_engine_slot = sub_ship_engine_n1
-			rear_1_custom_slot = ship_torpedo_sub_2
-		}
-		obsolete = no
-	}
-}
-
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-		add_equipment_to_stockpile = {
-			type = fighter_equipment_3
-			amount = 25
-			producer = USA
-		}
-		add_equipment_to_stockpile = {
-			type = fighter_equipment_3
-			amount = 40
-			producer = SOV
-		}
-		add_equipment_to_stockpile = {
-			type = fighter_equipment_2
-			amount = 40
-			producer = USA
-		}
-		add_equipment_to_stockpile = {
-			type = fighter_equipment_2
-			amount = 3
-			producer = FRA
-		}
-		add_equipment_to_stockpile = {
-			type = fighter_equipment_1
-			amount = 60
-			producer = USA
-		}
-		add_equipment_to_stockpile = {
-			type = fighter_equipment_1
-			amount = 35
-			producer = PRC
-		}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_0
-		amount = 12
-		producer = PER
-		variant_name = "Mirage F1" 
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_0
-		amount = 63
-		producer = PER
-		variant_name = "F-4 Phantom II"
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_0
-		amount = 40
-		producer = PER
-		variant_name = "F-5 Tiger II"
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_0
-		amount = 17
-		producer = PER
-		variant_name = "J-7"
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_1
-		amount = 19
-		producer = PER
-		variant_name = "MiG-29"
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_1
-		amount = 41
-		producer = PER
-		variant_name = "F-14 Tomcat" 
-	}
-	add_equipment_to_stockpile = {
-		type = small_plane_airframe_1
-		amount = 23
-		producer = PER
-		variant_name = "Su-25" #Su-24
-	}
-}
-

@@ -1,28 +1,31 @@
-state = {
-	id = 121
-	name = "STATE_121" #Lothian
-	manpower = 1894624
-	state_category = state_level_5
 
-	history = {
-		owner = ENG
-		add_core_of = ENG
-		add_core_of = SCO
-		add_extra_state_shared_building_slots = 1
-		victory_points = { 9392 20 }
-		victory_points = { 6300 3 }
-		victory_points = { 9383 1 }
-		buildings = {
-			infrastructure = 7
-			industrial_complex = 4
-			arms_factory = 1
-			air_base = 3
-			dockyard = 1
-			9392 = { naval_base = 3 }
-		}
-	}
+state={
+	id=121
+	name="STATE_121" # Lothian
+	manpower = 1431624
 	
-	provinces = {
+	state_category = city
+
+	history={
+		add_core_of = SCO
+		owner = ENG
+		victory_points = { 9392 10 }
+		victory_points = { 6300 1 }
+		buildings = {
+			infrastructure = 4 #was: 7
+			industrial_complex = 1
+			dockyard = 1
+			air_base = 3
+			6300 = {
+				naval_base = 5
+			}
+		}
+		add_core_of = ENG
+	}
+
+	provinces={
 		159 6300 9314 9383 9392 11378 
 	}
+
+	local_supplies=0.0 
 }

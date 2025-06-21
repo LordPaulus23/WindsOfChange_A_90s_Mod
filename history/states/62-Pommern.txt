@@ -1,59 +1,43 @@
+state = {
+	id = 62
+	name = "STATE_62"
+	manpower = 1006221
+	
+	
+	state_category = town
 
-state={
-	id=62
-	name="STATE_62"
-	resources={
-		steel=25.000
-	}
+	history = {
 
-	history={
-		owner = PRC
-		add_core_of = PRC
-		#add_claim_by = CHI
-		add_extra_state_shared_building_slots = 1
+		owner = DDR
+		add_core_of = GER
+		add_core_of = PRE
+
+		victory_points = {
+			9388 1 # Stralsund
+		}
+
+		victory_points = {
+			3258 1 # Neustrelitz 
+		}
+		
 		buildings = {
-			infrastructure = 6
-			industrial_complex = 5
-			arms_factory = 1
+			infrastructure = 3
+			fuel_silo = 1
+		}
 
-		}
-		victory_points = {
-			11913 70 
-		}
-		victory_points = {
-			10034 60 
-		}
-		victory_points = {
-			16433 2 
-		}
-		victory_points = {
-			11982 10
-		}
-		victory_points = {
-			996 1
-		}
-		victory_points = {
-			13142 15#30
-		}
-		victory_points = {
-			16616 50#40
-		}
-		victory_points = {
-			12052 2
-		}
-		victory_points = {
-			16614 5
-		}
-		victory_points = {
-			10076 15
+		1939.1.1 = {
+			buildings = {
+				air_base = 8
+				9388 = { #Not exact match with historical location but has supplies
+					air_facility = 1 #Representing Peenemünde's Research Facilities
+				}
+			}
 		}
 	}
 
-	provinces={
-		996 10034 10076 11913 11982 12052 13142 16433 16613 16614 16616 
+	provinces = {
+		349 3207 3258 3312 3340 9388 13257
 	}
-	manpower=24624000
-	buildings_max_level_factor=1.000
-	state_category=state_level_11
-	local_supplies=0.000
+
+	local_supplies = 3.0 
 }

@@ -1,25 +1,31 @@
-state={
-	id=702
-	name="STATE_702"
-	manpower = 428000
+state = {
+	id = 702
+	name = "STATE_702"
+	manpower = 150600
 	
-	state_category = state_level_2
+	state_category = small_island
 
-	history={
-		owner = CAB
+	history = { 
+
+		owner = CBV
+		add_core_of = CBV
+
+		victory_points = {
+			13014 1 # Praia
+		}
+
 		buildings = {
-			infrastructure = 4
-			industrial_complex = 1
-			air_base = 2
-			13014 = {
+			infrastructure = 2
+			13014 ={
 				naval_base = 1
 			}
 		}
-		add_core_of = CAB
-		victory_points = { 13014 3 } #Praia
+
 	}
 
-	provinces={
+	provinces = {
 		13014 
 	}
+
+	local_supplies = 0.0 
 }

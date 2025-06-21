@@ -1,37 +1,27 @@
+state = {
+	id = 462
+	name = "STATE_462"
+	manpower = 1865552
+	
+	state_category = wasteland
 
-state={
-	id=462
-	name="STATE_462"
-	resources={
-		oil=0.000
-	}
+	history = {
 
-	history={
 		owner = MOR
+		add_core_of = MOR
+
 		victory_points = {
-			7203 15 
+			4108 3 # Marrakesh
 		}
-		victory_points = {
-			5046 3 
-		}
+
 		buildings = {
-			infrastructure = 4
-			industrial_complex = 1
-			air_base = 1
-			7203 = {
-				naval_base = 2
-
-			}
-
+			infrastructure = 1
 		}
-
 	}
 
-	provinces={
-		4022 5046 7203 12857 14824 14825 14826 14828 14829 
+	provinces = {
+		1102 1152 1207 1989 4022 4108 4154 4933 5046 7203 7908 7958 8046 10107 
 	}
-	manpower=2622000
-	buildings_max_level_factor=1.000
-	state_category=state_level_5
-	local_supplies=0.000
+
+	local_supplies = 0.0 
 }

@@ -1,25 +1,26 @@
-
 state={
 	id=692
 	name="STATE_692"
+	manpower=76485
+	state_category = small_island
 
 	history={
-		owner = BRB
+		add_core_of = BAS
+		owner = ENG
 		buildings = {
-			infrastructure = 4
-			#industrial_complex = 1
+			infrastructure = 2
 			11350 = {
 				naval_base = 1
 			}
 		}
-		add_core_of = BRB
-		victory_points = { 11350 2 }
+		victory_points = {
+			11350 1
+		}
+	}
+	
+	provinces={
+		379 11106 11350 13009 
 	}
 
-	provinces={
-		11350 
-	}
-	manpower=271100
-	buildings_max_level_factor=1.000
-	state_category = state_level_1
+	local_supplies=4.0 
 }

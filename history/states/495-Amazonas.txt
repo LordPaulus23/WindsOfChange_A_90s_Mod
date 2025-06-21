@@ -2,38 +2,25 @@
 state={
 	id=495
 	name="STATE_495"
-	resources={
-		oil=12.000
-		rubber=10.000
-	}
 
 	history={
 		owner = BRA
 		add_core_of = BRA
 		buildings = {
-			infrastructure = 3
-			industrial_complex = 1
-			arms_factory = 1
-			air_base = 3
+			infrastructure = 0
 
 		}
 		victory_points = {
-			10934 20 
-		}
-		victory_points = {
-			13376 1 
-		}
-		victory_points = {
-			8254 1 
+			10934 1 
 		}
 
 	}
 
 	provinces={
-		1979 5083 5232 8185 8254 10934 12919 12965 13083 13268 13270 13271 13273 13353 13368 13371 13376 16190 16191 16192 
+		1979 5083 10934 13083 13317 13318 13319 13320 13321 13322 13323 13324 13325 13326 13327 13328 13329 13331 13332 13333 13334 13335 13336 13337 13339 13341 13342 13343 13344 13345 13346 13347 13348 13349 13350 13351 13352 13353 13355 13356 13357 13358 13359 13360 
 	}
-	manpower=2812990
+	manpower=159900
 	buildings_max_level_factor=1.000
-	state_category=state_level_6
+	state_category=pastoral
 	local_supplies=0.000
 }

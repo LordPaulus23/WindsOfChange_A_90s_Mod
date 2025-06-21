@@ -2,40 +2,40 @@
 state={
 	id=131
 	name="STATE_131"
-	resources={
-		oil=25.000
-		steel=5.000
+	manpower = 2128860
+	
+	state_category = city
+	resources = {
+		steel = 18
+		
 	}
 
 	history={
 		owner = ENG
 		add_core_of = ENG
 		victory_points = {
-			351 10 
-		}
-		victory_points = {
-			11270 3 
+			351 8 
 		}
 		buildings = {
-			infrastructure = 6
-			industrial_complex = 3
-			arms_factory = 1
-			air_base = 5
-			nuclear_reactor = 1
+			infrastructure = 3 #was: 6
+			industrial_complex = 1
+			dockyard = 4
+			air_base = 6
 			351 = {
 				naval_base = 6
-
 			}
-
 		}
-
+		1939.1.1 = {
+			buildings = {
+				dockyard = 5
+				industrial_complex = 2
+			}
+		}
 	}
 
 	provinces={
-		219 351 6399 9285 11270 11299 11332 
+		351 11270 11299 
 	}
-	manpower=3024860
-	buildings_max_level_factor=1.000
-	state_category=state_level_7
-	local_supplies=0.000
+
+	local_supplies=14.0 
 }

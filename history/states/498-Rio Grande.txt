@@ -1,47 +1,37 @@
 
-state={
-	id=498
-	name="STATE_498"
-	resources={
-		tungsten=100.000
-		oil=7.000
+state = {
+	id = 498
+	name = "STATE_498"
+	manpower = 649000 # A third removed for Ceara and Pernambuco each, was 7746000
+
+	state_category = town # Was city
+
+	resources = {
+		tungsten = 3
 	}
 
-	history={
+	history = {
+
 		owner = BRA
-		buildings = {
-			infrastructure = 6
-			industrial_complex = 2
-			10933 = {
-				naval_base = 1
 
-			}
-
-		}
 		add_core_of = BRA
-		victory_points = {
-			10933 10
-		}
-		victory_points = {
-			2227 9 
-		}
-		victory_points = {
-			16216 4 
-		}
-		victory_points = {
-			2175 3
-		}
-		victory_points = {
-			13394 1
+
+		buildings = {
+			infrastructure = 3 #was: 5
+			industrial_complex = 1 # Was 3
+			#air_base = 1 Added through focus later
+
 		}
 
+		victory_points = {
+			10933 3 
+		}
 	}
 
-	provinces={
-		1446 2175 2227 7561 10933 10989 13388 13390 13393 13394 16216 16217 
+	provinces = {
+		2175 10933 13273
 	}
-	manpower=6219000
-	buildings_max_level_factor=1.000
-	state_category=state_level_11
-	local_supplies=0.000
+	
+
+	local_supplies = 0.0 
 }

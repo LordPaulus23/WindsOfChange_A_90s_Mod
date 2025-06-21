@@ -1,31 +1,25 @@
-
 state={
 	id=683
 	name="STATE_683"
 	resources={
-		steel=10.000
+		aluminium=7.000
 	}
+
 	history={
 		owner = CAN
-		add_core_of = CAN
 		buildings = {
-			infrastructure = 2
-			3691 = {
-				naval_base = 1
-
-			}
+			infrastructure = 1
 
 		}
-		victory_points = {
-			3691 1 
-		}
+		add_core_of = CAN
 
 	}
 
 	provinces={
-		1712 2947 3691 7813 8962 10721 13188 13190 13191 13693 
+		2947 8962 10721 13188 13190 13191 
 	}
-	manpower=28000
+	manpower=46135
 	buildings_max_level_factor=1.000
-	state_category=state_level_0
+	state_category=wasteland
+	local_supplies=0.000
 }

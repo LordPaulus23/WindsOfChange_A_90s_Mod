@@ -1,323 +1,371 @@
 ﻿capital = 267
 
-oob = "AFG_2000"
-
-set_research_slots = 2
-set_convoys = 10
-set_stability = 0.3
-
-set_country_flag = country_language_dari
-set_country_flag = country_language_pashto
-set_country_flag = country_behavior_dispersed
-set_country_flag = country_behavior_indolent
-
 if = {
 	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-	set_technology = {
-		CAS1 = 1
-		CAS2 = 1
-		cv_CAS1 = 1
-		cv_CAS2 = 1
-		fighter1 = 1
-		fighter2 = 1
-		cv_fighter1 = 1
-		cv_fighter2 = 1
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-		naval_bomber3 = 1
-		cv_naval_bomber1 = 1
-		cv_naval_bomber2 = 1
-		cv_naval_bomber3 = 1
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
-		#scout_plane1 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	#tech
-	set_technology = {
-		iw_small_airframe = 1
-		basic_small_airframe = 1
-		iw_medium_airframe = 1
-		basic_medium_airframe = 1
-		iw_heli_airframe = 1
-		iw_naval_airframe = 1
-		basic_naval_airframe = 1
-		iw_large_airframe = 1
-		basic_large_airframe = 1
-		aa_lmg = 1
-		Cold_war_cas = 1
-		engines_1 = 1
-		air_misc = 1
-		#scout_plane1 = 1
-	}
-	#varients
-	#CAS
-	create_equipment_variant = {
-		name = "Su-25" 
-		type = small_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = heavy_mg_2x
-			fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
-			fixed_auxiliary_weapon_slot_2 = tank_buster_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-			special_type_slot_3 = armor_plate_medium
+		NOT = {
+			has_dlc = "No Step Back"
 		}
 	}
-	#Multirole
-	create_equipment_variant = {
-		name = "MiG-23" 
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "MiG-29" 
-		type = medium_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = aircraft_cannon_medium_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-	}
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-	main_battle_tank1 = 1
-	main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	light_tank1 = 1
-	mechanised_infantry1 = 1
-	nonsnb_technicality_tech = 1
-	light_mechanized_infantry1 = 1
-	light_mechanized_infantry2 = 1
-	#mechanised_infantry2 = 1
-	}
+	set_oob = "AFG_1936"
 }
 if = {
 	limit = {
 		has_dlc = "No Step Back"
 	}
-	set_technology = {
-		IFV_chassis_80s = 1
-		IFV_chassis = 1
-		technicality_tech = 1
-		light_mechanized_infantry1 = 1
-		light_mechanized_infantry2 = 1
-		main_battle_tank_chassis = 1
-		main_battle_tank_chassis_80s = 1
-		#main_battle_tank_chassis_00s = 1
-	}
-	
-	create_equipment_variant = {
-		name = "T-62"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_SOV_main_battle_tank1_medium"
-	}
-	create_equipment_variant = {
-		name = "BMP-2"
-		type = light_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_auto_cannon
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			atgm_slot = tank_atgm_1
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 2
-			tank_nsb_engine_upgrade = 2
-		}
-		icon = "GFX_SOV_mechanised_infantry2_medium"
-	}
-	create_equipment_variant = {
-		name = "MT-LB"
-		type = light_tank_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_heavy_machine_gun
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_SOV_mechanised_infantry1_medium"
-	}
-	create_equipment_variant = {
-		name = "PT-76"
-		type = light_tank_destroyer_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_ifv_medium_cannon
-			special_type_slot_1 = ergo_ifv_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			optics_slot = tank_optics_1
-			special_type_slot_4 = main_ammo_bay
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = no
-		icon = "GFX_SOV_light_tank1_medium"
-	}
+	set_oob = "AFG_1936_nsb"
 }
+
 set_technology = {
-	## Infantry ##
-	infantry_weapons1 = 1
-	motorised_infantry = 1
-	support_weapons = 1
-	night_vision = 1
-	body_armor = 1
-	camouflage = 1
-	marines = 1
-	tech_mountaineers = 1
-	paratroopers = 1
-	
-	## Support Companies ##
-	tech_support = 1
-	basic_train = 1
-	tech_engineers = 1
-	tech_recon = 1
-	tech_field_hospital = 1
-	tech_logistics_company = 1
-	tech_military_police = 1
-	tech_maintenance_company = 1
-	
-	## Armor ##
-	#main_battle_tank1 = 1
-	#light_tank1 = 1
-	
-	#mechanised_infantry2 = 1
-	#light_mechanized_infantry1 = 1
-	
-	## Artillery ##
-	coldwar_artillery = 1
-	coldwar_antiair = 1
-	coldwar_antitank = 1
- 	rocket_artillery = 1
-	sp_antiair0 = 1 
-	
-	## Industry ##
-	fuel_silos = 1
-	fuel_refining = 1
+	infantry_weapons = 1
 }
-
-add_ideas = {
-
-}
-
-set_country_flag = dominant_religion_islam
-set_country_flag = sunni_islam
-
-set_politics = {	
-	ruling_party = communist
-	last_election = "1997.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-
-set_popularities = {
-    democratic_socialist = 20
-    communist = 50
-    market_liberal = 7
-    social_liberal = 7
-    social_democrat = 8
-    communist = 8
-}
-
-set_province_controller = 15780
-set_province_controller = 8053
-set_province_controller = 15777
-set_province_controller = 15796
-
-set_cosmetic_tag = NAL
-add_manpower = 100000
-
-add_equipment_to_stockpile = {
-    type = infantry_equipment_2
-    amount = 600
-}
-
-2004.1.1 = {
-	oob = "AFG_2016"
-	drop_cosmetic_tag = yes
-	set_party_name = {
-		ideology = islamist
-		name = AFG_islamist_party_islamic
-		long_name = AFG_islamist_party_islamic
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
 	}
+	set_technology = { #vanilla keeps the old system, nsb afghanistan will no longer produce some of the most advanced tanks in the world
+		gwtank = 1
+		basic_light_tank = 1
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = { 
+		gwtank_chassis = 1
+		
+	}
+}
+
+IF = {
+	limit = {
+		has_dlc = "Graveyard of Empires"
+	}
+	recruit_character = AFG_mohammed_zahir_shah
+	recruit_character = AFG_mohammad_hashim_khan
+	recruit_character = AFG_sardar_shah_wali_khan
+	recruit_character = AFG_abdur_rahim_khan
+	recruit_character = AFG_mahmud_tarzi
+	recruit_character = AFG_mohammed_daoud_khan
+	recruit_character = AFG_abdul_majid_zabuli
+	recruit_character = AFG_abdul_hai_habibi
+	recruit_character = AFG_qiamuddin_khadim
+	recruit_character = AFG_ghulam_yahya_khan_tarzi
+	recruit_character = AFG_ghulam_muhammad_ghobar
+	recruit_character = AFG_turbaz_khan
+	recruit_character = AFG_mohammad_gul_khan_momand
+	recruit_character = AFG_shah_mahmud_khan
+	recruit_character = AFG_amunullah_khan
+	recruit_character = AFG_soraya_tarzi
+	recruit_character = AFG_provisional_government
+	recruit_character = AFG_muhammad_ibrahim_khan
+
+	# Generics
+	recruit_character = AFG_generic_army_1
+	recruit_character = AFG_generic_army_2
+	recruit_character = AFG_generic_army_3
+	recruit_character = AFG_generic_army_4
+	recruit_character = AFG_generic_navy_1
+	recruit_character = AFG_generic_navy_2
+	recruit_character = AFG_placeholder_fascist
+	recruit_character = AFG_generic_american_1
+	recruit_character = AFG_generic_american_2
+	recruit_character = AFG_generic_american_3
+	
+	#add_stability = -0.7
+	
+	set_variable = { AFG_electrification_cooldown = 0 }
+	### Techs ###
+
+	set_technology = {
+		gw_artillery = 1
+	}
+
+	#### Ideas/Modifiers/Variables ####
+
+	# Variables for subsistence economy modifier
+	set_variable = { AFG_economy_production_efficiency_gain_factor = -0.5 }
+	set_variable = { AFG_economy_production_max_efficiency_factor = -0.35 }
+	set_variable = { AFG_economy_industrial_capacity_factor = -0.5 }
+	set_variable = { AFG_stability_factor_dm = 0.2 }
+
+	#Variables for Quami modifier
+	set_variable = { AFG_modifier_army_sub_unit_irregular_infantry_defence_factor = 0.05 }
+	set_variable = { AFG_modifier_army_sub_unit_irregular_infantry_speed_factor = 0.05 }
+	set_variable = { AFG_modifier_army_sub_unit_irregular_infantry_max_org_factor = 0.05 }
+	set_variable = { AFG_modifier_army_sub_unit_irregular_infantry_attack_factor = 0 }
+	#set_variable = { AFG_MODIFIER_CAVALRY_ATTACK_FACTOR = 0 }
+	#set_variable = { AFG_MODIFIER_CAVALRY_DEFENCE_FACTOR = 0}
+	set_variable = { AFG_modifier_army_sub_unit_cavalry_attack_factor = 0 }
+	set_variable = { AFG_modifier_army_sub_unit_cavalry_defence_factor = 0 }
+	set_variable = { AFG_modifier_army_sub_unit_cavalry_speed_factor = 0 }
+	set_variable = { AFG_army_core_defence_factor = 0 }
+	set_variable = { AFG_acclimatization_cold_climate_gain_factor = 0 }
+	set_variable = { AFG_acclimatization_hot_climate_gain_factor = 0 }
+	set_variable = { AFG_conscription_factor = 0.2 }
+	set_variable = { AFG_experience_gain_army_factor = 0 }
+	set_variable = { AFG_training_time_factor = 0 }
+	set_variable = { AFG_max_planning_factor = 0 }
+	set_variable = { AFG_planning_speed = 0 }
+
+	#variables for Nufus modifier
+
+	set_variable = { AFG_experience_gain_army_factor = 0.02 }
+	set_variable = { AFG_army_org_factor = 0 }
+	set_variable = { AFG_army_core_defence_factor = 0.03 }
+	set_variable = { AFG_army_armor_defence_factor = 0 }
+	set_variable = { AFG_army_armor_attack_factor = 0 }
+	set_variable = { AFG_army_artillery_attack_factor = 0 }
+	set_variable = { AFG_army_artillery_defence_factor = 0 }
+	set_variable = { AFG_conscription_factor = 0 }
+	set_variable = { AFG_training_time_factor = 0 }
+	set_variable = { AFG_conscription = 0 }
+	set_variable = { AFG_army_defence_factor = 0 }
+	set_variable = { AFG_army_attack_factor = 0 }
+	set_variable = { AFG_special_forces_cap = 0 }
+	set_variable = { AFG_special_forces_out_of_supply_factor = 0 }
+	set_variable = { AFG_extra_marine_supply_grace = 0 }
+	set_variable = { AFG_max_planning_factor = 0 }
+	set_variable = { AFG_planning_speed = 0 }
+	set_variable = { AFG_max_command_power_mult = 0 }
+	set_variable = { AFG_command_power_gain_mult = 0 }
+	set_variable = { AFG_acclimatization_cold_climate_gain_factor = 0 }
+	set_variable = { AFG_acclimatization_hot_climate_gain_factor = 0 }
+
+	# Varaibles for Amanullah modifier
+
+	set_variable = { AFG_amanullah_modifier_stability_factor = -0.05 }
+	set_variable = { AFG_amanullah_modifier_fascism_drift = 0.01 }
+	set_variable = { AFG_amanullah_modifier_core_defense_factor = 0 }
+	set_variable = { AFG_amanullah_modifier_core_attack_factor = 0 }
+
+	# Variables for 1923 constitution modifier 
+
+	set_variable = { AFG_1923_const_modifier_stability_factor = -0.1 }
+	set_variable = { AFG_1923_const_modifier_mobilization_laws_cost_factor = -0.25 }
+	set_variable = { AFG_1923_const_modifier_political_advisor_cost_factor = -0.25 }
+	set_variable = { AFG_1923_const_modifier_production_speed_industrial_complex_factor = 0.1 }
+	set_variable = { AFG_1923_const_modifier_research_speed_factor = 0 }
+	set_variable = { AFG_1923_const_modifier_production_factory_efficiency_gain_factor = 0 }
+	set_variable = { AFG_1923_const_modifier_production_factory_max_efficiency_factor = 0 }
+
+	every_owned_state = {
+		limit = {
+			is_owned_by = AFG
+		}
+		set_variable = { AFG_state_development_production_speed = -0.2 }
+		set_variable = { AFG_state_development_state_resources_factor = -0.2 }
+		set_variable = { AFG_state_production_speed_infrastructure_factor = -0.2 }
+	}
+
+	every_owned_state = {
+		limit = {
+			OR = { 
+				state = 1005
+				state = 1007
+			}
+		}
+	}
+
 	set_politics = {
-		ruling_party = conservative
-		elections_allowed = yes
-		last_election = "2003.6.1"
+		ruling_party = fascism
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	
+	set_popularities = {
+		fascism = 75
+		communism = 0
+		democratic = 15
+		neutrality = 10
+	}
+	set_war_support = 0.1
+
+	set_stability = 0.0
+
+	set_variable = { AFG_levy_cap_max = 24 }
+	set_variable = { AFG_levy_cap_min = 0 }
+	set_variable = { AFG_levy_cap = 6 }
+	set_variable = { AFG_levy_deployed = 0 }
+	clamp_variable = {
+		var = AFG_levy_cap
+		min = AFG_levy_cap_min
+		max = AFG_levy_cap_max
 	}
 
-    set_popularities = {
-        islamist = 30
-        conservative = 30
-        social_democrat = 18
-        market_liberal = 2
-        communist = 10
-        reactionary = 10
-    }
-	remove_ideas = {
-		partially_recognized_state
+	division_template = {
+		name = "Pashtun Levy"		
+		#division_names_group = 
+		is_locked = yes
+		force_allow_recruiting = no
+		regiments = {
+			irregular_infantry = { x = 0 y = 0 }
+			irregular_infantry = { x = 0 y = 1 }
+			irregular_infantry = { x = 1 y = 0 }
+			irregular_infantry = { x = 1 y = 1 }
+			irregular_infantry = { x = 2 y = 0 }
+			irregular_infantry = { x = 2 y = 1 }
+		}
+		override_model = AFG_militia_entity
+	}
+
+	set_country_flag = AFG_quami_is_active
+
+}
+IF = {
+	limit = {
+		NOT = { has_dlc = "Graveyard of Empires"}
+	}
+	recruit_character = AFG_mohammed_zahir_shah
+	recruit_character = AFG_akram_sattari
+	recruit_character = AFG_yaqub_khan
+	recruit_character = AFG_mihrdil_shahnawaz
+	recruit_character = AFG_sardar_shah_wali_khan
+	recruit_character = AFG_hares_muzafar
+	recruit_character = AFG_asadullah_seraj_khan
+	recruit_character = AFG_gholam_wali
+	recruit_character = AFG_nasirullah_husain
+	recruit_character = AFG_muhammad_amin_bughra
+	recruit_character = AFG_azam_ataullah
+	recruit_character = AFG_mohammed_daoud_khan
+	recruit_character = AFG_renato_bardolucci
+	recruit_character = AFG_ali_muhammed_khan
+	recruit_character = AFG_mohammed_etemadi_khan
+	recruit_character = AFG_aalem_daana
+	recruit_character = AFG_wazir_akbar_khan
+	recruit_character = AFG_mahmud_khan
+	recruit_character = AFG_haji_faiz_muhammed_zikeria
+	recruit_character = AFG_mohammad_hashim_khan
+	recruit_character = AFG_muhammed_nowroz
+	
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	
+	set_popularities = {
+		fascism = 15
+		communism = 10
+		neutrality = 75
+	}
+
+	### Techs ###
+	set_technology = {
+		gw_artillery = 1
 	}
 }
-2014.1.1 = {
-AFG_mohammed_fahim = {
-  remove_unit_leader_role = yes
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	IF = {
+		limit = {
+			has_dlc = "Graveyard of Empires"
+		}
+		#1936
+		complete_national_focus = AFG_support_king_zahir
+		complete_national_focus = AFG_expand_telegraph_network
+		complete_national_focus = AFG_placeholder_1
+		complete_national_focus = AFG_fruit_packing
+		complete_national_focus = AFG_implement_currency_controls
+		complete_national_focus = AFG_sugar_processing
+		complete_national_focus = AFG_clear_malarial_swamps
+		 #1937
+		complete_national_focus = AFG_clear_malarial_swamps
+		complete_national_focus = AFG_infrastructure_construction
+		complete_national_focus = AFG_electrification
+		complete_national_focus = AFG_establish_radio_networks
+		#1938
+		complete_national_focus = AFG_expand_karakul_lambskin_industry
+		complete_national_focus = AFG_reform_2
+		complete_national_focus = AFG_secure_dynasty
+		complete_national_focus = AFG_maintain_neutrality
+		#1939
+		complete_national_focus = AFG_qargha_dam
+		complete_national_focus = AFG_adopt_nufus
+		complete_national_focus = AFG_introduce_national_service
+		complete_national_focus = AFG_new_army
+	}
+	IF = {
+		limit = {
+			NOT = { has_dlc = "Graveyard of Empires" }
+		}
+		# Generic focuses
+		complete_national_focus = army_effort
+		complete_national_focus = equipment_effort
+		complete_national_focus = motorization_effort
+		complete_national_focus = aviation_effort
+		complete_national_focus = construction_effort_2
+		complete_national_focus = production_effort_2
+		complete_national_focus = infrastructure_effort
+		complete_national_focus = industrial_effort
+		complete_national_focus = construction_effort
+		complete_national_focus = production_effort		
+	}
+	
+
+	oob = "AFG_1939"
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "AFG_1939_air_bba"
+		else = {
+			set_air_oob = "AFG_1939_air_legacy"
+			set_technology = {
+				early_fighter = 1
+				CAS1 = 1
+			}
+		}
+	}
+	set_technology = {
+		
+		gw_artillery = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		fuel_silos = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
 }
+
+1939.1.1 = {
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		fascism = 20
+		communism = 10
+		neutrality = 70
+	}
 }
+

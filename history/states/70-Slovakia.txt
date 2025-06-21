@@ -1,32 +1,52 @@
+state = {
 
-state={
-	id=70
-	name="STATE_70"
+	id = 70
 
-	history={
+	name = "STATE_70"
+
+	manpower = 1230500
+	
+	state_category = city
+	
+	resources = {
+		tungsten = 1 # was: 2
+	}
+
+	history = {
+
 		owner = SLO
-		add_core_of = SLO
-		victory_points = {
-			9692 20 
-		}
-		victory_points = {
-			541 1 
-		}
-		add_extra_state_shared_building_slots = 1
+		
 		buildings = {
-			infrastructure = 7
+			infrastructure = 3
 			industrial_complex = 3
 			arms_factory = 2
-			air_base = 4
-
+			air_base = 3
 		}
 
+		victory_points = {
+			9692 10 # Bratislava
+		}
+
+		victory_points = {
+			11539 5 # Zilina
+		}
+
+		victory_points = {
+			541 2 # Nitra
+		}
+
+		add_core_of = SLO
+
+		1939.3.14 = {
+			owner = SLO
+			controller = SLO
+		}
+		
 	}
 
-	provinces={
-		541 3484 9539 9692 11522 
+	provinces = {
+		541 3484 3537 9539 9692 11522 11539 
 	}
-	manpower=1923000
-	buildings_max_level_factor=1.000
-	state_category=state_level_4
+
+	local_supplies = 3.0 
 }

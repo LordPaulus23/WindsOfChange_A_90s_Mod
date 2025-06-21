@@ -1,25 +1,25 @@
-state=
-{
-	id = 337
-	name = "STATE_337"
-	manpower = 46500
+state = {
+	id=337
+	name="STATE_337"
+	manpower = 25900
 	
-	state_category = state_level_1
+	state_category = small_island
 	
-	history=
-	{
-	    victory_points = {
-		    13003 1
-		}
-		owner = FAI
+	history = {
+		owner = DEN
 		buildings = {
-			infrastructure = 4
-
+			infrastructure = 2
 			13003 = {
 				naval_base = 1
 			}
 		}
-		add_core_of = FAI
+		add_core_of = DEN
+
+		victory_points = { #Tórshavn
+			13003 1
+		}
 	}
-	provinces= { 13003 }
+
+	provinces = { 13003 }
+	local_supplies = 0.0 
 }

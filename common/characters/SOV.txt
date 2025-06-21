@@ -1,0 +1,15 @@
+characters={
+	SOV_Mikhail_Sergeyevich_Gorbachev={
+		#name="Vladimir Putin"
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/Mikhail_Sergeyevich_Gorbachev.dds"
+			}
+		}
+		country_leader={
+			ideology = reformist_communist
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

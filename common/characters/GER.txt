@@ -1,0 +1,14 @@
+characters={
+	GER_Helmut_Kohl={
+		portraits={
+			civilian={
+				large="gfx/leaders/GER/Helmut_Kohl.dds"
+			}
+		}
+		country_leader={
+			ideology=fiscal_conservative
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

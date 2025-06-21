@@ -1,293 +1,188 @@
 ﻿capital = 302
 
-oob = "BOL_2000"
+oob = "BOL_1936"
+every_core_state = {
+	ROOT = {
+		add_to_array = { cores_at_game_start = PREV }
+	}
+}
+IF = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "BOL_1936_air_bba"
+	ELSE = {
+		set_air_oob = "BOL_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+		}
+	}
+}
 
-set_research_slots = 3
-set_convoys = 10
-set_stability = 0.3
+IF = {
+	limit = {
+		has_dlc = "Trial of Allegiance"
+	}
+	JUNO_set_shared_military_branch_defaults = yes
+}
 
-set_country_flag = country_language_spanish
-set_country_flag = country_behavior_dispersed
-set_country_flag = country_behavior_indolent
-
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-	set_technology = {
-		CAS1 = 1
-		CAS2 = 1
-		cv_CAS1 = 1
-		cv_CAS2 = 1
-		fighter1 = 1
-		fighter2 = 1
-		cv_fighter1 = 1
-		cv_fighter2 = 1
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-		naval_bomber3 = 1
-		cv_naval_bomber1 = 1
-		cv_naval_bomber2 = 1
-		cv_naval_bomber3 = 1
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
-		#scout_plane1 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	#tech
-	set_technology = {
-		iw_small_airframe = 1
-		basic_small_airframe = 1
-		iw_medium_airframe = 1
-		basic_medium_airframe = 1
-		iw_heli_airframe = 1
-		iw_naval_airframe = 1
-		basic_naval_airframe = 1
-		iw_large_airframe = 1
-		basic_large_airframe = 1
-		aa_lmg = 1
-		Cold_war_cas = 1
-		engines_1 = 1
-		air_misc = 1
-		#scout_plane1 = 1
-	}
-	#varients
-	#CAS
-	create_equipment_variant = {
-		name = "Su-25" 
-		type = small_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = heavy_mg_2x
-			fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
-			fixed_auxiliary_weapon_slot_2 = tank_buster_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-			special_type_slot_3 = armor_plate_medium
-		}
-	}
-	#Multirole
-	create_equipment_variant = {
-		name = "MiG-23" 
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "MiG-29" 
-		type = medium_plane_airframe_1
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = aircraft_cannon_medium_1
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
-		}
-	}
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-	main_battle_tank1 = 1
-	light_tank1 = 1
-	mechanised_infantry1 = 1
-	nonsnb_technicality_tech = 1
-	light_mechanized_infantry1 = 1
-	light_mechanized_infantry2 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		IFV_chassis_80s = 1
-		IFV_chassis = 1
-		technicality_tech = 1
-		light_mechanized_infantry1 = 1
-		light_mechanized_infantry2 = 1
-		main_battle_tank_chassis = 1
-	}
-	create_equipment_variant = {
-		name = "M113"
-		type = light_tank_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_heavy_machine_gun
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_MAC_mechanised_infantry3_medium"
-	}
-	create_equipment_variant = {
-		name = "SK-105 Kurassier"
-		type = light_tank_destroyer_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_auto_cannon
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = main_ammo_bay
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = no
-		icon = "GFX_AUS_light_tank1_medium"
-	}
-}
+# Starting tech
 set_technology = {
-	## Infantry ##
-	infantry_weapons1 = 1
-	motorised_infantry = 1
-	support_weapons = 1
-	night_vision = 1
-	body_armor = 1
-	camouflage = 1
-	marines = 1
-	tech_mountaineers = 1
-	paratroopers = 1
-	
-	## Support Companies ##
-	tech_support = 1
-	basic_train = 1
+	infantry_weapons = 1
+	tech_support = 1		
 	tech_engineers = 1
-	tech_recon = 1
-	tech_field_hospital = 1
-	tech_logistics_company = 1
-	tech_military_police = 1
-	tech_maintenance_company = 1
-	
-	## Armor ##
-	#main_battle_tank1 = 1
-	#main_battle_tank2 = 1
-	#light_tank1 = 1
-	
-	#mechanised_infantry2 = 1
-	#light_mechanized_infantry1 = 1
-	#light_mechanized_infantry2 = 1
-	
-	## Artillery ##
-	coldwar_artillery = 1
-	
-	## Industry ##
+	gw_artillery = 1
+	tech_trucks = 1
 	fuel_silos = 1
-	fuel_refining = 1
-}
-add_ideas = {
-	civil_liberties_restricted
-	population_growth_rapid
-	limited_conscription
 }
 
-set_politics = {	
-	ruling_party = reactionary
-	last_election = "1997.1.1"
-	election_frequency = 60
-	elections_allowed = yes
-}
-
-set_popularities = {
-    fascist = 2
-    nationalist = 2
-    reactionary = 20
-    conservative = 10
-    market_liberal = 6
-    social_liberal = 25
-    social_democrat = 15
-    democratic_socialist = 15
-    communist = 5
-}
-recruit_character = BOL_hugo_banzer
-recruit_character = BOL_gonzalo_sanchez_lozada
-recruit_character = BOL_jaime_paz_zamora
-recruit_character = BOL_gustavo_sejas_revollo
-recruit_character = BOL_evo_morales
-recruit_character = BOL_manfred_reyes_villa
-recruit_character = BOL_samuel_jorge_doria_medina_auza
-recruit_character = BOL_ignacio_mendoza
-recruit_character = BOL_juan_del_granado
-#
-recruit_character = BOL_jorge_quiroga
-recruit_character = BOL_carlos_mesa
-recruit_character = BOL_eduardo_rodriguez_veltze
-recruit_character = BOL_mario_cossio
-recruit_character = BOL_hormando_vaca_diez
-recruit_character = BOL_chi_hyun_chung
-recruit_character = BOL_luis_arce
-recruit_character = BOL_jeanin_anez
-recruit_character = BOL_luis_fernando_camacho
-recruit_character = BOL_williams_kaliman
-#
-recruit_character = BOL_freddy_terrazas_salas
-#
-recruit_character = BOL_marcelo_antezana
-recruit_character = BOL_Oscar_naranjo
-recruit_character = BOL_juan_gonzalo_duran_flores
-recruit_character = BOL_carlos_erik_ruck_arzabe
-recruit_character = BOL_melvin_arteaga_aguada
-recruit_character = BOL_abel_galo_de_la_barra_caceres
-recruit_character = BOL_gina_reque_teran
-recruit_character = BOL_luis_fernando_aramayo_mercado
-recruit_character = BOL_felipe_eduardo_vasquez_moya
-recruit_character = BOL_guillermo_chalup_liendo
-recruit_character = BOL_jose_manuel_puente_guarachi
-recruit_character = BOL_ismael_zapata
-recruit_character = BOL_hernando_abaroa
-recruit_character = BOL_felipe_melgarejo
-recruit_character = BOL_jose_miguel_daza
-recruit_character = BOL_isidoro_de_la_cruz
-
-
-2014.10.13 = {
-	set_politics = {	
-		ruling_party = democratic_socialist
-		last_election = "2014.10.12"
-		election_frequency = 60
+IF = {
+	limit = {
+		has_dlc = "Trial of Allegiance"
+	}
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1934.11.11"
+		election_frequency = 72
 		elections_allowed = yes
 	}
 	set_popularities = {
-		fascist = 2
-		nationalist = 9
-		reactionary = 13
-		conservative = 13
-		market_liberal = 15
-		social_liberal = 6
-		social_democrat = 5
-		democratic_socialist = 32
-		communist = 5
+		neutrality = 32
+		democratic = 54
+		communism = 12
+		fascism = 2
 	}
-	promote_character = BOL_williams_kaliman
-	promote_character = BOL_jeanin_anez
-	promote_character = BOL_luis_fernando_camacho
-	promote_character = BOL_carlos_mesa
+
+	recruit_character = BOL_jose_luis_tejada_sorzano
+	recruit_character = BOL_oscar_unzaga_de_la_vega
+	recruit_character = BOL_tomas_monje_gutierrez
+	recruit_character = BOL_gil_ibarra_juarez
+	recruit_character = BOL_gualberto_villarroel_lopez
+	recruit_character = BOL_jose_santos_quinteros
+	recruit_character = BOL_fabian_vaca_chavez
+	recruit_character = BOL_david_toro_ruilova
+	recruit_character = BOL_enrique_baldivieso_aparicio
+	recruit_character = BOL_julian_montellano_carrasco
+	recruit_character = BOL_alberto_ostria_gutierrez
+	recruit_character = BOL_enrique_finot
+	recruit_character = BOL_german_busch_beccera
+	recruit_character = BOL_Gustavo_Adolfo_Navarro
+	recruit_character = BOL_Carlos_Quintanilla
+	recruit_character = BOL_Carlos_Blanco_Galindo
+	recruit_character = BOL_Enrique_Penaranda
+	recruit_character = BOL_bernardino_bilbao_rioja
+	recruit_character = BOL_indigenous_council
+
+	ELSE = {
+		set_politics = {
+			ruling_party = neutrality
+			last_election = "1934.11.11"
+			election_frequency = 72
+			elections_allowed = yes
+		}
+
+		set_popularities = {
+			neutrality = 100
+		}
+
+		recruit_character = BOL_jose_luis_tejada_sorzano
+		recruit_character = BOL_oscar_unzaga_de_la_vega
+		recruit_character = BOL_jorge_blanco
+		recruit_character = BOL_severino_ruiztagle
+		recruit_character = BOL_eusebio_ayala
+		recruit_character = BOL_tomas_monje_gutierrez
+		recruit_character = BOL_gil_ibarra_juarez
+		recruit_character = BOL_gualberto_villarroel_lopez
+		recruit_character = BOL_jose_santos_quinteros
+		recruit_character = BOL_fabian_vaca_chavez
+		recruit_character = BOL_david_toro_ruilova
+		recruit_character = BOL_enrique_baldivieso_aparicio
+		recruit_character = BOL_roberto_hinojosa
+		recruit_character = BOL_carlos_altamirano
+		recruit_character = BOL_julian_montellano_carrasco
+		recruit_character = BOL_hector_bilbao_roja
+		recruit_character = BOL_alberto_ostria_gutierrez
+		recruit_character = BOL_enrique_finot
+		recruit_character = BOL_german_busch_beccera
+		recruit_character = BOL_jose_maria_gutierrez
+	}
+}
+
+
+set_country_flag = monroe_doctrine
+
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = construction_effort_2
+	complete_national_focus = production_effort_2
+	complete_national_focus = infrastructure_effort
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	oob = "BOL_1939"
+
+	IF = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "BOL_1939_air_bba"
+		ELSE = {
+			set_air_oob = "BOL_1939_air_legacy"
+		}
+	}
+
+	set_technology = {
+
+		interwar_artillery = 1
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		fuel_refining = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+
+	}
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1934.11.11"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+
+	set_popularities = {
+		neutrality = 100
+	}
 }

@@ -2,35 +2,28 @@
 state={
 	id=153
 	name="STATE_153"
-	resources={
-		oil=1.000
-	}
-
 	history={
 		owner = AUS
-		add_core_of = AUS
 		victory_points = {
-			11618 5
-		}
-		victory_points = {
-			6680 1
-		}
-		victory_points = {
-			671 1
+			673 5 
 		}
 		buildings = {
-			infrastructure = 6
-			industrial_complex = 2
-			air_base = 1
-
+			infrastructure = 3
+			industrial_complex = 1
+			air_base = 3
 		}
-
+		add_core_of = AUS
+		1938.3.12 = {
+			owner = GER
+			controller = GER
+			add_core_of = GER
+		}
 	}
-
 	provinces={
-		671 673 6680 9633 9636 11618 11634 
+		668 671 673 3675 6673 9633 9636 11618 11634 
 	}
-	manpower=1024000
+	manpower=1500986
 	buildings_max_level_factor=1.000
-	state_category=state_level_2
+	state_category=town
+	local_supplies=12.000
 }

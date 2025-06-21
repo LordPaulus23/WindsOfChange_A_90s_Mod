@@ -2,36 +2,37 @@
 state={
 	id=221
 	name="STATE_221"
+	manpower = 2227520
+	
+	state_category = city
+	
 	resources={
-		oil=0.000
-		steel=10.000
+		steel=33 # was: 56
 	}
 
 	history={
-		owner = SOV
 		add_core_of = SOV
-		add_core_of = UKR
+		owner = SOV
 		victory_points = {
-			418 25 
-		}
-		victory_points = {
-			11461 1 
+			418 10
 		}
 		buildings = {
-			infrastructure = 5
-			#air_base = 2
-			industrial_complex = 1
+			infrastructure = 4 #was: 7
 			arms_factory = 1
-
+			industrial_complex = 1
+			air_base = 5
 		}
-
+		add_core_of = UKR
+		1939.1.1 = {
+			buildings = {
+				arms_factory = 2
+			}
+		}
 	}
 
 	provinces={
-		418 3409 3508 3531 6530 6554 9531 9556 11397 11461 11541 15402 15403 15404 15405 15406 
+		418 3409 3508 3531 6530 6554 9531 9556 11397 11461 11541 
 	}
-	manpower=2927520
-	buildings_max_level_factor=1.000
-	state_category=state_level_6
-	local_supplies=0.000
+
+	local_supplies=0.0 
 }

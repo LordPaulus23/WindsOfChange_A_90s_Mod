@@ -1,48 +1,23 @@
-
 state={
 	id=439
 	name="STATE_439"
-
+	provinces={
+		 2032 2086 10794 11955  
+	}
+	manpower=636246
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=1.000
 	history={
 		owner = RAJ
-		add_core_of = RAJ
-		add_core_of = NAX
-		add_extra_state_shared_building_slots = 1
 		buildings = {
-			infrastructure = 7
+			infrastructure = 3
+			industrial_complex = 1
 			air_base = 4
-			industrial_complex = 5
-			arms_factory = 2
-
 		}
+		add_core_of = RAJ
 		victory_points = {
-			2086 70 
+			2086 30
 		}
-		victory_points = {
-			16224 15
-		}
-		victory_points = {
-			16518 9
-		}
-		victory_points = {
-			 16520 4
-		}
-		victory_points = {
-			2032 4 
-		}
-		victory_points = {
-			12868 3 
-		}
-
-
-
 	}
-
-	provinces={
-		2032 2086 12868 16224 16398 16518 16519 16520 
-	}
-	manpower=34994000
-	buildings_max_level_factor=1.000
-	state_category=state_level_12
-	local_supplies=0.000
 }

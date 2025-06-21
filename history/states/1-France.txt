@@ -1,23 +1,29 @@
-state = {
-	id = 1
-	name = "STATE_1" #Corsica
-	manpower = 262900
-	state_category = state_level_1
+
+state={
+	id=1
+	name="STATE_1" # Corsica
+	manpower = 322900
 	
-	history = {
+	state_category = town
+
+	history={
 		owner = FRA
-		add_core_of = FRA
-		add_core_of = COR
-		victory_points = { 3838 1 } #Ajáccio
+		victory_points = { 3838 1 }
 		buildings = {
-			infrastructure = 4
-			dockyard = 1
+			infrastructure = 2
+			industrial_complex = 1
 			air_base = 1
-			3838 = { naval_base = 2 }
+			3838 = {
+				naval_base = 3
+			}
 		}
+		add_core_of = COR
+		add_core_of = FRA
 	}
-	
-	provinces = {
+
+	provinces={
 		3838 9851 11804 
 	}
+
+	local_supplies=0.0 
 }

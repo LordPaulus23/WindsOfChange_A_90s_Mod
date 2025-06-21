@@ -1,67 +1,25 @@
-
 state={
 	id=728
 	name="STATE_728"
-	resources={
-		tungsten=750.000
-		oil=23.000
-		steel=5.000
-	}
-
+	manpower = 200000
+	
+	state_category = enclave
+	
 	history={
 		owner = PRC
+		add_core_of = CHI
 		add_core_of = PRC
-		#add_claim_by = CHI
-		add_core_of = GXC
-		add_extra_state_shared_building_slots = 2
 		buildings = {
-			infrastructure = 6
-			industrial_complex = 3
-			arms_factory = 1
-			air_base = 2
-			dockyard = 2
-			9938 = {
-				naval_base = 6
-
+			infrastructure = 2
+			11981 = {
+				naval_base = 1
 			}
-
 		}
-		victory_points = {
-			4050 1 
-		}
-		victory_points = {
-			1202 24#30 
-		}
-		victory_points = {
-			1162 2 
-		}
-		victory_points = {
-			11862 1 
-		}
-		victory_points = {
-			7067 1 
-		}
-		victory_points = {
-			4165 3 
-		}
-		victory_points = {
-			9978 15 
-		}
-		victory_points = {
-			7182 8 
-		}
-		victory_points = {
-			9938 40
-		}
-
-
 	}
-
+	
 	provinces={
-		1078 1162 1202 4050 4165 4207 7067 7141 7182 9938 9978 11862 16392 
+		11981 
 	}
-	manpower=24047000
-	buildings_max_level_factor=1.000
-	state_category=state_level_11
-	local_supplies=0.000
+
+	local_supplies=0.0 
 }

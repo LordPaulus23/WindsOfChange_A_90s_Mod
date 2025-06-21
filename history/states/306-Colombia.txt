@@ -1,38 +1,29 @@
 
 state={
 	id=306
-	name="STATE_306"
-	resources={
-		steel=3.000
-	}
-
+	name="STATE_306" # Cundinamarca
+	manpower = 4953049
+	
+	state_category = city
+	
 	history={
 		owner = COL
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 5
+			air_base = 2
+		}
 		add_core_of = COL
 		victory_points = {
-			10747 50 
-		}
-		victory_points = {
-			16062 3
-		}
-		victory_points = {
-			16061 2 
-		}
-		buildings = {
-			infrastructure = 7
-			industrial_complex = 3
-			arms_factory = 2
-			air_base = 5
-
+			10747 10
 		}
 
 	}
 
 	provinces={
-		10747 16061 16062 
+		2079 7936 7991 7993 10747 10790 10846 
 	}
-	manpower=8491000
-	buildings_max_level_factor=1.000
-	state_category=state_level_14
-	local_supplies=0.000
+
+	local_supplies=4.0 
 }

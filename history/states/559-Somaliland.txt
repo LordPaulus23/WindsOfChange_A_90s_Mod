@@ -1,36 +1,32 @@
-
-state={
-	id=559
-	name="STATE_559"
-
+state=
+{
+	id = 559
+	name = "STATE_559"
+	manpower = 771671# was 1028895
+	resources = {
+		steel = 1
+	}
+	
+	state_category = rural
+	
 	history={
 		owner = SOM
 		add_core_of = SOM
-		add_core_of = SNA
-		add_core_of = SPF
 		victory_points = {
-			15823 15
+			12991 3 
 		}
 		buildings = {
-			infrastructure = 5
-			industrial_complex = 1
-			arms_factory = 1
-			air_base = 3
-			15823 = {
-				naval_base = 4
-
+			infrastructure = 2
+			air_base = 1
+			
+			12991 = {
+				naval_base = 2
 			}
-
 		}
-		add_dynamic_modifier = { modifier = SOM_mogadishu_in_ruins }
-
+	}
+	provinces = {
+		1964 1966 2020 2063 4909 5065 8164 10818 10891 10928  12840  12991 	
 	}
 
-	provinces={
-		15823 
-	}
-	manpower=1188000
-	buildings_max_level_factor=1.000
-	state_category=state_level_2
-	local_supplies=0.000
+	local_supplies=0.0 
 }

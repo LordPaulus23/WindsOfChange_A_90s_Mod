@@ -1,37 +1,47 @@
+state = {
+	id = 278
+	name = "STATE_278" # Pampas
+	manpower = 5596366
+	
+	state_category = large_city
 
-state={
-	id=278
-	name="STATE_278"
-	resources={
-		oil=18.000
-	}
+	history = {
 
-	history={
 		owner = ARG
 		add_core_of = ARG
+
 		buildings = {
-			infrastructure = 3
-			industrial_complex = 1
-			air_base = 2
+			infrastructure = 3 #was: 6
+			arms_factory = 2
+			industrial_complex = 5
+			dockyard = 1
+			air_base = 4
+			12364 = {
+				naval_base = 7
+				bunker = 1
+				coastal_bunker = 1
+			}
+			7621 = {
+				naval_base = 2
+			}
+			1639 = {
+				naval_base = 1
+			}
+		}
+		
+		victory_points = {
+			12364 15 
+		}
 
-		}
 		victory_points = {
-			11005 3 
-		}
-		victory_points = {
-			10981 1 
-		}
-		victory_points = {
-			12306 8 
+			7621 2 
 		}
 
 	}
 
-	provinces={
-		2199 8192 10981 11005 12306 12349 12982 15999 16000 16001 16008 16009 
+	provinces = {
+		1555 1568 1596 1624 1639 4573 4602 4643 7621 10375 10390 10402 10418 12351 12364 12379 12394 12409 12494 12998 
 	}
-	manpower=1026000
-	buildings_max_level_factor=1.000
-	state_category=state_level_2
-	local_supplies=0.000
+
+	local_supplies = 0.0 
 }

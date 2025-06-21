@@ -1,76 +1,52 @@
+state = {
+	id = 620
+	name = "STATE_620"
 
-state={
-	id=620
-	name="STATE_620"
-	resources={
-		steel=25.000
-		aluminium=10.000
-		oil=10.000
-	}
+	history = {
 
-	history={
 		owner = PRC
+		add_core_of = CHI
 		add_core_of = PRC
-		#add_claim_by = CHI
+
 		buildings = {
-			infrastructure = 4
-			air_base = 2
-			industrial_complex = 4
+			infrastructure = 3
+			arms_factory = 3
+			industrial_complex = 2
+			air_base = 1 # Wuhan Wangjiadun Airbase
+		}
 
-		}
 		victory_points = {
-			4619 15 
+			4619 5 # Wuhan
 		}
-		victory_points = {
-			7596 15 
-		}
-		victory_points = {
-			16601 10 
-		}
-		victory_points = {
-			16599 12 
-		}
-		victory_points = {
-			1036 7 
-		}
-		victory_points = {
-			16603 70 
-		}
-		victory_points = {
-			16600 5 
-		}
-		victory_points = {
-			12467 7 
-		}
-		victory_points = {
-			4130 5 
-		}
-		victory_points = {
-			1612 12 
-		}
-		victory_points = {
-			16602 6 
-		}
-		victory_points = {
-			7580 5 
-		}
-		victory_points = {
-			16474 10 
-		}
-		victory_points = {
-			5030 5 
-		}
-		victory_points = {
-			7167 7 
+
+		1938.10.25 = {
+			buildings = {
+				industrial_complex = 3
+				infrastructure = 3 #was: 6
+				air_base = 2
+				arms_factory = 2
+			}
+			JAP = {
+				set_province_controller = 1036
+				set_province_controller = 4619
+				set_province_controller = 4631
+				set_province_controller = 7167
+				set_province_controller = 7637
+				set_province_controller = 9959
+				set_province_controller = 10462
+
+			}
+
 		}
 
 	}
 
-	provinces={
-		1036 1612 4009 4130 4619 4631 5030 7019 7167 7201 7580 7596 7609 7625 7637 8072 9934 9959 10462 10474 10757 12086 12408 12414 12467 16474 16599 16600 16601 16602 16603 16604 16629 
+	provinces = {
+		1036 1612 4009 4130 4619 4631 7019 7167 7580 7596 7609 7625 7637 7948 8072 9934 9959 10462 10474 12408 12467 
 	}
-	manpower=59508000
-	buildings_max_level_factor=1.000
-	state_category=state_level_20
-	local_supplies=0.000
+	manpower = 25541600
+	buildings_max_level_factor = 1.000
+	state_category = city
+
+	local_supplies = 2.0 
 }

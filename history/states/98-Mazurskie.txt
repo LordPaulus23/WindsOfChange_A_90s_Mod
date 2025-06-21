@@ -1,20 +1,23 @@
-state = {
-	id = 98
-	name = "STATE_98" #Plock
-	manpower = 1642100
-	state_category = state_level_3
-
-	history = {
-		owner = POL
-		add_core_of = POL
-		victory_points = { 3230 3 }
-		buildings = {
-			infrastructure = 4
-			air_base = 2
+state={
+	id=98
+	name="STATE_98"
+	manpower = 1412100
+	
+	state_category = rural
+	history={
+		victory_points = {
+			3230 5
 		}
+		owner = POL
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = POL
 	}
 
-	provinces = {
+	provinces={
 		548 3230 6259 6321 6401 6567 9290 9316 11385 
 	}
+
+	local_supplies=7.0 
 }

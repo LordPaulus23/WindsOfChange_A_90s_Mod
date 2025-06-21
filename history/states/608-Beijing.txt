@@ -2,34 +2,37 @@
 state={
 	id=608
 	name="STATE_608"
-	resources={
-		steel=40.000
-	}
+	manpower = 9648400
+	
+	state_category = large_city
 
 	history={
 		owner = PRC
+		add_core_of = CHI
 		add_core_of = PRC
-		#add_claim_by = CHI
-		add_extra_state_shared_building_slots = 3
 		buildings = {
-			infrastructure = 7
-			industrial_complex = 7
-			arms_factory = 2
-			air_base = 10
+			infrastructure = 3 #was: 5
+			industrial_complex = 2
+			air_base = 3
+			10068 = {
+				naval_base = 2
+			}
 		}
 		victory_points = {
-			9843 90 
+			9843 20
 		}
 		victory_points = {
-			4140 15
+			10068 1 
 		}
 
+		1938.10.25 = {
+			controller = JAP
+		}
 	}
 
 	provinces={
-		4140 9843 11761 16248
+		1134 4137 4140 6828 9843 9969 10068 11761 12026 
 	}
-	manpower=13569000
-	buildings_max_level_factor=1.000
-	state_category=state_level_9
+
+	local_supplies=1.0 
 }

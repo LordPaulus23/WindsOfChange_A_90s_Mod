@@ -1,51 +1,39 @@
-
-state={
-	id=456
-	name="STATE_456"
-	resources={
-		oil=0.000
-		steel=3.000
-	}
-
-	history={
+state = {
+	id = 456
+	name = "STATE_456" # Aswan
+	manpower = 4224516
+	
+	state_category = rural
+	
+	history = {
+		
 		owner = EGY
 		add_core_of = EGY
+
 		buildings = {
-			infrastructure = 5
-			industrial_complex = 3
-			arms_factory = 1
-			air_base = 3
+			infrastructure = 2
+
+			# Aswan Low Dam
+			11999 = { dam = 1 }
 
 		}
+
 		victory_points = {
-			12071 5 
+			12071 3 # Luxor
 		}
+
 		victory_points = {
-			11974 10 
+			11974 1 # Asyut
 		}
+
 		victory_points = {
-			11999 7 
-		}
-		victory_points = {
-			15146 2 
-		}
-		victory_points = {
-			12044 5 
-		}
-		victory_points = {
-			10028 2 
-		}
-		victory_points = {
-			1064 2 
+			11999 1 # Aswan
 		}
 
 	}
-
-	provinces={
-		1028 1064 1151 1206 7073 10028 10844 11974 11999 12044 12071 12771 15117 15118 15119 15123 15124 15125 15126 15128 15131 15132 15134 15138 15139 15142 15143 15144 15145 15146 15147 15148 15150 15184 
+	provinces = {
+		1028 1064 1151 1206 7030 7073 7144 10028 10097 10844 11974 11999 12044 12071 12771 
 	}
-	manpower=11184000
-	buildings_max_level_factor=1.000
-	state_category=state_level_16
-	local_supplies=0.000
+
+	local_supplies = 0.0 
 }

@@ -1,28 +1,30 @@
 
-state={
-	id=401
-	name="STATE_401"
-	manpower = 975000
-	resources={
-		oil=2.000
+state = {
+	id = 401
+	name = "STATE_401" #Balakovo
+	manpower = 309530
+	
+	state_category = rural
+	
+	resources = {
+		steel = 10 # was: 40, then 24 but split
+		tungsten = 10 # was: 34, then 16 but split
 	}
-	state_category = state_level_2
 
-	history={
+	history = {
 		owner = SOV
+		buildings = {
+			infrastructure = 2
+		}
 		add_core_of = SOV
 		victory_points = {
-			11523 3
-		}
-		victory_points = {
-			6502 2
-		}
-		buildings = {
-			infrastructure = 3
+			6502 1
 		}
 	}
 
-	provinces={
-		410 452 499 3490 3551 6339 6430 6473 6502 6574 6601 9337 9432 9447 9473 9577 11321 11421 11458 11460 11523 
+	provinces = {
+		410 452 499 3490 3551 6339 6430 6473 6502 6574 9337 9447 9473 9577 11321 11421 11458 
 	}
+
+	local_supplies = 7.0 
 }

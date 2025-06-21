@@ -1,41 +1,43 @@
+state = {
 
-state={
-	id=405
-	name="STATE_405"
-	resources={
-		aluminium=23.000
-	}
+	id = 405
+	name = "STATE_405" #Tashkent
 
-	history={
+	history = {
+	
 		owner = SOV
 		add_core_of = SOV
+		
+		victory_points = {
+			1459 3 
+		}
+		victory_points = {
+			10488 1 
+		}
 		buildings = {
-			infrastructure = 4
-			industrial_complex = 1
+			infrastructure = 3 #was: 5
+			industrial_complex = 2
 			air_base = 1
+		}
+		
+		add_core_of = UZB
+		
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 3
 
+			}
 		}
-		add_core_of = TAJ
-		victory_points = {
-			1384 20 
-		}
-		victory_points = {
-			10488 3 
-		}
-		victory_points = {
-			7224 2 
-		}
-		victory_points = {
-			12218 1
-		}
-
 	}
 
-	provinces={
-		1216 1384 1919 4467 4542 7224 10187 10205 10488 11687 12218 12250 
+	provinces = {
+		1459 4629 7682 10488 11687 
 	}
-	manpower=5975820
-	buildings_max_level_factor=1.000
-	state_category=state_level_8
-	local_supplies=0.000
+	
+	manpower = 4137910 #Was 6275820 but was divided by 2 due to Bukhara (830) and then got 1M back
+	buildings_max_level_factor = 1.000
+	state_category = city
+
+	local_supplies = 2.0 
+	
 }

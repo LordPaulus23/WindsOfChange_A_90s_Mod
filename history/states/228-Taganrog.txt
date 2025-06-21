@@ -1,69 +1,25 @@
 
 state={
 	id=228
-	name="STATE_228"
-	resources={
-		steel=30.000
-	}
+	name="STATE_228" # Voroshilovgrad
+	manpower = 2167411
+	
+	state_category = town
 
 	history={
 		owner = SOV
-		add_core_of = SOV
-		add_core_of = UKR
 		victory_points = {
-			9461 7 
-		}
-		victory_points = {
-			6519 2 
+			9461 1
 		}
 		buildings = {
-			infrastructure = 5
-			industrial_complex = 1
-			#air_base = 1
-			9476 = {
-				bunker = 3
-
-			}
-			9446 = {
-				bunker = 3
-
-			}
-			547 = {
-				bunker = 3
-
-			}
-			11513 = {
-				bunker = 1
-
-			}
-			570 = {
-				bunker = 1
-
-			}
-			9461 = {
-				bunker = 4
-
-			}
-
+			infrastructure = 3 #was: 5
 		}
-		2014.4.1 = {
-			owner = NOV
-			UKR = {
-				set_province_controller = 11487
-				set_province_controller = 570
-				set_province_controller = 11513
-
-			}
-
-		}
-
+		add_core_of = UKR
 	}
 
 	provinces={
-		523 547 570 6505 6519 9446 9461 9476 11487 11513 15407 
+		523 547 570 6505 6519 9446 9461 9476 11487 11513 
 	}
-	manpower=2567411
-	buildings_max_level_factor=1.000
-	state_category=state_level_4
-	local_supplies=0.000
+
+	local_supplies=0.0 
 }

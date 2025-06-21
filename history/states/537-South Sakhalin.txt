@@ -1,18 +1,19 @@
 state= {
 	id=537
 	name="STATE_537"
-	manpower = 430000
-	
-	state_category = state_level_1
+	manpower = 295196
 	resources={
-		oil=15.000
+		oil=3 # was: 4
 	}
+	
+	state_category = rural
+
 	history= {
 		owner = SOV
-		add_core_of = AIN
-		add_core_of = SOV
+		add_core_of = JAP
+		
 		buildings = {
-			infrastructure = 3
+			infrastructure = 2
 			12446 = {
 				naval_base = 1
 
@@ -26,4 +27,6 @@ state= {
 	provinces=
 	{
 1322 1820 12446 	}
+
+	local_supplies=0.0 
 }

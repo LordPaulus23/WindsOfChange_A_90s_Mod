@@ -1,39 +1,37 @@
-
-state={
-	id=588
-	name="STATE_588"
-	resources={
-		steel=5.000
-		chromium=250.000
+state = {
+	id = 588
+	name = "STATE_588" # Semipalatinsk
+	
+	state_category = rural
+	
+	resources = {
+		chromium = 10 
 	}
 
-	history={
+	history = {
 		owner = SOV
 		add_core_of = SOV
 		add_core_of = KAZ
+
 		victory_points = {
-			7708 5 
+			12594 2 # Seipalatinsk
 		}
-		victory_points = {
-			1864 5 
-		}
-		victory_points = {
-			12594 6 
-		}
+		#victory_points = {
+		#	7350 1 # Kurchatov
+		#}
+
 		buildings = {
-			infrastructure = 5
-			air_base = 1
+			infrastructure = 2
 			industrial_complex = 2
-
 		}
-
+		
 	}
 
-	provinces={
-		1287 1749 1818 1864 1879 4661 4670 4685 4867 7317 7350 7708 7890 10202 10218 10235 10584 10630 12427 12564 12594 12616 13151 13587 13588 15740 
+	provinces = {
+		1287 1749 1818 1864 4661 4674 4867 7350 7890 10161 10218 10292 10584 10610 10653 12427 12564 12594 12635 13151 
 	}
-	manpower=2055223
-	buildings_max_level_factor=1.000
-	state_category=state_level_4
-	local_supplies=0.000
+	manpower = 429213
+	buildings_max_level_factor = 1.000
+
+	local_supplies = 0.0 
 }

@@ -2,14 +2,14 @@
 state={
 	id=643
 	name="STATE_643"
-	manpower=10450
-	state_category = state_level_0
+	manpower=493
+	state_category = small_island
 
 	history={
-		owner = KIR
-		add_core_of = KIR
+		owner = ENG
+		add_core_of = FIJ
 		buildings = {
-			infrastructure = 3
+			infrastructure = 2
 			13056 = {
 				naval_base = 1
 			}
@@ -23,4 +23,6 @@ state={
 	provinces={
 		13054 13055 13056 13057 
 	}
+
+	local_supplies=0.0 
 }

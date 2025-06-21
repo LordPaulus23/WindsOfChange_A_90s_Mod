@@ -2,35 +2,28 @@
 state={
 	id=441
 	name="STATE_441"
+	manpower = 2598027
+	
+	state_category = rural
 
 	history={
 		owner = RAJ
-		add_core_of = RAJ
-		add_core_of = NAX
-		add_claim_by = PAK
 		buildings = {
-			infrastructure = 4
-			industrial_complex = 1
-			air_base = 1
+			infrastructure = 1
+		}
+		add_claim_by = RAJ
+		add_claim_by = PAK
+		add_core_of = KAS
+		add_core_of = KHL 
 
-		}
 		victory_points = {
-			16531 7 
+			12754 1
 		}
-		victory_points = {
-			16532 12 
-		}
-		victory_points = {
-			16222 2 
-		}
-
 	}
 
 	provinces={
-		10905 12754 16222 16531 16532 
+		5042 7273 7316 8005 10905 12754 12884 
 	}
-	manpower=9907000
-	buildings_max_level_factor=1.000
-	state_category=state_level_3
-	local_supplies=0.000
+
+	local_supplies=0.0 
 }

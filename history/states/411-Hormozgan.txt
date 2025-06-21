@@ -1,42 +1,31 @@
 
 state={
 	id=411
-	name="STATE_411"
+	name="STATE_411" # Isfahan
+	manpower = 663954
 	resources={
-		oil=3.000
-		steel=18.000
+		oil=12 # was: 14
 	}
+	state_category = town
+	
 
 	history={
 		owner = PER
 		buildings = {
-			infrastructure = 5
-			industrial_complex = 2
-			arms_factory = 1
-			air_base = 1
-
+			infrastructure = 2
 		}
 		victory_points = {
-			2026 30 
+			2026 1 
 		}
 		victory_points = {
-			16662 6 
-		}
-		victory_points = {
-			12756 4 
-		}
-		victory_points = {
-			16661 2 
+			4928 1 
 		}
 		add_core_of = PER
-
 	}
 
 	provinces={
-		2026 4928 4983 5067 8074 12704 12756 16661 16662 
+		2026 4928 4983 5067 8074 12756 
 	}
-	manpower=4982000
-	buildings_max_level_factor=1.000
-	state_category=state_level_7
-	local_supplies=0.000
+
+	local_supplies=0.0 
 }

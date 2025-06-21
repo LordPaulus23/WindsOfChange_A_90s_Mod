@@ -1,404 +1,285 @@
-﻿capital = 4
+﻿capital = 4 # Vienna
 
-oob = "AUS_2000"
-
-set_research_slots = 4
-set_convoys = 50
-set_stability = 0.6
-
-set_country_flag = country_language_german
-
-if = {
+IF = {
 	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
+		has_dlc = "Gotterdammerung"
 	}
-	set_technology = {
-		CAS1 = 1
-		CAS2 = 1
-		cv_CAS1 = 1
-		cv_CAS2 = 1
-		fighter1 = 1
-		fighter2 = 1
-		cv_fighter1 = 1
-		cv_fighter2 = 1
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-		naval_bomber3 = 1
-		cv_naval_bomber1 = 1
-		cv_naval_bomber2 = 1
-		cv_naval_bomber3 = 1
-		strategic_bomber1 = 1
-		strategic_bomber2 = 1
-		#scout_plane1 = 1
+	set_oob = "AUS_ww_1936"
+	ELSE_IF = {
+		limit = {
+			NOT = {
+				has_dlc = "Gotterdammerung"
+			}
+		}
+		set_oob = "AUS_1936"
 	}
 }
+
 if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	#tech
-	set_technology = {
-		iw_small_airframe = 1
-		basic_small_airframe = 1
-		iw_medium_airframe = 1
-		basic_medium_airframe = 1
-		iw_heli_airframe = 1
-		iw_naval_airframe = 1
-		basic_naval_airframe = 1
-		iw_large_airframe = 1
-		basic_large_airframe = 1
-		aa_lmg = 1
-		Cold_war_cas = 1
-		engines_1 = 1
-		air_misc = 1
-		#scout_plane1 = 1
-	}
-	#varients
-	#CAS
-	create_equipment_variant = {
-		name = "F-100 Super Sabre" 
-		type = small_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = heavy_mg_2x
-			fixed_auxiliary_weapon_slot_1 = rocket_pod
-			engine_type_slot = engine_1_2x
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "AUS_1936_air_bba"
+		set_technology = {
+			aa_lmg = 1
+			engines_1 = 1
+			aircraft_construction = 1
+			iw_small_airframe = 1
 		}
-		icon = "GFX_F-100_Super_Sabre_medium"
-		obsolete = yes
-	}
-	#Multirole
-	create_equipment_variant = {
-		name = "F-4 Phantom II"
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = heavy_mg_2x
-			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_short_1
-			fixed_auxiliary_weapon_slot_2 = small_bomb_bay
-			engine_type_slot = engine_1_2x
-			special_type_slot_1 = empty
+	else = {
+		set_air_oob = "AUS_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+
 		}
-		icon = "GFX_F-4_Phantom_II_medium"
-		obsolete = yes
 	}
 }
-if = {
+
+
+### Store Austrian initial states - Used for removing German cores in Austria when German capitulates after having done successful Anschluss
+every_owned_state = {
 	limit = {
-		NOT = { has_dlc = "No Step Back" }
+		is_core_of = ROOT
 	}
-	set_technology = {
-	main_battle_tank1 = 1
-	main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	light_tank1 = 1
-	mechanised_infantry1 = 1
-	nonsnb_technicality_tech = 1
-	light_mechanized_infantry1 = 1
-	light_mechanized_infantry2 = 1
-	#mechanised_infantry2 = 1
-	}
+	add_to_array = { ROOT.AUS_initial_states = THIS }
 }
-if = {
-	limit = {
-		has_dlc = "No Step Back"
+
+
+IF = {
+	limit = { 
+		has_dlc = "Gotterdammerung"
 	}
-	set_technology = {
-		IFV_chassis_80s = 1
-		IFV_chassis = 1
-		technicality_tech = 1
-		light_mechanized_infantry1 = 1
-		light_mechanized_infantry2 = 1
-		main_battle_tank_chassis = 1
-		main_battle_tank_chassis_80s = 1
-		main_battle_tank_chassis_00s = 1
+
+	
+
+	#setting up all the dynamic modifiers
+
+	AUS_set_austrofascism_defaults = yes
+	AUS_set_monarchy_restored_defauts = yes
+	AUS_set_farr_defaults = yes
+	AUS_set_doth_defalts = yes
+	AUS_set_aggression_defaults = yes
+	AUS_set_austromarxism_defaults = yes
+	AUS_set_peoples_army_defaults = yes
+	AUS_set_empire_restored_defaults = yes
+	AUS_set_airforce_defaults = yes
+	AUS_set_army_defaults = yes
+	AUS_set_army_monarcy_defaults = yes
+	AUS_set_navy_defaults = yes
+	AUS_set_compensation_for_guarantee_defaults = yes
+
+	#National spirits are set here
+
+	add_opinion_modifier = {
+		target = GER
+		modifier = AUS_austrofascism_opm
+	}	
+
+	# rules are set here
+
+	country_lock_all_division_template = {
+		is_locked = yes
+		desc = AUS_cannot_train_due_to_treaty_of_saint_germain_en_laye
 	}
-	create_equipment_variant = {
-		name = "Leopard 2A4"
-		type = modern_tank_chassis_3
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon_2
-			#turret_type_slot = tank_modern_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_welded_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_3 = auto_loader
-			
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		icon = "GFX_GER_main_battle_tank3_medium"
+
+
+	
+
+	#########################
+	##DLC-LOCKED CHARACTERS##
+	#########################
+
+	#Political
+	recruit_character = AUS_kurt_schuschnigg
+	recruit_character = AUS_karl_renner
+	recruit_character = AUS_arthur_seyss-inquart
+	recruit_character = AUS_alfred_klahr
+	recruit_character = AUS_ernst_rudiger_starhemberg
+	recruit_character = AUS_johann_koplenig
+	recruit_character = AUS_edmund_glaise_horstenau
+	recruit_character = AUS_johann_hiedler
+	recruit_character = AUS_vinzenz_schumy
+	recruit_character = AUS_wilhelm_miklas
+	recruit_character = AUS_franz_winkler
+	recruit_character = AUS_ludwig_von_mises
+	recruit_character = AUS_heimito_von_doderer
+	recruit_character = AUS_hans_pertner
+	recruit_character = AUS_johannes_of_liechtenstein
+	recruit_character = AUS_alois_of_liechtenstein
+	recruit_character = AUS_heinrich_maier
+	recruit_character = AUS_leopold_waber
+	recruit_character = AUS_viktor_kienbock
+	recruit_character = AUS_karl_polheim
+	recruit_character = AUS_marianne_pollak
+	recruit_character = AUS_bruno_kreisky
+	recruit_character = AUS_theodor_innitzer
+	recruit_character = AUS_elizabet_von_gutmann
+	recruit_character = AUS_malke_schorr
+	recruit_character = AUS_franz_koritschoner
+	recruit_character = AUS_adolf_scharf
+	recruit_character = AUS_adolf_hoch
+	recruit_character = AUS_otto_bauer 
+	recruit_character = AUS_alois_schonburg_hartenstein
+	recruit_character = AUS_julius_raab
+	recruit_character = AUS_leopold_figl
+	recruit_character = AUS_ernst_kaltenbrunner
+	recruit_character = AUS_maximilian_ronge
+	recruit_character = AUS_egon_schonhof
+	recruit_character = AUS_friedrich_mandl
+
+	#Army
+
+	recruit_character = AUS_karl_eglseer
+	recruit_character = AUS_friedrich_materna
+	recruit_character = AUS_emil_liebitzky
+	recruit_character = AUS_ludwig_von_eimannsberger
+	recruit_character = AUS_alfred_ritter_von_hubicki
+	recruit_character = AUS_valentin_feuerstein
+	recruit_character = AUS_ernst_hammer
+	recruit_character = AUS_eduard_barger
+	recruit_character = AUS_mauritz_von_wiktorin
+	recruit_character = AUS_curt_von_jesser
+	recruit_character = AUS_anton_kienbauer
+	recruit_character = AUS_julius_deutsch
+	recruit_character = AUS_alfred_jansa
+	recruit_character = AUS_wilhelm_gebauer
+	recruit_character = AUS_theodor_korner
+	recruit_character = AUS_arthur_von_pongracz
+	recruit_character = AUS_gottfried_freiherr_von_banfeld
+	recruit_character = AUS_josef_brunner
+	recruit_character = AUS_alexander_lohr
+	recruit_character = AUS_julius_yllam
+	recruit_character = AUS_wilhelm_zehner
+	recruit_character = AUS_otto_schobel
+	recruit_character = AUS_viktor_seebauer
+	recruit_character = AUS_lothar_rendulic
+	recruit_character = AUS_franz_bohme
+	recruit_character = AUS_eugen_beyer
+	recruit_character = AUS_richard_steidle
+	recruit_character = AUS_godwin_von_brumowski
+	recruit_character = AUS_johann_jacob_reverta
+
+	#Navy
+
+	recruit_character = AUS_carl_heinz_birnbacher
+	recruit_character = AUS_franz_von_keil
+
+
+
+	#scientists, commented out before we know how to handle them
+	recruit_character = AUS_herbert_wagner
+	recruit_character = AUS_eugen_sanger
+	recruit_character = AUS_hedy_lamarr
+	recruit_character = AUS_egon_schweidler
+	recruit_character = AUS_paul_eisler
+
+	#Operatives
+
+	create_operative_leader = {
+		name = AUS_erwin_von_lahousen
+		bypass_recruitment = no 
+		available_to_spy_master = yes 
+		gfx = GFX_portrait_AUS_erwin_von_lahousen 
+		traits = { operative_double_agent operative_commando }
+		nationalities = { AUS GER }
 	}
-	create_equipment_variant = {
-		name = "M60A3"
-		type = modern_tank_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_small_cannon
-			special_type_slot_1 = ergo_old
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			#special_type_slot_4 = main_ammo_bay_MBT
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		obsolete = yes
-		icon = "GFX_USA_main_battle_tank1_medium"
+
+	create_operative_leader = {
+		name = AUS_wilhelm_ergert
+		bypass_recruitment = no 
+		available_to_spy_master = yes 
+		gfx = GFX_portrait_AUS_wilhelm_ergert 
+		traits = { operative_double_agent operative_linguist operative_safe_cracker }
+		nationalities = { AUS GER YUG }
 	}
-	create_equipment_variant = {
-		name = "Saurer 4K 4FA"
-		type = light_tank_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_heavy_machine_gun
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = crew_compartment
-			#atgm_slot = empty
+
+	ELSE_IF = {
+		limit = {
+			NOT = {
+				has_dlc = "Gotterdammerung"
+			}
 		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 0
-			tank_nsb_engine_upgrade = 0
-		}
-		icon = "GFX_AUS_mechanised_infantry1_medium"
+
+		#########################
+		#####FREE CHARACTERS#####
+		#########################
+
+		recruit_character = AUS_kurt_schuschnigg
+		recruit_character = AUS_karl_renner
+		recruit_character = AUS_arthur_seyss-inquart
+		recruit_character = AUS_alfred_klahr
+		recruit_character = AUS_karl_eglseer
+		recruit_character = AUS_odilo_globocnik
+		recruit_character = AUS_alexander_lohr
+		recruit_character = AUS_paul_von_hegedus #complete boogus, remove?
+		recruit_character = AUS_julius_yllam
+		recruit_character = AUS_otto_meixner_von_zweienstamm #might be removed, is 80 at game start
+		recruit_character = AUS_wilhelm_zehner
+		recruit_character = AUS_josef_teufl #complete boogus, remove? 
+		recruit_character = AUS_otto_schobel
+		recruit_character = AUS_viktor_seebauer
+		recruit_character = AUS_lothar_rendulic
+		recruit_character = AUS_ernst_kaltenbrunner
+		recruit_character = AUS_eduard_freiherr
+		recruit_character = AUS_franz_bohme
+		recruit_character = AUS_eugen_beyer
+		recruit_character = AUS_julius_raab
+		recruit_character = AUS_leopold_figl
+		recruit_character = AUS_friedrich_mandl
 	}
-	create_equipment_variant = {
-		name = "SK-105 Kurassier"
-		type = light_tank_destroyer_chassis_1
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_auto_cannon
-			special_type_slot_1 = ergo_ifv_old
-			#turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_diesel_engine
-			#special_type_slot_1 = tank_radio_1
-			optics_slot = tank_optics_1
-			special_type_slot_4 = main_ammo_bay
-			#atgm_slot = empty
-		}
-		upgrades = {
-			tank_nsb_armor_upgrade = 1
-			tank_nsb_engine_upgrade = 1
-		}
-		obsolete = no
-		icon = "GFX_AUS_light_tank1_medium"
-	}
+
 }
+
+
+set_research_slots = 3
+
 set_technology = {
-	## Infantry ##
+	infantry_weapons = 1
 	infantry_weapons1 = 1
-	infantry_weapons2 = 1
-	motorised_infantry = 1
-	infantry_rifle_upgrade = 1
-	support_weapons = 1
-	support_weapons2 = 1
-	night_vision = 1
-	body_armor = 1
-	camouflage = 1
-	marines = 1
-	tech_mountaineers = 1
-	paratroopers = 1
-	
-	## Support Companies ##
-	tech_support = 1
-	basic_train = 1
-	tech_engineers = 1
 	tech_recon = 1
-	tech_field_hospital = 1
-	tech_logistics_company = 1
-	tech_military_police = 1
-	tech_signal_company = 1
-	tech_maintenance_company = 1
-	
-	## Armor ##
-	#main_battle_tank1 = 1
-	#main_battle_tank2 = 1
-	#main_battle_tank3 = 1
-	#light_tank1 = 1
-	
-	#mechanised_infantry2 = 1
-	#light_mechanized_infantry1 = 1
-	#light_mechanized_infantry2 = 1
-	amphibious_mechanized_infantry1 = 1
-	
-	## Artillery ##
-	coldwar_artillery = 1
+	tech_engineers = 1
+	tech_support = 1
+	tech_mountaineers = 1
+	tech_trucks = 1
+	basic_train = 1
 	gw_artillery = 1
- 	rocket_artillery = 1
-	sp_antiair0 = 1 
-	coldwar_antiair = 1
-	coldwar_antitank = 1
-	 
-	 
-	sp_artillery1 = 1
-	
-	# ## Air ##
-	# CAS1 = 1
-	# CAS2 = 1
-	# cv_CAS1 = 1
-	# cv_CAS2 = 1
-	# fighter1 = 1
-	# fighter2 = 1
-	# fighter3 = 1
-	# cv_fighter1 = 1
-	# cv_fighter2 = 1
-	# cv_fighter3 = 1
-	# naval_bomber1 = 1
-	# naval_bomber2 = 1
-	# naval_bomber3 = 1
-	# cv_naval_bomber1 = 1
-	# cv_naval_bomber2 = 1
-	# cv_naval_bomber3 = 1
-	# strategic_bomber1 = 1
-	# strategic_bomber2 = 1
-	# tactical_bomber1 = 1
-	# #scout_plane1 = 1
-	
-	## Engineering ##
-	electronic_mechanical_engineering = 1
-	radio = 1
-	
-	## Industry ##
-	basic_machine_tools = 1
-	fuel_silos = 1
-	fuel_refining = 1
-	synth_oil_experiments = 1
 }
 
-add_ideas = {
-	centralization_federal
-	government_system_parliamentary_republic
-	national_development_developed
-	population_growth_stagnation
-	austrian_neutrality
-	free_trade
-	immigration_policy_loose_regulations
-	civil_liberties_free
-	limited_conscription
-	welfare_considerable_assistance
-	idea_eu_member
+IF = {
+	limit = { has_dlc = "No Step Back" }
+	set_technology = {
+		gwtank_chassis = 1
+	}
+
+	ELSE = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
 }
 
-set_politics = {	
-	ruling_party = social_democrat
-	last_election = "1999.10.3"
+IF = {
+	limit = { has_dlc = "La Resistance" }
+		set_technology = {
+			armored_car1 = 1
+		}
+}
+
+
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 
 set_popularities = {
-    reactionary = 27
-    conservative = 27
-    market_liberal = 4
-    social_democrat = 33
-    progressive = 8
-    communist = 1
-}
-recruit_character = AUS_viktor_klima
-recruit_character = AUS_wolfgang_schussel
-recruit_character = AUS_heide_schmidt
-recruit_character = AUS_susanne_riess
-recruit_character = AUS_alexander_van_der_bellen
-recruit_character = AUS_sonja_grusch
-recruit_character = AUS_walter_baier
-recruit_character = AUS_karl_ii
-recruit_character = AUS_othmar_commenda
-recruit_character = AUS_horst_hofer
-recruit_character = AUS_jurgen_worgotter
-recruit_character = AUS_franz_reissner
-recruit_character = AUS_dieter_heidecker
-recruit_character = AUS_othmar_wohlkonig
-recruit_character = AUS_heinrich_winkelmayer
-recruit_character = AUS_gerhard_christiner
-recruit_character = AUS_christian_platzner
-recruit_character = AUS_karl_gruber
-recruit_character = AUS_hermann_kaponig
-recruit_character = AUS_rudolf_striedinger
-recruit_character = AUS_edwin_potocnik
-recruit_character = AUS_christian_habersatter
-recruit_character = AUS_christian_riemer
-recruit_character = AUS_peter_grunwald
-recruit_character = AUS_adolf_hoffmann
-recruit_character = AUS_theodor_barkhorn
-recruit_character = AUS_felix_weber
-recruit_character = AUS_hermann_behrmann
-recruit_character = AUS_christoph_schonborn
-
-2002.1.1 = {
-	add_ideas = the_euro
+	neutrality = 48
+	fascism = 50
+	democratic = 1
+	communism = 1
 }
 
-2012.10.17 = {
-	set_party_name = {
-		ideology = market_liberal
-		long_name = AUS_market_liberal_party_2012_long
-		name = AUS_market_liberal_party_2012
-	}
-}
+set_stability = 0.50
 
-2016.1.1 = {
-	create_country_leader = {
-		name = "Christian Kern"
-		picture = "Christian_Kern.dds"
-		ideology = social_democrat_ideology
-	}
-	create_country_leader = {
-		name = "Reinhold Mitterlehner"
-		picture = "Reinhold_Mitterlehner.dds"
-		ideology = christian_democrat 
-	}
-	create_country_leader = {
-		name = "Heinz Christian Strache"
-		picture = "Heinz_Christian_Strache.dds"
-		ideology = counter_progressive_democrat
-	}
-	create_country_leader = {
-		name = "Matthias Strolz"
-		picture = "Matthias_Strolz.dds"
-		ideology = libertarian
-	}
-	create_country_leader = {
-		name = "Eva Glawischnig"
-		picture = "Eva_Glawischnig.dds"
-		ideology = green
-	}
-}
 
-if = {
-	limit = {
-		NOT = {has_dlc = "By Blood Alone"}
-	}
-		add_equipment_to_stockpile = {
-			type = fighter_equipment_1
-			amount = 24
-			producer = USA
-		}
-}
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	add_equipment_to_stockpile = {
-		type = medium_plane_airframe_0
-		amount = 24
-		producer = AUS
-		variant_name = "F-4 Phantom II"
-	}
-}
+

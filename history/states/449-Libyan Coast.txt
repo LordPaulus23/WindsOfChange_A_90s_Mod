@@ -1,34 +1,22 @@
 
 state={
 	id=449
-	name="STATE_449"
-	resources={
-		steel=7.000
-	}
+	name="STATE_449" # El Agheila
+	manpower = 40431
+	
+	state_category = wasteland
 
 	history={
 		owner = LBA
-		victory_points = {
-			9980 3 
-		}
 		buildings = {
-			infrastructure = 4
-			industrial_complex = 1
-			9980 = {
-				naval_base = 2
-
-			}
-
+			infrastructure = 2
 		}
 		add_core_of = LBA
-
 	}
 
 	provinces={
-		1118 4117 4176 7066 7209 9980 12009 15045 
+		1041 1198 4047 4057 10046 10117 12088 
 	}
-	manpower=550431
-	buildings_max_level_factor=1.000
-	state_category=state_level_1
-	local_supplies=0.000
+
+	local_supplies=0.0 
 }
