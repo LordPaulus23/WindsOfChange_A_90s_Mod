@@ -1,0 +1,14 @@
+characters={
+	DEN_Poul_Schlueter={
+		portraits={
+			civilian={
+				large="gfx/leaders/DEN/Poul_Schlueter.dds"
+			}
+		}
+		country_leader={
+			ideology = conservative_liberalism
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

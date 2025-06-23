@@ -1,0 +1,14 @@
+characters={
+	BEL_Wilfried_Martens={
+		portraits={
+			civilian={
+				large="gfx/leaders/BEL/Wilfried_Marten.dds"
+			}
+		}
+		country_leader={
+			ideology = christian_democrat
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

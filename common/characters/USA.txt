@@ -1,13 +1,13 @@
 characters={
-	USA_george_w_bush_sr={
+	USA_George_W_Bush_Sr={
 		#name="George W. Bush"
 		portraits={
 			civilian={
-				large="gfx/leaders/USA/George_W_Bush_Sr.dds"
+				large="gfx/leaders/USA/George_W_Bush.dds"
 			}
 		}
 		country_leader={
-			ideology=fiscal_conservative
+			ideology = constitutionalist
 			expire="1.1.1.1"
 			id=-1
 		}

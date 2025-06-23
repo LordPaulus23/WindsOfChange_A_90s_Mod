@@ -1,0 +1,14 @@
+characters={
+	AUS_Franz_Vranitzky={
+		portraits={
+			civilian={
+				large="gfx/leaders/AUS/Franz_Vranitzky.dds"
+			}
+		}
+		country_leader={
+			ideology = social_democrat_ideology
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

@@ -1,5 +1,7 @@
 ﻿capital = 361 # Washington DC
 
+recruit_character = USA_George_W_Bush_Sr
+
 oob = "USA_1936"
 
 starting_train_buffer = 5
@@ -44,5 +46,3 @@ set_popularities = {
 	market_liberal = 1
 	progressive = 1
 }
-
-recruit_character = USA_george_w_bush_sr

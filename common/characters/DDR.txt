@@ -1,0 +1,14 @@
+characters={
+	DDR_Hans_Modrow={
+		portraits={
+			civilian={
+				large="gfx/leaders/DDR/Hans_Modrow.dds"
+			}
+		}
+		country_leader={
+			ideology = marxist
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
+}

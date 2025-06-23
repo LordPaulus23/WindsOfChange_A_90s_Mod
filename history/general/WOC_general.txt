@@ -1,0 +1,12 @@
+AUS = {
+    recruit_character = AUS_Franz_Vranitzky
+}
+BEL = {
+    recruit_character = BEL_Wilfried_Martens
+}
+DDR = {
+    recruit_character = DDR_Hans_Modrow
+}
+DEN = {
+    recruit_character = DEN_Poul_Schlueter
+}
